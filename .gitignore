@@ -11,3 +11,10 @@ build/
 .vscode/
 .idea/
 docker-compose.override.yml
+
+# Claude Code local context files — not part of the project
+CLAUDE.md
+CLAUDE copy.md
+CLAUDE1.md
+HANDOFF-pet-project.md
+.claude/
