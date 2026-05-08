@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: timescale/timescaledb:latest-pg16
+    container_name: shadow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: shadow
+      POSTGRES_USER: shadow
+      POSTGRES_PASSWORD: shadow_dev
+    ports:
+      # Host port 5433 (5432 is taken by other local Postgres instances)
+      - "5433:5432"
+    volumes:
+      - shadow-postgres-data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shadow -d shadow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  shadow-postgres-data:

@@ -1,0 +1,23 @@
+{
+  "name": "polyscalp",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "smoke": "bun run packages/api/src/cli/smoke.ts",
+    "ingest": "bun run packages/api/src/cli/ingest.ts",
+    "load-sanctions": "bun run packages/api/src/cli/load-sanctions.ts",
+    "load-opensanctions": "bun run packages/api/src/cli/load-opensanctions.ts",
+    "load-ownership": "bun run packages/api/src/cli/load-ownership.ts",
+    "serve": "bun run packages/api/src/server.ts",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f postgres",
+    "db:psql": "docker compose exec postgres psql -U shadow -d shadow"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}

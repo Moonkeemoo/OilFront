@@ -1,0 +1,13 @@
+.env
+.env.local
+node_modules/
+bun.lockb
+.DS_Store
+dist/
+build/
+.next/
+.turbo/
+*.log
+.vscode/
+.idea/
+docker-compose.override.yml
