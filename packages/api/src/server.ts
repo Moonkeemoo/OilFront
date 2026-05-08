@@ -59,6 +59,35 @@ function csvResponse(rows: Array<Record<string, unknown>>, filename: string, col
   });
 }
 
+// Simple in-memory response cache for hot GET endpoints.
+// Keyed by full URL (path + query). TTL configurable per call.
+// Avoids hammering Postgres with identical concurrent queries from UI auto-refresh.
+const respCache = new Map<string, { ts: number; body: string; headers: Record<string, string> }>();
+const RESP_CACHE_DEFAULT_TTL_MS = 20_000; // 20 s — matches UI refresh cadence
+
+async function withCache(req: Request, ttlMs: number, fn: () => Promise<Response>): Promise<Response> {
+  const url = new URL(req.url);
+  const key = url.pathname + url.search;
+  const hit = respCache.get(key);
+  if (hit && Date.now() - hit.ts < ttlMs) {
+    return new Response(hit.body, { headers: { ...hit.headers, "x-cache": "HIT" } });
+  }
+  const res = await fn();
+  // Only cache successful JSON responses
+  if (res.status === 200 && res.headers.get("content-type")?.includes("json")) {
+    const body = await res.clone().text();
+    const headers: Record<string, string> = {};
+    res.headers.forEach((v, k) => { headers[k] = v; });
+    respCache.set(key, { ts: Date.now(), body, headers });
+    // Periodic prune: when cache exceeds 200 entries, drop the oldest 50
+    if (respCache.size > 200) {
+      const sorted = [...respCache.entries()].sort((a, b) => a[1].ts - b[1].ts);
+      for (const [k] of sorted.slice(0, 50)) respCache.delete(k);
+    }
+  }
+  return res;
+}
+
 function maybeCsvOrJson(req: Request | undefined, rows: Array<Record<string, unknown>>, filename: string, columns?: string[], extra?: Record<string, unknown>): Response {
   const url = req ? new URL(req.url) : null;
   const fmt = url?.searchParams.get("format")?.toLowerCase();
@@ -1641,19 +1670,20 @@ const server = Bun.serve({
   async fetch(req) {
     const url = new URL(req.url);
     try {
-      if (url.pathname === "/api/sanctioned-active") return await handleSanctionedActive(req);
-      if (url.pathname === "/api/tankers-active")    return await handleTankersActive();
-      if (url.pathname === "/api/stats")             return await handleStats();
-      if (url.pathname === "/api/zones")             return await handleZones();
-      if (url.pathname === "/api/digest")            return await handleDigest();
-      if (url.pathname === "/api/timeline")          return await handleTimeline(req);
-      if (url.pathname === "/api/sts-candidates")    return await handleStsCandidates(req);
-      if (url.pathname === "/api/sts-events")        return await handleStsEvents(req);
-      if (url.pathname === "/api/fleet-stats")       return await handleFleetStats(req);
-      if (url.pathname === "/api/newly-active")      return await handleNewlyActive(req);
-      if (url.pathname === "/api/newly-listed")      return await handleNewlyListed(req);
+      // Hot GET endpoints — 20 s in-memory cache
+      if (url.pathname === "/api/sanctioned-active") return await withCache(req, 20_000, () => handleSanctionedActive(req));
+      if (url.pathname === "/api/tankers-active")    return await withCache(req, 20_000, () => handleTankersActive());
+      if (url.pathname === "/api/stats")             return await withCache(req, 30_000, () => handleStats());
+      if (url.pathname === "/api/zones")             return await withCache(req, 600_000, () => handleZones());
+      if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());
+      if (url.pathname === "/api/timeline")          return await withCache(req, 30_000, () => handleTimeline(req));
+      if (url.pathname === "/api/sts-candidates")    return await withCache(req, 30_000, () => handleStsCandidates(req));
+      if (url.pathname === "/api/sts-events")        return await withCache(req, 30_000, () => handleStsEvents(req));
+      if (url.pathname === "/api/fleet-stats")       return await withCache(req, 60_000, () => handleFleetStats(req));
+      if (url.pathname === "/api/newly-active")      return await withCache(req, 60_000, () => handleNewlyActive(req));
+      if (url.pathname === "/api/newly-listed")      return await withCache(req, 300_000, () => handleNewlyListed(req));
       if (url.pathname === "/api/batch-screen")      return await handleBatchScreen(req);
-      if (url.pathname === "/api/advanced-filter")   return await handleAdvancedFilter(req);
+      if (url.pathname === "/api/advanced-filter")   return await withCache(req, 30_000, () => handleAdvancedFilter(req));
       const wikiMatch = url.pathname.match(/^\/api\/vessel\/(\d+)\/wiki$/);
       if (wikiMatch) return await handleVesselWiki(wikiMatch[1]!);
       const ownerActivityMatch = url.pathname.match(/^\/api\/owner-fleet-activity\/([A-Za-z0-9._:\-]+)$/);
@@ -1666,9 +1696,9 @@ const server = Bun.serve({
       const entityMatch = url.pathname.match(/^\/api\/entity\/([A-Za-z0-9._:\-]+)$/);
       if (entityMatch) return await handleEntityDetail(entityMatch[1]!);
       const ownershipMatch = url.pathname.match(/^\/api\/vessel\/(\d+)\/ownership$/);
-      if (ownershipMatch) return await handleVesselOwnership(ownershipMatch[1]!);
+      if (ownershipMatch) return await withCache(req, 300_000, () => handleVesselOwnership(ownershipMatch[1]!));
       const vesselMatch = url.pathname.match(/^\/api\/vessel\/(\d+)$/);
-      if (vesselMatch) return await handleVesselDetail(vesselMatch[1]!, req);
+      if (vesselMatch) return await withCache(req, 30_000, () => handleVesselDetail(vesselMatch[1]!, req));
       return await serveStatic(url.pathname);
     } catch (err) {
       logger.error({ event: "request_error", path: url.pathname, err: String(err) }, "request failed");
