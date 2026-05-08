@@ -68,56 +68,222 @@ Detailed methodology: [`web/methodology.html`](web/methodology.html).
 
 ## Prerequisites
 
-- [Bun](https://bun.sh) ≥ 1.1
-- [Docker](https://www.docker.com/) + Docker Compose
-- An AISStream.io API key (free, register at https://aisstream.io)
-- ~10 GB free disk for the first 30 days of position history (compresses ~10× after 7 d)
+- [Bun](https://bun.sh) ≥ 1.1 — install: `curl -fsSL https://bun.sh/install | bash`
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Mac / Windows) or
+  [Docker Engine](https://docs.docker.com/engine/install/) (Linux) + Docker Compose
+- An [AISStream.io](https://aisstream.io) API key (free; register, confirm email,
+  copy the key from your dashboard)
+- ~10 GB free disk for 30 days of position history at global coverage
+  (compresses ~10× after 7 d, auto-drops after 90 d)
+
+Verify your install before starting:
+```bash
+bun --version          # → 1.1+
+docker compose version # → Docker Compose v2+
+docker info            # → no errors; ensures daemon is running
+```
 
 ---
 
-## Quick start
+## First-time setup
+
+Walk through this exactly once. Steps 6+ become your daily workflow.
+
+### 1 · Clone + install
 
 ```bash
-# 1. Clone + install
 git clone https://github.com/Moonkeemoo/shipship.git
 cd shipship
 bun install
+```
 
-# 2. Configure
+### 2 · Configure environment
+
+```bash
 cp .env.example .env
-# Edit .env: set AISSTREAM_KEY=<your key>
-# Default DATABASE_URL points at the docker-compose Postgres on port 5433
+```
 
-# 3. Spin up Postgres + TimescaleDB
+Edit `.env`:
+```
+AISSTREAM_KEY=<paste your key from aisstream.io dashboard>
+```
+
+Defaults you can leave alone:
+- `DATABASE_URL=postgresql://shadow:shadow_dev@localhost:5433/shadow` — matches the
+  docker-compose Postgres on host port **5433** (5432 is often taken on dev machines).
+- `LOG_LEVEL=info`
+- `AIS_BBOXES=[[[-90,-180],[90,180]]]` — global coverage by default. Replace with
+  smaller bboxes if you want regional only (see Configuration table below).
+
+### 3 · Spin up Postgres + TimescaleDB
+
+```bash
 bun run db:up
-# Wait ~5 s for it to come up, then:
-docker exec shadow-postgres pg_isready -U shadow -d shadow   # → "accepting connections"
+```
 
-# 4. Apply additional migrations (entities table for ownership graph, compression policy)
+Wait ~5 s for the container to boot, then verify:
+```bash
+docker exec shadow-postgres pg_isready -U shadow -d shadow
+# → /var/run/postgresql:5432 - accepting connections
+```
+
+### 4 · Apply migrations
+
+The base schema (`vessels`, `positions` hypertable, `sanctioned_vessels`) is created
+automatically on container init from `db/init.sql`. Two more migrations need to run
+manually for the ownership-graph layer and TimescaleDB compression policies:
+
+```bash
 docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-add-entities.sql
 docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-compression-retention.sql
+```
 
-# 5. Load sanctions data (one-time; rerun weekly)
-bun run load-sanctions          # OFAC SDN — 1,481 vessels
-bun run load-opensanctions      # OpenSanctions Maritime aggregate — 13,857 vessels
-bun run load-ownership          # OpenSanctions FtM graph — 248k entities, 11k relations
-                                # (~321 MB download, ~20 s ingest)
+Verify TimescaleDB policies got attached:
+```bash
+docker exec shadow-postgres psql -U shadow -d shadow \
+  -c "SELECT compression_enabled, num_chunks FROM timescaledb_information.hypertables WHERE hypertable_name='positions';"
+# → compression_enabled = t
+```
 
-# 6. Smoke-test the AIS connection (no DB writes)
+### 5 · Load sanctions data
+
+Three loaders. Run sequentially (each is idempotent — safe to re-run weekly):
+
+```bash
+bun run load-sanctions          # OFAC SDN CSV — ~1,500 vessels, ~10 s
+bun run load-opensanctions      # OpenSanctions Maritime — ~14k vessels, ~30 s
+bun run load-ownership          # OpenSanctions FtM JSON — 321 MB stream, ~20 s
+                                # → 248k entities, 11k Ownership/Director/etc. relations
+```
+
+Total downloads ≈ 350 MB. After this you have ~9k unique sanctioned IMOs in the DB,
+deduplicated across 50+ source lists, ready to match against the live AIS feed.
+
+### 6 · Smoke-test the AIS connection
+
+Sanity check before committing to writing positions to disk. Connects to AISStream,
+logs ~30 s of live messages, no DB writes:
+
+```bash
 bun run smoke
+```
 
-# 7. Start the ingestor (writes positions to DB, run continuously)
+Expect to see ~50–150 messages/sec on global coverage. Press **Ctrl-C** to stop.
+If you see authentication errors → re-check `AISSTREAM_KEY` in `.env`.
+
+### 7 · Start the ingestor
+
+The ingestor is meant to run continuously. It connects to AISStream, filters to
+commercial fleet (ship_type 60–89), and batch-writes positions to Postgres.
+
+In a dedicated terminal (or `tmux` / `screen` window):
+```bash
 bun run ingest
+```
 
-# 8. In another terminal, start the API + UI server
+You'll see a stats line every 30 s with throughput, vessels seen, batches flushed,
+and DB error count. Healthy: `dbErrors: 0`, `parseErrors: 0`, `msgPerSec` consistent.
+
+### 8 · Start the API + UI server
+
+In a second terminal:
+```bash
 bun run serve
+```
 
-# 9. Open the dashboard
+Logs `shadow-fleet server up` on port `3000`.
+
+### 9 · Open the dashboard
+
+```bash
+open http://localhost:3000        # macOS
+xdg-open http://localhost:3000    # Linux
+start http://localhost:3000       # Windows
+```
+
+You should see the map within seconds. Sanctioned-tanker matches start appearing as
+vessels broadcast their static data (which arrives less frequently than positions —
+expect 10-20 matches in the first 5 minutes, growing to 50-100+ within an hour).
+
+---
+
+## Daily workflow
+
+After first-time setup, the recurring routine is:
+
+### Start everything
+```bash
+bun run db:up                    # Postgres container (idempotent — no-op if running)
+bun run ingest    &              # Ingestor in background
+bun run serve     &              # API + UI in background
 open http://localhost:3000
 ```
 
-Within a few minutes you should see vessels appearing on the map. Sanctioned
-tanker matches accumulate over time as vessels broadcast their static data.
+### Stop everything
+```bash
+pkill -INT -f "bun run packages/api"   # graceful — flushes pending writes
+bun run db:down                         # stops + removes Postgres container
+                                        # (data persists in named volume)
+```
+
+### Resume next day
+Same as Start everything. Position history is preserved in the docker volume.
+Sanctions data is also preserved — only re-run the loaders weekly to pull updates.
+
+### Refresh sanctions data (weekly)
+```bash
+bun run load-sanctions
+bun run load-opensanctions
+bun run load-ownership
+```
+
+These overwrite previous entries (ON CONFLICT UPDATE) so it's safe to run anytime.
+
+---
+
+## Troubleshooting
+
+**`port is already allocated` when running `bun run db:up`**
+> Another Postgres is already bound to host port 5433. Either stop it, or edit
+> `docker-compose.yml` to map a different host port and update `DATABASE_URL` in `.env`.
+
+**Ingestor logs `dbErrors` increasing**
+> Most often `invalid input syntax for type timestamp` — means the `positions`
+> hypertable hasn't been created yet, or a migration failed. Re-check step 3 + 4.
+
+**UI shows skeletons forever / vessels not loading**
+> Server-side endpoints have a 20–30 s in-memory cache, so the first request after
+> a restart can take 0.3–1 s. If it stays slow > 5 s, check that the ingestor isn't
+> overwhelming Postgres (look at `dbErrors` in ingest logs).
+
+**Wikidata / GDELT show "feed unavailable" for some vessels**
+> Both are best-effort external lookups. GDELT is sometimes blocked by ISP /
+> firewall; Wikidata times out on unfamiliar IMOs. The vessel detail panel still
+> works without them — just no news / no Wikipedia article.
+
+**`ALTER TABLE positions` hangs during migrations**
+> Stop the ingestor first. Position INSERTs hold row locks that block schema changes.
+> If you've stopped the ingestor and it still hangs, force-terminate idle backends:
+> ```bash
+> docker exec shadow-postgres psql -U shadow -d shadow \
+>   -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE state='active' AND query LIKE '%positions%' AND pid != pg_backend_pid();"
+> ```
+
+**Disk filling up**
+> Compression policy compresses chunks > 7 days old (~10× space saving).
+> Retention policy drops chunks > 90 days. To force-compress now:
+> ```bash
+> docker exec shadow-postgres psql -U shadow -d shadow \
+>   -c "SELECT compress_chunk(c, if_not_compressed=>true) FROM show_chunks('positions') c;"
+> ```
+
+**Want to start fresh / reset all data**
+> ```bash
+> bun run db:down
+> docker volume rm polyscalp_shadow-postgres-data shipship_shadow-postgres-data 2>/dev/null
+> bun run db:up
+> # Re-apply migrations (step 4) + reload sanctions (step 5)
+> ```
 
 ---
 
@@ -126,7 +292,7 @@ tanker matches accumulate over time as vessels broadcast their static data.
 | Command | Purpose |
 |---|---|
 | `bun run smoke` | Connect to AISStream, log samples, no DB writes |
-| `bun run ingest` | Production ingestor, writes positions to DB |
+| `bun run ingest` | Production ingestor, writes positions to DB (run continuously) |
 | `bun run serve` | API server + static UI on `:3000` |
 | `bun run load-sanctions` | (Re-)load OFAC SDN |
 | `bun run load-opensanctions` | (Re-)load OpenSanctions Maritime |
@@ -134,6 +300,7 @@ tanker matches accumulate over time as vessels broadcast their static data.
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
 | `bun run db:psql` | Open a `psql` shell into the DB |
 | `bun run db:logs` | Tail Postgres container logs |
+| `bunx tsc --noEmit` | TypeScript strict check (no build, no emit) |
 
 ---
 
@@ -143,17 +310,26 @@ tanker matches accumulate over time as vessels broadcast their static data.
 
 | Key | Default | Notes |
 |---|---|---|
-| `AISSTREAM_KEY` | required | Get one at https://aisstream.io |
+| `AISSTREAM_KEY` | **required** | Get one at https://aisstream.io |
 | `DATABASE_URL` | `postgresql://shadow:shadow_dev@localhost:5433/shadow` | Matches `docker-compose.yml` |
 | `LOG_LEVEL` | `info` | `debug` / `info` / `warn` / `error` |
 | `AIS_BBOXES` | `[[[-90,-180],[90,180]]]` | JSON array of `[[SW_lat, SW_lon], [NE_lat, NE_lon]]` boxes. Default = global. |
+| `PORT` | `3000` | API + UI server port |
 
 To track only a region, replace `AIS_BBOXES` with one or more bboxes. Example
-(Baltic + Black Sea + Persian Gulf + Singapore Strait):
+(Baltic + Black Sea + Persian Gulf + Singapore Strait — covers main shadow-fleet
+operational areas at ~50 msg/sec instead of global ~150 msg/sec):
 
 ```
 AIS_BBOXES=[[[53,-10],[66,31]],[[30,20],[48,42]],[[20,48],[30,60]],[[-2,98],[8,108]]]
 ```
+
+### Local-port reference
+
+| Port | Service |
+|---|---|
+| `3000` | API + UI server (`bun run serve`) |
+| `5433` | Postgres + TimescaleDB (host-mapped from container's 5432) |
 
 ---
 
