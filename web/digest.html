@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadow Fleet — daily digest</title>
+  <style>
+    :root {
+      --bg-0: #0a0e1a;
+      --bg-1: #14192a;
+      --bg-2: #1a2138;
+      --bg-3: #232a44;
+      --border: #2a3147;
+      --text-0: #f0f4fa;
+      --text-1: #b6c0d0;
+      --text-2: #6b7891;
+      --accent: #ff4757;
+      --warn: #ffa502;
+      --high: #ff7f50;
+      --low: #8a96aa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--bg-0);
+      color: var(--text-0);
+      line-height: 1.5;
+    }
+    header {
+      padding: 22px 32px;
+      background: var(--bg-1);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    header h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.3px; }
+    header .meta { color: var(--text-2); font-size: 12px; letter-spacing: 0.4px; }
+    header a { color: var(--text-1); text-decoration: none; border-bottom: 1px dashed var(--text-2); font-size: 13px; }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px; }
+    section { margin-bottom: 36px; }
+    section h2 {
+      margin: 0 0 14px;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--text-2);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    section .lede {
+      color: var(--text-1);
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 1100px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 700px)  { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px)  {
+      main { padding: 14px; }
+      header { padding: 14px; }
+      table { font-size: 11px; }
+      td, th { padding: 6px 8px; }
+    }
+    .kpi {
+      padding: 14px 16px;
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .kpi .l { color: var(--text-2); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+    .kpi .v { font-size: 24px; font-weight: 700; color: var(--text-0); font-variant-numeric: tabular-nums; }
+    .kpi.accent .v { color: var(--accent); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      text-align: left;
+      padding: 10px 12px;
+      background: var(--bg-2);
+      color: var(--text-2);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    td.num { font-variant-numeric: tabular-nums; }
+    .name-link { color: var(--text-0); font-weight: 600; text-decoration: none; }
+    .name-link:hover { color: var(--accent); }
+    .risk-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .risk-critical { background: rgba(255,71,87,0.15); color: var(--accent); border: 1px solid rgba(255,71,87,0.3); }
+    .risk-high     { background: rgba(255,127,80,0.15); color: var(--high);   border: 1px solid rgba(255,127,80,0.3); }
+    .risk-elevated { background: rgba(255,165,2,0.15);  color: var(--warn);   border: 1px solid rgba(255,165,2,0.3); }
+    .risk-low      { background: rgba(138,150,170,0.15); color: var(--low);   border: 1px solid rgba(138,150,170,0.3); }
+    .programs { display: flex; gap: 4px; flex-wrap: wrap; }
+    .programs .chip {
+      display: inline-block;
+      padding: 1px 7px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 10px;
+      color: var(--text-1);
+    }
+    .empty {
+      color: var(--text-2);
+      font-style: italic;
+      padding: 12px 0;
+    }
+    code { background: var(--bg-2); padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--text-1); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>📋 Shadow Fleet — daily digest</h1>
+      <div class="meta" id="generated-at">—</div>
+    </div>
+    <div style="display: flex; gap: 18px; font-size: 13px;">
+      <a href="/">← live map</a>
+      <a href="/methodology.html">methodology</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="kpi-grid" id="kpi-grid"></div>
+
+    <section>
+      <h2>Top high-risk vessels — currently visible</h2>
+      <div class="lede">Sanctioned tankers broadcasting AIS in the last 24 h, ranked by composite risk score (sanctions × Russia/Ukraine link × flag-of-convenience × dark periods).</div>
+      <div id="top-risk"></div>
+    </section>
+
+    <section>
+      <h2>Newly listed on sanctions (last 180 days)</h2>
+      <div class="lede">Vessels added to OpenSanctions FtM by upstream sanctions sources in the last 6 months. Useful for spotting designations driven by recent EU / UK / OFAC packages. <a href="/api/newly-listed?since_days=180&format=csv" style="color: var(--accent);">↓ download CSV</a></div>
+      <div id="newly-listed"></div>
+    </section>
+
+    <section>
+      <h2>STS events (last 24h)</h2>
+      <div class="lede">Discrete ship-to-ship rendezvous detected from proximity (&lt;1.5nm) and slow speed (&lt;2kn). Pairs grouped by &gt;30min gap = new event. Only at-least-one-sanctioned events shown.</div>
+      <div id="sts-events"></div>
+    </section>
+
+    <section>
+      <h2>Vessels dark inside suspect zones</h2>
+      <div class="lede">Sanctioned tankers whose last AIS broadcast was inside an STS-transfer area or sanctioned-port approach, with no update in &gt;1 h. These are the highest-OSINT-value cases — a vessel going silent in Lakonikos Bay or off Sikka is the textbook STS-transfer pattern.</div>
+      <div id="dark-in-zones"></div>
+    </section>
+
+    <section>
+      <h2>New vessels seen today</h2>
+      <div class="lede">First AIS broadcast captured by us today. Useful for spotting fresh tonnage or returning shadow-fleet vessels.</div>
+      <div id="new-today"></div>
+    </section>
+  </main>
+
+  <script>
+    function bucketClass(b) { return "risk-" + (b || "low"); }
+    function fmtTime(iso) { try { return new Date(iso).toLocaleString(); } catch { return iso; } }
+    function fmtTimeOnly(iso) { try { return new Date(iso).toLocaleTimeString(); } catch { return iso; } }
+    function escapeHtml(s) {
+      if (s == null) return "";
+      return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+    }
+
+    function renderKpis(d, stsCount, stsBoth) {
+      const total = (d.top_risk || []).length;
+      const ru = d.russia_linked_visible?.count ?? 0;
+      const dark = d.dark_in_zones?.count ?? 0;
+      const news = d.new_today?.count ?? 0;
+      document.getElementById("kpi-grid").innerHTML = `
+        <div class="kpi accent"><div class="l">High-risk visible</div><div class="v">${total}</div></div>
+        <div class="kpi accent"><div class="l">Russia/Ukraine-linked</div><div class="v">${ru}</div></div>
+        <div class="kpi"><div class="l">STS events 24h</div><div class="v" style="color: var(--high);">${stsCount ?? "—"}${stsBoth ? ' <span style="font-size: 12px; color: var(--accent);">(' + stsBoth + ' both)</span>' : ''}</div></div>
+        <div class="kpi"><div class="l">Dark in suspect zone</div><div class="v">${dark}</div></div>
+        <div class="kpi"><div class="l">New vessels today</div><div class="v">${news}</div></div>
+      `;
+    }
+
+    function renderTopRisk(rows) {
+      if (!rows || rows.length === 0) {
+        document.getElementById("top-risk").innerHTML = '<div class="empty">No high-risk vessels broadcasting right now. Refresh in a few minutes — coverage builds over time.</div>';
+        return;
+      }
+      const html = `<table>
+        <thead><tr>
+          <th>Risk</th><th>Vessel</th><th>IMO</th><th>Programs</th><th>Position</th><th>Speed (kn)</th><th>Last seen</th>
+        </tr></thead>
+        <tbody>
+          ${rows.map(v => `
+            <tr>
+              <td><span class="risk-badge ${bucketClass(v.risk_bucket)}">${v.risk_score} · ${v.risk_bucket}</span></td>
+              <td><a class="name-link" href="/?vessel=${v.imo}">${escapeHtml(v.name || "(no name)")}</a></td>
+              <td class="num">${v.imo ?? "—"}</td>
+              <td><div class="programs">${(v.programs || []).slice(0, 4).map(p => `<span class="chip">${escapeHtml(p)}</span>`).join("")}${(v.programs || []).length > 4 ? `<span class="chip">+${v.programs.length - 4}</span>` : ""}</div></td>
+              <td class="num">${Number(v.lat).toFixed(2)}, ${Number(v.lon).toFixed(2)}</td>
+              <td class="num">${v.sog ?? "—"}</td>
+              <td>${fmtTime(v.ts)}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+      document.getElementById("top-risk").innerHTML = html;
+    }
+
+    function renderDarkInZones(rows) {
+      if (!rows || rows.length === 0) {
+        document.getElementById("dark-in-zones").innerHTML = '<div class="empty">No sanctioned vessels currently dark inside a suspect zone. (Will accumulate as ingestion runs and vessels stop broadcasting.)</div>';
+        return;
+      }
+      const html = `<table>
+        <thead><tr><th>Vessel</th><th>IMO</th><th>Zone</th><th>Last position</th><th>Last seen</th></tr></thead>
+        <tbody>
+          ${rows.map(v => `
+            <tr>
+              <td><a class="name-link" href="/?vessel=${v.imo}">${escapeHtml(v.name || "(no name)")}</a></td>
+              <td class="num">${v.imo ?? "—"}</td>
+              <td><strong>${escapeHtml(v.zone?.name || "")}</strong> <span style="color: var(--text-2); font-size: 11px;">${escapeHtml(v.zone?.category || "")}</span></td>
+              <td class="num">${Number(v.lat).toFixed(3)}, ${Number(v.lon).toFixed(3)}</td>
+              <td>${fmtTime(v.ts)}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+      document.getElementById("dark-in-zones").innerHTML = html;
+    }
+
+    function renderNewToday(rows) {
+      if (!rows || rows.length === 0) {
+        document.getElementById("new-today").innerHTML = '<div class="empty">No new vessels seen today yet.</div>';
+        return;
+      }
+      const html = `<table>
+        <thead><tr><th>Vessel</th><th>IMO</th><th>Type</th><th>First seen</th></tr></thead>
+        <tbody>
+          ${rows.map(v => `
+            <tr>
+              <td><a class="name-link" href="/?vessel=${v.imo}">${escapeHtml(v.name || "(no name)")}</a></td>
+              <td class="num">${v.imo ?? "—"}</td>
+              <td class="num">${v.ship_type ?? "—"}</td>
+              <td>${fmtTime(v.first_seen)}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+      document.getElementById("new-today").innerHTML = html;
+    }
+
+    function renderStsEvents(events) {
+      const target = document.getElementById("sts-events");
+      if (!target) return;
+      if (!events || events.length === 0) {
+        target.innerHTML = '<div class="empty">No STS events detected in last 24 h.</div>';
+        return;
+      }
+      target.innerHTML = `<table>
+        <thead><tr><th>Vessels</th><th>Duration</th><th>Min distance</th><th>Zone</th><th>Started</th><th>Ended</th></tr></thead>
+        <tbody>
+          ${events.slice(0, 25).map(ev => `
+            <tr>
+              <td>
+                <a class="name-link" href="/?vessel=${ev.imo_a}">${escapeHtml(ev.name_a)}</a>
+                <span style="color: var(--text-2);">${ev.sanc_a ? "🚩" : ""}</span>
+                ↔
+                <a class="name-link" href="/?vessel=${ev.imo_b}">${escapeHtml(ev.name_b)}</a>
+                <span style="color: var(--text-2);">${ev.sanc_b ? "🚩" : ""}</span>
+                ${(ev.sanc_a && ev.sanc_b) ? '<span class="risk-badge risk-critical" style="margin-left: 6px;">both sanctioned</span>' : ''}
+              </td>
+              <td class="num">${ev.duration_min} min</td>
+              <td class="num">${Number(ev.min_distance_nm).toFixed(2)} nm</td>
+              <td>${ev.zone_name ? '<strong>' + escapeHtml(ev.zone_name) + '</strong>' : '<span style="color: var(--text-2);">open sea</span>'}</td>
+              <td>${fmtTime(ev.start_ts)}</td>
+              <td>${fmtTime(ev.end_ts)}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+    }
+
+    function renderNewlyListed(rows) {
+      const target = document.getElementById("newly-listed");
+      if (!target) return;
+      if (!rows || rows.length === 0) {
+        target.innerHTML = '<div class="empty">No newly-listed vessels in lookback window.</div>';
+        return;
+      }
+      target.innerHTML = `<table>
+        <thead><tr><th>Listed</th><th>Vessel</th><th>IMO</th><th>Type</th><th>Programs</th><th>In feed</th><th>Visible 24h</th></tr></thead>
+        <tbody>
+          ${rows.slice(0, 30).map(r => `
+            <tr>
+              <td class="num">${(r.listed_at || "").slice(0,10)}</td>
+              <td><a class="name-link" href="/?vessel=${r.imo}">${escapeHtml(r.caption || "—")}</a> ${r.russia_ukraine_linked ? '<span style="color: var(--accent);">🚩</span>' : ''}</td>
+              <td class="num">${r.imo}</td>
+              <td><span style="color: var(--text-2); font-size: 11px;">${escapeHtml((r.vessel_type || "—").slice(0, 30))}</span></td>
+              <td><div class="programs">${(r.programs || []).slice(0, 3).map(p => `<span class="chip">${escapeHtml(p)}</span>`).join("")}${(r.programs || []).length > 3 ? `<span class="chip">+${r.programs.length - 3}</span>` : ""}</div></td>
+              <td>${r.in_our_ais_feed ? '<span class="risk-badge risk-elevated">in feed</span>' : '<span style="color: var(--text-2);">—</span>'}</td>
+              <td>${r.visible_24h ? '<span class="risk-badge risk-critical">live</span>' : '<span style="color: var(--text-2);">—</span>'}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+    }
+
+    async function load() {
+      try {
+        const [digestRes, stsRes, listedRes] = await Promise.all([
+          fetch("/api/digest"),
+          fetch("/api/sts-events?range=24h&min_duration_min=10").catch(() => null),
+          fetch("/api/newly-listed?since_days=180").catch(() => null),
+        ]);
+        const d = await digestRes.json();
+        const sts = stsRes && stsRes.ok ? await stsRes.json() : { events: [] };
+        const newlyListed = listedRes && listedRes.ok ? await listedRes.json() : { results: [] };
+        document.getElementById("generated-at").textContent = "Generated " + fmtTime(d.generated_at);
+        renderKpis(d, sts.count, sts.both_sanctioned_count);
+        renderTopRisk(d.top_risk);
+        renderNewlyListed(newlyListed.results);
+        renderStsEvents(sts.events);
+        renderDarkInZones(d.dark_in_zones?.sample);
+        renderNewToday(d.new_today?.sample);
+      } catch (err) { console.error("digest load failed", err); }
+    }
+
+    load();
+    setInterval(load, 60000);
+  </script>
+</body>
+</html>

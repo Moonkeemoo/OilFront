@@ -1,0 +1,1898 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadow Fleet — live</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+  <style>
+    :root {
+      --bg-0: #0a0e1a;
+      --bg-1: #14192a;
+      --bg-2: #1a2138;
+      --bg-3: #232a44;
+      --border: #2a3147;
+      --text-0: #f0f4fa;
+      --text-1: #b6c0d0;
+      --text-2: #6b7891;
+      --accent: #ff4757;
+      --accent-glow: rgba(255, 71, 87, 0.45);
+      --warn: #ffa502;
+      --high: #ff7f50;
+      --low: #8a96aa;
+      --vessel: #ff4757;
+      --org: #ffa502;
+      --person: #54a0ff;
+      --addr: #2ed573;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--bg-0);
+      color: var(--text-0);
+      overflow: hidden;
+    }
+    #header {
+      padding: 12px 22px;
+      background: var(--bg-1);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 110px;
+    }
+    #header .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    #header .title h1 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    #header .title .subtitle {
+      margin-top: 2px;
+      font-size: 11px;
+      color: var(--text-2);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    #header .title .subtitle a { color: var(--text-1); text-decoration: none; border-bottom: 1px dashed var(--text-2); }
+    #stats {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+    }
+    #stats .stat .label {
+      color: var(--text-2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 10px;
+      margin-bottom: 2px;
+    }
+    #stats .stat .value {
+      color: var(--text-0);
+      font-weight: 600;
+      font-size: 16px;
+      font-variant-numeric: tabular-nums;
+    }
+    #stats .stat .value.accent { color: var(--accent); }
+
+    /* Bottom row of header: filter chips + entity search */
+    #controls {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .filter-label {
+      color: var(--text-2);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chip {
+      padding: 4px 10px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--text-1);
+      font-size: 11px;
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: 0.3px;
+      font-weight: 500;
+    }
+    .chip:hover { border-color: var(--text-2); color: var(--text-0); }
+    .chip.active {
+      background: rgba(255,71,87,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    #entity-search-box {
+      position: relative;
+      margin-left: auto;
+    }
+    #entity-search-input {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      color: var(--text-0);
+      font-size: 12px;
+      width: 280px;
+      outline: none;
+    }
+    #entity-search-input::placeholder { color: var(--text-2); }
+    #entity-search-input:focus { border-color: var(--accent); }
+    #entity-search-results {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 4px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: 320px;
+      max-height: 360px;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      z-index: 2000;
+      display: none;
+    }
+    #entity-search-results.open { display: block; }
+    #entity-search-results .res {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      font-size: 12px;
+    }
+    #entity-search-results .res:hover { background: var(--bg-3); }
+    #entity-search-results .res .name { color: var(--text-0); font-weight: 600; }
+    #entity-search-results .res .sub { color: var(--text-2); font-size: 11px; margin-top: 2px; }
+    #entity-search-results .res .badge {
+      display: inline-block;
+      padding: 1px 6px;
+      background: var(--bg-3);
+      border-radius: 8px;
+      font-size: 10px;
+      color: var(--text-2);
+      margin-left: 6px;
+    }
+
+    #map { position: absolute; top: 110px; left: 0; right: 0; bottom: 92px; }
+
+    /* Activity timeline strip */
+    #timeline {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 92px;
+      background: var(--bg-1);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 6px 22px 8px;
+      z-index: 800;
+    }
+    #timeline .tl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-2);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    #timeline .tl-header strong { color: var(--text-0); font-weight: 600; }
+    #timeline .tl-legend { display: flex; gap: 14px; }
+    #timeline .tl-legend .li {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    #timeline .tl-legend .swatch {
+      display: inline-block; width: 9px; height: 9px; border-radius: 2px;
+    }
+    #timeline-svg-wrap {
+      flex: 1;
+      position: relative;
+    }
+    #timeline-svg {
+      width: 100%; height: 100%;
+      cursor: crosshair;
+      display: block;
+    }
+    #timeline-tooltip {
+      position: absolute;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 9px;
+      font-size: 11px;
+      pointer-events: none;
+      display: none;
+      white-space: nowrap;
+      z-index: 1;
+      color: var(--text-0);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .leaflet-container { background: var(--bg-1) !important; }
+
+    /* Side panel */
+    #panel {
+      position: absolute;
+      top: 110px;
+      right: 0;
+      bottom: 92px;
+      width: 460px;
+      background: var(--bg-1);
+      border-left: 1px solid var(--border);
+      transform: translateX(100%);
+      transition: transform 0.2s ease;
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 0;
+    }
+    #panel.open { transform: translateX(0); }
+    #panel .panel-header {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg-1);
+      z-index: 1;
+    }
+    #panel .panel-header .vessel-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding-right: 36px;
+    }
+    #panel .panel-header .vessel-sub {
+      font-size: 11px;
+      color: var(--text-2);
+      margin-top: 4px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    #panel .panel-header .close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-1);
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+    }
+    #panel .panel-header .close-btn:hover { background: var(--bg-2); }
+    #panel .section {
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    #panel .section h3 {
+      margin: 0 0 10px;
+      font-size: 11px;
+      color: var(--text-2);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    #panel .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 5px 0;
+      font-size: 13px;
+    }
+    #panel .row .label { color: var(--text-2); }
+    #panel .row .value {
+      color: var(--text-0);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      max-width: 60%;
+      word-wrap: break-word;
+    }
+    #panel .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+    }
+    #panel .stat-grid .stat-cell {
+      padding: 10px;
+      background: var(--bg-2);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    #panel .stat-grid .stat-cell .l {
+      font-size: 10px;
+      color: var(--text-2);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    #panel .stat-grid .stat-cell .v {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-0);
+      font-variant-numeric: tabular-nums;
+    }
+    #panel .stat-grid .stat-cell.warn .v { color: var(--warn); }
+    #panel .stat-grid .stat-cell.alert .v { color: var(--accent); }
+    #panel .empty-msg {
+      color: var(--text-2);
+      font-size: 12px;
+      font-style: italic;
+    }
+    #panel .gap-item {
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      background: var(--bg-2);
+      border-left: 3px solid var(--warn);
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    #panel .gap-item .duration {
+      color: var(--warn);
+      font-weight: 600;
+    }
+    #panel .gap-item .gap-time {
+      color: var(--text-2);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    /* Vessel icons */
+    .vessel-icon svg {
+      filter: drop-shadow(0 0 6px var(--accent-glow));
+      transition: transform 0.15s ease;
+    }
+    .vessel-icon:hover svg { transform: scale(1.25); }
+    .vessel-icon-selected svg {
+      filter: drop-shadow(0 0 12px var(--accent));
+    }
+
+    /* Loading skeleton */
+    .skeleton {
+      background: linear-gradient(90deg, var(--bg-2) 0%, var(--bg-3) 50%, var(--bg-2) 100%);
+      background-size: 200% 100%;
+      animation: skeleton 1.4s infinite linear;
+      border-radius: 4px;
+      height: 14px;
+      margin: 8px 0;
+    }
+    .skeleton.lg { height: 32px; }
+    .skeleton.sm { height: 10px; width: 60%; }
+    @keyframes skeleton {
+      0%   { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Mobile layout */
+    @media (max-width: 900px) {
+      #header { height: auto; padding: 10px 12px; gap: 6px; }
+      #header .top-row { gap: 12px; }
+      #header .title h1 { font-size: 14px; }
+      #header .title .subtitle { font-size: 10px; }
+      #stats { gap: 12px; }
+      #stats .stat .label { font-size: 9px; }
+      #stats .stat .value { font-size: 13px; }
+      #controls { gap: 6px; }
+      #entity-search-box { width: 100%; margin-top: 6px; margin-left: 0; }
+      #entity-search-input { width: 100%; }
+      #entity-search-results { width: 100%; }
+      #map { top: 200px; bottom: 70px; }
+      #timeline { height: 70px; padding: 4px 12px 6px; }
+      #panel {
+        width: 100%; top: 200px; bottom: 70px; max-width: 100%;
+        z-index: 1500;
+      }
+      #panel.open { box-shadow: 0 -4px 20px rgba(0,0,0,0.5); }
+    }
+    @media (max-width: 600px) {
+      #stats .stat:nth-child(n+4) { display: none; }
+      #timeline .tl-legend .li:nth-child(n+2) { display: none; }
+    }
+
+    /* Graph container */
+    #graph-container {
+      width: 100%;
+      height: 380px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    /* Vessel list inside entity panel */
+    .vessel-list {
+      max-height: 360px;
+      overflow-y: auto;
+      margin-top: 6px;
+    }
+    .vessel-list .vrow {
+      padding: 8px 10px;
+      margin-bottom: 4px;
+      background: var(--bg-2);
+      border-radius: 4px;
+      border-left: 3px solid var(--bg-3);
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .vessel-list .vrow:hover { background: var(--bg-3); }
+    .vessel-list .vrow.live { border-left-color: var(--accent); }
+    .vessel-list .vrow .name { color: var(--text-0); font-weight: 600; }
+    .vessel-list .vrow .imo { color: var(--text-2); font-variant-numeric: tabular-nums; font-size: 11px; }
+    .vessel-list .vrow .live-badge {
+      display: inline-block;
+      padding: 1px 7px;
+      background: rgba(255,71,87,0.15);
+      color: var(--accent);
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    .vessel-list .vrow .static-badge {
+      display: inline-block;
+      padding: 1px 7px;
+      background: var(--bg-3);
+      color: var(--text-2);
+      border-radius: 8px;
+      font-size: 10px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    #empty-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      padding: 24px 32px;
+      border-radius: 12px;
+      text-align: center;
+      pointer-events: none;
+      z-index: 999;
+      display: none;
+    }
+    #empty-overlay h2 { margin: 0 0 8px; font-size: 16px; color: var(--text-0); }
+    #empty-overlay p { margin: 0; font-size: 12px; color: var(--text-2); max-width: 360px; }
+
+    /* ============================================================
+       DESIGN POLISH — refined visual system (13" MBA target)
+       Token-based, compact, overrides earlier declarations.
+       ============================================================ */
+    :root {
+      /* Surfaces (cooler, more refined) */
+      --c-bg:        #0b1020;
+      --c-surface-1: #131b2e;
+      --c-surface-2: #1c2541;
+      --c-surface-3: #2a3454;
+      --c-border:    #29304a;
+      --c-border-2:  #3a4366;
+      /* Text */
+      --c-text:    #f4f6fb;
+      --c-muted:   #c2cbe0;
+      --c-subtle:  #7a8499;
+      --c-faint:   #4a5470;
+      /* Accents */
+      --c-red:     #ff4d6a;
+      --c-orange:  #ff8c4a;
+      --c-amber:   #ffb84a;
+      --c-green:   #4ade80;
+      --c-blue:    #5b9eff;
+      /* Effects */
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.45);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.6);
+    }
+
+    body { background: var(--c-bg); color: var(--c-text); font-size: 13px; }
+
+    /* HEADER: compact two-row, 96px total */
+    #header {
+      height: 96px !important;
+      padding: 0 !important;
+      background: var(--c-surface-1);
+      border-bottom: 1px solid var(--c-border);
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+    }
+    #header .top-row {
+      height: 52px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: nowrap !important;
+      border-bottom: 1px solid var(--c-border);
+    }
+    #header .title h1 {
+      font-size: 14px !important;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: var(--c-text);
+      white-space: nowrap;
+    }
+    #header .title .subtitle {
+      font-size: 10px !important;
+      letter-spacing: 0.6px !important;
+      color: var(--c-subtle);
+      margin-top: 3px !important;
+    }
+    #header .title .subtitle a {
+      color: var(--c-muted);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--c-faint);
+      padding-bottom: 1px;
+      transition: color 0.12s, border-color 0.12s;
+    }
+    #header .title .subtitle a:hover { color: var(--c-text); border-color: var(--c-blue); }
+
+    /* STATS: dense inline */
+    #stats {
+      display: flex !important;
+      gap: 22px !important;
+      align-items: center;
+      margin-left: auto;
+      flex-wrap: nowrap;
+    }
+    #stats .stat { display: flex; flex-direction: column; gap: 1px; }
+    #stats .stat .label {
+      font-size: 9px !important;
+      letter-spacing: 0.7px !important;
+      color: var(--c-subtle);
+      text-transform: uppercase;
+      margin: 0 !important;
+      font-weight: 500;
+    }
+    #stats .stat .value {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      font-variant-numeric: tabular-nums;
+      color: var(--c-text);
+      line-height: 1.1;
+    }
+    #stats .stat .value.accent { color: var(--c-red); }
+    #stats .stat #stat-sts { color: var(--c-amber) !important; font-size: 12px !important; }
+
+    /* CONTROLS BAR: 44px, single row, segmented chips */
+    #controls {
+      height: 44px;
+      padding: 0 22px !important;
+      display: flex !important;
+      align-items: center;
+      gap: 14px !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--c-border-2) transparent;
+    }
+    #controls::-webkit-scrollbar { height: 4px; }
+    #controls::-webkit-scrollbar-thumb { background: var(--c-border-2); border-radius: 2px; }
+    .filter-label {
+      font-size: 9px !important;
+      letter-spacing: 0.7px !important;
+      color: var(--c-subtle) !important;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0 !important;
+      white-space: nowrap;
+    }
+
+    /* CHIP GROUPS: render as connected segmented control */
+    .chip-group {
+      display: inline-flex;
+      flex-wrap: nowrap;
+    }
+    .chip-group .chip {
+      border-radius: 0 !important;
+      margin: 0 !important;
+    }
+    .chip-group .chip + .chip { border-left-color: transparent !important; }
+    .chip-group .chip:first-child { border-radius: 5px 0 0 5px !important; }
+    .chip-group .chip:last-child  { border-radius: 0 5px 5px 0 !important; }
+    .chip-group .chip:hover { z-index: 2; }
+    .chip-group .chip.active { z-index: 1; box-shadow: none !important; }
+
+    /* CHIPS — uniformly rounded pills, low chrome */
+    .chip {
+      padding: 4px 10px !important;
+      background: var(--c-surface-2) !important;
+      border: 1px solid var(--c-border) !important;
+      border-radius: 4px !important;
+      color: var(--c-muted) !important;
+      font-size: 11px !important;
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: 0.2px !important;
+      font-weight: 500 !important;
+      transition: all 0.12s ease;
+      white-space: nowrap;
+      line-height: 18px;
+      margin: 0 !important;
+    }
+    .chip:hover {
+      background: var(--c-surface-3) !important;
+      color: var(--c-text) !important;
+      border-color: var(--c-border-2) !important;
+    }
+    .chip.active {
+      background: var(--c-red) !important;
+      color: white !important;
+      border-color: var(--c-red) !important;
+      font-weight: 600 !important;
+      box-shadow: 0 0 0 1px var(--c-red);
+    }
+    .chip.layer-chip.active {
+      background: var(--c-blue) !important;
+      border-color: var(--c-blue) !important;
+      box-shadow: 0 0 0 1px var(--c-blue);
+    }
+    /* Group divider after each label group (visual separator) */
+    .filter-label + .chip { margin-left: 0 !important; }
+
+    /* SEARCH BOX */
+    #entity-search-box {
+      margin-left: auto !important;
+      flex-shrink: 0;
+    }
+    #entity-search-input {
+      background: var(--c-surface-2) !important;
+      border: 1px solid var(--c-border) !important;
+      border-radius: 5px !important;
+      padding: 6px 10px !important;
+      color: var(--c-text) !important;
+      font-size: 11px !important;
+      width: 240px !important;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    #entity-search-input:focus {
+      border-color: var(--c-red) !important;
+      background: var(--c-surface-3) !important;
+    }
+    #entity-search-input::placeholder { color: var(--c-subtle); }
+    #entity-search-results {
+      width: 360px !important;
+      background: var(--c-surface-2) !important;
+      border: 1px solid var(--c-border) !important;
+      box-shadow: var(--shadow-lg) !important;
+      border-radius: 6px !important;
+    }
+    #entity-search-results .res {
+      padding: 8px 12px !important;
+      font-size: 11px !important;
+      border-bottom: 1px solid var(--c-border) !important;
+    }
+    #entity-search-results .res:hover { background: var(--c-surface-3) !important; }
+    #entity-search-results .res .name { color: var(--c-text); font-weight: 600; }
+    #entity-search-results .res .sub { color: var(--c-subtle); font-size: 10px; }
+    #entity-search-results .res .badge { background: var(--c-surface-3); }
+
+    /* MAP / TIMELINE / PANEL geometry — fits 13" MBA */
+    #map { top: 96px !important; bottom: 64px !important; }
+    .leaflet-container { background: var(--c-bg) !important; }
+
+    #timeline {
+      height: 64px !important;
+      padding: 4px 22px 6px !important;
+      background: var(--c-surface-1) !important;
+      border-top: 1px solid var(--c-border) !important;
+    }
+    #timeline .tl-header {
+      font-size: 10px !important;
+      color: var(--c-subtle) !important;
+      letter-spacing: 0.5px !important;
+      margin-bottom: 2px !important;
+    }
+    #timeline .tl-header strong { color: var(--c-text) !important; font-weight: 600 !important; }
+    #timeline .tl-legend { gap: 12px !important; }
+    #timeline .tl-legend .li { font-size: 9px !important; letter-spacing: 0.4px !important; color: var(--c-subtle); }
+
+    /* SIDE PANEL — 380px, compact sections, refined cards */
+    #panel {
+      width: 380px !important;
+      top: 96px !important;
+      bottom: 64px !important;
+      background: var(--c-surface-1) !important;
+      border-left: 1px solid var(--c-border) !important;
+      box-shadow: var(--shadow-lg);
+    }
+    #panel .panel-header {
+      padding: 14px 20px 12px !important;
+      background: var(--c-surface-1) !important;
+      border-bottom: 1px solid var(--c-border) !important;
+    }
+    #panel .panel-header .vessel-name {
+      font-size: 16px !important;
+      letter-spacing: 0.4px !important;
+      color: var(--c-red) !important;
+      padding-right: 38px;
+      line-height: 1.2;
+    }
+    #panel .panel-header .vessel-sub {
+      font-size: 10px !important;
+      color: var(--c-subtle) !important;
+      letter-spacing: 0.5px !important;
+      margin-top: 4px !important;
+    }
+    #panel .panel-header .close-btn {
+      top: 10px !important;
+      right: 10px !important;
+      width: 26px !important;
+      height: 26px !important;
+      background: transparent !important;
+      border: 1px solid var(--c-border) !important;
+      color: var(--c-muted) !important;
+      border-radius: 5px !important;
+      transition: background 0.12s, color 0.12s;
+    }
+    #panel .panel-header .close-btn:hover {
+      background: var(--c-surface-3) !important;
+      color: var(--c-text) !important;
+    }
+    #panel .section {
+      padding: 12px 20px !important;
+      border-bottom: 1px solid var(--c-border) !important;
+    }
+    #panel .section h3 {
+      font-size: 10px !important;
+      letter-spacing: 0.6px !important;
+      color: var(--c-subtle) !important;
+      margin: 0 0 8px !important;
+      font-weight: 600 !important;
+    }
+    #panel .row {
+      padding: 4px 0 !important;
+      font-size: 12px !important;
+    }
+    #panel .row .label { color: var(--c-subtle) !important; font-size: 11px; }
+    #panel .row .value { color: var(--c-text) !important; font-size: 12px; }
+
+    #panel .stat-grid { gap: 8px 10px !important; }
+    #panel .stat-grid .stat-cell {
+      padding: 8px 10px !important;
+      background: var(--c-surface-2) !important;
+      border: 1px solid var(--c-border) !important;
+      border-radius: 5px !important;
+    }
+    #panel .stat-grid .stat-cell .l {
+      font-size: 9px !important;
+      letter-spacing: 0.5px !important;
+      color: var(--c-subtle) !important;
+    }
+    #panel .stat-grid .stat-cell .v {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+    }
+    #panel .stat-grid .stat-cell.warn .v { color: var(--c-amber) !important; }
+    #panel .stat-grid .stat-cell.alert .v { color: var(--c-red) !important; }
+
+    #panel .gap-item {
+      padding: 7px 10px !important;
+      background: var(--c-surface-2) !important;
+      border-radius: 4px !important;
+      border-left-width: 3px !important;
+      font-size: 11px !important;
+      margin-bottom: 5px !important;
+    }
+    #panel .gap-item .duration { font-weight: 600 !important; }
+    #panel .gap-item .gap-time { font-size: 10px !important; color: var(--c-subtle) !important; }
+
+    #panel .vessel-list .vrow {
+      padding: 7px 10px !important;
+      background: var(--c-surface-2) !important;
+      font-size: 11px !important;
+      border-radius: 4px !important;
+      margin-bottom: 4px !important;
+      transition: background 0.12s, transform 0.08s;
+    }
+    #panel .vessel-list .vrow:hover {
+      background: var(--c-surface-3) !important;
+      transform: translateX(2px);
+    }
+    #panel .vessel-list .vrow.live { border-left: 3px solid var(--c-red) !important; }
+    #panel .vessel-list .vrow .name { color: var(--c-text) !important; font-size: 12px; }
+    #panel .vessel-list .vrow .imo { color: var(--c-subtle) !important; font-size: 10px; }
+
+    /* GRAPH container — bigger, cleaner */
+    #graph-container {
+      background: var(--c-surface-2) !important;
+      border: 1px solid var(--c-border) !important;
+      border-radius: 6px !important;
+      height: 320px !important;
+    }
+
+    /* Empty / loading states */
+    #panel .empty-msg {
+      color: var(--c-subtle) !important;
+      font-size: 11px !important;
+      padding: 6px 0;
+      font-style: normal !important;
+    }
+    .skeleton {
+      background: linear-gradient(90deg, var(--c-surface-2) 0%, var(--c-surface-3) 50%, var(--c-surface-2) 100%);
+      background-size: 200% 100%;
+    }
+
+    /* Empty overlay (centered) */
+    #empty-overlay {
+      background: var(--c-surface-2) !important;
+      border: 1px solid var(--c-border) !important;
+      box-shadow: var(--shadow-lg);
+      padding: 20px 28px !important;
+      max-width: 420px;
+    }
+    #empty-overlay h2 { font-size: 14px !important; color: var(--c-text) !important; }
+    #empty-overlay p { font-size: 11px !important; color: var(--c-subtle) !important; }
+
+    /* Vessel icon hover slightly stronger */
+    .vessel-icon { transition: transform 0.18s ease; }
+    .vessel-icon:hover { transform: scale(1.35); z-index: 999 !important; }
+
+    /* Mobile / narrow */
+    @media (max-width: 1100px) {
+      #stats .stat:nth-child(n+5) { display: none; }
+      #entity-search-input { width: 180px !important; }
+    }
+    @media (max-width: 900px) {
+      #header { height: auto !important; }
+      #header .top-row { flex-wrap: wrap !important; height: auto; padding: 8px 14px; }
+      #stats { gap: 14px !important; }
+      #controls { height: auto; padding: 8px 14px !important; flex-wrap: wrap !important; gap: 10px !important; }
+      #map { top: auto !important; }
+      #panel { width: 100% !important; max-width: 100%; z-index: 1500; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="top-row">
+      <div class="title">
+        <h1>⚓ Shadow Fleet — live</h1>
+        <div class="subtitle">Sanctioned tankers · ownership graph · risk scoring · <a href="/digest.html">daily digest</a> · <a href="/methodology.html">methodology</a></div>
+      </div>
+      <div id="stats">
+        <div class="stat">
+          <div class="label">Tankers on map</div>
+          <div class="value" id="stat-visible">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">OFAC vessels</div>
+          <div class="value" id="stat-ofac">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Sanctioned visible</div>
+          <div class="value accent" id="stat-matched">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">STS events 24h</div>
+          <div class="value" style="color: var(--warn); font-size: 13px;" id="stat-sts">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Last refresh</div>
+          <div class="value" id="stat-refresh">—</div>
+        </div>
+      </div>
+    </div>
+    <div id="controls">
+      <span class="filter-label">Range</span>
+      <div class="chip-group">
+        <span class="chip" data-range="1h">1h</span>
+        <span class="chip" data-range="6h">6h</span>
+        <span class="chip active" data-range="24h">24h</span>
+        <span class="chip" data-range="7d">7d</span>
+        <span class="chip" data-range="30d">30d</span>
+        <span class="chip" data-range="all">all</span>
+      </div>
+      <span class="filter-label">Lists</span>
+      <div class="chip-group">
+        <span class="chip active" data-list="all">all</span>
+        <span class="chip" data-list="ofac">OFAC</span>
+        <span class="chip" data-list="eu">EU</span>
+        <span class="chip" data-list="uk">UK</span>
+        <span class="chip" data-list="ua">UA</span>
+        <span class="chip" data-list="ru">RU</span>
+        <span class="chip" data-list="iran">IR</span>
+      </div>
+      <span class="filter-label">Layers</span>
+      <div class="chip-group">
+        <span class="chip layer-chip active" data-layer="zones">Zones</span>
+        <span class="chip layer-chip active" data-layer="sts">STS</span>
+        <span class="chip layer-chip active" data-layer="clean">Clean</span>
+      </div>
+      <div id="entity-search-box">
+        <input id="entity-search-input" type="text" placeholder="Search owners, companies, persons (/) " autocomplete="off" />
+        <div id="entity-search-results"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <div id="empty-overlay">
+    <h2>No sanctioned tankers visible right now</h2>
+    <p>The ingestor listens to AIS in shadow-fleet hot-zones (Baltic, Black Sea, Persian Gulf, Singapore Strait). Wait a few minutes — refresh runs every 15s.</p>
+  </div>
+
+  <div id="timeline">
+    <div class="tl-header">
+      <div><strong id="tl-range-label">last 24h</strong> · <span id="tl-summary">—</span></div>
+      <div class="tl-legend">
+        <div class="li"><span class="swatch" style="background: #ffb84a;"></span> sanctioned visible</div>
+        <div class="li"><span class="swatch" style="background: #ff4d6a;"></span> RU / UA subset</div>
+        <div class="li"><span class="swatch" style="background: rgba(194,203,224,0.5); border: 1px dashed #c2cbe0;"></span> all tankers (trace)</div>
+      </div>
+    </div>
+    <div id="timeline-svg-wrap">
+      <svg id="timeline-svg" preserveAspectRatio="none"></svg>
+      <div id="timeline-tooltip"></div>
+    </div>
+  </div>
+
+  <aside id="panel">
+    <div class="panel-header">
+      <div class="vessel-name" id="p-name">—</div>
+      <div class="vessel-sub" id="p-sub">—</div>
+      <button class="close-btn" onclick="closePanel()">×</button>
+    </div>
+    <div id="p-body"></div>
+  </aside>
+
+  <script>
+    // -------- Map setup
+    const map = L.map("map", { worldCopyJump: true, zoomControl: true }).setView([35, 35], 3);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      attribution: "© OpenStreetMap, © CARTO",
+      subdomains: "abcd",
+      maxZoom: 18,
+    }).addTo(map);
+
+    const zonesLayer = L.layerGroup().addTo(map);
+    const cleanLayer = L.layerGroup().addTo(map);
+    const stsLayer  = L.layerGroup().addTo(map);
+    const vesselsLayer = L.layerGroup().addTo(map);
+    const trackLayer = L.layerGroup().addTo(map);
+
+    const vesselMarkers = new Map(); // imo -> marker
+    let selectedImo = null;
+    let activeFilter = "all";
+    let activeRange = "24h";
+    const layerVisible = { zones: true, sts: true, clean: true };
+
+    // -------- Helpers
+    function bucketColor(b) {
+      switch (b) {
+        case "critical": return "#ff4757";
+        case "high":     return "#ff7f50";
+        case "elevated": return "#ffa502";
+        default:         return "#8a96aa";
+      }
+    }
+    function tankerIcon(rotationDeg, selected, bucket) {
+      const r = Number.isFinite(rotationDeg) ? rotationDeg : 0;
+      const cls = selected ? "vessel-icon vessel-icon-selected" : "vessel-icon";
+      const size = selected ? 28 : 22;
+      const fill = bucketColor(bucket);
+      return L.divIcon({
+        className: cls,
+        html: `<svg viewBox="0 0 20 20" width="${size}" height="${size}" style="transform: rotate(${r}deg);">
+          <path d="M 10 1 L 16 17 L 10 13 L 4 17 Z" fill="${fill}" stroke="#fff" stroke-width="0.6"/>
+        </svg>`,
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+      });
+    }
+    function cleanTankerDot(rotationDeg) {
+      const r = Number.isFinite(rotationDeg) ? rotationDeg : 0;
+      return L.divIcon({
+        className: "clean-icon",
+        html: `<svg viewBox="0 0 12 12" width="10" height="10" style="transform: rotate(${r}deg); opacity: 0.45;">
+          <path d="M 6 1 L 10 11 L 6 8 L 2 11 Z" fill="#6b7891" stroke="none"/>
+        </svg>`,
+        iconSize: [10, 10],
+        iconAnchor: [5, 5],
+      });
+    }
+    function fmt(n, digits = 0) { return (n == null) ? "—" : Number(n).toFixed(digits); }
+    function fmtTime(iso) { try { return new Date(iso).toLocaleString(); } catch { return iso; } }
+    function fmtDur(min) {
+      if (min < 60) return `${min} min`;
+      if (min < 1440) return `${(min / 60).toFixed(1)} h`;
+      return `${(min / 1440).toFixed(1)} d`;
+    }
+    function escapeHtml(s) {
+      if (s == null) return "";
+      return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+    }
+    function schemaColor(s) {
+      switch (s) {
+        case "Vessel":       return { bg: "#ff4757", text: "#fff" };
+        case "Company":
+        case "Organization":
+        case "PublicBody":
+        case "LegalEntity":  return { bg: "#ffa502", text: "#000" };
+        case "Person":       return { bg: "#54a0ff", text: "#fff" };
+        case "Address":      return { bg: "#2ed573", text: "#000" };
+        default:             return { bg: "#8a96aa", text: "#fff" };
+      }
+    }
+
+    // -------- Vessels loading
+    async function loadVessels() {
+      try {
+        const params = new URLSearchParams();
+        if (activeFilter !== "all") params.set("lists", activeFilter);
+        params.set("range", activeRange);
+        const [allRes, sancRes] = await Promise.all([
+          fetch(`/api/tankers-active`),
+          fetch(`/api/sanctioned-active?${params.toString()}`),
+        ]);
+        const all = await allRes.json();
+        const sanc = await sancRes.json();
+
+        const sancImos = new Set(sanc.vessels.map(v => v.imo));
+
+        cleanLayer.clearLayers();
+        for (const v of all.vessels) {
+          if (sancImos.has(v.imo)) continue;
+          const lat = Number(v.lat), lon = Number(v.lon);
+          if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+          const heading = v.heading != null ? Number(v.heading) : (v.cog != null ? Number(v.cog) : 0);
+          const m = L.marker([lat, lon], { icon: cleanTankerDot(heading), riseOnHover: false, interactive: !!v.imo });
+          if (v.imo) m.on("click", () => openVessel(v.imo));
+          m.addTo(cleanLayer);
+        }
+
+        vesselsLayer.clearLayers();
+        vesselMarkers.clear();
+        document.getElementById("empty-overlay").style.display = sanc.count === 0 ? "block" : "none";
+        for (const v of sanc.vessels) {
+          const lat = Number(v.lat), lon = Number(v.lon);
+          if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+          const heading = v.heading != null ? Number(v.heading) : (v.cog != null ? Number(v.cog) : 0);
+          const isSelected = v.imo === selectedImo;
+          const m = L.marker([lat, lon], { icon: tankerIcon(heading, isSelected, v.risk_bucket), riseOnHover: true }).addTo(vesselsLayer);
+          m.on("click", () => openVessel(v.imo));
+          vesselMarkers.set(v.imo, m);
+        }
+
+        document.getElementById("stat-matched").textContent = sanc.count;
+        document.getElementById("stat-visible").textContent = all.count;
+        document.getElementById("stat-refresh").textContent = new Date().toLocaleTimeString();
+      } catch (err) { console.error("loadVessels failed", err); }
+    }
+    async function loadStats() {
+      try {
+        const res = await fetch("/api/stats");
+        const s = await res.json();
+        document.getElementById("stat-ofac").textContent = s.list_unique_imos ?? "—";
+      } catch (err) { console.error("loadStats failed", err); }
+    }
+    async function loadSts() {
+      try {
+        // Use /api/sts-events: clusters of consecutive proximity observations into discrete events
+        const res = await fetch(`/api/sts-events?range=24h&max_nm=2&max_kn=3&min_duration_min=10`);
+        const data = await res.json();
+        stsLayer.clearLayers();
+        if (!data.events) return;
+
+        for (const ev of data.events) {
+          // Need vessel positions at midpoint to draw line — use avg_lat/lon as approximation
+          // We need recent positions for both — fall back to recent live position if available
+          // For cleanliness, use midpoint to draw a small rendezvous marker.
+          const both = ev.sanc_a && ev.sanc_b;
+          const color = both ? "#ff4757" : "#ffa502";
+          const lat = ev.avg_lat, lon = ev.avg_lon;
+
+          // Halo
+          L.circleMarker([lat, lon], {
+            radius: both ? 14 : 10,
+            color, weight: 1, fillColor: color, fillOpacity: 0.06, opacity: 0.5,
+          }).addTo(stsLayer);
+          // Inner marker
+          const m = L.circleMarker([lat, lon], {
+            radius: both ? 5 : 4,
+            color: "#fff", weight: 1.5, fillColor: color, fillOpacity: 0.95,
+          }).addTo(stsLayer);
+
+          const tooltipHtml = `
+            <div style="font-size: 11px; line-height: 1.4; min-width: 200px;">
+              <div style="font-weight: 700; color: ${color}; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.4px;">
+                ${both ? "STS · both sanctioned" : "Rendezvous · sanctioned"}
+              </div>
+              <div><strong>${escapeHtml(ev.name_a || "?")}</strong> ↔ <strong>${escapeHtml(ev.name_b || "?")}</strong></div>
+              <div style="color: #b6c0d0; margin-top: 2px;">${ev.duration_min} min · ${Number(ev.min_distance_nm).toFixed(2)} nm closest · ${ev.observation_count} obs</div>
+              ${ev.zone_name ? `<div style="color: ${color}; margin-top: 2px;">📍 ${escapeHtml(ev.zone_name)}</div>` : ""}
+            </div>`;
+          m.bindTooltip(tooltipHtml, { sticky: true });
+          m.on("click", () => {
+            const imo = ev.sanc_a ? ev.imo_a : (ev.sanc_b ? ev.imo_b : (ev.imo_a || ev.imo_b));
+            if (imo) openVessel(Number(imo));
+          });
+        }
+
+        const stsBadge = document.getElementById("stat-sts");
+        if (stsBadge) stsBadge.textContent = `${data.count} (${data.both_sanctioned_count} both-sanc, ${data.in_zone_count} in zone)`;
+      } catch (err) { console.error("loadSts failed", err); }
+    }
+
+    async function loadZones() {
+      try {
+        const res = await fetch("/api/zones");
+        const data = await res.json();
+        zonesLayer.clearLayers();
+        const colors = { sts: "#ffa502", russian_port: "#ff4757", iranian_port: "#ff4757", choke_point: "#54a0ff" };
+        for (const z of data.zones) {
+          const color = colors[z.category] || "#888";
+          L.circle([z.lat, z.lon], {
+            radius: z.radius_nm * 1852,
+            color, weight: 1, fillColor: color, fillOpacity: 0.06, opacity: 0.4, interactive: false,
+          }).addTo(zonesLayer);
+        }
+      } catch (err) { console.error("loadZones failed", err); }
+    }
+
+    // -------- Filter chips
+    document.querySelectorAll(".chip[data-list]").forEach(el => {
+      el.addEventListener("click", () => {
+        document.querySelectorAll(".chip[data-list]").forEach(e => e.classList.remove("active"));
+        el.classList.add("active");
+        activeFilter = el.dataset.list;
+        loadVessels();
+        loadTimeline();
+      });
+    });
+
+    // -------- Range chips
+    document.querySelectorAll(".chip[data-range]").forEach(el => {
+      el.addEventListener("click", () => {
+        document.querySelectorAll(".chip[data-range]").forEach(e => e.classList.remove("active"));
+        el.classList.add("active");
+        activeRange = el.dataset.range;
+        loadVessels();
+        loadTimeline();
+        if (selectedImo) openVessel(selectedImo);
+      });
+    });
+
+    // -------- Layer toggle chips
+    document.querySelectorAll(".layer-chip").forEach(el => {
+      el.addEventListener("click", () => {
+        const k = el.dataset.layer;
+        layerVisible[k] = !layerVisible[k];
+        el.classList.toggle("active", layerVisible[k]);
+        if (k === "zones")  toggleLayer(zonesLayer,  layerVisible.zones);
+        if (k === "sts")    toggleLayer(stsLayer,    layerVisible.sts);
+        if (k === "clean")  toggleLayer(cleanLayer,  layerVisible.clean);
+      });
+    });
+    function toggleLayer(layer, on) {
+      if (on) layer.addTo(map);
+      else map.removeLayer(layer);
+    }
+
+    // -------- Keyboard shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (document.getElementById("entity-search-results").classList.contains("open")) {
+          document.getElementById("entity-search-results").classList.remove("open");
+          document.getElementById("entity-search-input").blur();
+          return;
+        }
+        if (document.getElementById("panel").classList.contains("open")) closePanel();
+        return;
+      }
+      if (e.key === "/" && document.activeElement.tagName !== "INPUT") {
+        e.preventDefault();
+        document.getElementById("entity-search-input").focus();
+      }
+    });
+
+    // -------- Entity search
+    const searchInput = document.getElementById("entity-search-input");
+    const searchResults = document.getElementById("entity-search-results");
+    let searchTimer = null;
+    searchInput.addEventListener("input", () => {
+      clearTimeout(searchTimer);
+      const q = searchInput.value.trim();
+      if (q.length < 2) { searchResults.classList.remove("open"); return; }
+      searchTimer = setTimeout(async () => {
+        const res = await fetch(`/api/entity-search?q=${encodeURIComponent(q)}&min_vessels=1`);
+        const data = await res.json();
+        if (data.results.length === 0) {
+          searchResults.innerHTML = '<div class="res" style="cursor: default; color: var(--text-2);">No matching owners</div>';
+        } else {
+          searchResults.innerHTML = data.results.map(r => `
+            <div class="res" data-id="${escapeHtml(r.id)}">
+              <div><span class="name">${escapeHtml(r.caption)}</span> <span class="badge">${escapeHtml(r.schema_type)}</span></div>
+              <div class="sub">${(r.countries||[]).map(c => c.toUpperCase()).join(", ")} · ${r.vessels_owned} vessels</div>
+            </div>
+          `).join("");
+          searchResults.querySelectorAll(".res[data-id]").forEach(el => {
+            el.addEventListener("click", () => {
+              openEntity(el.dataset.id);
+              searchResults.classList.remove("open");
+              searchInput.value = "";
+            });
+          });
+        }
+        searchResults.classList.add("open");
+      }, 200);
+    });
+    document.addEventListener("click", (ev) => {
+      if (!ev.target.closest("#entity-search-box")) searchResults.classList.remove("open");
+    });
+
+    // -------- Panel: vessel
+    async function openVessel(imo) {
+      selectedImo = imo;
+      const panel = document.getElementById("panel");
+      const body = document.getElementById("p-body");
+      panel.classList.add("open");
+      document.getElementById("p-name").textContent = "Loading…";
+      document.getElementById("p-sub").textContent = `IMO ${imo}`;
+      body.innerHTML = `
+        <div class="section">
+          <div class="skeleton lg"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton sm"></div>
+        </div>
+        <div class="section">
+          <div class="skeleton sm"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>`;
+
+      try {
+        const detailParams = new URLSearchParams();
+        detailParams.set("range", activeRange);
+        const [detailRes, ownershipRes, portCallsRes] = await Promise.all([
+          fetch(`/api/vessel/${imo}?${detailParams.toString()}`),
+          fetch(`/api/vessel/${imo}/ownership`).catch(() => null),
+          fetch(`/api/vessel/${imo}/portcalls`).catch(() => null),
+        ]);
+        if (!detailRes.ok) {
+          body.innerHTML = '<div class="section"><div class="empty-msg">Failed to load vessel</div></div>';
+          return;
+        }
+        const detail = await detailRes.json();
+        const ownership = ownershipRes && ownershipRes.ok ? await ownershipRes.json() : null;
+        const portCalls = portCallsRes && portCallsRes.ok ? await portCallsRes.json() : null;
+        renderVesselPanel(detail, ownership, portCalls);
+        renderTrack(detail.track);
+        await loadVessels();
+        // News + Wikidata both async (GDELT slow, Wikidata fine)
+        loadVesselNews(imo);
+        loadVesselWiki(imo);
+      } catch (err) { console.error("openVessel failed", err); }
+    }
+
+    async function loadVesselNews(imo) {
+      const slot = document.getElementById("news-slot");
+      if (!slot) return;
+      try {
+        const res = await fetch(`/api/vessel/${imo}/news`);
+        const data = await res.json();
+        if (!data || data.count === 0) {
+          slot.innerHTML = `<div class="empty-msg">No recent news mentions${data?.cached ? " (cache)" : ""}${data?.error ? " — feed unavailable" : ""}.</div>`;
+          return;
+        }
+        slot.innerHTML = data.articles.slice(0, 8).map(a => `
+          <a href="${escapeHtml(a.url)}" target="_blank" style="display: block; text-decoration: none; color: inherit; padding: 8px 10px; margin-bottom: 6px; background: var(--bg-2); border-radius: 4px; border-left: 3px solid var(--bg-3); font-size: 12px;">
+            <div style="color: var(--text-0); font-weight: 500; margin-bottom: 2px;">${escapeHtml(a.title || "(no title)")}</div>
+            <div style="color: var(--text-2); font-size: 10px;">${escapeHtml(a.domain || "")} · ${formatGdeltDate(a.seendate)}${a.country ? " · " + escapeHtml(a.country) : ""}</div>
+          </a>
+        `).join("") + (data.count > 8 ? `<div style="font-size: 11px; color: var(--text-2); margin-top: 6px;">+${data.count - 8} more</div>` : "");
+      } catch (err) {
+        slot.innerHTML = '<div class="empty-msg">News feed unavailable.</div>';
+      }
+    }
+
+    async function loadVesselWiki(imo) {
+      const slot = document.getElementById("wiki-slot");
+      if (!slot) return;
+      try {
+        const res = await fetch(`/api/vessel/${imo}/wiki`);
+        const d = await res.json();
+        if (!d || !d.found) {
+          slot.innerHTML = `<div class="empty-msg">No Wikidata entry for IMO ${imo}.</div>`;
+          return;
+        }
+        slot.innerHTML = `
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            ${d.image_url ? `<img src="${escapeHtml(d.image_url)}" alt="${escapeHtml(d.label)}" style="width: 120px; height: auto; max-height: 120px; border-radius: 4px; border: 1px solid var(--c-border); object-fit: cover;">` : ""}
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 13px; font-weight: 600; color: var(--c-text);">${escapeHtml(d.label || "(no label)")}</div>
+              ${d.country ? `<div style="font-size: 11px; color: var(--c-subtle); margin-top: 2px;">Flag state: ${escapeHtml(d.country)}</div>` : ""}
+              ${d.built_year ? `<div style="font-size: 11px; color: var(--c-subtle);">Built: ${escapeHtml(d.built_year.slice(0,4))}</div>` : ""}
+              <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 3px;">
+                ${d.wikipedia_url ? `<a href="${escapeHtml(d.wikipedia_url)}" target="_blank" rel="noopener" style="font-size: 11px; color: var(--c-blue); text-decoration: none;">↗ Wikipedia article</a>` : ""}
+                ${d.wikidata_id ? `<a href="${escapeHtml(d.wikidata_id)}" target="_blank" rel="noopener" style="font-size: 11px; color: var(--c-blue); text-decoration: none;">↗ Wikidata entity</a>` : ""}
+              </div>
+              ${d.label ? `<div style="margin-top: 6px; padding: 4px 8px; background: rgba(255,77,106,0.1); border-radius: 3px; font-size: 10px; color: var(--c-red);">⚠️ Wikidata label "${escapeHtml(d.label)}" may differ from current AIS name — possible alias / historical name</div>` : ""}
+            </div>
+          </div>`;
+      } catch (err) {
+        slot.innerHTML = '<div class="empty-msg">Wikidata lookup failed.</div>';
+      }
+    }
+
+    function formatGdeltDate(s) {
+      if (!s || s.length < 8) return "—";
+      // GDELT format YYYYMMDDTHHMMSSZ
+      const y = s.slice(0,4), mo = s.slice(4,6), d = s.slice(6,8);
+      return `${y}-${mo}-${d}`;
+    }
+
+    function renderVesselPanel(data, ownership, portCalls) {
+      const v = data.vessel;
+      document.getElementById("p-name").textContent = v.name ?? "(no name)";
+      document.getElementById("p-sub").textContent = `IMO ${v.imo} · MMSI ${v.mmsi}`;
+
+      const isSanctioned = !!(v.sanction_sources && v.sanction_sources.length);
+      const stats = data.stats || {};
+      const gaps = data.gaps || [];
+      const programs = v.sanction_programs || [];
+      const sources = v.sanction_sources || [];
+      const risk = data.risk || { score: 0, bucket: "low", factors: [] };
+
+      let html = "";
+
+      // Risk
+      const rcolor = bucketColor(risk.bucket);
+      html += `<div class="section" style="background: linear-gradient(180deg, ${rcolor}22, transparent); border-left: 4px solid ${rcolor};">
+        <h3 style="margin: 0 0 6px;">Risk score</h3>
+        <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px;">
+          <div style="font-size: 36px; font-weight: 800; color: ${rcolor}; font-variant-numeric: tabular-nums;">${risk.score}</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: ${rcolor}; font-weight: 700;">${risk.bucket}</div>
+        </div>
+        ${risk.factors.length === 0 ? '<div class="empty-msg">No risk factors</div>' : risk.factors.map(f => `
+          <div class="row" style="font-size: 12px; padding: 3px 0; border: none;">
+            <span class="label">${escapeHtml(f.name)}</span>
+            <span class="value" style="color: ${rcolor};">+${f.contribution}</span>
+          </div>`).join("")}
+      </div>`;
+
+      // Sanctions
+      if (isSanctioned) {
+        html += `<div class="section">
+          <h3>Sanctions / risk lists</h3>
+          ${v.russia_ukraine_linked ? '<div style="margin: 4px 0 10px; padding: 6px 10px; background: rgba(255,71,87,0.15); border-left: 3px solid var(--accent); border-radius: 4px; font-size: 12px; color: #ff6b7a; font-weight: 600;">Russia / Ukraine sanctions linked</div>' : ""}
+          <div class="row"><span class="label">Sources</span><span class="value">${sources.join(", ")}</span></div>
+          <div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px;">
+            ${programs.map(p => `<span style="display: inline-block; padding: 2px 8px; background: var(--bg-3); border-radius: 10px; font-size: 11px; color: var(--text-1); border: 1px solid var(--border);">${escapeHtml(p)}</span>`).join("")}
+          </div>
+          ${v.sanction_flag ? `<div class="row" style="margin-top: 8px;"><span class="label">Flag</span><span class="value">${v.sanction_flag}</span></div>` : ""}
+          ${v.sanction_owner ? `<div class="row"><span class="label">Owner</span><span class="value">${escapeHtml(v.sanction_owner)}</span></div>` : ""}
+          ${v.sanction_url ? `<div class="row"><span class="label">Source URL</span><span class="value"><a href="${escapeHtml(v.sanction_url)}" target="_blank" style="color: var(--accent); text-decoration: none;">↗ open</a></span></div>` : ""}
+        </div>`;
+      }
+
+      // Vessel info — AIS + FtM enrichment
+      const pastFlags = Array.isArray(v.past_flags) ? v.past_flags : [];
+      const previousNames = Array.isArray(v.previous_names) ? v.previous_names : [];
+      html += `<div class="section">
+        <h3>Vessel</h3>
+        <div class="row"><span class="label">Type (FtM)</span><span class="value">${escapeHtml(v.ftm_type ?? "—")}</span></div>
+        <div class="row"><span class="label">Build year</span><span class="value">${v.build_date ?? "—"}${v.build_date ? ` · ${new Date().getFullYear() - parseInt(String(v.build_date).slice(0,4),10)} y` : ""}</span></div>
+        <div class="row"><span class="label">Tonnage</span><span class="value">${v.tonnage ? Number(v.tonnage).toLocaleString() : "—"}</span></div>
+        ${v.dwt ? `<div class="row"><span class="label">DWT</span><span class="value">${Number(v.dwt).toLocaleString()}</span></div>` : ""}
+        <div class="row"><span class="label">Flag (FtM)</span><span class="value">${(v.ftm_flag ?? "—").toUpperCase()}</span></div>
+        ${pastFlags.length > 0 ? `<div class="row"><span class="label">Past flags</span><span class="value">${pastFlags.map(String).join(" → ")}</span></div>` : ""}
+        ${previousNames.length > 0 ? `<div class="row"><span class="label">Previous names</span><span class="value">${previousNames.slice(0,5).map(escapeHtml).join(", ")}${previousNames.length > 5 ? ` +${previousNames.length - 5}` : ""}</span></div>` : ""}
+        <div class="row"><span class="label">Ship type code (AIS)</span><span class="value">${v.ship_type ?? "—"}</span></div>
+        <div class="row"><span class="label">Call sign</span><span class="value">${v.call_sign ?? "—"}</span></div>
+        <div class="row"><span class="label">Destination</span><span class="value">${escapeHtml(v.destination ?? "—")}</span></div>
+        <div class="row"><span class="label">Draught</span><span class="value">${fmt(v.draught, 1)} m</span></div>
+        <div class="row"><span class="label">Last AIS update</span><span class="value">${fmtTime(v.last_seen)}</span></div>
+        ${v.ftm_url ? `<div class="row"><span class="label">FtM record</span><span class="value"><a href="${escapeHtml(v.ftm_url)}" target="_blank" style="color: var(--accent); text-decoration: none;">↗ open</a></span></div>` : ""}
+      </div>`;
+
+      // Ownership graph (vis-network) — placeholder div, instantiate after insert
+      html += `<div class="section">
+        <h3>Ownership graph${ownership && ownership.found ? ` · ${ownership.node_count} nodes / ${ownership.edge_count} edges` : ""}</h3>
+        <div id="graph-container"></div>
+        <div style="margin-top: 8px; font-size: 11px; color: var(--text-2);">Click a node for detail. Source: OpenSanctions FtM (Follow-the-Money).</div>
+      </div>`;
+
+      // Track stats
+      html += `<div class="section">
+        <h3>Last 24 hours</h3>
+        <div class="stat-grid">
+          <div class="stat-cell"><div class="l">Track points</div><div class="v">${stats.track_points ?? 0}</div></div>
+          <div class="stat-cell ${gaps.length > 0 ? 'warn' : ''}"><div class="l">AIS gaps (>30m)</div><div class="v">${stats.gap_count ?? 0}</div></div>
+          <div class="stat-cell ${stats.longest_gap_min > 120 ? 'alert' : (stats.longest_gap_min > 60 ? 'warn' : '')}"><div class="l">Longest gap</div><div class="v">${stats.longest_gap_min ? fmtDur(stats.longest_gap_min) : "—"}</div></div>
+          <div class="stat-cell ${stats.gaps_in_zone > 0 ? 'alert' : ''}"><div class="l">Gaps in zone</div><div class="v">${stats.gaps_in_zone ?? 0}</div></div>
+        </div>
+      </div>`;
+
+      // CARGO + DESTINATION + LOAD STATUS
+      const cargo = data.cargo;
+      if (cargo) {
+        const dest = cargo.destination || {};
+        const load = cargo.load || {};
+        const loadColor = load.status === "loaded" ? "var(--c-red)" : load.status === "ballast" ? "var(--c-blue)" : load.status === "partial" ? "var(--warn)" : "var(--c-subtle)";
+        let destBlock = "";
+        if (dest.port) {
+          const sancMark = dest.port.sanctioned_origin ? '<span style="color: var(--c-red); margin-left: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">sanctioned-origin</span>' : "";
+          destBlock = `<div class="row"><span class="label">Destination port</span><span class="value">${escapeHtml(dest.port.name)}, ${escapeHtml(dest.port.country)} <span style="color: var(--c-subtle); font-size: 10px;">[${dest.port.code} · ${escapeHtml(dest.port.region)} · ${escapeHtml(dest.port.role)}]</span>${sancMark}</span></div>`;
+        } else if (dest.origin || dest.destination) {
+          const o = dest.origin ? `${dest.origin.name} (${dest.origin.code})` : "?";
+          const d = dest.destination ? `${dest.destination.name} (${dest.destination.code})` : "?";
+          destBlock = `<div class="row"><span class="label">Voyage</span><span class="value">${escapeHtml(o)} → ${escapeHtml(d)}</span></div>`;
+        } else if (dest.note) {
+          destBlock = `<div class="row"><span class="label">Destination</span><span class="value" style="color: var(--c-subtle); font-style: italic;">${escapeHtml(dest.note)}</span></div>`;
+        } else if (dest.raw) {
+          destBlock = `<div class="row"><span class="label">Destination (raw)</span><span class="value">${escapeHtml(dest.raw)}</span></div>`;
+        }
+        html += `<div class="section">
+          <h3>Cargo &amp; voyage</h3>
+          <div class="row"><span class="label">Cargo type</span><span class="value">${cargo.emoji} ${escapeHtml(cargo.cargo || "—")}</span></div>
+          <div class="row"><span class="label">Load status</span><span class="value" style="color: ${loadColor}; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">${load.status || "—"}</span></div>
+          ${load.current_draught_m ? `<div class="row"><span class="label">Current draught</span><span class="value">${load.current_draught_m} m <span style="color: var(--c-subtle); font-size: 10px;">(${escapeHtml(load.category)})</span></span></div>` : ""}
+          ${load.reasoning ? `<div style="margin-top: 4px; font-size: 10px; color: var(--c-subtle); font-style: italic;">${escapeHtml(load.reasoning)}</div>` : ""}
+          ${destBlock}
+        </div>`;
+      }
+
+      // EXTERNAL LINKS — photos + registry
+      const links = data.external_links || [];
+      if (links.length > 0) {
+        html += `<div class="section">
+          <h3>External references</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px;">
+            ${links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener noreferrer" style="color: var(--c-blue); text-decoration: none; font-size: 11px; padding: 4px 8px; background: var(--c-surface-2); border-radius: 4px; border: 1px solid var(--c-border);">↗ ${escapeHtml(l.source)} · <span style="color: var(--c-subtle); font-size: 10px;">${escapeHtml(l.label)}</span></a>`).join("")}
+          </div>
+        </div>`;
+      }
+
+      // Port calls / zone visits (full history)
+      const visits = (portCalls && portCalls.visits) ? portCalls.visits : [];
+      if (visits.length > 0) {
+        html += `<div class="section">
+          <h3>Zone visits · ${visits.length}</h3>
+          ${visits.slice(-12).reverse().map(vv => `
+            <div class="gap-item" style="border-left-color: ${vv.zone_category === 'sts' ? 'var(--accent)' : 'var(--warn)'};">
+              <div><span class="duration" style="color: ${vv.zone_category === 'sts' ? 'var(--accent)' : 'var(--warn)'};">${escapeHtml(vv.zone_name)}</span> · ${vv.duration_min < 60 ? vv.duration_min + ' min' : (vv.duration_min / 60).toFixed(1) + ' h'}</div>
+              <div class="gap-time">${fmtTime(vv.start_ts)} → ${fmtTime(vv.end_ts)}</div>
+              <div style="color: var(--text-2); font-size: 10px; margin-top: 2px;">sog ${fmt(vv.min_sog,1)}–${fmt(vv.max_sog,1)} kn · ${vv.position_count} positions</div>
+            </div>
+          `).join("")}
+        </div>`;
+      }
+
+      // Wikidata / Wikipedia (filled async)
+      html += `<div class="section">
+        <h3>Wikipedia / Wikidata</h3>
+        <div id="wiki-slot"><div class="empty-msg">Looking up…</div></div>
+      </div>`;
+
+      // News section (filled async)
+      html += `<div class="section">
+        <h3>Recent news (GDELT, last 3 months)</h3>
+        <div id="news-slot"><div class="empty-msg">Loading news…</div></div>
+      </div>`;
+
+      // AIS dark periods
+      if (gaps.length > 0) {
+        html += `<div class="section">
+          <h3>AIS dark periods (24h)</h3>
+          ${gaps.slice(0, 12).map(g => {
+            const inZone = g.from_zone || g.to_zone;
+            const zoneText = inZone ? `${(g.from_zone || g.to_zone).name} (${(g.from_zone || g.to_zone).category.replace("_", " ")})` : null;
+            return `<div class="gap-item" ${inZone ? `style="border-left-color: var(--c-red);"` : ""}>
+                <div><span class="duration" ${inZone ? `style="color: var(--c-red);"` : ""}>${fmtDur(g.duration_min)}</span> dark${inZone ? " · in zone" : ""}</div>
+                <div class="gap-time">${new Date(g.from_ts).toLocaleTimeString()} → ${new Date(g.to_ts).toLocaleTimeString()}</div>
+                ${zoneText ? `<div style="margin-top: 4px; font-size: 11px; color: var(--c-red);">📍 ${escapeHtml(zoneText)}</div>` : ""}
+                ${g.verify_url ? `<a href="${escapeHtml(g.verify_url)}" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 4px; font-size: 10px; color: var(--c-blue); text-decoration: none; padding: 2px 6px; background: var(--c-surface-3); border-radius: 3px;">🛰️ verify with Sentinel-1 SAR</a>` : ""}
+              </div>`;
+          }).join("")}
+        </div>`;
+      }
+
+      // ALIASES / PREVIOUS NAMES (shadow-fleet name-change pattern)
+      // FtM stores all historical and alias names in the `name` array.
+      const allNames = Array.isArray(v.all_names) ? v.all_names : [];
+      const currentName = (v.name || "").toString().toUpperCase().trim();
+      const prevNames = allNames
+        .map(n => String(n).trim())
+        .filter(n => n && n.toUpperCase() !== currentName);
+      if (prevNames.length > 0) {
+        html += `<div class="section" style="background: linear-gradient(180deg, rgba(255,77,106,0.08), transparent); border-left: 3px solid var(--c-red);">
+          <h3>⚠️ Aliases / previous names</h3>
+          <div style="font-size: 11px; color: var(--c-muted); margin-bottom: 6px;">Frequent name changes are a textbook shadow-fleet pattern. ${prevNames.length} alias${prevNames.length > 1 ? "es" : ""} on FtM record:</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+            ${prevNames.slice(0, 12).map(n => `<span style="display: inline-block; padding: 2px 8px; background: rgba(255,77,106,0.12); border: 1px solid rgba(255,77,106,0.3); border-radius: 10px; font-size: 11px; color: var(--c-red); font-weight: 500;">${escapeHtml(n)}</span>`).join("")}
+            ${prevNames.length > 12 ? `<span style="font-size: 10px; color: var(--c-subtle);">+${prevNames.length - 12} more</span>` : ""}
+          </div>
+        </div>`;
+      }
+
+      // FtM NOTES — text snippets including "Previous names include..." and sanctioning rationale.
+      const notes = Array.isArray(v.notes) ? v.notes.filter(n => n) : [];
+      if (notes.length > 0) {
+        html += `<div class="section">
+          <h3>FtM notes (${notes.length})</h3>
+          ${notes.slice(0, 4).map(n => `<div style="margin-bottom: 6px; padding: 8px 10px; background: var(--c-surface-2); border-radius: 4px; font-size: 11px; color: var(--c-muted); line-height: 1.5; border-left: 2px solid var(--c-border-2);">${escapeHtml(String(n).slice(0, 400))}${String(n).length > 400 ? "…" : ""}</div>`).join("")}
+          ${notes.length > 4 ? `<div style="font-size: 10px; color: var(--c-subtle); margin-top: 4px;">+${notes.length - 4} more</div>` : ""}
+        </div>`;
+      }
+
+      document.getElementById("p-body").innerHTML = html;
+
+      // After DOM insert: instantiate vis-network if data present
+      if (ownership && ownership.found && ownership.nodes && ownership.nodes.length > 0) {
+        renderGraph(ownership);
+      } else {
+        const c = document.getElementById("graph-container");
+        if (c) c.innerHTML = '<div style="padding: 40px; text-align: center; color: var(--text-2); font-size: 12px; font-style: italic;">No FtM ownership data for this vessel.</div>';
+      }
+    }
+
+    function renderGraph(ownership) {
+      const container = document.getElementById("graph-container");
+      if (!container || typeof vis === "undefined") return;
+
+      const nodes = ownership.nodes.map(n => {
+        const sc = schemaColor(n.schema_type);
+        const country = (n.countries && n.countries.length) ? ` [${n.countries[0].toUpperCase()}]` : "";
+        const isVessel = n.schema_type === "Vessel";
+        return {
+          id: n.id,
+          label: (n.caption || n.id).slice(0, 30) + country,
+          group: n.schema_type,
+          color: { background: sc.bg, border: sc.bg, highlight: { background: "#fff", border: sc.bg } },
+          font: { color: sc.text, size: 11, face: "system-ui" },
+          shape: isVessel ? "triangle" : (n.schema_type === "Person" ? "dot" : "box"),
+          size: isVessel ? 18 : 12,
+          imo: n.imo,
+          schema: n.schema_type,
+        };
+      });
+      const edges = ownership.edges.map(e => ({
+        from: e.src_id,
+        to: e.dst_id,
+        label: e.rel_type === "Ownership" ? "owns" : (e.rel_type || ""),
+        font: { color: "#6b7891", size: 9, align: "middle" },
+        arrows: "to",
+        color: { color: "#3a4360", highlight: "#ff4757" },
+        smooth: { type: "continuous" },
+      }));
+
+      const data = { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
+      const options = {
+        physics: { enabled: true, solver: "forceAtlas2Based", forceAtlas2Based: { gravitationalConstant: -50, springLength: 80 }, stabilization: { iterations: 100 } },
+        layout: { improvedLayout: true },
+        interaction: { hover: true, dragNodes: true, zoomView: true },
+        nodes: { borderWidth: 1 },
+        edges: { width: 1 },
+      };
+      const network = new vis.Network(container, data, options);
+      network.on("click", (params) => {
+        if (params.nodes.length === 0) return;
+        const nodeId = params.nodes[0];
+        const node = nodes.find(n => n.id === nodeId);
+        if (!node) return;
+        if (node.schema === "Vessel" && node.imo) openVessel(Number(node.imo));
+        else openEntity(nodeId);
+      });
+    }
+
+    function renderTrack(track) {
+      trackLayer.clearLayers();
+      if (!track || track.length === 0) return;
+      const coords = track.map(p => [Number(p.lat), Number(p.lon)]).filter(c => Number.isFinite(c[0]) && Number.isFinite(c[1]));
+      if (coords.length === 0) return;
+      const line = L.polyline(coords, { color: "#ff4757", weight: 2.5, opacity: 0.85, smoothFactor: 1.5 }).addTo(trackLayer);
+      L.circleMarker(coords[0], { radius: 5, fillColor: "#2ed573", color: "#fff", weight: 1.5, fillOpacity: 1 }).addTo(trackLayer).bindTooltip("24h ago");
+      for (let i = 1; i < coords.length - 1; i++) {
+        L.circleMarker(coords[i], { radius: 1.5, fillColor: "#ff4757", color: "#ff4757", weight: 0, fillOpacity: 0.6 }).addTo(trackLayer);
+      }
+      L.circleMarker(coords[coords.length - 1], { radius: 6, fillColor: "#ff4757", color: "#fff", weight: 2, fillOpacity: 1 }).addTo(trackLayer).bindTooltip("Now");
+      map.fitBounds(line.getBounds().pad(0.3));
+    }
+
+    // -------- Panel: entity (Person / Company / Org)
+    async function openEntity(entityId) {
+      selectedImo = null;
+      trackLayer.clearLayers();
+      const panel = document.getElementById("panel");
+      const body = document.getElementById("p-body");
+      panel.classList.add("open");
+      document.getElementById("p-name").textContent = "Loading…";
+      document.getElementById("p-sub").textContent = "Entity";
+      body.innerHTML = `
+        <div class="section">
+          <div class="skeleton lg"></div>
+          <div class="skeleton"></div>
+        </div>
+        <div class="section">
+          <div class="skeleton sm"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>`;
+      try {
+        const res = await fetch(`/api/entity/${encodeURIComponent(entityId)}`);
+        if (!res.ok) {
+          body.innerHTML = '<div class="section"><div class="empty-msg">Entity not found</div></div>';
+          return;
+        }
+        const data = await res.json();
+        renderEntityPanel(data);
+        plotOwnedVesselsOnMap(data);
+      } catch (err) { console.error("openEntity failed", err); }
+    }
+
+    function renderEntityPanel(data) {
+      const e = data.entity;
+      const sc = schemaColor(e.schema_type);
+      document.getElementById("p-name").textContent = e.caption ?? "(no name)";
+      document.getElementById("p-sub").textContent = `${e.schema_type}${e.countries && e.countries.length ? " · " + e.countries.map(c => c.toUpperCase()).join(", ") : ""}`;
+
+      const ownedVessels = (data.owns || []).filter(o => o.schema_type === "Vessel");
+      const ownedOthers = (data.owns || []).filter(o => o.schema_type !== "Vessel");
+      const ownedBy = data.owned_by || [];
+
+      let html = `<div class="section">
+        <h3>Entity</h3>
+        <div class="row"><span class="label">Schema</span><span class="value">${escapeHtml(e.schema_type)}</span></div>
+        <div class="row"><span class="label">Countries</span><span class="value">${(e.countries || []).map(c => c.toUpperCase()).join(", ") || "—"}</span></div>
+        ${e.url ? `<div class="row"><span class="label">OpenSanctions</span><span class="value"><a href="${escapeHtml(e.url)}" target="_blank" style="color: var(--accent); text-decoration: none;">↗ open</a></span></div>` : ""}
+      </div>`;
+
+      // Owned vessels
+      if (ownedVessels.length > 0) {
+        const live = ownedVessels.filter(v => v.currently_visible).length;
+        html += `<div class="section">
+          <h3>Vessels owned · ${ownedVessels.length} <span style="color: var(--accent); font-weight: 700;">${live > 0 ? "(" + live + " live)" : ""}</span></h3>
+          <div class="vessel-list">
+            ${ownedVessels.map(v => `
+              <div class="vrow ${v.currently_visible ? 'live' : ''}" data-imo="${v.imo}">
+                <div>
+                  <div class="name">${escapeHtml(v.caption || "(no name)")}</div>
+                  <div class="imo">IMO ${v.imo} · ${(v.countries || []).map(c => (c||"").toUpperCase()).join(", ") || ""}</div>
+                </div>
+                <span class="${v.currently_visible ? 'live-badge' : 'static-badge'}">${v.currently_visible ? "live" : "static"}</span>
+              </div>`).join("")}
+          </div>
+        </div>`;
+      }
+
+      // Other owned (sub-companies)
+      if (ownedOthers.length > 0) {
+        html += `<div class="section">
+          <h3>Other links · ${ownedOthers.length}</h3>
+          <div class="vessel-list">
+            ${ownedOthers.slice(0, 30).map(o => `
+              <div class="vrow" data-eid="${escapeHtml(o.id)}">
+                <div>
+                  <div class="name">${escapeHtml(o.caption || o.id)}</div>
+                  <div class="imo">${escapeHtml(o.schema_type)} · ${(o.countries || []).map(c => (c||"").toUpperCase()).join(", ") || ""} · ${o.rel_type}${o.role ? " ("+escapeHtml(o.role)+")" : ""}</div>
+                </div>
+              </div>`).join("")}
+          </div>
+        </div>`;
+      }
+
+      // Owned BY (parents up the chain)
+      if (ownedBy.length > 0) {
+        html += `<div class="section">
+          <h3>Owned by / linked from · ${ownedBy.length}</h3>
+          <div class="vessel-list">
+            ${ownedBy.slice(0, 20).map(o => `
+              <div class="vrow" data-eid="${escapeHtml(o.id)}">
+                <div>
+                  <div class="name">${escapeHtml(o.caption || o.id)}</div>
+                  <div class="imo">${escapeHtml(o.schema_type)} · ${(o.countries || []).map(c => (c||"").toUpperCase()).join(", ") || ""} · ${o.rel_type}</div>
+                </div>
+              </div>`).join("")}
+          </div>
+        </div>`;
+      }
+
+      document.getElementById("p-body").innerHTML = html;
+
+      // Wire up vessel/entity drill-down clicks
+      document.querySelectorAll(".vrow[data-imo]").forEach(el => {
+        el.addEventListener("click", () => openVessel(Number(el.dataset.imo)));
+      });
+      document.querySelectorAll(".vrow[data-eid]").forEach(el => {
+        el.addEventListener("click", () => openEntity(el.dataset.eid));
+      });
+    }
+
+    function plotOwnedVesselsOnMap(data) {
+      // Highlight live-vessels owned by the entity. Just fit map bounds to them.
+      const live = (data.owns || []).filter(o => o.schema_type === "Vessel" && o.currently_visible && o.live_position);
+      if (live.length === 0) return;
+      trackLayer.clearLayers();
+      const coords = [];
+      for (const v of live) {
+        const lat = v.live_position.lat, lon = v.live_position.lon;
+        coords.push([lat, lon]);
+        L.circleMarker([lat, lon], { radius: 12, fillColor: "transparent", color: "#54a0ff", weight: 2, opacity: 0.9 }).addTo(trackLayer)
+          .bindTooltip(`${v.caption} (IMO ${v.imo})`, { permanent: false });
+      }
+      if (coords.length > 0) {
+        const bounds = L.latLngBounds(coords).pad(0.4);
+        map.fitBounds(bounds);
+      }
+    }
+
+    function closePanel() {
+      selectedImo = null;
+      document.getElementById("panel").classList.remove("open");
+      trackLayer.clearLayers();
+      loadVessels();
+    }
+
+    // -------- Activity timeline strip
+    async function loadTimeline() {
+      try {
+        const params = new URLSearchParams();
+        params.set("range", activeRange);
+        if (activeFilter === "ru" || activeFilter === "ua") params.set("lists", "ru");
+        const res = await fetch(`/api/timeline?${params.toString()}`);
+        const data = await res.json();
+        renderTimeline(data);
+      } catch (err) { console.error("loadTimeline failed", err); }
+    }
+
+    function renderTimeline(data) {
+      const svg = document.getElementById("timeline-svg");
+      const wrap = document.getElementById("timeline-svg-wrap");
+      const tooltip = document.getElementById("timeline-tooltip");
+      const W = wrap.clientWidth, H = wrap.clientHeight;
+      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      svg.innerHTML = "";
+
+      const buckets = data.buckets || [];
+      if (buckets.length === 0) {
+        svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#6b7891" font-size="11" font-family="system-ui">No activity in selected range yet</text>`;
+        document.getElementById("tl-summary").textContent = "no data";
+        return;
+      }
+
+      // PRIMARY metric is `sanctioned`. All-tankers shown as a faint line trace
+      // for context, NOT as the dominant visual.
+      const maxSanc = Math.max(...buckets.map(b => b.sanctioned || 0), 1);
+      const maxTotal = Math.max(...buckets.map(b => b.total_tankers || 0), 1);
+      const padL = 4, padR = 4, padT = 4, padB = 16;
+      const innerW = W - padL - padR;
+      const innerH = H - padT - padB;
+      const barW = innerW / buckets.length;
+      const baseY = padT + innerH;
+
+      // Background grid line (subtle) at half-height
+      svg.insertAdjacentHTML("beforeend",
+        `<line x1="${padL}" y1="${padT + innerH * 0.5}" x2="${padL + innerW}" y2="${padT + innerH * 0.5}" stroke="rgba(122,132,153,0.12)" stroke-dasharray="2 4"/>`);
+
+      // BARS: sanctioned (orange) primary, ru_ua (red) overlaid on bottom portion
+      buckets.forEach((b, i) => {
+        const x = padL + i * barW + 1;
+        const w = Math.max(2, barW - 2);
+        const sanH = (b.sanctioned / maxSanc) * innerH;
+        const ruH  = (b.ru_ua      / maxSanc) * innerH;
+
+        // Sanctioned (full bar — primary metric)
+        if (b.sanctioned > 0) {
+          svg.insertAdjacentHTML("beforeend",
+            `<rect x="${x}" y="${baseY - sanH}" width="${w}" height="${sanH}" fill="#ffb84a" rx="1.5"/>`);
+        }
+        // RU/UA overlay (drawn from base, will be visually inside the sanctioned bar)
+        if (b.ru_ua > 0) {
+          svg.insertAdjacentHTML("beforeend",
+            `<rect x="${x}" y="${baseY - ruH}" width="${w}" height="${ruH}" fill="#ff4d6a" rx="1.5"/>`);
+        }
+        // Numeric label above bar (sanctioned count) — helps when only a few buckets
+        if (buckets.length <= 12 && b.sanctioned > 0) {
+          svg.insertAdjacentHTML("beforeend",
+            `<text x="${x + w/2}" y="${baseY - sanH - 3}" text-anchor="middle" fill="#c2cbe0" font-size="9" font-family="system-ui" font-weight="600">${b.sanctioned}</text>`);
+        }
+
+        // Hover capture rect
+        svg.insertAdjacentHTML("beforeend",
+          `<rect x="${x - 1}" y="${padT}" width="${w + 2}" height="${innerH}" fill="transparent" data-i="${i}" style="cursor: crosshair;"/>`);
+      });
+
+      // ALL-TANKERS context line (faint trace above bars)
+      const points = buckets.map((b, i) => {
+        const x = padL + i * barW + barW/2;
+        const y = baseY - (b.total_tankers / maxTotal) * innerH;
+        return `${x},${y}`;
+      }).join(" ");
+      if (points) svg.insertAdjacentHTML("beforeend",
+        `<polyline points="${points}" fill="none" stroke="rgba(194,203,224,0.35)" stroke-width="1" stroke-dasharray="3 3"/>`);
+      // Total-tanker dots on the polyline
+      buckets.forEach((b, i) => {
+        const x = padL + i * barW + barW/2;
+        const y = baseY - (b.total_tankers / maxTotal) * innerH;
+        svg.insertAdjacentHTML("beforeend",
+          `<circle cx="${x}" cy="${y}" r="2" fill="rgba(194,203,224,0.7)"/>`);
+      });
+
+      // x-axis labels at start, middle, end
+      function fmtBucket(ts) {
+        const d = new Date(ts);
+        if (data.bucket_seconds < 3600) return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        if (data.bucket_seconds < 86400) return d.toLocaleString([], { month: "short", day: "numeric", hour: "2-digit" });
+        return d.toLocaleDateString([], { month: "short", day: "numeric" });
+      }
+      const labelIdx = buckets.length === 1 ? [0] : [0, Math.floor(buckets.length / 2), buckets.length - 1];
+      labelIdx.forEach(i => {
+        const x = padL + i * barW + barW / 2;
+        svg.insertAdjacentHTML("beforeend",
+          `<text x="${x}" y="${H - 3}" text-anchor="middle" fill="#6b7891" font-size="9" font-family="system-ui">${fmtBucket(buckets[i].ts)}</text>`);
+      });
+
+      // Hover events
+      svg.querySelectorAll("rect[data-i]").forEach(rect => {
+        rect.addEventListener("mouseenter", (ev) => {
+          const i = Number(ev.target.dataset.i);
+          const b = buckets[i];
+          tooltip.innerHTML = `
+            <div style="margin-bottom: 3px; color: var(--text-2); font-size: 10px;">${fmtBucket(b.ts)}</div>
+            <div><span style="color: #ffa502;">●</span> Sanctioned: <strong>${b.sanctioned}</strong></div>
+            <div><span style="color: #ff4757;">●</span> RU / UA: <strong>${b.ru_ua}</strong></div>
+            <div><span style="color: #6b7891;">●</span> All tankers: <strong>${b.total_tankers}</strong></div>
+          `;
+          tooltip.style.display = "block";
+        });
+        rect.addEventListener("mousemove", (ev) => {
+          const wrapRect = wrap.getBoundingClientRect();
+          const x = ev.clientX - wrapRect.left;
+          const y = ev.clientY - wrapRect.top;
+          tooltip.style.left = `${Math.min(x + 12, W - 180)}px`;
+          tooltip.style.top = `${Math.max(2, y - 60)}px`;
+        });
+        rect.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+
+      // Header summary
+      const peak = Math.max(...buckets.map(b => b.sanctioned));
+      const totalSanctioned = buckets.reduce((s, b) => s + b.sanctioned, 0);
+      document.getElementById("tl-range-label").textContent = `last ${data.range}`;
+      document.getElementById("tl-summary").textContent = `peak ${peak} sanctioned · ${buckets.length} buckets · ${data.bucket_seconds < 3600 ? Math.round(data.bucket_seconds / 60) + "m" : (data.bucket_seconds < 86400 ? Math.round(data.bucket_seconds / 3600) + "h" : Math.round(data.bucket_seconds / 86400) + "d")} each`;
+    }
+
+    // Re-render timeline on window resize
+    window.addEventListener("resize", () => loadTimeline());
+
+    // -------- Boot
+    loadZones();
+    loadVessels();
+    loadStats();
+    loadTimeline();
+    loadSts();
+    setInterval(loadVessels, 15000);
+    setInterval(loadStats, 30000);
+    setInterval(loadTimeline, 60000);
+    setInterval(loadSts, 30000);
+  </script>
+</body>
+</html>

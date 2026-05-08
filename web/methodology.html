@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodology — Shadow Fleet Tracker</title>
+  <style>
+    :root {
+      --bg-0: #0a0e1a;
+      --bg-1: #14192a;
+      --bg-2: #1a2138;
+      --bg-3: #232a44;
+      --border: #2a3147;
+      --text-0: #f0f4fa;
+      --text-1: #b6c0d0;
+      --text-2: #6b7891;
+      --text-3: #4a546b;
+      --accent: #ff4d6a;
+      --warn: #ffa502;
+      --high: #ff7f50;
+      --good: #2ed573;
+      --link: #54a0ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--bg-0);
+      color: var(--text-0);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    a { color: var(--link); text-decoration: none; border-bottom: 1px dashed var(--text-2); }
+    a:hover { color: var(--text-0); border-color: var(--link); }
+    code {
+      background: var(--bg-2);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      color: var(--text-1);
+    }
+    header {
+      padding: 26px 32px;
+      background: var(--bg-1);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    header .meta {
+      color: var(--text-2);
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    header nav {
+      display: flex;
+      gap: 18px;
+      font-size: 13px;
+    }
+    header nav a {
+      color: var(--text-1);
+      border-bottom: 1px dashed var(--text-3);
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 32px 96px;
+    }
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 24px;
+    }
+    section h2 {
+      margin: 0 0 6px;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    section h3.title {
+      margin: 0 0 18px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: var(--text-0);
+    }
+    section h4 {
+      margin: 24px 0 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-0);
+    }
+    section p { margin: 14px 0; color: var(--text-1); }
+    section p strong { color: var(--text-0); font-weight: 600; }
+    section ul, section ol {
+      margin: 14px 0;
+      padding-left: 22px;
+      color: var(--text-1);
+    }
+    section li { margin: 5px 0; }
+    section li strong { color: var(--text-0); }
+
+    .toc {
+      position: sticky;
+      top: 18px;
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 32px;
+      font-size: 12px;
+    }
+    .toc .toc-label {
+      color: var(--text-2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 10px;
+      margin-bottom: 8px;
+    }
+    .toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 18px; }
+    .toc ol li { margin: 3px 0; line-height: 1.5; break-inside: avoid; }
+    .toc a { color: var(--text-1); border-bottom: none; }
+    .toc a:hover { color: var(--accent); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 14px 0;
+    }
+    th {
+      text-align: left;
+      padding: 9px 12px;
+      background: var(--bg-2);
+      color: var(--text-2);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text-1);
+    }
+    td strong { color: var(--text-0); font-weight: 600; }
+    td.num { font-variant-numeric: tabular-nums; }
+
+    .callout {
+      padding: 14px 18px;
+      margin: 18px 0;
+      border-radius: 6px;
+      border-left: 4px solid;
+      background: var(--bg-1);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .callout.warning { border-color: var(--warn); }
+    .callout.danger  { border-color: var(--accent); }
+    .callout.info    { border-color: var(--link); }
+    .callout.good    { border-color: var(--good); }
+    .callout strong { color: var(--text-0); }
+
+    .formula {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--text-0);
+    }
+    .formula .plus { color: var(--accent); font-weight: 600; }
+    .formula .key  { color: var(--warn); }
+    .formula .cap  { color: var(--text-2); }
+
+    .endpoint {
+      display: block;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 10px;
+      margin: 6px 0;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 12px;
+      color: var(--text-0);
+    }
+    .endpoint .verb {
+      display: inline-block;
+      padding: 0 6px;
+      background: var(--bg-3);
+      border-radius: 3px;
+      color: var(--good);
+      font-weight: 600;
+      margin-right: 8px;
+      letter-spacing: 0.4px;
+    }
+    .endpoint .verb.post { color: var(--warn); }
+
+    @media (max-width: 700px) {
+      .toc ol { columns: 1; }
+      header { padding: 18px 18px; }
+      header h1 { font-size: 18px; }
+      main { padding: 32px 18px 64px; }
+      section h3.title { font-size: 20px; }
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 1px 8px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-1);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      margin-right: 4px;
+    }
+    .pill.risk-c { background: rgba(255,77,106,0.12); color: var(--accent); border-color: rgba(255,77,106,0.3); }
+    .pill.risk-h { background: rgba(255,127,80,0.12); color: var(--high); border-color: rgba(255,127,80,0.3); }
+    .pill.risk-e { background: rgba(255,165,2,0.12); color: var(--warn); border-color: rgba(255,165,2,0.3); }
+    .pill.risk-l { background: rgba(138,150,170,0.12); color: var(--text-2); border-color: var(--border); }
+
+    footer {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 24px 32px 48px;
+      color: var(--text-3);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>📋 Methodology</h1>
+      <div class="meta">Sources · scoring · derivations · limitations · v2</div>
+    </div>
+    <nav>
+      <a href="/">← live map</a>
+      <a href="/digest.html">daily digest</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="toc">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#about">About this tool</a></li>
+        <li><a href="#sources">Data sources</a></li>
+        <li><a href="#risk">Risk scoring</a></li>
+        <li><a href="#zones">Zones &amp; ports</a></li>
+        <li><a href="#sts">STS event detection</a></li>
+        <li><a href="#gaps">AIS dark periods + SAR</a></li>
+        <li><a href="#ownership">Ownership graph</a></li>
+        <li><a href="#sanctions">Sanctions reconciliation</a></li>
+        <li><a href="#cargo">Cargo &amp; voyage inference</a></li>
+        <li><a href="#aliases">Aliases &amp; previous names</a></li>
+        <li><a href="#references">External references</a></li>
+        <li><a href="#endpoints">Researcher endpoints</a></li>
+        <li><a href="#limitations">Limitations &amp; caveats</a></li>
+        <li><a href="#refresh">Refresh cadence &amp; corrections</a></li>
+      </ol>
+    </div>
+
+    <section id="about">
+      <h2>01. Purpose</h2>
+      <h3 class="title">About this tool</h3>
+      <p>
+        This is a read-only OSINT (open-source intelligence) aggregator focused on Russia-related shadow-fleet maritime activity.
+        It overlays a live AIS feed with publicly published sanctions lists, ownership-graph data, news mentions, and Wikidata
+        records; computes a transparent multi-factor risk score per vessel; flags proximity events that fit ship-to-ship
+        transfer patterns; and infers cargo and voyage intent from declared destination + draught.
+      </p>
+      <p>
+        It is intended as a research and journalistic aid. <strong>It is not legal evidence, regulatory enforcement, or
+        a substitute for due diligence by a regulated party.</strong> Every claim is sourced and explainable — risk factors
+        are listed inline in the side panel; sanction list entries link back to the upstream source; ownership chains link
+        to OpenSanctions; news links open the original article.
+      </p>
+      <div class="callout warning">
+        <strong>Allegations vs verified claims.</strong> When this tool says a vessel is "sanctioned", it means the vessel's IMO
+        appears on at least one publicly published sanctions or detention list. Inclusion does not by itself prove wrongdoing;
+        appeals and de-listings happen. When it says a vessel "may be conducting STS", it describes an observed proximity
+        pattern, not a proven event. When it says a vessel was "previously named X", it cites the OpenSanctions record;
+        we do not run our own registry investigations.
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>02. Provenance</h2>
+      <h3 class="title">Data sources</h3>
+      <p>Six primary feeds, all public and license-compatible with this use:</p>
+      <table>
+        <thead><tr><th>Source</th><th>What we ingest</th><th>License / access</th><th>Refresh</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong><a href="https://aisstream.io/" target="_blank">AISStream.io</a></strong></td>
+            <td>Real-time global AIS broadcasts (<code>PositionReport</code>, <code>ShipStaticData</code>) inside our four bounding boxes (Baltic + North Sea, Black Sea + East Med, Persian Gulf, Singapore Strait).</td>
+            <td>Free, registered API key.</td>
+            <td>Continuous (~50 messages/sec)</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.treasury.gov/ofac/downloads/sdn.csv" target="_blank">OFAC SDN</a></strong></td>
+            <td>U.S. Treasury Specially Designated Nationals list, vessel-type entries (1,481 vessels). IMO/MMSI extracted from the Remarks column.</td>
+            <td>U.S. government, public domain.</td>
+            <td>Manual reload (recommended weekly)</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.opensanctions.org/datasets/maritime/" target="_blank">OpenSanctions Maritime</a></strong></td>
+            <td>Aggregated maritime-relevant sanctions and detention lists (~14,645 vessels covering OFAC, EU, UK, UN, Australia, Canada, Japan, Tokyo / Black Sea / Paris / Abuja MOU detentions, KSE Russia Oil Tracker, RUSI shadow-fleet research, Ukrainian war sanctions).</td>
+            <td><a href="https://www.opensanctions.org/licensing/" target="_blank">OpenSanctions licence</a> — free for non-commercial / journalistic use.</td>
+            <td>Daily upstream; manual reload here</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.opensanctions.org/datasets/sanctions/" target="_blank">OpenSanctions FtM</a></strong></td>
+            <td>Follow-the-Money entity graph (~248k entities, 11k explicit relations) covering vessels, owners, operators, directors, persons, addresses; used for ownership-chain rendering and chain-aware risk; also surfaces aliases + textual notes.</td>
+            <td>Same OpenSanctions licence.</td>
+            <td>Daily upstream; manual reload</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/" target="_blank">GDELT 2.0 Doc API</a></strong></td>
+            <td>News article search by vessel name (last 3 months). Surfaces media mentions of specific tankers.</td>
+            <td>Free, public API.</td>
+            <td>On-demand per vessel; 1h in-memory cache</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.wikidata.org/" target="_blank">Wikidata SPARQL</a></strong></td>
+            <td>Per-IMO lookup (P458 = IMO ship number) returning Wikipedia article URL, Wikimedia Commons image, build year, flag country. Reveals historical names not always in FtM.</td>
+            <td>Free, public SPARQL endpoint with rate-limit etiquette.</td>
+            <td>On-demand per vessel; 1h cache</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout info">
+        <strong>What we do not use.</strong> We do not scrape Equasis (their TOS forbids automated access), do not licence
+        commercial feeds (Lloyd's List, MarineTraffic Premium, Windward, Kpler), and do not use proprietary intel.
+        Everything here can be reproduced by any analyst with the same listed sources.
+      </div>
+    </section>
+
+    <section id="risk">
+      <h2>03. Scoring</h2>
+      <h3 class="title">Risk scoring</h3>
+      <p>
+        Every vessel gets a 0–100 composite risk score. The score is a sum of named factors, capped at 100.
+        Each factor's contribution is shown inline in the vessel detail panel — there is no opaque ML model.
+      </p>
+      <div class="formula">
+        <div><span class="plus">+</span> <span class="key">5</span> per sanctions list <span class="cap">(cap 30)</span></div>
+        <div><span class="plus">+</span> <span class="key">20</span> if Russia / Ukraine sanctions linked</div>
+        <div><span class="plus">+</span> <span class="key">10</span> if flag of convenience</div>
+        <div><span class="plus">+</span> <span class="key">10</span> if currently AIS-dark (&gt;60 min)</div>
+        <div><span class="plus">+</span> <span class="key">15</span> if AIS gap inside STS / sanctioned-port zone (24h)</div>
+        <div><span class="plus">+</span> <span class="key">5</span> if longest 24h gap &gt;2h</div>
+        <div><span class="plus">+</span> <span class="key">10</span> if ownership chain touches sanctioned-state owner (RU / IR / KP / BY / SY / VE)</div>
+        <div style="margin-top: 10px; color: var(--text-2);">→ capped at 100, bucketed into:</div>
+        <div style="margin-top: 6px;">
+          <span class="pill risk-l">low &lt; 30</span>
+          <span class="pill risk-e">elevated 30–59</span>
+          <span class="pill risk-h">high 60–79</span>
+          <span class="pill risk-c">critical 80+</span>
+        </div>
+      </div>
+      <h4>Why these weights</h4>
+      <p>
+        The strongest signal in the open literature is being on multiple independent sanction lists — that's why list count
+        compounds (5 × N, capped at 30). Russia/Ukraine linkage is weighted heavily because it's the most actionable category
+        for current EU/UK enforcement. The <em>chain-touches-sanctioned-state-owner</em> factor (added in v2) catches vessels
+        where the immediate registered owner is not on a list but their parent or beneficial owner is in a sanctioned-state
+        jurisdiction — a textbook obfuscation pattern.
+      </p>
+      <h4>Flag-of-convenience list</h4>
+      <p>
+        Curated from ITF and KSE shadow-fleet research:
+        Panama, Liberia, Marshall Islands, Cyprus, Malta, Bahamas, Belize, Bermuda, Cambodia, Comoros, Cook Islands,
+        Djibouti, Gabon, Guinea, Honduras, Jamaica, Kiribati, Lebanon, Sri Lanka, Mongolia, Mauritius, Niue, Palau,
+        São Tomé and Príncipe, Sierra Leone, Togo, Tonga, Vanuatu, Barbados.
+      </p>
+      <div class="callout warning">
+        <strong>What scores cannot tell you.</strong> A vessel with score 20 may still be conducting an STS event right now;
+        a vessel with score 80 may have a clean recent voyage. The score is a triage prior — it tells an analyst where to
+        look, not what to conclude. Always read the breakdown of factors before citing a score.
+      </div>
+    </section>
+
+    <section id="zones">
+      <h2>04. Geography</h2>
+      <h3 class="title">Suspect zones &amp; world ports</h3>
+      <p>
+        Two layers of geographic data feed the inference engine:
+      </p>
+      <h4>Suspect zones (22 curated risk hotspots)</h4>
+      <p>Used for <strong>risk scoring</strong> and STS-zone tagging — vessels whose AIS gap or rendezvous occurs inside one of these gets flagged.</p>
+      <table>
+        <thead><tr><th>Category</th><th>Count</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><strong>STS</strong></td><td class="num">9</td><td>Ceuta / Algeciras, Lakonikos Bay, Kalamata, Augusta, Mersin, Sikka, Singapore E. Anchorage, Fujairah, Sohar</td></tr>
+          <tr><td><strong>Russian port</strong></td><td class="num">6</td><td>Novorossiysk, Tuapse, Ust-Luga, Primorsk, St. Petersburg, Murmansk</td></tr>
+          <tr><td><strong>Iranian port</strong></td><td class="num">3</td><td>Kharg Island, Bandar Abbas, Sirri Island</td></tr>
+          <tr><td><strong>Choke point</strong></td><td class="num">4</td><td>Bosphorus, Bab el-Mandeb, Strait of Hormuz, Malacca Strait</td></tr>
+        </tbody>
+      </table>
+      <h4>WORLD_PORTS database (~110 commercial ports)</h4>
+      <p>
+        Used for <strong>port-call inference</strong> — when a vessel's track passes within ~10 nm of a known port, it's
+        logged as a zone visit. This is broader than the curated suspect zones and lets us catch visits to legitimate
+        commercial ports (Rotterdam, Houston, Mumbai, Shanghai, etc.) for full voyage context.
+      </p>
+      <p>Coverage: Russian oil exports, Iranian / Venezuelan oil exports, STS hubs, Chinese / Indian refineries, all major
+        North-Sea / Mediterranean / Baltic / Black-Sea / Persian-Gulf / East-Asia / SE-Asia / African / American
+        commercial ports. Coordinates are berth/anchorage approximations.</p>
+    </section>
+
+    <section id="sts">
+      <h2>05. Detection</h2>
+      <h3 class="title">STS event detection</h3>
+      <p>
+        Ship-to-ship transfers are routine maritime operations, but they are also the textbook way Russian and Iranian
+        crude is laundered between sanctioned tonnage and "clean" buyers. We approximate STS events from AIS proximity
+        in two stages.
+      </p>
+      <h4>Stage 1 — candidate pairs</h4>
+      <ol>
+        <li>Two tankers (AIS ship type 80–89) within <strong>1.5 nm</strong> (configurable) of each other.</li>
+        <li>Both at speed &lt;<strong>2 kn</strong> (configurable).</li>
+        <li>Position reports within <strong>5 min</strong> of each other.</li>
+        <li>At least one IMO is on any of our 50+ ingested sanction lists.</li>
+      </ol>
+      <h4>Stage 2 — event clustering</h4>
+      <ol>
+        <li>Group consecutive observations of the same vessel pair into a single event.</li>
+        <li>A gap of more than <strong>30 min</strong> between observations starts a new event.</li>
+        <li>Filter events shorter than <strong>10 min</strong> (configurable) as noise.</li>
+        <li>Tag the event's midpoint against the suspect-zone list.</li>
+      </ol>
+      <p>
+        Distance is computed via an equirectangular approximation of haversine — accurate to &lt;0.1% at distances &lt;50 nm.
+        Both <code>/api/sts-candidates</code> (raw) and <code>/api/sts-events</code> (clustered) are exposed; the map and
+        digest use clustered events.
+      </p>
+      <div class="callout danger">
+        <strong>False positives.</strong> Vessels at the same anchorage, in lock queues, or under tow can satisfy the
+        proximity test without any STS happening. Vessels with the same MMSI broadcasting from different positions
+        (spoofing) can also create phantom matches. Treat events without zone tagging as lower-confidence.
+      </div>
+      <div class="callout warning">
+        <strong>False negatives.</strong> Sophisticated operators turn off AIS during an STS. We capture the dark periods
+        (see §06) but cannot directly observe what happens during them. SAR-satellite imagery is the next layer of
+        verification — see the Sentinel-1 deep-link in §06.
+      </div>
+    </section>
+
+    <section id="gaps">
+      <h2>06. AIS</h2>
+      <h3 class="title">AIS dark periods + Sentinel-1 SAR verification</h3>
+      <p>
+        A "dark period" is any interval &gt;30 minutes between two consecutive AIS broadcasts from the same MMSI.
+        For each vessel we compute gaps over the configured time range (1h–30d) and flag gaps whose start or end position
+        falls inside a suspect zone.
+      </p>
+      <p>Gaps can mean any of: intentional shutdown (shadow-fleet pattern), receiver coverage gap (open ocean),
+        equipment failure, or AIS spoofing. We report gaps as observations and let the analyst weigh them in context.</p>
+      <h4>Sentinel-1 SAR verification</h4>
+      <p>
+        For each AIS gap inside a suspect zone, we generate a deep-link to <a href="https://browser.dataspace.copernicus.eu/" target="_blank">Copernicus Browser</a>
+        pre-filled with the gap's bounding box and a ±12-hour time window, set to the Sentinel-1 GRD dataset. SAR penetrates
+        cloud cover and works at night, so it is the gold-standard way to verify whether a vessel was physically present
+        during a dark period.
+      </p>
+      <div class="callout info">
+        <strong>Why this matters.</strong> A vessel claiming AIS-equipment-failure for a 14-hour gap inside Lakonikos Bay
+        is a different story if Sentinel-1 imagery from that window shows two tankers moored next to each other.
+        We do not auto-fetch SAR imagery (Copernicus has its own access flow) — we just one-click the analyst into the right view.
+      </div>
+    </section>
+
+    <section id="ownership">
+      <h2>07. Graph</h2>
+      <h3 class="title">Ownership graph</h3>
+      <p>
+        Ownership data comes from OpenSanctions FtM (Follow-the-Money), a public structured-data model used by
+        most non-commercial sanctions trackers. Each entity (vessel, company, person, address) has a stable
+        <code>NK-...</code> ID and is connected via typed relations (<code>Ownership</code>, <code>Directorship</code>,
+        <code>Membership</code>, <code>Family</code>, <code>Representation</code>, <code>Employment</code>, <code>UnknownLink</code>).
+      </p>
+      <p>
+        For each vessel we run a breadth-first traversal of these relations, capped at 4 hops and 80 nodes per query.
+        The traversal is bidirectional — both upstream owners and downstream sub-entities are surfaced.
+      </p>
+      <h4>Reverse search</h4>
+      <p>
+        The header search box queries entity captions across all 248k entities, with vessel-count prioritisation. Use it to
+        drill into a known operator — e.g. <em>"Sovcomflot"</em> returns the parent plus the 84 vessels FtM links to it. Live
+        AIS positions, where available, are highlighted in red.
+      </p>
+      <div class="callout info">
+        <strong>What's not in the graph.</strong> Many vessels carry an <code>owner</code> property as free-text rather than
+        a linked entity ID. These appear in the vessel detail sanction-source panel but cannot be expanded as graph nodes.
+        To resolve them we would need OpenCorporates, Sayari, or proprietary registry access — out of scope.
+      </div>
+    </section>
+
+    <section id="sanctions">
+      <h2>08. Reconciliation</h2>
+      <h3 class="title">Sanctions list reconciliation</h3>
+      <p>
+        Across our two sanction-source layers (OFAC SDN direct + OpenSanctions Maritime aggregate) we have ~15,300 raw
+        list entries which deduplicate to <strong>~8,870 unique IMOs</strong>. The same vessel commonly appears on 3–7 lists.
+      </p>
+      <ul>
+        <li><strong>Primary key:</strong> IMO when present (~99% of entries).</li>
+        <li><strong>Secondary key:</strong> for entries without IMO, OpenSanctions provides a stable internal ID; we keep them but cannot join them to AIS.</li>
+        <li><strong>Aggregated programmes:</strong> shown as a list per vessel — e.g. <em>"OFAC + EU + UK + Canada + Ukraine + Tokyo MOU"</em>.</li>
+        <li><strong>Russia/Ukraine flag:</strong> a vessel is flagged if any program label contains <em>"Russia"</em>, <em>"Ukraine"</em>, or <em>"ua_war"</em>.</li>
+      </ul>
+      <p>
+        We do not currently track de-listing dates. A small fraction of our list entries may refer to vessels that have
+        been removed from the upstream list since our last refresh. Reload OpenSanctions weekly to keep this delta small.
+      </p>
+    </section>
+
+    <section id="cargo">
+      <h2>09. Inference</h2>
+      <h3 class="title">Cargo &amp; voyage</h3>
+      <p>
+        Without commercial feeds (Kpler, Vortexa, Lloyd's List Intelligence) we cannot know exact cargo tonnage.
+        We surface qualitative cargo intent from three signals:
+      </p>
+      <h4>Cargo type</h4>
+      <p>
+        Derived from the FtM <code>type</code> property — e.g. <em>"Crude Oil Tanker"</em> → 🛢️ Crude oil;
+        <em>"Oil Products Tanker"</em> → ⛽ Refined petroleum; <em>"Chemical Tanker"</em> → ⚗️ Chemicals;
+        <em>"LNG Carrier"</em> → ❄️ LNG. When FtM has no type we fall back to AIS ship_type code 80–89.
+      </p>
+      <h4>Load status (loaded / partial / ballast)</h4>
+      <p>
+        Inferred from the AIS-broadcast current draught compared to typical thresholds for the vessel category:
+      </p>
+      <table>
+        <thead><tr><th>Category</th><th>Ballast (≤)</th><th>Loaded (≥)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>VLCC</strong></td><td class="num">11 m</td><td class="num">19 m</td></tr>
+          <tr><td><strong>Suezmax</strong></td><td class="num">9 m</td><td class="num">16 m</td></tr>
+          <tr><td><strong>Aframax / crude</strong></td><td class="num">8 m</td><td class="num">13 m</td></tr>
+          <tr><td><strong>Product tanker</strong></td><td class="num">5.5 m</td><td class="num">10 m</td></tr>
+          <tr><td><strong>Chemical tanker</strong></td><td class="num">5 m</td><td class="num">9.5 m</td></tr>
+          <tr><td><strong>LNG carrier</strong></td><td class="num">9 m</td><td class="num">11 m</td></tr>
+          <tr><td><strong>LPG carrier</strong></td><td class="num">6 m</td><td class="num">10 m</td></tr>
+        </tbody>
+      </table>
+      <p>Between thresholds = "partial" load. Reasoning is shown inline in the vessel detail.</p>
+      <h4>Destination decoding (UN/LOCODE)</h4>
+      <p>
+        AIS destination is a free-text 5-character UN/LOCODE (e.g. <code>RUULU</code> = Russia / Ust-Luga). We curate ~110
+        codes covering Russian / Iranian / Venezuelan oil exports, STS hubs, major Chinese / Indian refineries, and global
+        commercial ports. Compound destinations like <code>RULED&gt;EGSUZ</code> are split into origin / destination.
+        Phrases like <em>"FOR ORDERS"</em> or <em>"OPL"</em> are tagged with their tactical meaning (awaiting routing,
+        off-port-limits anchored — both common shadow-fleet patterns).
+      </p>
+    </section>
+
+    <section id="aliases">
+      <h2>10. Identity</h2>
+      <h3 class="title">Aliases &amp; previous names</h3>
+      <p>
+        Frequent vessel-name changes are a textbook shadow-fleet operational pattern — they break tracker continuity and
+        let operators escape stale-data sanctions screening. Two sources of historical names:
+      </p>
+      <ul>
+        <li><strong>OpenSanctions FtM <code>name</code> array</strong> — every alias the upstream list publishers ever recorded,
+          deduplicated by entity ID. The vessel's current AIS-broadcast name is filtered out, leaving prior names.</li>
+        <li><strong>Wikidata SPARQL <code>P458</code></strong> — querying the vessel by IMO returns the Wikidata-canonical
+          name, which often differs from both AIS and FtM. Useful for vessels with Wikipedia articles (Eagle S, Vezhen, etc.).</li>
+      </ul>
+      <p>
+        The vessel detail panel shows the union of both, with FtM's free-text <code>notes</code> block surfaced separately
+        (it often contains explicit <em>"Previous names include…"</em> text from the underlying sanction-package PDF).
+      </p>
+      <div class="callout info">
+        <strong>Worked example.</strong> The vessel currently broadcasting as <code>CELT</code> (IMO 9299692) has FtM aliases
+        <em>"CALLISTO"</em> and <em>"Callisto"</em>; Wikidata records the same hull as <em>"NS Concord"</em>. Three documented
+        names on one IMO is not unusual for sanctioned tonnage.
+      </div>
+    </section>
+
+    <section id="references">
+      <h2>11. Pivots</h2>
+      <h3 class="title">External references</h3>
+      <p>
+        Each vessel detail panel includes 14 deep-links to public reference sources. We do not fetch the content (TOS-respecting);
+        we just generate the URL so a researcher gets one-click access:
+      </p>
+      <table>
+        <thead><tr><th>Source</th><th>Use case</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ShipSpotting</strong></td><td>Community vessel-photo galleries indexed by IMO</td></tr>
+          <tr><td><strong>VesselFinder</strong></td><td>Public vessel profile + photos</td></tr>
+          <tr><td><strong>MarineTraffic</strong></td><td>Public AIS track + photos page</td></tr>
+          <tr><td><strong>Equasis</strong></td><td>Authoritative vessel registry (free login required)</td></tr>
+          <tr><td><strong>Wikipedia / Wikidata</strong></td><td>Article search and structured entity record</td></tr>
+          <tr><td><strong>Lloyd's List</strong></td><td>Maritime news search (mostly paywalled)</td></tr>
+          <tr><td><strong>OpenSanctions</strong></td><td>Direct sanctions record by IMO</td></tr>
+          <tr><td><strong>Google Images</strong></td><td>Catch-all photo search by name + IMO</td></tr>
+          <tr><td><strong>Bellingcat</strong></td><td>Investigative journalism archive</td></tr>
+          <tr><td><strong>OCCRP</strong></td><td>Organized Crime &amp; Corruption Reporting Project archive</td></tr>
+          <tr><td><strong>X / Twitter</strong></td><td>Live OSINT chatter (Tanker Trackers, Defmon3, KSE crew, etc.)</td></tr>
+          <tr><td><strong>EU Sanctions</strong></td><td>EU consolidated XML sanctions feed</td></tr>
+          <tr><td><strong>UK OFSI</strong></td><td>HM Treasury direct sanctions search</td></tr>
+        </tbody>
+      </table>
+      <p>The same panel also surfaces GDELT 2.0 news mentions (last 3 months) inline when GDELT is reachable.</p>
+    </section>
+
+    <section id="endpoints">
+      <h2>12. Bulk</h2>
+      <h3 class="title">Researcher endpoints</h3>
+      <p>
+        For journalists, NGOs, and compliance researchers, the tool exposes structured endpoints with CSV export.
+        Everything is reproducible from raw AIS + sanctions data — no closed-source enrichment.
+      </p>
+      <h4>Bulk feeds</h4>
+      <span class="endpoint"><span class="verb">GET</span> /api/sanctioned-active?range=24h&amp;lists=ru&amp;format=csv</span>
+      <p>Currently visible sanctioned tankers with risk score, programmes, last position. Filters: <code>range</code>, <code>lists</code> (ofac, eu, uk, ua, ru, iran).</p>
+      <span class="endpoint"><span class="verb">GET</span> /api/sts-events?range=24h&amp;format=csv</span>
+      <p>Discrete STS events (clustered candidates) with start/end, duration, min distance, observation count, zone tag.</p>
+      <span class="endpoint"><span class="verb">GET</span> /api/newly-active?since_days=7&amp;sanctioned=true&amp;format=csv</span>
+      <p>Vessels first observed in <em>our</em> AIS feed in last N days. Tracks new tonnage appearing in a region.</p>
+      <span class="endpoint"><span class="verb">GET</span> /api/newly-listed?since_days=180&amp;ru=true&amp;format=csv</span>
+      <p>Vessels added to <em>OpenSanctions FtM</em> in last N days. Tracks designation cadence.</p>
+      <span class="endpoint"><span class="verb">GET</span> /api/advanced-filter?min_risk=60&amp;russia=true&amp;in_zone=true&amp;dark_min=120&amp;format=csv</span>
+      <p>Combine criteria. Example query: <em>"All Russia/Ukraine-linked vessels with risk ≥ 60 currently dark for &gt;2h inside a suspect zone"</em>.</p>
+      <h4>Aggregate analytics</h4>
+      <span class="endpoint"><span class="verb">GET</span> /api/fleet-stats?range=24h</span>
+      <p>Flag distribution, build-year buckets, top owners by visible fleet, programme overlaps, zone-dwell minutes.</p>
+      <span class="endpoint"><span class="verb">GET</span> /api/owner-fleet-activity/:entityId?range=7d</span>
+      <p>Time-bucketed AIS activity for all vessels owned by a single entity (e.g. Sovcomflot, NITC).</p>
+      <h4>Compliance bulk-screening</h4>
+      <span class="endpoint"><span class="verb post">POST</span> /api/batch-screen <span class="cap">(up to 1,000 IMOs/request, JSON body)</span></span>
+      <p>Returns sanction status, sources, programmes, RU/UA flag, OS-canonical name (reveals aliases),
+        AIS-broadcast name, and "currently visible" flag for each input IMO.</p>
+      <h4>Single-vessel deep dive</h4>
+      <span class="endpoint"><span class="verb">GET</span> /api/vessel/:imo?range=24h</span>
+      <span class="endpoint"><span class="verb">GET</span> /api/vessel/:imo/ownership</span>
+      <span class="endpoint"><span class="verb">GET</span> /api/vessel/:imo/portcalls</span>
+      <span class="endpoint"><span class="verb">GET</span> /api/vessel/:imo/news</span>
+      <span class="endpoint"><span class="verb">GET</span> /api/vessel/:imo/wiki</span>
+      <h4>Geographic context</h4>
+      <span class="endpoint"><span class="verb">GET</span> /api/zones</span>
+      <span class="endpoint"><span class="verb">GET</span> /api/timeline?range=24h&amp;lists=ru</span>
+    </section>
+
+    <section id="limitations">
+      <h2>13. Caveats</h2>
+      <h3 class="title">Limitations &amp; known issues</h3>
+      <ul>
+        <li><strong>Position history depth</strong> is bounded by how long the ingestor has been running. Long-range views
+          (7d / 30d / all) become meaningful only after the ingestor has been collecting for that length of time.</li>
+        <li><strong>Geographic coverage</strong> is limited to the four configured AIS bounding boxes. Vessels operating
+          outside these will not be tracked.</li>
+        <li><strong>GDELT availability</strong> is best-effort. The endpoint may be unreachable from some networks.
+          When it fails we display a graceful empty state and serve previous successful results from cache for 1h.</li>
+        <li><strong>Wikidata coverage</strong> is sparse — most random tankers are not in Wikidata. Famous vessels
+          (Eagle S, Vezhen, NS Champion) are.</li>
+        <li><strong>Free-text owners</strong> in OpenSanctions metadata are not graphable.</li>
+        <li><strong>Vessel name collisions</strong> exist — common names like <em>FORTUNE</em> or <em>HALCYON</em> match many
+          vessels. Always verify by IMO.</li>
+        <li><strong>Sanctions de-listings</strong> are not pulled in real time; reload OpenSanctions weekly.</li>
+        <li><strong>STS detection</strong> is proximity-based, not SAR-confirmed. Treat as triage; use the Sentinel-1
+          deep-link to verify when needed.</li>
+        <li><strong>Cargo inference</strong> (load status from draught) is heuristic. Real tonnage requires commercial feeds.</li>
+        <li><strong>Risk score weights</strong> are heuristic and will be tuned against operator feedback.
+          They are not derived from a backtested model.</li>
+        <li><strong>Newly-listed</strong> uses <code>OpenSanctions.createdAt</code>, which is when OS first ingested the entity —
+          a close proxy for "newly designated" but not exactly the same.</li>
+        <li><strong>Port-call inference</strong> from AIS positions assumes vessels broadcast continuously while inside ports.
+          Vessels that go AIS-dark on approach will not register a port call here.</li>
+      </ul>
+    </section>
+
+    <section id="refresh">
+      <h2>14. Operations</h2>
+      <h3 class="title">Refresh cadence &amp; corrections</h3>
+      <table>
+        <thead><tr><th>Source</th><th>Refresh mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>AIS positions</td><td>Continuous WebSocket; auto-reconnect with watchdog (silent &gt;30 s ⇒ restart)</td></tr>
+          <tr><td>OFAC SDN</td><td><code>bun run load-sanctions</code> — CSV download + parse + upsert. Recommended weekly.</td></tr>
+          <tr><td>OpenSanctions Maritime</td><td><code>bun run load-opensanctions</code> — same pattern. Weekly.</td></tr>
+          <tr><td>OpenSanctions FtM (graph)</td><td><code>bun run load-ownership</code> — 321 MB stream-ingest, ~15 s. Weekly.</td></tr>
+          <tr><td>GDELT</td><td>On-demand per vessel; 1 h in-memory cache.</td></tr>
+          <tr><td>Wikidata</td><td>On-demand per vessel; 1 h in-memory cache.</td></tr>
+        </tbody>
+      </table>
+      <p>
+        If you find a vessel mis-classified, an entity link that is wrong, or an STS event that is provably not an STS,
+        please send the IMO number, time range, and a description of the issue. Corrections are applied at source where
+        possible (i.e., upstream to OpenSanctions or OFAC) — this tool does not maintain a private vessel registry.
+      </p>
+      <p style="margin-top: 24px; color: var(--text-2); font-size: 12px;">
+        Methodology v2 — last revised when the cargo / aliases / external-references / researcher-endpoints layer landed.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Built as a research / journalism aid. No commercial licence is implied; respect upstream terms.
+    Issues, corrections and questions: contact via the project repository.
+  </footer>
+</body>
+</html>
