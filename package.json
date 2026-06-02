@@ -11,6 +11,7 @@
     "load-opensanctions": "bun run packages/api/src/cli/load-opensanctions.ts",
     "load-ownership": "bun run packages/api/src/cli/load-ownership.ts",
     "load-war-sanctions": "bun run packages/api/src/cli/load-war-sanctions.ts",
+    "load-crea": "bun run packages/api/src/cli/load-crea.ts",
     "load-psc": "bun run packages/api/src/cli/load-psc.ts",
     "load-cases": "bun run packages/api/src/cli/load-cases.ts",
     "test": "node --test packages/api/src/*.test.ts",

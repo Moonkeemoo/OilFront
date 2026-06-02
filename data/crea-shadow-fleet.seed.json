@@ -1,0 +1,76 @@
+{
+  "_comment": "SYNTHETIC example seed for the CREA shadow-fleet revenue/insurance layer. Values are illustrative, NOT real CREA estimates. IMOs are real vessels currently broadcasting in this DB so the panel renders on a clickable on-map vessel. Replace with a real CREA export: bun run load-crea path/to/crea.json. Schema per packages/api/src/cli/load-crea.ts.",
+  "source": "CREA Russia Fossil Tracker (synthetic seed)",
+  "vessels": [
+    {
+      "imo": 8915550,
+      "vessel_name": "NOYABRSK",
+      "shadow_fleet": true,
+      "insurer": "Unknown / non-IG",
+      "insurer_country": "Russia",
+      "pi_club": "none (no IG P&I cover found)",
+      "price_cap_compliant": false,
+      "voyages": 14,
+      "est_revenue_usd": 612000000,
+      "main_destination": "India",
+      "last_voyage_on": "2026-05-20",
+      "source_url": "https://www.russiafossiltracker.com/"
+    },
+    {
+      "imo": 9227443,
+      "vessel_name": "ARLAN",
+      "shadow_fleet": true,
+      "insurer": "Opaque",
+      "insurer_country": "unknown",
+      "pi_club": "none (no IG P&I cover found)",
+      "price_cap_compliant": false,
+      "voyages": 9,
+      "est_revenue_usd": 388000000,
+      "main_destination": "China",
+      "last_voyage_on": "2026-05-12",
+      "source_url": "https://www.russiafossiltracker.com/"
+    },
+    {
+      "imo": 9247376,
+      "vessel_name": "MARIEL",
+      "shadow_fleet": true,
+      "insurer": "Unknown / non-IG",
+      "insurer_country": "Russia",
+      "pi_club": "none (no IG P&I cover found)",
+      "price_cap_compliant": false,
+      "voyages": 11,
+      "est_revenue_usd": 470000000,
+      "main_destination": "Turkey",
+      "last_voyage_on": "2026-05-28",
+      "source_url": "https://www.russiafossiltracker.com/"
+    },
+    {
+      "imo": 9250543,
+      "vessel_name": "INVICTA",
+      "shadow_fleet": true,
+      "insurer": "Opaque",
+      "insurer_country": "unknown",
+      "pi_club": "none (no IG P&I cover found)",
+      "price_cap_compliant": false,
+      "voyages": 7,
+      "est_revenue_usd": 244000000,
+      "main_destination": "India",
+      "last_voyage_on": "2026-04-30",
+      "source_url": "https://www.russiafossiltracker.com/"
+    },
+    {
+      "imo": 9155418,
+      "vessel_name": "VALENTINA",
+      "shadow_fleet": true,
+      "insurer": "Western IG club",
+      "insurer_country": "United Kingdom",
+      "pi_club": "Standard Club (IG)",
+      "price_cap_compliant": true,
+      "voyages": 5,
+      "est_revenue_usd": 121000000,
+      "main_destination": "Greece",
+      "last_voyage_on": "2026-05-03",
+      "source_url": "https://www.russiafossiltracker.com/"
+    }
+  ]
+}

@@ -101,15 +101,15 @@ const SANCTIONED_COUNTRIES = ["ru", "ir", "kp", "by", "sy", "ve"];
 // They may be absent on databases provisioned before that migration, so every
 // query that touches them is guarded by this one-time, cached existence check —
 // keeping the API fully backward-compatible.
-let _reconTables: { psc: boolean; cases: boolean } | null = null;
-async function reconTables(): Promise<{ psc: boolean; cases: boolean }> {
+let _reconTables: { psc: boolean; cases: boolean; crea: boolean } | null = null;
+async function reconTables(): Promise<{ psc: boolean; cases: boolean; crea: boolean }> {
   if (_reconTables) return _reconTables;
-  if (!sql) return { psc: false, cases: false };
+  if (!sql) return { psc: false, cases: false, crea: false };
   try {
-    const r = await sql`SELECT to_regclass('public.psc_detentions') AS psc, to_regclass('public.known_cases') AS cases`;
-    _reconTables = { psc: !!r[0]?.psc, cases: !!r[0]?.cases };
+    const r = await sql`SELECT to_regclass('public.psc_detentions') AS psc, to_regclass('public.known_cases') AS cases, to_regclass('public.crea_vessels') AS crea`;
+    _reconTables = { psc: !!r[0]?.psc, cases: !!r[0]?.cases, crea: !!r[0]?.crea };
   } catch {
-    _reconTables = { psc: false, cases: false };
+    _reconTables = { psc: false, cases: false, crea: false };
   }
   return _reconTables;
 }
@@ -517,6 +517,17 @@ async function handleVesselDetail(imoStr: string, req?: Request): Promise<Respon
       ORDER BY published_on DESC NULLS LAST LIMIT 20
     `;
   }
+  // CREA shadow-fleet revenue & insurance signals (guarded — table optional).
+  let crea: Record<string, unknown> | null = null;
+  if (recon.crea) {
+    const creaRows = await sql`
+      SELECT imo::text, vessel_name, shadow_fleet, insurer, insurer_country, pi_club,
+             price_cap_compliant, voyages, est_revenue_usd::text, main_destination,
+             last_voyage_on, source_url
+      FROM crea_vessels WHERE imo = ${imo} LIMIT 1
+    `;
+    crea = creaRows[0] ?? null;
+  }
   const pscDetainedRecently = pscDetentions.some((d) => {
     const on = d.detained_on ? new Date(d.detained_on as string).getTime() : 0;
     return on > 0 && (Date.now() - on) / (1000 * 60 * 60 * 24) <= 730; // 24 months
@@ -571,6 +582,7 @@ async function handleVesselDetail(imoStr: string, req?: Request): Promise<Respon
     },
     psc: pscDetentions,
     cases: knownCases,
+    crea,
   });
 }
 
