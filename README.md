@@ -154,6 +154,9 @@ bun run load-sanctions          # OFAC SDN CSV — ~1,500 vessels, ~10 s
 bun run load-opensanctions      # OpenSanctions Maritime — ~14k vessels, ~30 s
 bun run load-ownership          # OpenSanctions FtM JSON — 321 MB stream, ~20 s
                                 # → 248k entities, 11k Ownership/Director/etc. relations
+bun run load-war-sanctions      # GUR Defence-Intelligence "War & Sanctions" — ~32 MB, ~4 s
+                                # → 1.4k vessels + ~5.8k masters/officers + owners/managers,
+                                #   merged into the same ownership graph (dataset ua_war_sanctions)
 ```
 
 Total downloads ≈ 350 MB. After this you have ~9k unique sanctioned IMOs in the DB,
@@ -318,6 +321,7 @@ These overwrite previous entries (ON CONFLICT UPDATE) so it's safe to run anytim
 | `bun run load-sanctions` | (Re-)load OFAC SDN |
 | `bun run load-opensanctions` | (Re-)load OpenSanctions Maritime |
 | `bun run load-ownership` | (Re-)load OpenSanctions FtM graph |
+| `bun run load-war-sanctions` | (Re-)load GUR "War & Sanctions" graph (vessels + masters + owners) via the daily `ua_war_sanctions` OpenSanctions mirror |
 | `bun run load-psc` | (Re-)load Port State Control detentions |
 | `bun run load-cases` | (Re-)load documented investigative cases |
 | `bun run test` | Run the risk-scoring unit tests (Node) |
@@ -367,6 +371,7 @@ All free, license-compatible with non-commercial / journalistic use:
 | [OFAC SDN](https://www.treasury.gov/ofac/downloads/sdn.csv) | U.S. sanctioned vessels | Public domain (USG) |
 | [OpenSanctions Maritime](https://www.opensanctions.org/datasets/maritime/) | Aggregated sanctions + detentions (50+ source lists) | [CC-BY-NC-4.0 + commercial tier](https://www.opensanctions.org/licensing/) |
 | [OpenSanctions FtM](https://www.opensanctions.org/datasets/sanctions/) | Follow-the-Money entity graph | Same |
+| [GUR War & Sanctions](https://war-sanctions.gur.gov.ua/en) (via [OpenSanctions `ua_war_sanctions`](https://www.opensanctions.org/datasets/ua_war_sanctions/)) | Ukrainian Defence-Intelligence shadow-fleet list: vessels, masters, owners/managers | CC-BY-NC-4.0 (mirror) |
 | [GDELT 2.0 Doc API](https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/) | News article search | Free |
 | [Wikidata SPARQL](https://query.wikidata.org/) | Per-IMO entity / Wikipedia / image | CC0 |
 | [Copernicus Browser](https://browser.dataspace.copernicus.eu/) | Sentinel-1 SAR (deep-link only, no fetch) | ESA terms |
