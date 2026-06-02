@@ -171,6 +171,7 @@ exports before drawing conclusions.
 ```bash
 bun run load-psc                # Port State Control detentions (Paris/Tokyo MoU) → data/psc-detentions.seed.json
 bun run load-cases              # Documented investigations (KSE/CREA/UANI/OCCRP) → data/known-cases.seed.json
+bun run load-crea               # CREA shadow-fleet revenue + P&I-insurance per IMO → data/crea-shadow-fleet.seed.json
 ```
 
 - **PSC detentions** — Paris MoU and Tokyo MoU publish public "current detentions"
@@ -324,6 +325,7 @@ These overwrite previous entries (ON CONFLICT UPDATE) so it's safe to run anytim
 | `bun run load-war-sanctions` | (Re-)load GUR "War & Sanctions" graph (vessels + masters + owners) via the daily `ua_war_sanctions` OpenSanctions mirror |
 | `bun run load-psc` | (Re-)load Port State Control detentions |
 | `bun run load-cases` | (Re-)load documented investigative cases |
+| `bun run load-crea` | (Re-)load CREA shadow-fleet revenue + P&I-insurance signals |
 | `bun run test` | Run the risk-scoring unit tests (Node) |
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
 | `bun run db:psql` | Open a `psql` shell into the DB |

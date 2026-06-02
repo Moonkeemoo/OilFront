@@ -1453,6 +1453,29 @@
         </div>`;
       }
 
+      // CREA — Russian-oil revenue & insurance (recon source: russiafossiltracker.com)
+      const crea = data.crea;
+      if (crea) {
+        const rev = crea.est_revenue_usd != null ? Number(crea.est_revenue_usd) : null;
+        const revFmt = rev == null ? null : (rev >= 1e9 ? "$" + (rev / 1e9).toFixed(2) + "B" : "$" + Math.round(rev / 1e6) + "M");
+        const uninsured = crea.pi_club && /none|no ig|unknown|opaque/i.test(String(crea.pi_club));
+        const capBad = crea.price_cap_compliant === false;
+        const accent = (uninsured || capBad) ? "var(--c-red)" : "var(--good, #38c172)";
+        html += `<div class="section" style="background: linear-gradient(180deg, ${accent}14, transparent); border-left: 3px solid ${accent};">
+          <h3>🛢️ CREA · Russian-oil revenue &amp; insurance</h3>
+          <div style="font-size: 10px; color: var(--c-muted); margin-bottom: 6px;">Shadow-fleet revenue &amp; P&amp;I-insurance signals (CREA Russia Fossil Tracker).</div>
+          ${crea.shadow_fleet ? '<div style="margin: 2px 0 8px; padding: 5px 9px; background: rgba(255,77,106,0.13); border-left: 3px solid var(--c-red); border-radius: 4px; font-size: 11px; color: #ff6b7a; font-weight: 600;">Classified shadow fleet</div>' : ""}
+          ${revFmt ? `<div class="row"><span class="label">Est. revenue carried</span><span class="value" style="color:${accent};font-weight:700;">${revFmt}</span></div>` : ""}
+          ${crea.voyages != null ? `<div class="row"><span class="label">Voyages</span><span class="value">${crea.voyages}</span></div>` : ""}
+          ${crea.main_destination ? `<div class="row"><span class="label">Main buyer</span><span class="value">${escapeHtml(crea.main_destination)}</span></div>` : ""}
+          ${crea.insurer_country ? `<div class="row"><span class="label">Insurer country</span><span class="value"${/russia|unknown/i.test(String(crea.insurer_country)) ? ` style="color:var(--c-red);"` : ""}>${escapeHtml(crea.insurer_country)}</span></div>` : ""}
+          ${crea.pi_club ? `<div class="row"><span class="label">P&amp;I cover</span><span class="value"${uninsured ? ` style="color:var(--c-red);"` : ""}>${escapeHtml(crea.pi_club)}</span></div>` : ""}
+          ${crea.price_cap_compliant != null ? `<div class="row"><span class="label">Price-cap</span><span class="value" style="color:${capBad ? "var(--c-red)" : "var(--good,#38c172)"};font-weight:600;">${capBad ? "VIOLATION" : "compliant"}</span></div>` : ""}
+          ${crea.last_voyage_on ? `<div class="row"><span class="label">Last voyage</span><span class="value">${new Date(crea.last_voyage_on).toLocaleDateString()}</span></div>` : ""}
+          ${crea.source_url ? `<div class="row" style="margin-top:4px;"><span class="label">Source</span><span class="value"><a href="${escapeHtml(crea.source_url)}" target="_blank" rel="noopener" style="color:var(--c-blue);text-decoration:none;">↗ CREA</a></span></div>` : ""}
+        </div>`;
+      }
+
       // Vessel info — AIS + FtM enrichment
       const pastFlags = Array.isArray(v.past_flags) ? v.past_flags : [];
       const previousNames = Array.isArray(v.previous_names) ? v.previous_names : [];
