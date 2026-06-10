@@ -1244,19 +1244,37 @@
       document.getElementById("p-sub").textContent = `${INFRA_KIND_LABELS[o.kind] || o.kind}${o.region ? " · " + o.region : ""}`;
       const c = INFRA_COLORS[o.kind] || "#e0a458";
       const damaged = o.status === "damaged";
+
+      // Profile
       let html = `<div class="section" style="border-left: 3px solid ${c};">
-        <h3>🏭 ${escapeHtml(INFRA_KIND_LABELS[o.kind] || o.kind)}</h3>
+        <h3>🏭 Profile</h3>
+        <div class="row"><span class="label">Type</span><span class="value">${escapeHtml(INFRA_KIND_LABELS[o.kind] || o.kind)}</span></div>
         ${o.name_local ? `<div class="row"><span class="label">Local name</span><span class="value">${escapeHtml(o.name_local)}</span></div>` : ""}
-        ${o.owner ? `<div class="row"><span class="label">Owner</span><span class="value">${escapeHtml(o.owner)}</span></div>` : ""}
-        ${o.operator ? `<div class="row"><span class="label">Operator</span><span class="value">${escapeHtml(o.operator)}</span></div>` : ""}
-        ${o.capacity_mt_yr != null ? `<div class="row"><span class="label">Capacity</span><span class="value">${fmtNum(o.capacity_mt_yr)} Mt/yr${o.capacity_bbl_d ? ` · ${fmtNum(o.capacity_bbl_d)} bbl/d` : ""}</span></div>` : ""}
-        ${o.storage_m3 != null ? `<div class="row"><span class="label">Storage</span><span class="value">${fmtNum(o.storage_m3)} m³</span></div>` : ""}
-        ${o.throughput_mt_yr != null ? `<div class="row"><span class="label">Throughput</span><span class="value">${fmtNum(o.throughput_mt_yr)} Mt/yr</span></div>` : ""}
+        ${o.region ? `<div class="row"><span class="label">Region</span><span class="value">${escapeHtml(o.region)}</span></div>` : ""}
+        ${o.lat != null && o.lon != null ? `<div class="row"><span class="label">Coordinates</span><span class="value">${o.lat.toFixed(3)}, ${o.lon.toFixed(3)}</span></div>` : ""}
         ${o.commodity ? `<div class="row"><span class="label">Commodity</span><span class="value">${escapeHtml(o.commodity)}</span></div>` : ""}
         <div class="row"><span class="label">Status</span><span class="value" style="color:${damaged ? "var(--c-red)" : "var(--text-1)"};font-weight:${damaged ? "700" : "400"};">${escapeHtml(o.status || "unknown")}</span></div>
-        ${o.notes ? `<div style="font-size:11px;color:var(--text-1);line-height:1.45;margin-top:6px;">${escapeHtml(o.notes)}</div>` : ""}
-        <div style="margin-top:8px;">${sourceLinks(o.source_urls)}</div>
       </div>`;
+
+      // Capacity & scale — only when at least one metric is present
+      if (o.capacity_mt_yr != null || o.storage_m3 != null || o.throughput_mt_yr != null) {
+        html += `<div class="section">
+          <h3>📊 Capacity</h3>
+          ${o.capacity_mt_yr != null ? `<div class="row"><span class="label">Refining capacity</span><span class="value">${fmtNum(o.capacity_mt_yr)} Mt/yr${o.capacity_bbl_d ? ` · ${fmtNum(o.capacity_bbl_d)} bbl/d` : ""}</span></div>` : ""}
+          ${o.storage_m3 != null ? `<div class="row"><span class="label">Storage</span><span class="value">${fmtNum(o.storage_m3)} m³</span></div>` : ""}
+          ${o.throughput_mt_yr != null ? `<div class="row"><span class="label">Throughput</span><span class="value">${fmtNum(o.throughput_mt_yr)} Mt/yr</span></div>` : ""}
+        </div>`;
+      }
+
+      // Ownership — only when known
+      if (o.owner || o.operator) {
+        html += `<div class="section">
+          <h3>🏢 Ownership</h3>
+          ${o.owner ? `<div class="row"><span class="label">Owner</span><span class="value">${escapeHtml(o.owner)}</span></div>` : ""}
+          ${o.operator ? `<div class="row"><span class="label">Operator</span><span class="value">${escapeHtml(o.operator)}</span></div>` : ""}
+        </div>`;
+      }
+
       const strikes = strikesByInfra.get(o.id) || [];
       if (strikes.length > 0) {
         html += `<div class="section" style="background: linear-gradient(180deg, rgba(255,71,87,0.10), transparent); border-left: 3px solid var(--c-red);">
@@ -1269,7 +1287,21 @@
             </div>`).join("")}
         </div>`;
       }
-      html += `<div class="section"><div style="font-size:10px;color:var(--c-muted);">Reference layer — public sources (GEM CC BY, Wikipedia, CREA, OSM). Capacities vary between sources and over time; see methodology.</div></div>`;
+
+      // Notes — only when present
+      if (o.notes) {
+        html += `<div class="section">
+          <h3>📝 Notes</h3>
+          <div style="font-size:11px;color:var(--text-1);line-height:1.45;">${escapeHtml(o.notes)}</div>
+        </div>`;
+      }
+
+      // Sources + provenance
+      html += `<div class="section">
+        <h3>🔗 Sources</h3>
+        <div>${sourceLinks(o.source_urls)}</div>
+        <div style="margin-top:8px;font-size:10px;color:var(--c-muted);">Reference layer — public sources (GEM CC BY, Wikipedia, CREA, OSM). Capacities vary between sources and over time; see methodology.</div>
+      </div>`;
       document.getElementById("p-body").innerHTML = html;
     }
 
