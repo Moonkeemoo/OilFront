@@ -2,7 +2,7 @@
 // Pure module (no Bun/Postgres deps) — runnable with: node --test packages/api/src/infra-normalize.test.ts
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { normalizeInfra, normalizeAttack } from "./infra-normalize.ts";
+import { normalizeInfra, normalizeAttack, normalizeStrike } from "./infra-normalize.ts";
 
 const REFINERY = {
   id: "ryazan-refinery",
@@ -148,4 +148,32 @@ test("uav_strike (aerial drone) is a valid attack type", () => {
   const a = normalizeAttack({ ...ATTACK, attack_type: "uav_strike" });
   assert.ok(a);
   assert.equal(a.attack_type, "uav_strike");
+});
+
+const STRIKE = {
+  id: "2024-03-13-ryazan-refinery",
+  infra_id: "ryazan-refinery",
+  occurred_on: "2024-03-13",
+  weapon: "uav",
+  summary: "Drones struck the Ryazan refinery causing a fire in the primary unit.",
+  source_urls: ["https://www.reuters.com/example-ryazan"],
+};
+
+test("valid strike normalizes", () => {
+  const s = normalizeStrike(STRIKE);
+  assert.ok(s);
+  assert.equal(s.infra_id, "ryazan-refinery");
+  assert.equal(s.weapon, "uav");
+});
+
+test("strike without infra_id or sources is rejected", () => {
+  assert.equal(normalizeStrike({ ...STRIKE, infra_id: null }), null);
+  assert.equal(normalizeStrike({ ...STRIKE, source_urls: [] }), null);
+});
+
+test("strike with bad date is rejected, unknown weapon falls back", () => {
+  assert.equal(normalizeStrike({ ...STRIKE, occurred_on: "2024-13-45" }), null);
+  const s = normalizeStrike({ ...STRIKE, weapon: "ballista" });
+  assert.ok(s);
+  assert.equal(s.weapon, "unknown");
 });

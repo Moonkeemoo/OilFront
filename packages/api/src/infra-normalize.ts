@@ -25,6 +25,16 @@ export interface InfraRow {
   raw: Record<string, unknown>;
 }
 
+export interface StrikeRow {
+  id: string;
+  infra_id: string;
+  occurred_on: string;
+  weapon: "uav" | "missile" | "unknown";
+  summary: string | null;
+  source_urls: string[];
+  raw: Record<string, unknown>;
+}
+
 export interface AttackRow {
   id: string;
   occurred_on: string;
@@ -43,6 +53,7 @@ const INFRA_KINDS = new Set(["refinery", "depot", "terminal", "pipeline"]);
 const STATUSES = new Set(["operational", "damaged", "unknown"]);
 const ATTACK_TYPES = new Set(["usv_strike", "uav_strike", "limpet_mine", "port_strike", "explosion_unexplained"]);
 const PRECISIONS = new Set(["exact", "approx", "port"]);
+const WEAPONS = new Set(["uav", "missile", "unknown"]);
 
 function toStr(v: unknown): string | null {
   if (v === null || v === undefined) return null;
@@ -61,6 +72,15 @@ function toCoord(v: unknown, min: number, max: number): number | null {
   const n = toNum(v);
   if (n === null) return null;
   return n >= min && n <= max ? n : null;
+}
+
+/** YYYY-MM-DD that survives a UTC round-trip (rejects e.g. 2023-13-45), else null. */
+function toIsoDate(v: unknown): string | null {
+  const s = toStr(v);
+  if (!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
+  const d = new Date(s + "T00:00:00Z");
+  if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== s) return null;
+  return s;
 }
 
 function toUrls(v: unknown): string[] {
@@ -118,11 +138,8 @@ export function normalizeInfra(raw: Record<string, unknown>): InfraRow | null {
 
 export function normalizeAttack(raw: Record<string, unknown>): AttackRow | null {
   const id = toStr(raw.id);
-  const occurred_on = toStr(raw.occurred_on);
-  if (!id || !occurred_on || !/^\d{4}-\d{2}-\d{2}$/.test(occurred_on)) return null;
-  // Reject impossible calendar dates (e.g. 2023-13-45) via round-trip check.
-  const d = new Date(occurred_on + "T00:00:00Z");
-  if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== occurred_on) return null;
+  const occurred_on = toIsoDate(raw.occurred_on);
+  if (!id || !occurred_on) return null;
 
   const lat = toCoord(raw.lat, -90, 90);
   const lon = toCoord(raw.lon, -180, 180);
@@ -149,6 +166,31 @@ export function normalizeAttack(raw: Record<string, unknown>): AttackRow | null 
     lon,
     location_precision: location_precision as AttackRow["location_precision"],
     attack_type: attack_type as AttackRow["attack_type"],
+    summary: toStr(raw.summary),
+    source_urls,
+    raw,
+  };
+}
+
+export function normalizeStrike(raw: Record<string, unknown>): StrikeRow | null {
+  const id = toStr(raw.id);
+  const infra_id = toStr(raw.infra_id);
+  if (!id || !infra_id) return null;
+
+  const occurred_on = toIsoDate(raw.occurred_on);
+  if (!occurred_on) return null;
+
+  const source_urls = toUrls(raw.source_urls);
+  if (source_urls.length === 0) return null;
+
+  const weaponRaw = toStr(raw.weapon);
+  const weapon = weaponRaw && WEAPONS.has(weaponRaw) ? weaponRaw : "unknown";
+
+  return {
+    id,
+    infra_id,
+    occurred_on,
+    weapon: weapon as StrikeRow["weapon"],
     summary: toStr(raw.summary),
     source_urls,
     raw,

@@ -101,15 +101,15 @@ const SANCTIONED_COUNTRIES = ["ru", "ir", "kp", "by", "sy", "ve"];
 // They may be absent on databases provisioned before that migration, so every
 // query that touches them is guarded by this one-time, cached existence check —
 // keeping the API fully backward-compatible.
-let _reconTables: { psc: boolean; cases: boolean; crea: boolean; infra: boolean; attacks: boolean } | null = null;
-async function reconTables(): Promise<{ psc: boolean; cases: boolean; crea: boolean; infra: boolean; attacks: boolean }> {
+let _reconTables: { psc: boolean; cases: boolean; crea: boolean; infra: boolean; attacks: boolean; strikes: boolean } | null = null;
+async function reconTables(): Promise<{ psc: boolean; cases: boolean; crea: boolean; infra: boolean; attacks: boolean; strikes: boolean }> {
   if (_reconTables) return _reconTables;
-  if (!sql) return { psc: false, cases: false, crea: false, infra: false, attacks: false };
+  if (!sql) return { psc: false, cases: false, crea: false, infra: false, attacks: false, strikes: false };
   try {
-    const r = await sql`SELECT to_regclass('public.psc_detentions') AS psc, to_regclass('public.known_cases') AS cases, to_regclass('public.crea_vessels') AS crea, to_regclass('public.oil_infra') AS infra, to_regclass('public.tanker_attacks') AS attacks`;
-    _reconTables = { psc: !!r[0]?.psc, cases: !!r[0]?.cases, crea: !!r[0]?.crea, infra: !!r[0]?.infra, attacks: !!r[0]?.attacks };
+    const r = await sql`SELECT to_regclass('public.psc_detentions') AS psc, to_regclass('public.known_cases') AS cases, to_regclass('public.crea_vessels') AS crea, to_regclass('public.oil_infra') AS infra, to_regclass('public.tanker_attacks') AS attacks, to_regclass('public.infra_strikes') AS strikes`;
+    _reconTables = { psc: !!r[0]?.psc, cases: !!r[0]?.cases, crea: !!r[0]?.crea, infra: !!r[0]?.infra, attacks: !!r[0]?.attacks, strikes: !!r[0]?.strikes };
   } catch {
-    _reconTables = { psc: false, cases: false, crea: false, infra: false, attacks: false };
+    _reconTables = { psc: false, cases: false, crea: false, infra: false, attacks: false, strikes: false };
   }
   return _reconTables;
 }
@@ -1863,6 +1863,34 @@ async function handleAttacks(req: Request): Promise<Response> {
     ["occurred_on", "vessel_name", "imo", "attack_type", "lat", "lon", "location_precision", "summary", "source_urls"]);
 }
 
+// Ukrainian strikes on the oil facilities in oil_infra.
+// Optional filters: ?infra_id=ryazan-refinery  ?since=2024-01-01  ?format=csv
+async function handleInfraStrikes(req: Request): Promise<Response> {
+  if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
+  const recon = await reconTables();
+  if (!recon.strikes) {
+    return jsonResponse({ count: 0, results: [], note: "infra_strikes table absent — run db/migrate-add-infra-strikes.sql then bun run load-infra-strikes" });
+  }
+  const url = new URL(req.url);
+  const infraId = url.searchParams.get("infra_id");
+  const since = url.searchParams.get("since");
+  const sinceValid = since && /^\d{4}-\d{2}-\d{2}$/.test(since) ? since : null;
+
+  const rows = await sql`
+    SELECT id, infra_id, occurred_on, weapon, summary, source_urls
+    FROM infra_strikes
+    WHERE TRUE
+      ${infraId ? sql`AND infra_id = ${infraId}` : sql``}
+      ${sinceValid ? sql`AND occurred_on >= ${sinceValid}` : sql``}
+    ORDER BY occurred_on DESC
+    LIMIT 2000
+  `;
+
+  return maybeCsvOrJson(req, rows as unknown as Array<Record<string, unknown>>,
+    `infra-strikes-${new Date().toISOString().slice(0, 10)}.csv`,
+    ["occurred_on", "infra_id", "weapon", "summary", "source_urls"]);
+}
+
 async function handleDigest(): Promise<Response> {
   if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
 
@@ -1934,6 +1962,7 @@ const server = Bun.serve({
       if (url.pathname === "/api/zones")             return await withCache(req, 600_000, () => handleZones());
       if (url.pathname === "/api/infra")             return await withCache(req, 600_000, () => handleInfra(req));
       if (url.pathname === "/api/attacks")           return await withCache(req, 300_000, () => handleAttacks(req));
+      if (url.pathname === "/api/infra-strikes")     return await withCache(req, 600_000, () => handleInfraStrikes(req));
       if (url.pathname === "/api/cases")             return await withCache(req, 300_000, () => handleCases(req));
       if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());
       if (url.pathname === "/api/timeline")          return await withCache(req, 30_000, () => handleTimeline(req));
