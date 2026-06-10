@@ -1,4 +1,4 @@
-<img width="2549" height="1197" alt="Screenshot 2026-05-08 at 10 11 00" src="https://github.com/user-attachments/assets/e845451a-e613-4fa3-8ef3-38dc472369c2" />
+![OilFront — live map: sanctioned tankers, Russian oil infrastructure, pipelines and strike data](docs/screenshots/oilfront-live-map.png)
 
 # OilFront
 
@@ -21,12 +21,16 @@ research. (Formerly “Shadow Fleet Tracker”.)
 
 - **Live map** of sanctioned tankers (Leaflet) — risk-coded markers, suspect-zone overlay,
   STS event markers, click-to-detail side panel.
-- **Oil-infrastructure layer** — Russian refineries, depots, export terminals and trunk
-  pipelines with capacity/owner cards and per-record source links (`/api/infra`); struck
-  facilities carry a per-event strike history (`/api/infra-strikes`).
-- **Tanker-attacks layer** — Russia-linked attacks on tankers 2022–2026 (USV strikes,
-  limpet mines, port strikes) with incident cards; linked to vessel panels by IMO
-  (`/api/attacks`, CSV export).
+- **Oil-infrastructure layer** — 81 objects: Russian refineries, depots, export terminals
+  and trunk pipelines (Druzhba, BTS, ESPO, CPC…) with structured profile cards
+  (capacity / ownership / sources) and per-record source links (`/api/infra`).
+- **Strike history** — 256 research-verified Ukrainian strike events on 58 of those
+  facilities (2022–2026): struck facilities get a red marker badge, a strike counter
+  in the tooltip, and a numbered per-event history (date, weapon, damage, sources)
+  in the profile card (`/api/infra-strikes`, CSV export).
+- **Tanker-attacks layer** — 38 Russia-linked attacks on tankers 2022–2026 (naval- and
+  aerial-drone strikes, limpet mines, port strikes, unexplained explosions) with
+  incident cards; linked to vessel panels by IMO (`/api/attacks`, CSV export).
 - **Vessel detail** — risk score with factor breakdown, sanctions sources/programmes,
   cargo type + load status (loaded / partial / ballast) inferred from draught,
   decoded UN/LOCODE destination, FtM ownership graph (vis-network), 24h track + AIS
@@ -55,6 +59,11 @@ documentation.
 External:
   AISStream WS  ·  Treasury OFAC SDN  ·  OpenSanctions Maritime + FtM
   GDELT 2.0     ·  Wikidata SPARQL    ·  Sentinel-1 SAR (deep-links only)
+
+Curated datasets (in this repo, research-verified, every record cited):
+  data/oil-infra.json       81 facilities + pipeline geometries (GEM / Wikipedia / OSM)
+  data/infra-strikes.json   256 strike events on 58 facilities (press, fact-checked)
+  data/tanker-attacks.json  38 Russia-linked tanker attacks (press, fact-checked)
 
 Local services:
   ingestor (Bun)  →  Postgres 16 + TimescaleDB
@@ -146,6 +155,16 @@ manually for the ownership-graph layer and TimescaleDB compression policies:
 ```bash
 docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-add-entities.sql
 docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-compression-retention.sql
+```
+
+The remaining migrations (`migrate-add-recon.sql`, `migrate-add-infra.sql`,
+`migrate-add-infra-strikes.sql`) are optional to run here — their loaders create the
+same tables on first run:
+
+```bash
+docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-add-recon.sql
+docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-add-infra.sql
+docker exec -i shadow-postgres psql -U shadow -d shadow < db/migrate-add-infra-strikes.sql
 ```
 
 Verify TimescaleDB policies got attached:
@@ -325,10 +344,14 @@ bun run load-infra-strikes   # strike events on infra objects (data/infra-strike
 **Want to start fresh / reset all data**
 > ```bash
 > bun run db:down
+> docker volume rm shadow-fleet-tracker-_shadow-postgres-data 2>/dev/null
+> # orphaned volumes from earlier project names, if still around:
 > docker volume rm polyscalp_shadow-postgres-data shipship_shadow-postgres-data 2>/dev/null
 > bun run db:up
 > # Re-apply migrations (step 4) + reload sanctions (step 5)
 > ```
+> The compose project name is pinned in `docker-compose.yml` (`name:`), so renaming
+> the checkout folder does not orphan the data volume.
 
 ---
 
@@ -349,7 +372,7 @@ bun run load-infra-strikes   # strike events on infra objects (data/infra-strike
 | `bun run load-infra` | (Re-)load oil-infrastructure reference layer (`data/oil-infra.json`) |
 | `bun run load-attacks` | (Re-)load tanker-attack incidents (`data/tanker-attacks.json`) |
 | `bun run load-infra-strikes` | (Re-)load strike events on infra objects (`data/infra-strikes.json`) |
-| `bun run test` | Run the risk-scoring unit tests (Node) |
+| `bun run test` | Run unit tests — risk scoring + dataset normalization (Node) |
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
 | `bun run db:psql` | Open a `psql` shell into the DB |
 | `bun run db:logs` | Tail Postgres container logs |
@@ -405,6 +428,12 @@ All free, license-compatible with non-commercial / journalistic use:
 | [Copernicus Browser](https://browser.dataspace.copernicus.eu/) | Sentinel-1 SAR (deep-link only, no fetch) | ESA terms |
 | [Paris MoU](https://www.parismou.org/detentions-banning/current-detentions) / [Tokyo MoU](https://www.tokyo-mou.org) | Port State Control detentions (operator export → `load-psc`) | Public |
 | [KSE Institute](https://kse.ua/russian-oil-tracker/) · [CREA](https://energyandcleanair.org/) · [UANI](https://www.unitedagainstnucleariran.com/) · OCCRP | Documented shadow-fleet cases (operator-curated → `load-cases`) | Public / research |
+| [Global Energy Monitor](https://globalenergymonitor.org/) — Global Oil Infrastructure Tracker | Refineries + pipeline routes/capacities for `data/oil-infra.json` | CC BY 4.0 |
+| Wikipedia / Wikidata · [OpenStreetMap](https://www.openstreetmap.org/) | Infra cross-checks, local names, route geometry | CC BY-SA / CC0 · ODbL |
+| Press reports (Reuters / AP / BBC / FT / Kyiv Independent / Naval News …) | Strike events (`data/infra-strikes.json`) + tanker attacks (`data/tanker-attacks.json`) — every record carries its own source URLs | Public articles, linked per record |
+
+Provenance & QA for the curated datasets (verification methodology, dropped records,
+known gaps): [`docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md`](docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md).
 
 ### Data we deliberately do NOT use
 
@@ -430,8 +459,13 @@ No build step. No bundler. No SPA framework.
 ## Repo layout
 
 ```
+data/                   curated datasets (real, cited) + optional seed examples
+  oil-infra.json          81 facilities + pipeline geometries
+  infra-strikes.json      256 verified strike events on facilities
+  tanker-attacks.json     38 verified tanker-attack incidents
+  *.seed.json             synthetic examples for optional recon loaders
 db/                     SQL migrations
-docs/                   research artifacts + archived plan docs
+docs/                   research artifacts, specs/plans, data QA reports, screenshots
 packages/api/
   package.json
   src/
@@ -440,11 +474,12 @@ packages/api/
     ingestor.ts                            AIS WebSocket subscriber
     server.ts                              HTTP API + static serve
     risk.ts zones.ts ports.ts              domain logic
+    infra-normalize.ts                     dataset validation/normalization (unit-tested)
 web/
   index.html            live-map dashboard
   digest.html           daily aggregate page
   methodology.html      sources + scoring + limitations (full docs)
-docker-compose.yml      Postgres + TimescaleDB
+docker-compose.yml      Postgres + TimescaleDB (project name pinned)
 ```
 
 ---
