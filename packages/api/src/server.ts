@@ -517,6 +517,15 @@ async function handleVesselDetail(imoStr: string, req?: Request): Promise<Respon
       ORDER BY published_on DESC NULLS LAST LIMIT 20
     `;
   }
+  let vesselAttacks: Array<Record<string, unknown>> = [];
+  if (recon.attacks) {
+    vesselAttacks = await sql`
+      SELECT id, occurred_on, vessel_name, attack_type, lat, lon,
+             location_precision, summary, source_urls
+      FROM tanker_attacks WHERE imo = ${imo}
+      ORDER BY occurred_on DESC LIMIT 20
+    `;
+  }
   // CREA shadow-fleet revenue & insurance signals (guarded — table optional).
   let crea: Record<string, unknown> | null = null;
   if (recon.crea) {
@@ -582,6 +591,7 @@ async function handleVesselDetail(imoStr: string, req?: Request): Promise<Respon
     },
     psc: pscDetentions,
     cases: knownCases,
+    attacks: vesselAttacks,
     crea,
   });
 }
