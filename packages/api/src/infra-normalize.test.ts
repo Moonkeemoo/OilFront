@@ -143,3 +143,9 @@ test("float IMO truncates to integer", () => {
   assert.ok(a);
   assert.equal(a.imo, 9735335);
 });
+
+test("uav_strike (aerial drone) is a valid attack type", () => {
+  const a = normalizeAttack({ ...ATTACK, attack_type: "uav_strike" });
+  assert.ok(a);
+  assert.equal(a.attack_type, "uav_strike");
+});

@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS tanker_attacks (
   lat                REAL NOT NULL,
   lon                REAL NOT NULL,
   location_precision TEXT,                -- 'exact' | 'approx' | 'port'
-  attack_type        TEXT NOT NULL,       -- 'usv_strike' | 'limpet_mine' | 'port_strike' | 'explosion_unexplained'
+  attack_type        TEXT NOT NULL,       -- 'usv_strike' | 'uav_strike' | 'limpet_mine' | 'port_strike' | 'explosion_unexplained'
   summary            TEXT,
   source_urls        TEXT[],
   raw                JSONB,

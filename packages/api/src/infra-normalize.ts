@@ -33,7 +33,7 @@ export interface AttackRow {
   lat: number;
   lon: number;
   location_precision: "exact" | "approx" | "port";
-  attack_type: "usv_strike" | "limpet_mine" | "port_strike" | "explosion_unexplained";
+  attack_type: "usv_strike" | "uav_strike" | "limpet_mine" | "port_strike" | "explosion_unexplained";
   summary: string | null;
   source_urls: string[];
   raw: Record<string, unknown>;
@@ -41,7 +41,7 @@ export interface AttackRow {
 
 const INFRA_KINDS = new Set(["refinery", "depot", "terminal", "pipeline"]);
 const STATUSES = new Set(["operational", "damaged", "unknown"]);
-const ATTACK_TYPES = new Set(["usv_strike", "limpet_mine", "port_strike", "explosion_unexplained"]);
+const ATTACK_TYPES = new Set(["usv_strike", "uav_strike", "limpet_mine", "port_strike", "explosion_unexplained"]);
 const PRECISIONS = new Set(["exact", "approx", "port"]);
 
 function toStr(v: unknown): string | null {
