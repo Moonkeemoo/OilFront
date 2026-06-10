@@ -276,6 +276,7 @@
         <li><a href="#aliases">Aliases &amp; previous names</a></li>
         <li><a href="#references">External references</a></li>
         <li><a href="#endpoints">Researcher endpoints</a></li>
+        <li><a href="#infra-attacks">Oil infrastructure &amp; tanker-attack layers</a></li>
         <li><a href="#limitations">Limitations &amp; caveats</a></li>
         <li><a href="#refresh">Refresh cadence &amp; corrections</a></li>
       </ol>
@@ -347,6 +348,30 @@
             <td>Per-IMO lookup (P458 = IMO ship number) returning Wikipedia article URL, Wikimedia Commons image, build year, flag country. Reveals historical names not always in FtM.</td>
             <td>Free, public SPARQL endpoint with rate-limit etiquette.</td>
             <td>On-demand per vessel; 1h cache</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://globalenergymonitor.org/projects/global-oil-infrastructure-tracker/" target="_blank">Global Energy Monitor — Global Oil Infrastructure Tracker</a></strong></td>
+            <td>Refineries, pipelines (locations, capacities, routes).</td>
+            <td>CC BY 4.0 (public)</td>
+            <td>Manual, quarterly</td>
+          </tr>
+          <tr>
+            <td><strong>Wikipedia / Wikidata</strong></td>
+            <td>Refinery &amp; terminal cross-checks, local names.</td>
+            <td>CC BY-SA / CC0</td>
+            <td>Manual, quarterly</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a></strong></td>
+            <td>Pipeline route geometry cross-checks.</td>
+            <td>ODbL</td>
+            <td>Manual, quarterly</td>
+          </tr>
+          <tr>
+            <td><strong>Press reports (Reuters / AP / BBC / FT / Kyiv Independent / Naval News …)</strong></td>
+            <td>Tanker-attack incidents.</td>
+            <td>Public articles, linked per record</td>
+            <td>Manual, ongoing curation</td>
           </tr>
         </tbody>
       </table>
@@ -687,8 +712,29 @@
       <span class="endpoint"><span class="verb">GET</span> /api/timeline?range=24h&amp;lists=ru</span>
     </section>
 
+    <section id="infra-attacks">
+      <h2>13. Layers</h2>
+      <h3 class="title">Oil infrastructure &amp; tanker-attack layers</h3>
+      <p>Two static reference layers add land-side context to the live vessel picture.</p>
+      <ul>
+        <li><strong>Infra</strong> — Russian oil refineries, major depots/tank farms, marine export terminals and trunk pipelines (simplified routes). Compiled from Global Energy Monitor (CC BY 4.0), Wikipedia/Wikidata, CREA publications and OpenStreetMap. Every record carries its source links, visible in the object card.</li>
+        <li><strong>Attacks</strong> — Russia-linked attacks on tankers 2022–2026: Ukrainian naval-drone strikes, limpet-mine attacks, strikes hitting tankers inside Russian ports, and unexplained explosions on shadow-fleet vessels. Each incident requires ≥2 independent sources or one authoritative source (Reuters/AP/BBC/FT/official statements). Incidents with a known IMO link to the vessel detail panel.</li>
+      </ul>
+      <div class="callout warning">
+        <strong>Caveats.</strong> At-sea incident coordinates are approximate (press-derived) and flagged as such per record.
+        Refinery capacities differ between sources and change over time — values are indicative, not authoritative.
+        Facility status (operational/damaged) changes faster than this dataset; treat it as a snapshot, not live state.
+        The incident list is curated, not exhaustive. Pipeline routes are simplified for journalistic context, not engineering precision.
+      </div>
+      <p>
+        Datasets ship as <code>data/oil-infra.json</code> and <code>data/tanker-attacks.json</code> (real, cited records).
+        Bulk access: <code>/api/infra</code>, <code>/api/attacks?format=csv</code>.
+        Provenance &amp; QA detail: <code>docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md</code>.
+      </p>
+    </section>
+
     <section id="limitations">
-      <h2>13. Caveats</h2>
+      <h2>14. Caveats</h2>
       <h3 class="title">Limitations &amp; known issues</h3>
       <ul>
         <li><strong>Position history depth</strong> is bounded by how long the ingestor has been running. Long-range views
@@ -716,7 +762,7 @@
     </section>
 
     <section id="refresh">
-      <h2>14. Operations</h2>
+      <h2>15. Operations</h2>
       <h3 class="title">Refresh cadence &amp; corrections</h3>
       <table>
         <thead><tr><th>Source</th><th>Refresh mechanism</th></tr></thead>
@@ -727,6 +773,8 @@
           <tr><td>OpenSanctions FtM (graph)</td><td><code>bun run load-ownership</code> — 321 MB stream-ingest, ~15 s. Weekly.</td></tr>
           <tr><td>GDELT</td><td>On-demand per vessel; 1 h in-memory cache.</td></tr>
           <tr><td>Wikidata</td><td>On-demand per vessel; 1 h in-memory cache.</td></tr>
+          <tr><td>Oil infrastructure</td><td>Manual reload, quarterly (<code>bun run load-infra</code>).</td></tr>
+          <tr><td>Tanker attacks</td><td>Manual reload, ongoing curation (<code>bun run load-attacks</code>).</td></tr>
         </tbody>
       </table>
       <p>
