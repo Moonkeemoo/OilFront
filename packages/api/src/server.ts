@@ -101,15 +101,15 @@ const SANCTIONED_COUNTRIES = ["ru", "ir", "kp", "by", "sy", "ve"];
 // They may be absent on databases provisioned before that migration, so every
 // query that touches them is guarded by this one-time, cached existence check —
 // keeping the API fully backward-compatible.
-let _reconTables: { psc: boolean; cases: boolean; crea: boolean } | null = null;
-async function reconTables(): Promise<{ psc: boolean; cases: boolean; crea: boolean }> {
+let _reconTables: { psc: boolean; cases: boolean; crea: boolean; infra: boolean; attacks: boolean } | null = null;
+async function reconTables(): Promise<{ psc: boolean; cases: boolean; crea: boolean; infra: boolean; attacks: boolean }> {
   if (_reconTables) return _reconTables;
-  if (!sql) return { psc: false, cases: false, crea: false };
+  if (!sql) return { psc: false, cases: false, crea: false, infra: false, attacks: false };
   try {
-    const r = await sql`SELECT to_regclass('public.psc_detentions') AS psc, to_regclass('public.known_cases') AS cases, to_regclass('public.crea_vessels') AS crea`;
-    _reconTables = { psc: !!r[0]?.psc, cases: !!r[0]?.cases, crea: !!r[0]?.crea };
+    const r = await sql`SELECT to_regclass('public.psc_detentions') AS psc, to_regclass('public.known_cases') AS cases, to_regclass('public.crea_vessels') AS crea, to_regclass('public.oil_infra') AS infra, to_regclass('public.tanker_attacks') AS attacks`;
+    _reconTables = { psc: !!r[0]?.psc, cases: !!r[0]?.cases, crea: !!r[0]?.crea, infra: !!r[0]?.infra, attacks: !!r[0]?.attacks };
   } catch {
-    _reconTables = { psc: false, cases: false, crea: false };
+    _reconTables = { psc: false, cases: false, crea: false, infra: false, attacks: false };
   }
   return _reconTables;
 }
@@ -517,6 +517,15 @@ async function handleVesselDetail(imoStr: string, req?: Request): Promise<Respon
       ORDER BY published_on DESC NULLS LAST LIMIT 20
     `;
   }
+  let vesselAttacks: Array<Record<string, unknown>> = [];
+  if (recon.attacks) {
+    vesselAttacks = await sql`
+      SELECT id, occurred_on, vessel_name, attack_type, lat, lon,
+             location_precision, summary, source_urls
+      FROM tanker_attacks WHERE imo = ${imo}
+      ORDER BY occurred_on DESC LIMIT 20
+    `;
+  }
   // CREA shadow-fleet revenue & insurance signals (guarded — table optional).
   let crea: Record<string, unknown> | null = null;
   if (recon.crea) {
@@ -582,6 +591,7 @@ async function handleVesselDetail(imoStr: string, req?: Request): Promise<Respon
     },
     psc: pscDetentions,
     cases: knownCases,
+    attacks: vesselAttacks,
     crea,
   });
 }
@@ -1798,6 +1808,61 @@ async function handleCases(req: Request): Promise<Response> {
   return jsonResponse({ count: rows.length, results: rows });
 }
 
+// Oil-infrastructure reference layer (refineries / depots / terminals / pipelines).
+// Optional filter: ?kind=refinery  ?kind=pipeline
+async function handleInfra(req: Request): Promise<Response> {
+  if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
+  const recon = await reconTables();
+  if (!recon.infra) {
+    return jsonResponse({ count: 0, objects: [], note: "oil_infra table absent — run db/migrate-add-infra.sql then bun run load-infra" });
+  }
+  const url = new URL(req.url);
+  const kind = url.searchParams.get("kind");
+
+  const rows = await sql`
+    SELECT id, kind, name, name_local, lat, lon, geometry, commodity,
+           capacity_mt_yr, capacity_bbl_d, storage_m3, throughput_mt_yr,
+           owner, operator, region, status, notes, source_urls
+    FROM oil_infra
+    WHERE TRUE
+      ${kind ? sql`AND kind = ${kind}` : sql``}
+    ORDER BY kind, name
+    LIMIT 1000
+  `;
+  return jsonResponse({ count: rows.length, objects: rows });
+}
+
+// Russia-linked tanker-attack incidents.
+// Optional filters: ?since=2024-01-01  ?imo=9735335  ?format=csv
+// (?since instead of the usual ?range — incidents span 2022-2026 while
+//  parseRange caps at 90 days.)
+async function handleAttacks(req: Request): Promise<Response> {
+  if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
+  const recon = await reconTables();
+  if (!recon.attacks) {
+    return jsonResponse({ count: 0, results: [], note: "tanker_attacks table absent — run db/migrate-add-infra.sql then bun run load-attacks" });
+  }
+  const url = new URL(req.url);
+  const since = url.searchParams.get("since");
+  const sinceValid = since && /^\d{4}-\d{2}-\d{2}$/.test(since) ? since : null;
+  const imo = parseInt(url.searchParams.get("imo") ?? "", 10);
+
+  const rows = await sql`
+    SELECT id, occurred_on, vessel_name, imo::text AS imo, lat, lon,
+           location_precision, attack_type, summary, source_urls
+    FROM tanker_attacks
+    WHERE TRUE
+      ${sinceValid ? sql`AND occurred_on >= ${sinceValid}` : sql``}
+      ${Number.isFinite(imo) ? sql`AND imo = ${imo}` : sql``}
+    ORDER BY occurred_on DESC
+    LIMIT 500
+  `;
+
+  return maybeCsvOrJson(req, rows as unknown as Array<Record<string, unknown>>,
+    `tanker-attacks-${new Date().toISOString().slice(0, 10)}.csv`,
+    ["occurred_on", "vessel_name", "imo", "attack_type", "lat", "lon", "location_precision", "summary", "source_urls"]);
+}
+
 async function handleDigest(): Promise<Response> {
   if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
 
@@ -1867,6 +1932,8 @@ const server = Bun.serve({
       if (url.pathname === "/api/tankers-active")    return await withCache(req, 20_000, () => handleTankersActive());
       if (url.pathname === "/api/stats")             return await withCache(req, 30_000, () => handleStats());
       if (url.pathname === "/api/zones")             return await withCache(req, 600_000, () => handleZones());
+      if (url.pathname === "/api/infra")             return await withCache(req, 600_000, () => handleInfra(req));
+      if (url.pathname === "/api/attacks")           return await withCache(req, 300_000, () => handleAttacks(req));
       if (url.pathname === "/api/cases")             return await withCache(req, 300_000, () => handleCases(req));
       if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());
       if (url.pathname === "/api/timeline")          return await withCache(req, 30_000, () => handleTimeline(req));

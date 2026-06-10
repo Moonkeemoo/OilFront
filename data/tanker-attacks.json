@@ -1,0 +1,684 @@
+{
+  "attacks": [
+    {
+      "id": "2023-08-05-sig",
+      "occurred_on": "2023-08-05",
+      "vessel_name": "SIG",
+      "imo": 9735335,
+      "lat": 44.55,
+      "lon": 36.5,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Russian-flagged product tanker SIG (6,600 dwt), under US sanctions since 2019 for delivering jet fuel to Russian forces in Syria, was hit shortly before midnight on 4-5 August 2023 by a Ukrainian naval drone carrying about 450 kg of TNT, roughly 30 nautical miles south of the Kerch Strait near the approaches to Port Kavkaz. The blast holed the engine room at the waterline on the starboard side; the 11 crew were unhurt and the vessel stayed afloat. SBU sources said the strike was a joint SBU-Ukrainian Navy operation against a tanker carrying fuel for Russian troops.",
+      "source_urls": [
+        "https://www.nbcnews.com/news/world/russia-ukraine-war-drone-attack-tanker-navy-ship-crimea-black-sea-rcna98307",
+        "https://www.cnn.com/2023/08/05/europe/ukraine-sea-drone-attacks-intl/index.html",
+        "https://www.lloydslist.com/LL1146159/Sanctioned-Russian-tanker-hit-in-drone-attack-south-of-Kerch-strait",
+        "https://maritime-executive.com/article/ukraine-strikes-sanctioned-russian-tanker-with-drone-boat-attack",
+        "https://www.aljazeera.com/news/2023/8/5/russian-tanker-damaged-in-ukrainian-drone-attack-state-media-says",
+        "https://www.themoscowtimes.com/2023/08/05/russian-tanker-hit-by-ukrainian-drones-russian-media-a82064"
+      ]
+    },
+    {
+      "id": "2024-05-30-kavkaz-port-ferries",
+      "occurred_on": "2024-05-30",
+      "vessel_name": null,
+      "imo": null,
+      "lat": 45.377,
+      "lon": 36.588,
+      "location_precision": "approx",
+      "attack_type": "port_strike",
+      "summary": "Overnight Ukrainian ATACMS missile strikes on the Kerch ferry crossing damaged the rail ferries Avangard and Conro Trader on the Crimean side of the Kerch Strait (Kerch/Port Krym area, not Port Kavkaz): Avangard ran aground with breaches in its sides and four crew injured, while Conro Trader sustained lesser side and deck damage. A separate Ukrainian Neptune missile strike the following night targeted the oil terminal and ferry crossing at Port Kavkaz across the strait. Non-tanker: both vessels were railway ferries used to move fuel tank cars and ammunition trains across the Kerch Strait.",
+      "source_urls": [
+        "https://euromaidanpress.com/2024/05/30/media-two-russian-kerch-strait-ferries-damaged-in-last-nights-attack/",
+        "https://militarnyi.com/en/news/photos-of-damaged-russian-ferries-in-kerch-appeared/",
+        "https://www.pravda.com.ua/eng/news/2024/05/30/7458355/",
+        "https://kyivindependent.com/russia-claims-attack-on-crimea-ferries/",
+        "https://militarnyi.com/en/news/atacms-ballistic-missiles-target-kerch-ferry-crossing-general-staff-reveals/",
+        "https://maritime-executive.com/article/with-ferry-strikes-ukraine-narrows-russia-s-options-at-kerch-strait",
+        "https://euromaidanpress.com/2026/04/08/ukrainian-intelligence-called-it-the-last-russian-railway-ferry-in-the-kerch-strait-still-afloat-now-its-out-of-action-too/"
+      ]
+    },
+    {
+      "id": "2024-07-23-slavyanin-kavkaz",
+      "occurred_on": "2024-07-23",
+      "vessel_name": "Slavyanin",
+      "imo": null,
+      "lat": 45.337,
+      "lon": 36.669,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "Ukrainian drones struck and damaged the rail/ro-ro ferry Slavyanin at Port Kavkaz; UK Defence Intelligence assessed the strike would force Russia to move fuel via the Kerch Bridge. Non-tanker: the Slavyanin was the last railcar-capable ferry serving Russian fuel and munitions logistics to Crimea.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/07/25/7467367/",
+        "https://en.defence-ua.com/analysis/the_uk_defense_intelligence_analyzes_the_consequences_of_the_strike_on_russian_slavyanin_ferry-11292.html",
+        "https://militarnyi.com/en/news/ukrainian-forces-strike-russian-ferry-in-kavkaz-port/",
+        "https://militarnyi.com/en/news/ukrainian-drones-strike-russian-ferry-slavyanin-used-for-military-logistics/"
+      ]
+    },
+    {
+      "id": "2024-08-22-conro-trader-kavkaz",
+      "occurred_on": "2024-08-22",
+      "vessel_name": "Conro Trader",
+      "imo": null,
+      "lat": 45.337,
+      "lon": 36.669,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "The rail ferry Conro Trader, loaded with about 30 railway tank cars of fuel, was hit by a Ukrainian missile (reportedly a Neptune) and sank at Port Kavkaz; two crew were reported missing and the Ukrainian Navy confirmed the strike. Non-tanker: a railway ferry that was a key fuel-supply link to occupied Crimea.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/08/22/7471476/",
+        "https://www.twz.com/news-features/ship-full-of-fuel-train-cars-detonates-in-russian-port-ukrainian-neptune-missile-suspected",
+        "https://euromaidanpress.com/2024/08/22/fuel-laden-ferry-sinks-in-russian-port-after-alleged-ukrainian-strike-russian-media/"
+      ]
+    },
+    {
+      "id": "2024-12-23-ursa-major",
+      "occurred_on": "2024-12-23",
+      "vessel_name": "Ursa Major",
+      "imo": 9538892,
+      "lat": 36.4583,
+      "lon": -0.8907,
+      "location_precision": "exact",
+      "attack_type": "explosion_unexplained",
+      "summary": "Non-tanker: Russian state-owned cargo ship Ursa Major (Oboronlogistika, sanctioned by the US) sank in the western Mediterranean between Spain and Algeria after three explosions in the engine-room area; 14 of 16 crew were rescued and 2 went missing. The owner and a Russian Navy probe called it a terrorist attack; a Spanish investigation reportedly considered external causes including a rare torpedo type, and the ship was later reported to have carried hatches for an icebreaker (and, per 2026 reports, possibly nuclear reactor cargo for North Korea).",
+      "source_urls": [
+        "https://www.cnn.com/2024/12/24/europe/russia-cargo-ship-sinks-intl",
+        "https://www.themoscowtimes.com/2024/12/26/terrorist-attack-sank-russian-cargo-ship-in-mediterranean-owner-claims-a87458",
+        "https://www.themoscowtimes.com/2024/12/24/russia-says-cargo-ship-sank-in-mediterranean-after-explosion-2-crew-members-missing-a87439",
+        "https://www.cbsnews.com/news/russian-cargo-ship-sinks-in-the-mediterranean/",
+        "https://en.wikipedia.org/wiki/MV_Ursa_Major"
+      ]
+    },
+    {
+      "id": "2025-01-17-seacharm",
+      "occurred_on": "2025-01-17",
+      "vessel_name": "Seacharm",
+      "imo": 9773765,
+      "lat": 36.84,
+      "lon": 35.93,
+      "location_precision": "approx",
+      "attack_type": "limpet_mine",
+      "summary": "Marshall Islands-flagged, Thenamaris-managed aframax crude tanker Seacharm suffered a hull breach (about 3 feet) from an explosion near the Turkish oil port of Ceyhan after recently calling at a Russian port; recovered debris and security assessments (Ambrey cites two devices on 17 January) point to limpet mines. Reported dates range from mid- to late January 2025; the ship was repaired in Greece in about two to three weeks.",
+      "source_urls": [
+        "https://ambrey.com/ara210126i/",
+        "https://fortune.com/2025/02/20/oil-tankers-mystery-blasts-russia/",
+        "https://www.skuld.com/topics/port/port-news/europe/limpet-mines---the-new-maritime-threatscape/",
+        "https://www.kyivpost.com/post/47586",
+        "https://meduza.io/en/news/2025/02/20/three-tankers-damaged-by-explosions-in-the-mediterranean-after-recent-visits-to-russian-ports-reuters",
+        "https://www.usnews.com/news/world/articles/2025-02-19/three-tankers-damaged-by-blasts-in-mediterranean-in-the-last-month-causes-unknown-sources-say"
+      ]
+    },
+    {
+      "id": "2025-02-01-grace-ferrum",
+      "occurred_on": "2025-02-01",
+      "vessel_name": "Grace Ferrum",
+      "imo": 9667928,
+      "lat": 32.08,
+      "lon": 24.0,
+      "location_precision": "approx",
+      "attack_type": "explosion_unexplained",
+      "summary": "Liberia-flagged products tanker Grace Ferrum (Cyprus-managed, had recently called at Russian ports St Petersburg and Ust-Luga) was severely damaged by two explosions under the hull near the engine room while at anchor off Libya in early February 2025, left not under command and requiring salvage and over six months of downtime. Security firms Ambrey, Skuld and Dryad place the incident near Tobruk, while Lloyd's List reported it at Tripoli anchorage on 2 February; suspected limpet mines.",
+      "source_urls": [
+        "https://ambrey.com/ara210126i/",
+        "https://www.lloydslist.com/LL1154049/Fear-and-speculation-mount-after-another-tanker-is-hit-by-unexplained-blast",
+        "https://fortune.com/2025/02/20/oil-tankers-mystery-blasts-russia/",
+        "https://defenceweb.co.za/sea/sea-sea/suspected-limpet-mine-attacks-in-the-mediterranean-highlight-a-new-era-of-maritime-risk/",
+        "https://militarnyi.com/en/news/explosion-knocks-out-oil-tanker-approaching-russian-ports/",
+        "https://www.usnews.com/news/world/articles/2025-02-19/three-tankers-damaged-by-blasts-in-mediterranean-in-the-last-month-causes-unknown-sources-say"
+      ]
+    },
+    {
+      "id": "2025-02-09-koala-ust-luga",
+      "occurred_on": "2025-02-09",
+      "vessel_name": "Koala",
+      "imo": 9234642,
+      "lat": 59.676,
+      "lon": 28.415,
+      "location_precision": "port",
+      "attack_type": "explosion_unexplained",
+      "summary": "Antigua and Barbuda-flagged, Turkish-owned suezmax tanker Koala, laden with about 130,000 tonnes of fuel oil and on dark-fleet watchlists, was rocked by three engine-room explosions at berth in Russia's Baltic port of Ust-Luga around 02:00 on 9 February 2025 just before departure; the 24 crew evacuated safely and the stern settled on the seabed. Ambrey assessed the blasts were likely caused by limpet mines, with three hull holes including two of roughly 4x2 metres.",
+      "source_urls": [
+        "https://maritime-executive.com/article/blast-partially-sinks-tanker-at-russian-port-of-ust-luga",
+        "https://www.themoscowtimes.com/2025/02/09/russia-probes-explosion-on-oil-tanker-a87921",
+        "https://maritime-executive.com/article/ambrey-tanker-at-ust-luga-may-have-been-hit-with-limpet-mines",
+        "https://splash247.com/crew-evacuate-laden-suezmax-in-russia-after-engine-room-explosions/",
+        "https://www.lloydslist.com/LL1152520/Explosions-reported-on-dark-fleet-tanker"
+      ]
+    },
+    {
+      "id": "2025-02-14-seajewel-savona",
+      "occurred_on": "2025-02-14",
+      "vessel_name": "Seajewel",
+      "imo": 9388807,
+      "lat": 44.26,
+      "lon": 8.45,
+      "location_precision": "port",
+      "attack_type": "limpet_mine",
+      "summary": "Malta-flagged, Thenamaris-managed aframax Seajewel was holed below the waterline by two explosions on the night of 14-15 February 2025 while at the Savona-Vado anchorage in Italy discharging oil, after a recent Russian port call. Italian prosecutors in Genoa opened a terrorism investigation; investigators and security analysts attribute the blasts to limpet mines, suspected Soviet-era BPM-1/BPM-2 types. No injuries or spill were reported.",
+      "source_urls": [
+        "https://maritime-executive.com/article/italians-investigating-after-explosion-damages-greek-tanker-at-savona",
+        "https://www.lloydslist.com/LL1152657/Four-tanker-explosions-in-two-months-as-Seajewel-becomes-second-Thenamaris-tanker-hit",
+        "https://fortune.com/2025/02/20/oil-tankers-mystery-blasts-russia/",
+        "https://www.bairdmaritime.com/security/incidents/piracy/italy-opens-terrorism-probe-into-tanker-blasts",
+        "https://www.marineinsight.com/shipping-news/two-underwater-explosions-damage-oil-tanker-at-port-of-savona-probe-on/",
+        "https://www.usnews.com/news/world/articles/2025-02-20/italy-prosecutors-open-terrorism-probe-into-oil-tanker-explosion"
+      ]
+    },
+    {
+      "id": "2025-06-27-vilamoura",
+      "occurred_on": "2025-06-27",
+      "vessel_name": "Vilamoura",
+      "imo": 9529293,
+      "lat": 31.9,
+      "lon": 18.6,
+      "location_precision": "approx",
+      "attack_type": "explosion_unexplained",
+      "summary": "Marshall Islands-flagged suezmax Vilamoura (TMS Tankers/George Economou), carrying about 1 million barrels of crude loaded at Zuetina, Libya, suffered an engine-room explosion and flooding about 80-90 nm off the Libyan coast on 27 June 2025 and was towed to Greece; no injuries or pollution. The hull plating was warped inward, indicating an external device, and analysts assess a limpet mine likely attached during an earlier call linked to Russian ports (the ship had visited Ust-Luga and the CPC terminal near Novorossiysk in preceding months).",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-06-30/oil-tanker-being-towed-to-greece-following-explosion-near-libya",
+        "https://maritime-executive.com/article/explosion-reported-on-crude-tanker-off-the-coast-of-libya",
+        "https://www.kyivpost.com/post/55517",
+        "https://www.lloydslist.com/LL1154049/Fear-and-speculation-mount-after-another-tanker-is-hit-by-unexplained-blast",
+        "https://mcac.maryland.gov/2025/07/explosive-device-likely-damaged-greek-tanker-off-libya-last-week-operator-says/",
+        "https://libyaobserver.ly/news/operator-oil-tanker-vilamoura-reveals-cause-mysterious-explosion-libyan-coast"
+      ]
+    },
+    {
+      "id": "2025-07-06-eco-wizard-ust-luga",
+      "occurred_on": "2025-07-06",
+      "vessel_name": "Eco Wizard",
+      "imo": 9941568,
+      "lat": 59.66,
+      "lon": 28.39,
+      "location_precision": "port",
+      "attack_type": "explosion_unexplained",
+      "summary": "Marshall Islands-flagged LPG/ammonia carrier Eco Wizard (built 2024, linked to Greece's StealthGas), which had arrived from Antwerp, suffered two explosions about 10 minutes apart during loading at the EuroChem terminal in Ust-Luga, Russia, on 6 July 2025, causing hull breaches, listing and a minor ammonia leak; the 23 crew evacuated safely. Russian officials and analysts indicated external devices, consistent with the limpet-mine pattern; the ship was immobilized for months before being towed to Latvia. Non-oil-tanker note: gas (LPG/ammonia) carrier.",
+      "source_urls": [
+        "https://maritime-executive.com/article/blast-and-leak-reported-aboard-lpg-carrier-at-ust-luga-russia",
+        "https://kyivindependent.com/explosion-on-tanker-in-russian-port-sparks-investigation-06-2025/",
+        "https://splash247.com/russia-downplays-ammonia-leak-in-wake-of-stealthgas-tanker-blast-at-ust-luga/",
+        "https://www.france24.com/en/europe/20250715-what-we-know-mysterious-explosions-ships-russian-ports-calls",
+        "https://www.globenewswire.com/news-release/2025/12/16/3206231/9952/en/STEALTHGAS-INC-Provides-Update-in-Relation-to-Its-LPG-Carrier-Eco-Wizard.html"
+      ]
+    },
+    {
+      "id": "2025-07-16-pushpa-malta",
+      "occurred_on": "2025-07-16",
+      "vessel_name": "Pushpa",
+      "imo": 9332810,
+      "lat": 35.8,
+      "lon": 14.5,
+      "location_precision": "approx",
+      "attack_type": "explosion_unexplained",
+      "summary": "Sanctioned, flagless crude tanker Pushpa (ex-Kiwala, later renamed Boracay; EU/UK-sanctioned shadow-fleet vessel) reportedly suffered an explosion in the Mediterranean off Malta around 16 July 2025, shortly after calling at St. Petersburg, Russia. EOS Risk Group called it the eighth incident of its kind in months, with limpet mines among suspected causes; details remained scarce due to the vessel's dark-fleet operation.",
+      "source_urls": [
+        "https://safety4sea.com/sanctioned-tanker-suffers-explosion-after-russian-port-call/",
+        "https://cepa.org/article/bombs-on-board-the-strange-streak-of-russian-ship-explosions/",
+        "https://www.lloydslist.com/LL1154977/France-investigating-shadow-fleet-tanker-linked-to-Danish-drone-attacks",
+        "https://channel16.dryadglobal.com/suspected-limpet-mine-attacks-in-the-mediterranean-highlight-a-new-era-of-maritime-risk"
+      ]
+    },
+    {
+      "id": "2025-08-14-port-olya-4",
+      "occurred_on": "2025-08-14",
+      "vessel_name": "Port Olya-4",
+      "imo": 9481934,
+      "lat": 45.784,
+      "lon": 47.551,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "Ukrainian long-range aerial drones struck the Russian-flagged cargo ship Port Olya-4 inside the Caspian port of Olya near Astrakhan, leaving it partially submerged; Ukraine said the vessel carried Shahed drone components and ammunition from Iran. UK Defence Intelligence and satellite imagery confirmed the hit. Non-tanker: a general cargo ship on the Iran-Russia weapons supply route.",
+      "source_urls": [
+        "https://www.twz.com/air/ukraine-sinks-russian-cargo-ship-in-caspian-sea",
+        "https://en.defence-ua.com/analysis/uk_defense_intelligence_satellite_imagery_confirms_ukrainian_strike_on_russian_cargo_ship_in_the_caspian_sea-15570.html",
+        "https://splash247.com/ukraine-targets-caspian-port-in-strike-on-russian-drone-supply-chain/"
+      ]
+    },
+    {
+      "id": "2025-09-12-kusto-primorsk",
+      "occurred_on": "2025-09-12",
+      "vessel_name": "Kusto",
+      "imo": 9308833,
+      "lat": 60.336,
+      "lon": 28.716,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "During an SBU long-range drone attack on Primorsk, Russia's largest Baltic oil port, the shadow-fleet Aframax tanker Kusto was damaged and a fire broke out on a vessel in the port; loadings were suspended for the first time. The tanker Cai Yun was damaged in the same strike, which also hit a pumping station.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/13/7530694/",
+        "https://www.pravda.com.ua/eng/news/2025/09/12/7530501/",
+        "https://militarnyi.com/en/news/drones-attack-russia-s-largest-oil-port-fire-erupts-on-ship-at-primorsk/",
+        "https://www.spglobal.com/commodity-insights/en/news-research/latest-news/shipping/091225-ukrainian-drone-strike-sets-tanker-ablaze-in-first-attack-on-primorsk",
+        "https://gcaptain.com/ukrainian-drones-hit-key-russian-oil-port-for-the-first-time/"
+      ]
+    },
+    {
+      "id": "2025-09-12-cai-yun-primorsk",
+      "occurred_on": "2025-09-12",
+      "vessel_name": "Cai Yun",
+      "imo": 9437983,
+      "lat": 60.336,
+      "lon": 28.716,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "The shadow-fleet Aframax tanker Cai Yun was damaged at the Russian Baltic oil port of Primorsk in the same SBU drone attack of 12 September 2025 that hit the tanker Kusto and port pumping infrastructure, forcing Russia's largest Baltic crude terminal to suspend operations.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/13/7530694/",
+        "https://euromaidanpress.com/2025/09/13/ukrainian-drones-shutdown-of-russias-key-baltic-oil-terminal-for-first-time/",
+        "https://mezha.net/eng/bukvy/damage-to-russian-aframax-tankers-disrupts-oil-exports-at-primorsk-port/amp/"
+      ]
+    },
+    {
+      "id": "2025-11-02-tuapse-tanker",
+      "occurred_on": "2025-11-02",
+      "vessel_name": null,
+      "imo": null,
+      "lat": 44.094,
+      "lon": 39.077,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "A Ukrainian SBU drone attack on the Black Sea port of Tuapse set an oil tanker ablaze at the export terminal, damaging its deck superstructure, and wrecked loading piers; fuel exports and the adjacent Rosneft refinery were halted. Two people were killed in the wider attack on the town, according to local authorities.",
+      "source_urls": [
+        "https://www.usnews.com/news/world/articles/2025-11-01/ukrainian-drone-attack-damages-russias-tuapse-port-sparks-fire-russia-says",
+        "https://gcaptain.com/ukrainian-drone-attack-sets-oil-tanker-tuapse-port-infrastructure-ablaze/",
+        "https://kyivindependent.com/ukraine-reportedly-strikes-oil-terminal-in-russias-krasnodar-krai/",
+        "https://www.bloomberg.com/news/articles/2025-11-02/russian-oil-tanker-set-ablaze-in-drone-attack-on-black-sea-port"
+      ]
+    },
+    {
+      "id": "2025-11-10-tuapse-port",
+      "occurred_on": "2025-11-10",
+      "vessel_name": null,
+      "imo": null,
+      "lat": 44.096,
+      "lon": 39.072,
+      "location_precision": "port",
+      "attack_type": "usv_strike",
+      "summary": "Overnight on 9-10 November 2025 Ukrainian maritime drones attacked the harbor of Russia's Black Sea oil port of Tuapse; Russian regional authorities and OSINT analysts reported a naval drone detonating in the area of berth No. 167, with a vessel moored nearby - possibly a small product tanker - likely hit, while Russia claimed four naval drones were neutralized. It was the third attack on Tuapse in as many months and the oil terminal was reportedly shut down pending repairs. Note: tanker damage in this USV attack is OSINT-reported and unconfirmed (the earlier 2 November 2025 strike that set a tanker ablaze was by aerial drones).",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/10/8006631/",
+        "https://militarnyi.com/en/news/explosions-in-tuapse-port-drones-attack-berth-area-vessel-likely-hit/",
+        "https://maritime-executive.com/article/ukraine-hits-port-of-tuapse-for-a-third-time-in-long-range-strike",
+        "https://newsukraine.rbc.ua/news/marine-drones-attack-russia-s-tuapse-port-1762759257.html"
+      ]
+    },
+    {
+      "id": "2025-11-14-arlan-novorossiysk",
+      "occurred_on": "2025-11-14",
+      "vessel_name": "Arlan",
+      "imo": 9227443,
+      "lat": 44.703,
+      "lon": 37.823,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "During a major Ukrainian drone and Neptune missile strike on Novorossiysk's Sheskharis oil terminal, the UK/EU-sanctioned Sierra Leone-flagged Suezmax tanker Arlan was damaged at berth and three crew were injured. The attack damaged oil berths and halted exports from one of Russia's largest oil terminals for several days.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/11/14/major-ukrainian-drone-strike-halts-oil-deliveries-at-novorossiysk-terminal-a91122",
+        "https://maritime-executive.com/article/ukraine-takes-one-of-russia-s-largest-oil-terminals-offline",
+        "https://www.bairdmaritime.com/amp/story/security/naval/unmanned-naval-systems/ukrainian-drone-strike-hits-russian-novorossiysk-oil-hub-damaging-ship-and-depot",
+        "https://www.usnews.com/news/world/articles/2025-11-14/russias-black-sea-port-of-novorossiysk-suspends-oil-exports-after-ukrainian-drone-attack-sources-say"
+      ]
+    },
+    {
+      "id": "2025-11-27-mersin-dakar",
+      "occurred_on": "2025-11-27",
+      "vessel_name": "Mersin",
+      "imo": 9428683,
+      "lat": 14.65,
+      "lon": -17.45,
+      "location_precision": "approx",
+      "attack_type": "explosion_unexplained",
+      "summary": "Panama-flagged, Turkish-owned (Besiktas) products tanker Mersin, laden with about 39,000 tonnes of fuel and with a history of Russian port calls (Novorossiysk, Tuapse, Ust-Luga), was hit by four external explosions while at anchor off Dakar, Senegal, at about 23:45 UTC on 27 November 2025, flooding the engine room; all crew were evacuated unhurt. Senegalese investigators later said evidence showed the ship was deliberately attacked, with limpet mines widely suspected; no party claimed responsibility, with suspicion falling on Ukraine's campaign against Russia-linked tankers, and manager Besiktas subsequently ended its Russian business.",
+      "source_urls": [
+        "https://gcaptain.com/mersin-tanker-hit-by-external-explosions-off-senegal-ship-manager-confirms/",
+        "https://www.france24.com/en/europe/20251203-sinking-russia-s-shadow-fleet-has-the-ukraine-war-spread-to-senegal",
+        "https://www.themoscowtimes.com/2025/12/01/third-tanker-carrying-russian-oil-hit-by-explosions-a91295",
+        "https://www.dailysabah.com/business/energy/damaged-turkish-tanker-off-senegal-was-hit-by-4-explosions-manager",
+        "https://allafrica.com/stories/202601300003.html",
+        "https://www.bloomberg.com/news/articles/2025-12-01/oil-tanker-mersin-suffered-explosions-off-senegal-manager-says"
+      ]
+    },
+    {
+      "id": "2025-11-28-kairos",
+      "occurred_on": "2025-11-28",
+      "vessel_name": "Kairos",
+      "imo": 9236004,
+      "lat": 41.6,
+      "lon": 29.1,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Gambia-flagged Suezmax crude tanker Kairos (ex-Katiuska, 150,000 dwt), EU- and UK-sanctioned as part of Russia's shadow fleet, was struck by Ukrainian Sea Baby naval drones on the evening of 28 November 2025 about 28 nautical miles off the Turkish coast near the northern end of the Bosphorus while sailing in ballast toward Novorossiysk. The explosion set the tanker on fire and disabled it; all 25 crew were evacuated by the Turkish coastguard. The SBU and Ukrainian Navy claimed the joint operation.",
+      "source_urls": [
+        "https://maritime-executive.com/article/turkey-s-maritime-director-reports-explosions-on-two-sanctioned-tankers",
+        "https://www.navalnews.com/naval-news/2025/12/ukraine-strikes-russian-shadow-fleet-tankers-in-black-sea/",
+        "https://www.kyivpost.com/post/65230",
+        "https://militarnyi.com/en/news/ukrainian-sea-baby-naval-drones-hit-two-tankers-in-black-sea/",
+        "https://www.cbsnews.com/news/ukraine-targets-russia-shadow-fleet/"
+      ]
+    },
+    {
+      "id": "2025-11-28-virat",
+      "occurred_on": "2025-11-28",
+      "vessel_name": "Virat",
+      "imo": 9832559,
+      "lat": 41.75,
+      "lon": 30.2,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Gambia-flagged tanker Virat (115,000 dwt), US-, EU- and UK-sanctioned for transporting Russian oil, was hit by Ukrainian Sea Baby naval drones on the evening of 28 November 2025 about 35 nautical miles off the Turkish Black Sea coast, east of the Bosphorus, while heading in ballast to Novorossiysk; it was struck again the following morning with additional minor damage above the waterline. The vessel sustained starboard-side damage, engine-room smoke and minor fire but remained stable, and the crew were reported safe; it was later towed to Turkey, renamed Prometey and reflagged to Russia. The SBU and Ukrainian Navy claimed the operation against Russia's shadow fleet.",
+      "source_urls": [
+        "https://maritime-executive.com/article/turkey-s-maritime-director-reports-explosions-on-two-sanctioned-tankers",
+        "https://www.navalnews.com/naval-news/2025/12/ukraine-strikes-russian-shadow-fleet-tankers-in-black-sea/",
+        "https://www.kyivpost.com/post/65230",
+        "https://militarnyi.com/en/news/ukrainian-sea-baby-naval-drones-hit-two-tankers-in-black-sea/",
+        "https://www.themoscowtimes.com/2025/11/29/black-sea-tanker-that-sustained-blast-hit-again-a91283",
+        "https://en.usm.media/attacked-sanctioned-tanker-virat-enters-turkey-for-repairs-under-new-name-and-flag/"
+      ]
+    },
+    {
+      "id": "2025-12-02-midvolga-2",
+      "occurred_on": "2025-12-02",
+      "vessel_name": "Midvolga 2",
+      "imo": 9735139,
+      "lat": 43.3,
+      "lon": 35.2,
+      "location_precision": "approx",
+      "attack_type": "uav_strike",
+      "summary": "The Russian-flagged tanker Midvolga 2, carrying sunflower oil from Russia to Georgia, was hit by an aerial kamikaze drone (reported as an FP-1, not a surface drone) about 80 miles off Turkey's Black Sea coast, damaging the hull near the engine room and superstructure. Turkish authorities said the 13 crew were unharmed and the ship proceeded to Sinop under its own power; Ukraine's foreign ministry denied involvement.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2025/12/2/russian-tanker-struck-off-turkiye-as-ukraine-targets-shadow-fleet",
+        "https://www.themoscowtimes.com/2025/12/02/turkey-says-another-tanker-was-attacked-in-the-black-sea-a91300",
+        "https://maritime-executive.com/article/russia-reports-drone-attack-on-tanker-but-ukraine-denies-involvement"
+      ]
+    },
+    {
+      "id": "2025-12-10-dashan",
+      "occurred_on": "2025-12-10",
+      "vessel_name": "Dashan",
+      "imo": 9299666,
+      "lat": 43.6,
+      "lon": 35.4,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Comoros-flagged Suezmax crude tanker Dashan (ex-Eurochampion 2004/Mianzimu, 164,000 dwt), part of Russia's shadow fleet, was struck in the stern by SBU Sea Baby naval drones on 10 December 2025 in the Black Sea roughly 160 km south of occupied Feodosia, within Ukraine's exclusive economic zone, while running at full speed with its AIS off toward Novorossiysk. Ukrainian sources said the tanker, carrying petroleum products valued around $60 million, suffered critical damage and was disabled. The SBU and Ukrainian Navy conducted the operation jointly.",
+      "source_urls": [
+        "https://www.cnn.com/2025/12/10/europe/ukraine-strikes-russian-shadow-fleet-tanker-intl",
+        "https://www.pravda.com.ua/eng/news/2025/12/10/8011285/",
+        "https://euromaidanpress.com/2025/12/11/another-russian-shadow-fleet-tanker-wrecked-by-sea-baby-drones-in-the-black-sea/",
+        "https://maritime-executive.com/article/third-shadow-fleet-tanker-hit-by-suspected-ukrainian-drone-boat-attack",
+        "https://kyivindependent.com/ukraines-sbu-conducts-new-sea-baby-drone-strike-on-russian-shadow-fleet-tanker-in-black-sea-source-says/"
+      ]
+    },
+    {
+      "id": "2025-12-18-qendil",
+      "occurred_on": "2025-12-18",
+      "vessel_name": "Qendil",
+      "imo": 9310525,
+      "lat": 34.3,
+      "lon": 24.0,
+      "location_precision": "approx",
+      "attack_type": "uav_strike",
+      "summary": "The Oman-flagged, EU/UK-sanctioned Aframax Qendil, sailing empty from Sikka (India) to Ust-Luga, was hit overnight 18-19 December by Ukrainian aerial drones in the eastern Mediterranean between Crete and the Libyan coast - Ukraine's first claimed shadow-fleet strike in the Mediterranean. The SBU said the tanker sustained critical damage; it later grounded off Turkey. Attack was by long-range aerial drones, not surface drones.",
+      "source_urls": [
+        "https://www.euronews.com/2025/12/19/ukraine-strikes-russian-shadow-fleet-tanker-in-mediterranean",
+        "https://www.nbcnews.com/world/russia/ukraine-strikes-russian-shadow-fleet-tanker-mediterranean-rcna250101",
+        "https://gcaptain.com/shadow-fleet-tanker-qendil-runs-aground-in-turkey-following-ukrainian-drone-strike/",
+        "https://www.twz.com/news-features/ukraine-strikes-russia-linked-tanker-in-the-mediterranean-with-bomber-drone",
+        "https://www.themoscowtimes.com/2025/12/19/kyiv-claims-drone-strike-against-russian-shadow-fleet-tanker-in-mediterranean-a91489"
+      ]
+    },
+    {
+      "id": "2026-01-08-elbus",
+      "occurred_on": "2026-01-08",
+      "vessel_name": "Elbus",
+      "imo": 9290385,
+      "lat": 42.45,
+      "lon": 34.0,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Palau-flagged crude tanker Elbus, linked to Russia's shadow fleet and sailing from Singapore toward Novorossiysk, was hit on 8 January 2026 about 30 nautical miles off Turkey's Black Sea coast near Abana/Inebolu (Kastamonu province). The strike, assessed by Lloyd's List Intelligence and Turkish sources as an unmanned surface vessel attack, damaged the upper hull and engine-room area; the crew were unharmed and the tanker was towed to Inebolu for inspection. No party claimed responsibility, though the attack matched Ukraine's preceding USV strikes on shadow-fleet tankers.",
+      "source_urls": [
+        "https://www.navalnews.com/naval-news/2026/01/ukraine-hits-another-shadow-fleet-tanker-off-turkish-coast/",
+        "https://www.bloomberg.com/news/articles/2026-01-08/russia-linked-oil-tanker-attacked-in-the-black-sea-ntv-says",
+        "https://maritime-executive.com/article/shadow-fleet-tanker-diverts-to-turkey-after-reporting-drone-attack",
+        "https://www.theweek.in/news/maritime/2026/01/09/chinese-owned-oil-tanker-elbus-hit-by-drone-strike-en-route-to-russian-port-all-you-need-to-know.html",
+        "https://www.pravda.com.ua/eng/news/2026/01/08/8015214/"
+      ]
+    },
+    {
+      "id": "2026-03-03-arctic-metagaz",
+      "occurred_on": "2026-03-03",
+      "vessel_name": "Arctic Metagaz",
+      "imo": 9243148,
+      "lat": 35.9,
+      "lon": 15.6,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Russian-flagged LNG carrier Arctic Metagaz (non-tanker in the oil sense: gas carrier serving the sanctioned Arctic LNG 2 trade) was struck on 3 March 2026 (some reports say 4 March) about 50 nautical miles east of Malta while en route from Murmansk to Port Said with about 60,000 tonnes of LNG. An RFI investigation reported the engine room was hit by a Ukrainian Magura V5 unmanned surface drone launched from a base near Tripoli, Libya; explosions and fire left the gas-laden ship a drifting derelict off Libya for weeks, and all 30 crew were evacuated. Russia called it a Ukrainian attack; Kyiv did not comment.",
+      "source_urls": [
+        "https://www.euronews.com/2026/04/04/rfi-investigation-ukrainian-military-in-libya-and-the-strike-on-the-russian-gas-carrier-ar",
+        "https://www.cnn.com/2026/03/16/europe/arctic-metagaz-russian-fuel-tanker-italy-malta-intl",
+        "https://www.kyivpost.com/post/76817",
+        "https://en.wikipedia.org/wiki/Arctic_Metagaz",
+        "https://gcaptain.com/russian-lng-carrier-arctic-metagaz-reportedly-ablaze-off-malta-as-maritime-patrol-aircraft-circles/",
+        "https://www.thebarentsobserver.com/news/tanker-attacked-in-mediterranean-was-carrying-sanctioned-arctic-gas/446187"
+      ]
+    },
+    {
+      "id": "2026-03-13-avangard-kerch",
+      "occurred_on": "2026-03-13",
+      "vessel_name": "Avangard",
+      "imo": null,
+      "lat": 45.337,
+      "lon": 36.669,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "On the night of 13-14 March 2026, drones of Ukraine's military intelligence (HUR) Active Operations Department struck two Russian vessels on the Kerch Strait crossing, disabling the rail ferry Avangard and damaging the ferry Slavyanin. Non-tanker: railway ferries carrying fuel and military cargo between Port Kavkaz and occupied Kerch.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/04/08/ukrainian-intelligence-called-it-the-last-russian-railway-ferry-in-the-kerch-strait-still-afloat-now-its-out-of-action-too/",
+        "https://kyivindependent.com/ukraine-claims-successful-strike-on-2-russian-ships-ferrying-weapons/",
+        "https://maritime-executive.com/article/ukraine-claims-to-have-finished-off-russia-s-last-kerch-strait-ferry"
+      ]
+    },
+    {
+      "id": "2026-03-14-maran-homer",
+      "occurred_on": "2026-03-14",
+      "vessel_name": "Maran Homer",
+      "imo": 9761372,
+      "lat": 44.52,
+      "lon": 37.62,
+      "location_precision": "approx",
+      "attack_type": "explosion_unexplained",
+      "summary": "The Greek-flagged tanker Maran Homer (Maran Tankers / Angelicoussis group), waiting in ballast about 14 nautical miles off Novorossiysk to load Kazakh crude at the CPC terminal under Chevron charter, was damaged by a suspected drone or small projectile. All 24 crew were unharmed; no party claimed the attack.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-03-14/greek-oil-tanker-en-route-to-russia-attacked-in-black-sea",
+        "https://www.usnews.com/news/business/articles/2026-03-14/greek-oil-tanker-damaged-in-suspected-black-sea-drone-attack-as-wars-disrupt-global-shipping",
+        "https://greekreporter.com/2026/03/14/greek-tanker-attack-novorossiysk-black-sea/",
+        "https://maritime-executive.com/article/greek-operated-tanker-hit-by-unknown-assailants-near-cpc-terminal",
+        "https://www.hellenicshippingnews.com/announcement-by-maran-tankers-management-regarding-the-m-t-maran-homer/"
+      ]
+    },
+    {
+      "id": "2026-03-26-altura",
+      "occurred_on": "2026-03-26",
+      "vessel_name": "Altura",
+      "imo": 9292199,
+      "lat": 41.48,
+      "lon": 29.1,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Sierra Leone-flagged, Turkish-operated (Pergamon Maritime) Suezmax tanker Altura, EU/UK/Ukraine-sanctioned for carrying Russian oil, was hit by an unmanned surface vessel around 00:30 on 26 March 2026 some 14-18 nautical miles north of the Bosphorus, after leaving Novorossiysk with about 1 million barrels (140,000 tonnes) of crude. The blast damaged the bridge and engine room, which took on water, leaving the vessel immobilised; all 27 Turkish crew were unharmed. Turkey's transport minister attributed the strike to a naval drone; Ukraine did not claim it.",
+      "source_urls": [
+        "https://www.france24.com/en/europe/20260326-turkey-operated-tanker-carrying-russian-oil-struck-by-naval-drone-in-black-sea",
+        "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/03/26/naval-drone-strike-damages-turkish-operated-tanker-in-black-sea-crew-safe",
+        "https://www.themoscowtimes.com/2026/03/26/drone-hits-turkish-tanker-carrying-russian-oil-in-black-sea-a92343",
+        "https://euromaidanpress.com/2026/03/26/sanctioned-russian-shadow-fleet-tanker-struck-by-drone-in-black-sea/",
+        "https://www.bloomberg.com/news/articles/2026-03-26/turkish-oil-tanker-hit-by-drones-in-black-sea-near-istanbul"
+      ]
+    },
+    {
+      "id": "2026-04-06-slavyanin-kerch",
+      "occurred_on": "2026-04-06",
+      "vessel_name": "Slavyanin",
+      "imo": null,
+      "lat": 45.36,
+      "lon": 36.48,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "Ukrainian HUR drones struck the rail ferry Slavyanin overnight into 6 April 2026, putting out of action what Ukrainian intelligence called the last Russian railway ferry still afloat in the Kerch Strait, used to move fuel and military cargo to occupied Crimea. Non-tanker: railway ferry.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/04/08/8029253/",
+        "https://kyivindependent.com/ukraine-disables-last-ferry-in-kerch-strait-supporting-russian-forces-in-occupied-crimea-military-intelligence-says/",
+        "https://euromaidanpress.com/2026/04/08/ukrainian-intelligence-called-it-the-last-russian-railway-ferry-in-the-kerch-strait-still-afloat-now-its-out-of-action-too/"
+      ]
+    },
+    {
+      "id": "2026-04-29-marquise",
+      "occurred_on": "2026-04-29",
+      "vessel_name": "Marquise",
+      "imo": 9315745,
+      "lat": 42.8,
+      "lon": 40.9,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Two Ukrainian Navy kamikaze sea drones hit the Cameroon-flagged, multi-jurisdiction-sanctioned shadow-fleet tanker Marquise in the stern, around the propeller-rudder group and engine compartment, about 210 km southeast of Tuapse. The empty 184-metre tanker was drifting with AIS off, reportedly awaiting a ship-to-ship oil transfer; Ukraine's General Staff claimed the strike.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/04/29/sea-drones-hit-russian-shadow-fleets-tanker-as-it-waited-for-an-at-sea-oil-rendezvous-off-russias-black-sea-coast/",
+        "https://www.marineinsight.com/shipping-news/watch-ukrainian-sea-drones-disable-russias-shadow-fleet-tanker-in-black-sea/",
+        "https://kyivindependent.com/ukraine-hit-russias-sanctioned-oil-tanker-near-tuapse-general-staff-says/",
+        "https://www.ukrinform.net/rubric-ato/4117835-ukrainian-navy-unit-strikes-sanctioned-tanker-marquise.html",
+        "https://war-sanctions.gur.gov.ua/en/transport/shadow-fleet/1119"
+      ]
+    },
+    {
+      "id": "2026-05-03-novorossiysk-two-tankers",
+      "occurred_on": "2026-05-03",
+      "vessel_name": null,
+      "imo": null,
+      "lat": 44.65,
+      "lon": 37.83,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Ukrainian Navy and SBU naval drones struck two unnamed Russian shadow-fleet tankers at the entrance to Novorossiysk port, President Zelensky announced; thermal drone footage showed a strike on one tanker's stern. It was the second Ukrainian naval-drone operation against shadow-fleet tankers in five days; vessel names were not officially disclosed, though Ukrainian shipping outlet USM identified them as the Aqua Live and the Torx.",
+      "source_urls": [
+        "https://www.kyivpost.com/post/75296",
+        "https://kyivindependent.com/ukraine-targets-2-russian-shadow-fleet-vessels/",
+        "https://cyprus-mail.com/2026/05/03/ukraine-hits-two-shadow-fleet-tankers-near-russias-novorossiysk-port-zelenskiy-says",
+        "https://en.usm.media/drones-attacked-two-shadow-fleet-ships-near-novorossiysk-details-and-video/",
+        "https://maritime-executive.com/article/ukraine-hits-two-tankers-at-novorossiysk-and-three-vessels-at-primorsk"
+      ]
+    },
+    {
+      "id": "2026-05-03-primorsk-vessels",
+      "occurred_on": "2026-05-03",
+      "vessel_name": null,
+      "imo": null,
+      "lat": 60.336,
+      "lon": 28.716,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "During an overnight wave of Ukrainian long-range drone strikes on 3 May 2026, three vessels were hit at Russia's Baltic oil port of Primorsk: a Karakurt-class missile corvette, a patrol boat and an unnamed shadow-fleet oil tanker, President Zelensky announced, crediting the SBU, Unmanned Systems Forces, Special Operations Forces, HUR and border guard units. The strike also caused significant damage to the oil terminal's infrastructure, while the Leningrad regional governor said the fire was quickly extinguished with no oil spill. Vessel names and IMO numbers were not disclosed; the same operation separately hit two shadow-fleet tankers at the entrance to Novorossiysk (covered by record 2026-05-03-novorossiysk-two-tankers).",
+      "source_urls": [
+        "https://www.usnews.com/news/world/articles/2026-05-03/russias-primorsk-port-hit-as-ukraine-launches-wave-of-drone-strikes",
+        "https://maritime-executive.com/article/ukraine-hits-two-tankers-at-novorossiysk-and-three-vessels-at-primorsk",
+        "https://www.kyivpost.com/post/75320",
+        "https://united24media.com/war-in-ukraine/ukraine-hits-russian-karakurt-class-missile-ship-in-primorsk-port-18433",
+        "https://www.marineinsight.com/ukraine-strikes-primorsk-oil-terminal-damages-tankers-and-naval-ships-in-drone-attack/",
+        "https://www.freemalaysiatoday.com/category/world/2026/05/03/ukrainian-drones-hit-russias-primorsk-port-oil-tankers-military-ships"
+      ]
+    },
+    {
+      "id": "2026-05-25-arrhenius-ust-luga",
+      "occurred_on": "2026-05-25",
+      "vessel_name": "Arrhenius",
+      "imo": 9471032,
+      "lat": 59.676,
+      "lon": 28.408,
+      "location_precision": "port",
+      "attack_type": "limpet_mine",
+      "summary": "Foiled attack, no explosion: Russia's FSB announced on 25 May 2026 that divers had found two magnetic limpet mines (about 7 kg of explosive each) attached near the engine room of the Liberia-flagged LPG tanker Arrhenius, which arrived at Ust-Luga on 20 May from Antwerp to load LPG for Turkey; the mines were neutralized. Russia's Investigative Committee claimed the factory-made naval mines were manufactured in a NATO country and were planted outside Russian waters; no independent confirmation of attribution.",
+      "source_urls": [
+        "https://maritime-executive.com/article/russia-finds-two-mines-attached-to-hull-of-lpg-carrier-arriving-at-ust-luga",
+        "https://www.usnews.com/news/world/articles/2026-05-25/russia-says-magnetic-mines-found-on-tanker-at-ust-luga-port",
+        "https://www.themoscowtimes.com/2026/05/25/explosives-found-on-lpg-tanker-docked-at-ust-luga-port-fsb-says-a92838",
+        "https://meduza.io/en/news/2026/05/25/fsb-says-ship-arriving-at-russian-port-from-belgium-was-found-to-have-sea-mines-attached-to-its-hull",
+        "https://gcaptain.com/mines-on-lpg-tanker-point-to-dangerous-new-front-in-baltic-war/"
+      ]
+    },
+    {
+      "id": "2026-05-28-james-ii",
+      "occurred_on": "2026-05-28",
+      "vessel_name": "James II",
+      "imo": 9253909,
+      "lat": 42.0,
+      "lon": 29.1,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Shadow-fleet crude tanker James II (Indian-managed, UK-sanctioned, reported Palau flag though the registry said it had been deflagged), sailing in ballast, was struck by an unmanned surface vessel on 28 May 2026 about 50 miles north of Turkey's Turkeli area near the Bosphorus entrance, in one of three near-simultaneous USV attacks on Russia-linked tankers that night. Its AIS status changed to 'not under command' suggesting engine damage; the crew were safe. OSINT analysis identified a new 'Police'-marked Ukrainian USV type; no party claimed responsibility.",
+      "source_urls": [
+        "https://www.hisutton.com/Ukrainian-USV-Police.html",
+        "https://kyivindependent.com/3-russian-shadow-fleet-tankers-attacked-by-drones-near-turkeys-black-sea-coast/",
+        "https://worldoil.com/news/2026/5/28/drone-attacks-hit-russian-shadow-fleet-tankers-in-black-sea/",
+        "https://www.arabnews.com/node/2645208/middle-east",
+        "https://maritime-executive.com/article/drone-attacks-on-three-sanctioned-shadow-fleet-tankers-in-the-black-sea",
+        "https://www.bloomberg.com/news/articles/2026-05-28/oil-tankers-suffer-drone-attacks-off-turkey-s-black-sea-coast"
+      ]
+    },
+    {
+      "id": "2026-05-28-velora",
+      "occurred_on": "2026-05-28",
+      "vessel_name": "Velora",
+      "imo": 9290373,
+      "lat": 42.0,
+      "lon": 29.2,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Sierra Leone-flagged, Turkish-managed (Pergamon) shadow-fleet tanker Velora was attacked by unmanned surface vessels on 28 May 2026 while conducting a ship-to-ship transfer in ballast roughly 50 miles off Turkey's northern Black Sea coast, part of a coordinated three-tanker USV strike. Per OSINT reporting, two USVs reached the vessel but failed to detonate, so damage was minimal; the crew were unharmed. No party claimed the attack, which matched Ukraine's ongoing campaign against Russia's shadow fleet.",
+      "source_urls": [
+        "https://www.hisutton.com/Ukrainian-USV-Police.html",
+        "https://kyivindependent.com/3-russian-shadow-fleet-tankers-attacked-by-drones-near-turkeys-black-sea-coast/",
+        "https://worldoil.com/news/2026/5/28/drone-attacks-hit-russian-shadow-fleet-tankers-in-black-sea/",
+        "https://www.arabnews.com/node/2645208/middle-east",
+        "https://maritime-executive.com/article/drone-attacks-on-three-sanctioned-shadow-fleet-tankers-in-the-black-sea",
+        "https://www.kyivpost.com/post/77055"
+      ]
+    },
+    {
+      "id": "2026-05-28-altura-second",
+      "occurred_on": "2026-05-28",
+      "vessel_name": "Altura",
+      "imo": 9292199,
+      "lat": 42.0,
+      "lon": 29.2,
+      "location_precision": "approx",
+      "attack_type": "usv_strike",
+      "summary": "Sanctioned Suezmax tanker Altura (Sierra Leone flag, Turkish-managed) was hit by an unmanned surface vessel for the second time in two months on 28 May 2026, while conducting a ship-to-ship operation in ballast about 50 miles off Turkey's northern Black Sea coast alongside the tanker Velora. The vessel was damaged but the crew were reported safe (some reports said the devices failed to detonate and caused little damage); Turkish coastal-safety boats responded. The strike was part of a coordinated three-tanker USV attack attributed by analysts to Ukraine's campaign against Russia's shadow fleet, though Kyiv did not comment.",
+      "source_urls": [
+        "https://www.hisutton.com/Ukrainian-USV-Police.html",
+        "https://kyivindependent.com/3-russian-shadow-fleet-tankers-attacked-by-drones-near-turkeys-black-sea-coast/",
+        "https://worldoil.com/news/2026/5/28/drone-attacks-hit-russian-shadow-fleet-tankers-in-black-sea/",
+        "https://www.arabnews.com/node/2645208/middle-east",
+        "https://maritime-executive.com/article/drone-attacks-on-three-sanctioned-shadow-fleet-tankers-in-the-black-sea",
+        "https://www.kyivpost.com/post/77055"
+      ]
+    },
+    {
+      "id": "2026-05-30-taganrog-tanker",
+      "occurred_on": "2026-05-30",
+      "vessel_name": null,
+      "imo": null,
+      "lat": 47.203,
+      "lon": 38.949,
+      "location_precision": "port",
+      "attack_type": "port_strike",
+      "summary": "Drones of Ukraine's Unmanned Systems Forces struck the Sea of Azov port of Taganrog overnight 29-30 May 2026, setting an unnamed shadow-fleet product tanker ablaze alongside a fuel storage tank at the Kurganneftprodukt oil depot; the same operation hit the Feodosia marine oil terminal in occupied Crimea. The fire was extinguished with no fuel leak reported; two people were injured.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-05-30/tanker-catches-fire-in-drone-attack-on-russia-s-taganrog-port",
+        "https://www.pravda.com.ua/eng/news/2026/05/30/8037040/",
+        "https://maritime-executive.com/article/ukraine-damages-product-tanker-and-oil-terminal-on-sea-of-azov",
+        "https://euromaidanpress.com/2026/05/30/drones-set-a-tanker-and-fuel-tank-ablaze-at-russias-taganrog-port/"
+      ]
+    }
+  ]
+}

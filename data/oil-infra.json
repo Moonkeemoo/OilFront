@@ -1,0 +1,2992 @@
+{
+  "objects": [
+    {
+      "id": "achinsk-refinery",
+      "kind": "refinery",
+      "name": "Achinsk Refinery",
+      "name_local": "Ачинский НПЗ",
+      "lat": 56.46,
+      "lon": 90.53,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 7.5,
+      "capacity_bbl_d": 150600,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Achinsk Refinery (ANPZ VNK)",
+      "region": "Krasnoyarsk Krai",
+      "status": "operational",
+      "notes": "Eastern Siberia; outside reported drone strike range as of mid-2026.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Ачинский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4073365"
+      ]
+    },
+    {
+      "id": "afipsky-refinery",
+      "kind": "refinery",
+      "name": "Afipsky Refinery",
+      "name_local": "Афипский НПЗ",
+      "lat": 44.88167,
+      "lon": 38.82194,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 6.25,
+      "capacity_bbl_d": 125500,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (Safmar group)",
+      "operator": "Afipsky NPZ LLC",
+      "region": "Krasnodar Krai",
+      "status": "unknown",
+      "notes": "Struck repeatedly by drones in 2025-2026 (fire at gas/condensate processing unit reported); current operating level unclear.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Afipsky_refinery",
+        "https://kyivindependent.com/ukraine-strikes-oil-refinery-in-russias-krasnodar-krai/",
+        "https://ru.wikipedia.org/wiki/Афипский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q112960406"
+      ]
+    },
+    {
+      "id": "angarsk-petrochemical-refinery",
+      "kind": "refinery",
+      "name": "Angarsk Petrochemical Company Refinery",
+      "name_local": "Ангарская нефтехимическая компания (АНХК)",
+      "lat": 52.557162,
+      "lon": 103.917733,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 10.2,
+      "capacity_bbl_d": 204800,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Angarsk Petrochemical Company (ANKhK)",
+      "region": "Irkutsk Oblast",
+      "status": "operational",
+      "notes": "Eastern Siberia; outside reported drone strike range, no credible damage reports as of mid-2026.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Ангарская_нефтехимическая_компания",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4065054"
+      ]
+    },
+    {
+      "id": "antipinsky-refinery",
+      "kind": "refinery",
+      "name": "Antipinsky Refinery (Tyumen)",
+      "name_local": "Антипинский НПЗ (Тюменский НПЗ)",
+      "lat": 57.10003,
+      "lon": 65.75872,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 9.0,
+      "capacity_bbl_d": 180700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rusinvest LLC (now RI-Invest)",
+      "operator": "Antipinsky NPZ JSC",
+      "region": "Tyumen Oblast",
+      "status": "operational",
+      "notes": "Design capacity ~9 Mt/yr (Wikipedia registry cites 7.5 Mt/yr, 20% apart; design value used; nominal 180,000 bbl/d). Bankrupt 2019; Sberbank/SOCAR-linked Sokar Energoresurs interim control 2019-2021 (SOCAR held only a brief 9.6% minority and withdrew); sold at bankruptcy auction in 2021 to Rusinvest LLC (since renamed RI-Invest). No credible damage reports as of mid-2026.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Antipinsky_refinery",
+        "https://ru.wikipedia.org/wiki/Тюменский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q24935742"
+      ]
+    },
+    {
+      "id": "anzhersk-refinery",
+      "kind": "refinery",
+      "name": "Anzhersk Refinery",
+      "name_local": "Анжерский НПЗ",
+      "lat": 56.08333,
+      "lon": 86.03333,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 1.3,
+      "capacity_bbl_d": 26100,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "NefteKhimService",
+      "operator": "OOO Anzherskaya Neftegazovaya Kompaniya (ANGK), consolidated under AO NefteKhimService",
+      "region": "Kemerovo Oblast",
+      "status": "operational",
+      "notes": "Commissioned 2010; being integrated with the Yaya refinery complex per Russian Wikipedia references; coordinates are city-level for Anzhero-Sudzhensk (approximate).",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://ru.wikipedia.org/wiki/Анжеро-Судженск",
+        "https://ru.wikipedia.org/wiki/Яйский_нефтеперерабатывающий_завод",
+        "https://www.kommersant.ru/doc/5270765",
+        "https://anpkoil.ru/",
+        "https://energybase.ru/processing-plant/anzhersky-refinery"
+      ]
+    },
+    {
+      "id": "astrakhan-gas-processing-plant",
+      "kind": "refinery",
+      "name": "Astrakhan Gas Processing Plant",
+      "name_local": "Астраханский газоперерабатывающий завод",
+      "lat": 46.7728,
+      "lon": 48.11193,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 3.0,
+      "capacity_bbl_d": 60200,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Gazprom",
+      "operator": "Gazprom Pererabotka (Astrakhan GPZ)",
+      "region": "Astrakhan Oblast",
+      "status": "unknown",
+      "notes": "Gas condensate processing (~3 Mt/yr liquids, approximate) producing gasoline/diesel. Struck by drones in Feb 2025 with months-long processing suspension; mid-2026 status unclear. Coordinates from OSM industrial site.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Астраханский_газоперерабатывающий_завод",
+        "https://united24media.com/war-in-ukraine/mapping-ukraines-drone-campaign-to-destroy-russias-oil-empire-12927",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://www.wikidata.org/wiki/Q39083169",
+        "https://euromaidanpress.com/2025/02/04/russias-astrakhan-gas-processing-plant-halts-operations-after-ukrainian-drone-attack/",
+        "https://newsukraine.rbc.ua/news/russia-s-astrakhan-gas-processing-plant-shuts-1758691434.html"
+      ]
+    },
+    {
+      "id": "ilsky-refinery",
+      "kind": "refinery",
+      "name": "Ilsky Refinery",
+      "name_local": "Ильский НПЗ",
+      "lat": 44.8604614,
+      "lon": 38.6092737,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 6.6,
+      "capacity_bbl_d": 132500,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (KNGK Group)",
+      "operator": "Ilsky NPZ LLC",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Set ablaze by drone strike on 2 June 2026; repeatedly targeted since 2023. Coordinates from OSM/Nominatim.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-sets-ilsky-oil-refinery-in-russia-ablaze/",
+        "https://ru.wikipedia.org/wiki/Ильский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://www.wikidata.org/wiki/Q4199956"
+      ]
+    },
+    {
+      "id": "khabarovsk-refinery",
+      "kind": "refinery",
+      "name": "Khabarovsk Refinery",
+      "name_local": "Хабаровский НПЗ",
+      "lat": 48.5027,
+      "lon": 135.0509,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 5.0,
+      "capacity_bbl_d": 100400,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (NNK - Independent Petroleum and Gas Company)",
+      "operator": "NNK-Khabarovsk Refinery",
+      "region": "Khabarovsk Krai",
+      "status": "operational",
+      "notes": "Russian Far East; outside reported drone strike range as of mid-2026.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Хабаровский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4494353"
+      ]
+    },
+    {
+      "id": "kirishi-refinery",
+      "kind": "refinery",
+      "name": "Kirishi Refinery (KINEF)",
+      "name_local": "Киришский НПЗ (ООО «КИНЕФ», Киришинефтеоргсинтез)",
+      "lat": 59.4847,
+      "lon": 32.054248,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 20.1,
+      "capacity_bbl_d": 403700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Surgutneftegas",
+      "operator": "KINEF LLC",
+      "region": "Leningrad Oblast",
+      "status": "damaged",
+      "notes": "Coordinates exact per GEM. Damaged in drone strike March 2026; halted operations after another strike in early May 2026.",
+      "source_urls": [
+        "https://www.gem.wiki/Kinef_Kirishi_Refinery",
+        "https://www.themoscowtimes.com/2026/05/06/leningrad-regions-kirishi-oil-refinery-halts-operations-after-drone-strike-reuters-a92696",
+        "https://www.themoscowtimes.com/2026/03/26/major-oil-refinery-in-leningrad-region-reportedly-damaged-in-ukrainian-drone-strike-a92341",
+        "https://ru.wikipedia.org/wiki/Киришинефтеоргсинтез",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4221493"
+      ]
+    },
+    {
+      "id": "komsomolsk-refinery",
+      "kind": "refinery",
+      "name": "Komsomolsk Refinery",
+      "name_local": "Комсомольский НПЗ",
+      "lat": 50.624,
+      "lon": 137.063,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 8.0,
+      "capacity_bbl_d": 160700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "RN-Komsomolsky NPZ",
+      "region": "Khabarovsk Krai",
+      "status": "operational",
+      "notes": "Russian Far East; outside reported drone strike range as of mid-2026.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Комсомольский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4230230"
+      ]
+    },
+    {
+      "id": "krasnodar-refinery",
+      "kind": "refinery",
+      "name": "Krasnodar Refinery (Krasnodareconeft)",
+      "name_local": "Краснодарский НПЗ (Краснодарэконефть)",
+      "lat": 44.99822,
+      "lon": 38.96514,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 3.1,
+      "capacity_bbl_d": 62200,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Safmar Group (Gutseriev family); branch of Afipsky Refinery LLC since 2021",
+      "operator": "Afipsky NPZ LLC — Krasnodar branch (KNPZ-Krasnodareconeft)",
+      "region": "Krasnodar Krai",
+      "status": "unknown",
+      "notes": "Struck by drones in 2024-2025; current operating level unclear. Coordinates from OSM plant polygon.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Краснодарский_нефтеперерабатывающий_завод",
+        "https://united24media.com/war-in-ukraine/mapping-ukraines-drone-campaign-to-destroy-russias-oil-empire-12927",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q112960412",
+        "https://www.interfax.ru/business/769783"
+      ]
+    },
+    {
+      "id": "kuibyshev-refinery",
+      "kind": "refinery",
+      "name": "Kuibyshev Refinery (Samara)",
+      "name_local": "Куйбышевский НПЗ",
+      "lat": 53.102,
+      "lon": 50.054,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 7.0,
+      "capacity_bbl_d": 140600,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Kuibyshev Refinery JSC",
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "notes": "Reported burning after mass drone attack in early June 2026; repeatedly struck through 2025-2026.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Куйбышевский_нефтеперерабатывающий_завод",
+        "https://www.aljazeera.com/news/2026/6/10/ukrainian-drones-strike-sevastopol-museum-and-key-russian-oil-refineries",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4245602"
+      ]
+    },
+    {
+      "id": "mari-refinery",
+      "kind": "refinery",
+      "name": "Mari Refinery (Tabashino)",
+      "name_local": "Марийский НПЗ",
+      "lat": 56.981331,
+      "lon": 47.725502,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 1.3,
+      "capacity_bbl_d": 26100,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "OOO Volzhskie Nefteprodukty (100%); in bankruptcy receivership since Oct 2024; previously Dolgovoy Tsentr structure linked to Moscow Credit Bank (private, not state)",
+      "operator": "Mariysky NPZ LLC",
+      "region": "Mari El Republic",
+      "status": "unknown",
+      "notes": "Small independent refinery; struck by drones in 2024-2025; current status unclear.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Марийский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://www.wikidata.org/wiki/Q4281447",
+        "https://www.rusprofile.ru/id/7626290"
+      ]
+    },
+    {
+      "id": "moscow-refinery",
+      "kind": "refinery",
+      "name": "Moscow Refinery (Kapotnya)",
+      "name_local": "Московский нефтеперерабатывающий завод",
+      "lat": 55.64932,
+      "lon": 37.80974,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 12.15,
+      "capacity_bbl_d": 244000,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Gazprom Neft",
+      "operator": "Gazpromneft-MNPZ",
+      "region": "Moscow",
+      "status": "damaged",
+      "notes": "Shut down on 17 May 2026 after drone strikes. Coordinates from OSM industrial polygon.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Moscow_Refinery",
+        "https://www.themoscowtimes.com/2026/05/20/drone-strikes-force-central-russian-refineries-to-halt-or-cut-output-reuters-a92805",
+        "https://charter97.org/en/news/2026/5/20/684758",
+        "https://ru.wikipedia.org/wiki/Московский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://www.wikidata.org/wiki/Q4304225"
+      ]
+    },
+    {
+      "id": "nizhnevartovsk-refinery",
+      "kind": "refinery",
+      "name": "Nizhnevartovsk Oil Refining Association",
+      "name_local": "Нижневартовское нефтеперерабатывающее объединение",
+      "lat": 60.93389,
+      "lon": 76.58111,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 1.58,
+      "capacity_bbl_d": 27000,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Nizhnevartovsk NPO",
+      "region": "Khanty-Mansi Autonomous Okrug",
+      "status": "operational",
+      "notes": "Commissioned 1998; coordinates are city-level for Nizhnevartovsk (approximate, no dedicated Wikipedia article).",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://ru.wikipedia.org/wiki/Нижневартовск",
+        "https://www.nnponeft.ru/",
+        "https://raexpert.ru/database/companies/nnpo/"
+      ]
+    },
+    {
+      "id": "nizhny-novgorod-refinery",
+      "kind": "refinery",
+      "name": "Nizhny Novgorod Refinery (Kstovo, NORSI)",
+      "name_local": "ЛУКОЙЛ-Нижегороднефтеоргсинтез",
+      "lat": 56.105972,
+      "lon": 44.14389,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 17.0,
+      "capacity_bbl_d": 341400,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Lukoil",
+      "operator": "LUKOIL-Nizhegorodnefteorgsintez",
+      "region": "Nizhny Novgorod Oblast",
+      "status": "damaged",
+      "notes": "Struck by drones on 18 May 2026 (fire on site); among central-Russia refineries forced to halt or cut output. Supplies ~30% of Moscow Oblast gasoline.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Лукойл-Нижегороднефтеоргсинтез",
+        "https://euromaidanpress.com/2026/05/19/ukraine-strikes-kstovo-refinery-supplying-30-of-moscow-oblasts-gasoline-800-km-from-border/",
+        "https://www.themoscowtimes.com/2026/05/20/drone-strikes-force-central-russian-refineries-to-halt-or-cut-output-reuters-a92805",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4269070"
+      ]
+    },
+    {
+      "id": "novoil-refinery",
+      "kind": "refinery",
+      "name": "Novoil Refinery (Novo-Ufimsky)",
+      "name_local": "Башнефть-Новойл (Ново-Уфимский НПЗ)",
+      "lat": 54.87963,
+      "lon": 56.07938,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 7.1,
+      "capacity_bbl_d": 142600,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Bashneft (Rosneft group)",
+      "operator": "PJSC ANK Bashneft - Novoil branch",
+      "region": "Republic of Bashkortostan",
+      "status": "damaged",
+      "notes": "Primary distillation unit reported burning after repeat drone strike on 2 April 2026. Coordinates from OSM industrial polygon.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Башнефть-Новойл",
+        "https://euromaidanpress.com/2026/04/02/ukraines-drones-return-to-bashneft-novoil-refinery-in-ufa-1300-km-from-the-front-the-primary-distillation-unit-is-burning-again/",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4322977"
+      ]
+    },
+    {
+      "id": "novokuibyshevsk-refinery",
+      "kind": "refinery",
+      "name": "Novokuibyshevsk Refinery",
+      "name_local": "Новокуйбышевский НПЗ",
+      "lat": 53.1,
+      "lon": 49.91,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 8.8,
+      "capacity_bbl_d": 176700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Novokuibyshevsk Refinery JSC",
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "notes": "Primary oil processing halted since 18 April 2026 after drone attack.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Новокуйбышевский_нефтеперерабатывающий_завод",
+        "https://www.usnews.com/news/world/articles/2026-05-13/factbox-ukraine-attacks-russian-energy-sites-what-has-been-hit",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4324338",
+        "https://www.rosneft.com/business/Downstream/Neftepererabotka/OilRefineries/NovokuibyshevskRefinery/"
+      ]
+    },
+    {
+      "id": "novoshakhtinsk-refinery",
+      "kind": "refinery",
+      "name": "Novoshakhtinsk Refinery (NZNP)",
+      "name_local": "Новошахтинский завод нефтепродуктов",
+      "lat": 47.835,
+      "lon": 39.85,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 5.0,
+      "capacity_bbl_d": 100400,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (Peton group, since 2021)",
+      "operator": "Novoshakhtinsk Plant of Petroleum Products LLC",
+      "region": "Rostov Oblast",
+      "status": "damaged",
+      "notes": "Repeatedly struck since 2022; halted crude intake in late December 2025 after drone strikes, with multi-week fires earlier in 2025.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Новошахтинский_завод_нефтепродуктов",
+        "https://united24media.com/war-in-ukraine/mapping-ukraines-drone-campaign-to-destroy-russias-oil-empire-12927",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4326245",
+        "https://www.offshore-technology.com/data-insights/novoshakhtinsk-refinery-topping-russia/"
+      ]
+    },
+    {
+      "id": "omsk-refinery",
+      "kind": "refinery",
+      "name": "Omsk Refinery",
+      "name_local": "Омский нефтеперерабатывающий завод (Газпромнефть-ОНПЗ)",
+      "lat": 55.060746,
+      "lon": 73.24925,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 22.2,
+      "capacity_bbl_d": 445800,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Gazprom Neft",
+      "operator": "Gazpromneft-ONPZ",
+      "region": "Omsk Oblast",
+      "status": "operational",
+      "notes": "Largest refinery in Russia; coordinates exact per GEM. No credible reports of strike damage as of mid-2026 (out of routine drone range).",
+      "source_urls": [
+        "https://www.gem.wiki/Gazpromneft-Omsk_Oil_Refinery",
+        "https://en.wikipedia.org/wiki/Omsk_Refinery",
+        "https://onpz.gazprom-neft.ru/",
+        "https://ru.wikipedia.org/wiki/Омский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4334732"
+      ]
+    },
+    {
+      "id": "orsk-refinery",
+      "kind": "refinery",
+      "name": "Orsk Refinery (Orsknefteorgsintez)",
+      "name_local": "Орскнефтеоргсинтез",
+      "lat": 51.247733,
+      "lon": 58.514986,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 6.6,
+      "capacity_bbl_d": 132500,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (ForteInvest / Safmar group)",
+      "operator": "Orsknefteorgsintez PJSC",
+      "region": "Orenburg Oblast",
+      "status": "damaged",
+      "notes": "Struck by drones overnight 29 April 2026; designed to process 6.6 Mt/yr.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Орскнефтеоргсинтез",
+        "https://kyivindependent.com/russian-oil-facilities-in-perm-and-orsk-struck-as-ukraines-drones-follow-up-tuapse-attacks/",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4337084"
+      ]
+    },
+    {
+      "id": "perm-refinery",
+      "kind": "refinery",
+      "name": "Perm Refinery (Permnefteorgsintez)",
+      "name_local": "ЛУКОЙЛ-Пермнефтеоргсинтез",
+      "lat": 57.91963,
+      "lon": 56.142165,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 13.1,
+      "capacity_bbl_d": 263100,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Lukoil",
+      "operator": "LUKOIL-Permnefteorgsintez",
+      "region": "Perm Krai",
+      "status": "damaged",
+      "notes": "Coordinates exact per GEM. Drone strike (April-May 2026) reported to have halted the refinery deep in the Urals.",
+      "source_urls": [
+        "https://www.gem.wiki/Lukoil_Perm_Refinery",
+        "https://www.kyivpost.com/post/76052",
+        "https://kyivindependent.com/russian-oil-facilities-in-perm-and-orsk-struck-as-ukraines-drones-follow-up-tuapse-attacks/",
+        "https://ru.wikipedia.org/wiki/Лукойл-Пермнефтеоргсинтез",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q112960399"
+      ]
+    },
+    {
+      "id": "ryazan-refinery",
+      "kind": "refinery",
+      "name": "Ryazan Refinery (RNPK)",
+      "name_local": "Рязанская нефтеперерабатывающая компания (РНПК)",
+      "lat": 54.567786,
+      "lon": 39.74558,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 18.8,
+      "capacity_bbl_d": 377600,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Ryazan Oil Refining Company (RNPK)",
+      "region": "Ryazan Oblast",
+      "status": "damaged",
+      "notes": "Coordinates exact per GEM. Repeatedly struck by drones; suspended operations completely on 15 May 2026.",
+      "source_urls": [
+        "https://www.gem.wiki/RNPK_Ryazan_Refinery",
+        "https://www.themoscowtimes.com/2026/05/20/drone-strikes-force-central-russian-refineries-to-halt-or-cut-output-reuters-a92805",
+        "https://ru.wikipedia.org/wiki/Рязанский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q55664215"
+      ]
+    },
+    {
+      "id": "salavat-refinery",
+      "kind": "refinery",
+      "name": "Gazprom Neftekhim Salavat Refinery",
+      "name_local": "Газпром нефтехим Салават",
+      "lat": 53.4018806,
+      "lon": 55.8952611,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 10.0,
+      "capacity_bbl_d": 200800,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Gazprom",
+      "operator": "Gazprom Neftekhim Salavat",
+      "region": "Republic of Bashkortostan",
+      "status": "operational",
+      "notes": "Integrated refining/petrochemical complex; hit by drones in 2025 but reported operating normally afterwards. GEM covers it as Gazprom Neftekhim Salavat Chemical Complex.",
+      "source_urls": [
+        "https://www.gem.wiki/Gazprom_Neftekhim_Salavat_Chemical_Complex",
+        "https://ru.wikipedia.org/wiki/Газпром_нефтехим_Салават",
+        "https://www.qcintel.com/article/neftekhim-salavat-refinery-operating-normally-after-drone-attacks-50711.html",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4131792"
+      ]
+    },
+    {
+      "id": "saratov-refinery",
+      "kind": "refinery",
+      "name": "Saratov Refinery",
+      "name_local": "Саратовский НПЗ",
+      "lat": 51.45085,
+      "lon": 45.94402,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 7.0,
+      "capacity_bbl_d": 140600,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Saratov Refinery PJSC",
+      "region": "Saratov Oblast",
+      "status": "damaged",
+      "notes": "Completely halted operations after drone attack, reported 3 June 2026; repeatedly struck since 2024. Coordinates from OSM industrial polygon.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Саратовский_нефтеперерабатывающий_завод",
+        "https://www.voiceofemirates.com/en/news/2026/06/03/reuters-operations-at-russias-saratov-refinery-halted-after-drone-attack/",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://www.wikidata.org/wiki/Q4408468"
+      ]
+    },
+    {
+      "id": "slavyansk-eco-refinery",
+      "kind": "refinery",
+      "name": "Slavyansk ECO Refinery (Slavyansk-on-Kuban)",
+      "name_local": "Славянск ЭКО",
+      "lat": 45.22131,
+      "lon": 38.13281,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 5.2,
+      "capacity_bbl_d": 104400,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (Slavyansk ECO Group)",
+      "operator": "Slavyansk ECO LLC",
+      "region": "Krasnodar Krai",
+      "status": "unknown",
+      "notes": "Nominal capacity ~5.2 Mt/yr. One of the most frequently struck refineries (2024-2026, incl. Nov 2025 and Jan 2026 hits); operating at reduced level, current status unclear. Coordinates from OSM plant polygon. Capacity discrepancy between sweeps: 5.2 Mt/yr nominal vs 3.99 Mt/yr (registry); nominal value used.",
+      "source_urls": [
+        "https://www.offshore-technology.com/data-insights/slavyansk-refinery-topping-russia/",
+        "https://newsukraine.rbc.ua/news/russia-claims-drone-strike-on-slavyansk-oil-1764493108.html",
+        "https://euromaidanpress.com/2026/01/26/this-southern-russian-refinery-hit-again-russia-claims-it-was-just-debris-map/",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://ru.wikipedia.org/wiki/Славянск-на-Кубани"
+      ]
+    },
+    {
+      "id": "surgut-zsk-condensate-plant",
+      "kind": "refinery",
+      "name": "Surgut Condensate Stabilization Plant (Chernomyrdin ZSK)",
+      "name_local": "Сургутский завод стабилизации конденсата им. В.С. Черномырдина",
+      "lat": 61.288972,
+      "lon": 73.004918,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 8.0,
+      "capacity_bbl_d": 160700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Gazprom",
+      "operator": "Gazprom Pererabotka",
+      "region": "Khanty-Mansi Autonomous Okrug",
+      "status": "operational",
+      "notes": "Gas condensate stabilization/processing plant (capacity estimates 8-12 Mt/yr); coordinates exact per GEM. No credible damage reports as of mid-2026. Capacity discrepancy between sweeps: ~8 Mt/yr (GEM) vs 4 Mt/yr (ru-wiki registry table); GEM value used.",
+      "source_urls": [
+        "https://www.gem.wiki/Chernomyrdin_Condensate_Stabilization_Plant",
+        "https://ru.wikipedia.org/wiki/Сургутский_ЗСК",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://www.wikidata.org/wiki/Q110853428"
+      ]
+    },
+    {
+      "id": "syzran-refinery",
+      "kind": "refinery",
+      "name": "Syzran Refinery",
+      "name_local": "Сызранский НПЗ",
+      "lat": 53.08,
+      "lon": 48.39,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 8.5,
+      "capacity_bbl_d": 170700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "Syzran Refinery JSC",
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "notes": "Halted operations after Ukrainian drone strike on 21 May 2026 (confirmed by Ukraine's General Staff). Capacity sources differ: 8.9 Mt/yr (ru-wiki design) vs 8.5 Mt/yr (Rosneft official crude distillation capacity) vs lower en-wiki list figure; Rosneft official 8.5 used.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Сызранский_нефтеперерабатывающий_завод",
+        "https://www.ukrinform.net/rubric-ato/4127352-ukraine-confirms-russias-syzran-oil-refinery-halted-operations-after-strike.html",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4447906",
+        "https://www.rosneft.com/business/Downstream/Neftepererabotka/OilRefineries/SyzranRefinery/"
+      ]
+    },
+    {
+      "id": "taif-nk-refinery",
+      "kind": "refinery",
+      "name": "TAIF-NK Refinery (Nizhnekamsk)",
+      "name_local": "ТАИФ-НК",
+      "lat": 55.58972,
+      "lon": 51.94444,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 8.3,
+      "capacity_bbl_d": 166700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (TAIF Group)",
+      "operator": "TAIF-NK JSC",
+      "region": "Republic of Tatarstan",
+      "status": "operational",
+      "notes": "Crude and gas condensate processing ~8 Mt/yr. Nizhnekamsk hub attacked by drones in 2024-2025; no confirmed mid-2026 shutdown.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/ТАИФ-НК",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q112960401"
+      ]
+    },
+    {
+      "id": "taneco-nizhnekamsk-refinery",
+      "kind": "refinery",
+      "name": "TANECO Refinery (Nizhnekamsk)",
+      "name_local": "ТАНЕКО (Нижнекамск)",
+      "lat": 55.570833,
+      "lon": 51.903889,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 15.3,
+      "capacity_bbl_d": 307300,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Tatneft",
+      "operator": "TANEKO JSC",
+      "region": "Republic of Tatarstan",
+      "status": "operational",
+      "notes": "GEM lists approximate location 55.6376/51.8197; ru-Wikipedia plant coordinate used. Struck by drones in 2024-2025 but no reported shutdown as of mid-2026. Capacity discrepancy between sweeps: GEM post-expansion ~15.3 vs Wikipedia registry 8.7 Mt/yr (pre-expansion figure); 15.3 used.",
+      "source_urls": [
+        "https://www.gem.wiki/Taneko_Nizhnekamsk_Refinery",
+        "https://ru.wikipedia.org/wiki/Танеко",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q28667150"
+      ]
+    },
+    {
+      "id": "tuapse-refinery",
+      "kind": "refinery",
+      "name": "Tuapse Refinery",
+      "name_local": "Туапсинский НПЗ (РН-Туапсинский НПЗ)",
+      "lat": 44.104167,
+      "lon": 39.098611,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 12.0,
+      "capacity_bbl_d": 241000,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": "RN-Tuapsinsky NPZ",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Struck four times in April-May 2026; operations suspended indefinitely, tank farm fires and 2026 Tuapse environmental disaster. Capacity discrepancy between sweeps: 12.0 Mt/yr design (GEM/en-wiki) vs 9.03 Mt/yr (ru-wiki registry); design value used.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Tuapse_Refinery",
+        "https://kyivindependent.com/russias-hard-hit-tuapse-oil-refinery-struck-by-ukrainian-drones-for-4th-time-as-fires-ravage-site/",
+        "https://en.wikipedia.org/wiki/2026_Tuapse_environmental_disaster",
+        "https://ru.wikipedia.org/wiki/Туапсинский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4464791"
+      ]
+    },
+    {
+      "id": "ufa-refinery-unpz",
+      "kind": "refinery",
+      "name": "Ufa Refinery (UNPZ)",
+      "name_local": "Башнефть-УНПЗ (Уфимский НПЗ)",
+      "lat": 54.84678,
+      "lon": 56.0962,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 7.5,
+      "capacity_bbl_d": 150600,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Bashneft (Rosneft group)",
+      "operator": "PJSC ANK Bashneft - UNPZ branch",
+      "region": "Republic of Bashkortostan",
+      "status": "unknown",
+      "notes": "Coordinates from OSM industrial polygon. Part of Ufa cluster targeted by drones since 2024; no confirmed mid-2026 shutdown report found.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Башнефть-УНПЗ",
+        "https://www.themoscowtimes.com/2024/05/09/in-first-drone-attacks-oil-refinery-in-russias-bashkortostan-a85078",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4479115"
+      ]
+    },
+    {
+      "id": "ufaneftekhim-refinery",
+      "kind": "refinery",
+      "name": "Ufaneftekhim Refinery",
+      "name_local": "Башнефть-Уфанефтехим",
+      "lat": 54.911706,
+      "lon": 56.05331,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 9.5,
+      "capacity_bbl_d": 190800,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Bashneft (Rosneft group)",
+      "operator": "PJSC ANK Bashneft - Ufaneftekhim branch",
+      "region": "Republic of Bashkortostan",
+      "status": "unknown",
+      "notes": "Coordinates exact per GEM. Ufa refinery cluster repeatedly struck by long-range drones in 2024-2026; current operating level unclear.",
+      "source_urls": [
+        "https://www.gem.wiki/Bashneft-Ufaneftekhim_Refinery",
+        "https://militarnyi.com/en/news/drones-hit-oil-refinery-in-ufa/",
+        "https://ru.wikipedia.org/wiki/Башнефть-Уфанефтехим",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q654845"
+      ]
+    },
+    {
+      "id": "ukhta-refinery",
+      "kind": "refinery",
+      "name": "Ukhta Refinery",
+      "name_local": "ЛУКОЙЛ-Ухтанефтепереработка",
+      "lat": 63.5739,
+      "lon": 53.723,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 4.0,
+      "capacity_bbl_d": 80300,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Lukoil",
+      "operator": "LUKOIL-Ukhtaneftepererabotka",
+      "region": "Komi Republic",
+      "status": "damaged",
+      "notes": "Small northern Lukoil refinery (~4-4.2 Mt/yr); throughput scaled down in 2020s with periodic idling. Struck by Ukrainian drones on 12 Feb 2026 in a record-range (~2,000 km) attack causing fire at the AVT primary distillation and visbreaking units; subsequent operating level unclear. Coordinates from OSM plant polygon.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/ЛУКОЙЛ-Ухтанефтепереработка",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q24930647",
+        "https://kyivindependent.com/ukraine-strike-ukhta-oil-refinery-in-record-range-attack-sbu-source/",
+        "https://www.ukrinform.net/rubric-ato/4090600-defense-forces-strike-ukhta-oil-refinery-in-komi-republic-general-staff-claims.html"
+      ]
+    },
+    {
+      "id": "usinsk-refinery",
+      "kind": "refinery",
+      "name": "Usinsk Refinery",
+      "name_local": "Усинский нефтеперерабатывающий завод",
+      "lat": 65.995028,
+      "lon": 57.557139,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 1.6,
+      "capacity_bbl_d": 32100,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Yenisei LLC",
+      "operator": "Yenisei LLC",
+      "region": "Komi Republic",
+      "status": "operational",
+      "notes": "Commissioned 2011; at the 1.0 Mt/yr threshold; coordinates are city-level for Usinsk (approximate).",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://ru.wikipedia.org/wiki/Усинск",
+        "https://topresursy.ru/ooo-enisey/",
+        "https://www.forbes.ru/kompanii/resursy/308901-enisei-dlya-khotinykh-biznesmeny-pretenduyut-na-kompaniyu-syna-glavy-rosatom"
+      ]
+    },
+    {
+      "id": "ust-luga-novatek-complex",
+      "kind": "refinery",
+      "name": "Ust-Luga Gas Condensate Processing Complex (Novatek)",
+      "name_local": "Комплекс НОВАТЭК по переработке газового конденсата в Усть-Луге",
+      "lat": 59.7119,
+      "lon": 28.4332,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 9.0,
+      "capacity_bbl_d": 180700,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Novatek (independent)",
+      "operator": "Novatek-Ust-Luga LLC",
+      "region": "Leningrad Oblast",
+      "status": "damaged",
+      "notes": "Gas condensate splitter (3 units x 3 Mt/yr) producing naphtha/jet/fuel oil. Processing and export loadings suspended after major drone-strike fire 24-25 March 2026; later reported operating at roughly half capacity. Merged with the depot/terminal-sweep record for the same Novatek complex (integrated sea export terminal at Ust-Luga port). Coordinates set to the gas condensate fractionation/transshipment complex polygon in the northern part of Ust-Luga port (OSM); earlier sweep point was ~6 km south at the Yug-2/SIBUR area.",
+      "source_urls": [
+        "https://united24media.com/latest-news/russian-energy-giant-novatek-suspends-baltic-gas-exports-after-drone-attack-sparks-fire-17375",
+        "https://kyivindependent.com/drone-attack-hits-russias-leningrad-region-fire-reported-at-ust-luga-port/",
+        "https://www.novatek.ru/en/about/operational-activities/processing/ustluga/",
+        "https://www.ainvest.com/news/assessing-impact-ust-luga-disruption-novatek-export-capacity-energy-market-dynamics-2508/",
+        "https://www.hydrocarbonprocessing.com/news/2024/01/russias-ust-luga-port-continues-crude-fuel-exports-while-novatek-terminal-shut/",
+        "https://www.themoscowtimes.com/2026/03/25/ukraine-hits-ust-luga-oil-terminal-in-largest-overnight-drone-attack-of-the-year-a92329",
+        "https://www.hydrocarbonprocessing.com/news/2024/09/russias-novatek-launches-new-condensate-unit-at-ust-luga-complex/"
+      ]
+    },
+    {
+      "id": "volgograd-refinery",
+      "kind": "refinery",
+      "name": "Volgograd Refinery",
+      "name_local": "ЛУКОЙЛ-Волгограднефтепереработка",
+      "lat": 48.49222,
+      "lon": 44.62667,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 14.8,
+      "capacity_bbl_d": 297200,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Lukoil",
+      "operator": "LUKOIL-Volgogradneftepererabotka",
+      "region": "Volgograd Oblast",
+      "status": "damaged",
+      "notes": "Halted operations after 2026 drone attack that stopped CDU-1 (~40% of plant capacity) plus units 5 and 6. Coordinates from OSM industrial polygon / en-Wikipedia.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Volgograd_refinery",
+        "https://militarnyi.com/en/news/volgograd-oil-refinery-halts-operations/",
+        "https://ru.wikipedia.org/wiki/Лукойл-Волгограднефтепереработка",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q108817949"
+      ]
+    },
+    {
+      "id": "yaisky-refinery",
+      "kind": "refinery",
+      "name": "Yaisky Refinery (Kuzbass)",
+      "name_local": "Яйский НПЗ",
+      "lat": 56.124,
+      "lon": 86.136,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 3.3,
+      "capacity_bbl_d": 66200,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "independent (NefteKhimService)",
+      "operator": "NefteKhimService JSC",
+      "region": "Kemerovo Oblast",
+      "status": "operational",
+      "notes": "Western Siberia; outside reported drone strike range as of mid-2026.",
+      "source_urls": [
+        "https://ru.wikipedia.org/wiki/Яйский_нефтеперерабатывающий_завод",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4536582",
+        "https://energybase.ru/processing-plant/yaya-refinery"
+      ]
+    },
+    {
+      "id": "yaroslavl-yanos-refinery",
+      "kind": "refinery",
+      "name": "Yaroslavl Refinery (Slavneft-YANOS)",
+      "name_local": "Славнефть-ЯНОС (Ярославнефтеоргсинтез)",
+      "lat": 57.55318,
+      "lon": 39.806121,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 15.0,
+      "capacity_bbl_d": 301200,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Slavneft (Gazprom Neft / Rosneft 50/50)",
+      "operator": "Slavneft-YANOS PJSC",
+      "region": "Yaroslavl Oblast",
+      "status": "damaged",
+      "notes": "Coordinates exact per GEM. Hit by confirmed drone strike late April 2026; among refineries forced to halt or cut output in May 2026.",
+      "source_urls": [
+        "https://www.gem.wiki/Slavneft-YANOS_Yaroslavl_Refinery",
+        "https://euromaidanpress.com/2026/04/26/ukraine-hits-major-refinery-in-yaroslavl/",
+        "https://www.themoscowtimes.com/2026/05/20/drone-strikes-force-central-russian-refineries-to-halt-or-cut-output-reuters-a92805",
+        "https://ru.wikipedia.org/wiki/Ярославнефтеоргсинтез",
+        "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
+        "https://en.wikipedia.org/wiki/List_of_oil_refineries",
+        "https://www.wikidata.org/wiki/Q4538810"
+      ]
+    },
+    {
+      "id": "arctic-gate-terminal",
+      "kind": "terminal",
+      "name": "Arctic Gate Terminal (Novy Port)",
+      "name_local": "Терминал «Ворота Арктики» (Мыс Каменный)",
+      "lat": 68.46,
+      "lon": 73.59,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 8.5,
+      "owner": "Gazprom Neft",
+      "operator": "Gazprom Neft Yamal",
+      "region": "Yamalo-Nenets Autonomous Okrug",
+      "status": "operational",
+      "notes": "Offshore single-point-mooring loading terminal in the Gulf of Ob at Cape Kamenny; ships Novy Port (Novoportovskoye field) crude year-round via Northern Sea Route; capacity up to 8.5 Mt/yr. Coordinates approximate (SPM ~3.5 km offshore).",
+      "source_urls": [
+        "https://www.gazprom-neft.com/company/major-projects/new-port/",
+        "https://www.gazprom-neft.com/press-center/news/gazprom-neft-confirms-first-ever-maritime-shipments-of-yamal-oil-via-new-arctic-gates-sea-terminal/"
+      ]
+    },
+    {
+      "id": "cpc-marine-terminal",
+      "kind": "terminal",
+      "name": "CPC Marine Terminal (Yuzhnaya Ozereyevka)",
+      "name_local": "Морской терминал КТК (Южная Озереевка)",
+      "lat": 44.672,
+      "lon": 37.584,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 63,
+      "owner": "Caspian Pipeline Consortium",
+      "operator": "CPC-R",
+      "region": "Krasnodar Krai",
+      "status": "operational",
+      "notes": "SPM offshore loading terminal west of Novorossiysk, terminus of the CPC pipeline; ~63 Mt shipped in 2024 (capacity ~83 Mt/yr after debottlenecking), predominantly Kazakhstani crude. Feeding infrastructure (Kropotkinskaya PS, Kavkazskaya) hit by drones in 2025.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Caspian_Pipeline_Consortium",
+        "https://euromaidanpress.com/2025/03/25/oil-pumping-through-russias-drone-struck-kavkazskaya-station-impossible-in-foreseeable-future-operator-says/"
+      ]
+    },
+    {
+      "id": "de-kastri-oil-terminal",
+      "kind": "terminal",
+      "name": "De-Kastri Oil Terminal",
+      "name_local": "Нефтеотгрузочный терминал Де-Кастри",
+      "lat": 51.45,
+      "lon": 140.75,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 200000,
+      "throughput_mt_yr": 12,
+      "owner": "Sakhalin-1 consortium (Rosneft-led since 2022)",
+      "operator": "Sakhalin-1 LLC",
+      "region": "Khabarovsk Krai",
+      "status": "operational",
+      "notes": "Export outlet for Sakhalin-1 Sokol crude; annual capacity ~12 Mt (~88 mln bbl); two 100,000 m3 storage tanks. Operatorship transferred from Exxon Neftegas to Rosneft-controlled entity in 2022.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/De-Kastri_terminal",
+        "https://www.offshore-technology.com/marketdata/de-kastri-liquids-storage-terminal-russia/"
+      ]
+    },
+    {
+      "id": "feodosia-oil-terminal",
+      "kind": "terminal",
+      "name": "Feodosia Marine Oil Terminal",
+      "name_local": "Феодосийский морской нефтяной терминал",
+      "lat": 45.046,
+      "lon": 35.373,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 12,
+      "owner": "Occupation administration (Sea Oil Terminal JSC)",
+      "operator": "Sea Oil Terminal (Feodosia)",
+      "region": "Crimea (occupied)",
+      "status": "damaged",
+      "notes": "Largest oil transshipment complex in occupied Crimea (rail-to-sea, up to 12 Mt/yr; can store ~250,000 t of fuel); supplies Russian Black Sea Fleet and ground forces. Repeatedly struck (Oct 2024, 2025, 7 June 2026) with multi-day tank fires.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-hit-largest-oil-terminal-in-russian-occupied-crimea/",
+        "https://united24media.com/latest-news/drone-strike-sparks-massive-blaze-at-crimeas-largest-oil-terminal-12208",
+        "https://militarnyi.com/en/news/ukraine-strike-oil-depot-in-occupied-crimea/"
+      ]
+    },
+    {
+      "id": "kozmino-oil-terminal",
+      "kind": "terminal",
+      "name": "Kozmino Oil Terminal",
+      "name_local": "Спецморнефтепорт Козьмино",
+      "lat": 42.741,
+      "lon": 133.052,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 50,
+      "owner": "Transneft",
+      "operator": "Transneft Port Kozmino",
+      "region": "Primorsky Krai",
+      "status": "operational",
+      "notes": "Pacific terminus of the ESPO pipeline near Nakhodka; ESPO blend crude to Asia (~1 mln bbl/d). Design capacity 30 Mt/yr; actual 46 Mt shipped in 2024, Transneft targeting 50 Mt from 2025.",
+      "source_urls": [
+        "https://tass.com/economy/2034331",
+        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline"
+      ]
+    },
+    {
+      "id": "murmansk-kola-bay-sts-hub",
+      "kind": "terminal",
+      "name": "Murmansk / Kola Bay STS Transshipment Hub",
+      "name_local": "Рейдовый перегрузочный комплекс в Кольском заливе (Мурманск)",
+      "lat": 69.05,
+      "lon": 33.42,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": null,
+      "operator": "Multiple (Gazprom Neft FSO Umba; Lukoil-chartered FSU Kola/Lotta)",
+      "region": "Murmansk Oblast",
+      "status": "operational",
+      "notes": "Ship-to-ship reloading hub for Arctic crude (Varandey, Novy Port, Prirazlomnoye) at Kola Bay anchorages near Murmansk, using floating storage units Umba (Gazprom Neft) and Kola — renamed Lotta — for Lukoil's Varandey crude; key node for shadow-fleet exports, described as Russia's main Arctic oil export hub. (Novatek's LNG FSU Saam operates separately in Ura Bay, ~50 km NW.) In Apr 2026 the Lotta FSU disappeared from AIS, spoofing its position to the Gulf of Guinea. Coordinates are an approximate anchorage location.",
+      "source_urls": [
+        "https://www.thebarentsobserver.com/news/worries-grow-in-norway-as-murmansk-becomes-russias-main-oil-export-hub/447460",
+        "https://www.thebarentsobserver.com/news/shadow-tanker-that-broke-cuba-fuel-blockade-loads-arctic-crude-in-murmansk/449566",
+        "https://www.thebarentsobserver.com/news/arctic-oil-hub-tanker-disappears-from-the-map/449837",
+        "https://www.arctictoday.com/worries-grow-in-norway-as-murmansk-becomes-russias-main-oil-export-hub/"
+      ]
+    },
+    {
+      "id": "petersburg-oil-terminal",
+      "kind": "terminal",
+      "name": "Petersburg Oil Terminal (St. Petersburg)",
+      "name_local": "Петербургский нефтяной терминал",
+      "lat": 59.88,
+      "lon": 30.197,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 324000,
+      "throughput_mt_yr": 12.5,
+      "owner": "Petersburg Oil Terminal JSC",
+      "operator": "Petersburg Oil Terminal JSC",
+      "region": "Saint Petersburg",
+      "status": "damaged",
+      "notes": "Fuel/products export terminal in the Big Port of St. Petersburg: 31 tanks totaling 324,000 m3, annual capacity ~12.5 Mt. Struck by long-range drones 2-3 June 2026 on the eve of SPIEF; storage tank destroyed, large fires.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/06/03/8037554/",
+        "https://www.npr.org/2026/06/03/nx-s1-5844793/ukrainian-drones-hit-st-petersburg",
+        "https://kyivindependent.com/ukraine-destroys-oil-storage-tank-in-st-petersburg-strikes-russian-patrol-ship-in-sea-of-azov/",
+        "https://www.oilterminal.ru/en/company/"
+      ]
+    },
+    {
+      "id": "port-kavkaz-oil-ferry-terminal",
+      "kind": "terminal",
+      "name": "Port Kavkaz Oil and Rail Ferry Terminal",
+      "name_local": "Порт Кавказ",
+      "lat": 45.3417,
+      "lon": 36.6764,
+      "geometry": null,
+      "commodity": "products",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 23,
+      "owner": "FSUE Rosmorport (port infrastructure)",
+      "operator": "Multiple stevedores: OOO Yugneftekhimtranzit and ZAO Evro-Trans (oil products), OAO Anroskrym (rail/auto ferry complexes), Lada-Gelendzhik-Trans, EvroTEK-Universal",
+      "region": "Krasnodar Krai, Russia (Chushka Spit, Kerch Strait)",
+      "status": "damaged",
+      "notes": "Russia's 5th-largest port by cargo turnover (23.0 Mt 2024; 21.4 Mt 2023), 2nd in Azov-Black Sea basin. Dual role: rail-to-sea ferry hub (Kerch Strait crossing supplying occupied Crimea/Kherson/Zaporizhzhia; rail-ferry lines to Varna, Zonguldak, Poti) and oil-products transshipment (fuel oil, naphtha; ~110,000 b/d fuel oil/residue shipments per S&P Global), incl. roadstead STS transfers. Repeatedly struck: 31 May 2024 naphtha terminal/oil depot (Neptune missiles); 23 Jul 2024 rail ferry Slavyanin damaged, fuel transshipment cut; 22 Aug 2024 rail ferry with fuel wagons sunk; 14 Mar 2026 oil depot and berthing complex hit by drones; 5-6 Apr 2026 Slavyanin (last Kerch rail ferry) destroyed. Port partially operational but oil/ferry infrastructure repeatedly damaged.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Port_Kavkaz",
+        "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B2%D0%BA%D0%B0%D0%B7_(%D0%BF%D0%BE%D1%80%D1%82)",
+        "https://kyivindependent.com/ukrainian-drones-reportedly-hit-major-oil-refinery-key-port-in-russias-krasnodar-krai/",
+        "https://militarnyi.com/en/news/drones-attack-port-kavkaz-in-krasnodar-krai-russia-s-fifth-largest-port-by-cargo-turnover/",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/082224-ukraine-sinks-ferry-carrying-fuel-supplies-in-russian-port-of-kavkaz"
+      ]
+    },
+    {
+      "id": "prigorodnoye-oil-export-terminal",
+      "kind": "terminal",
+      "name": "Prigorodnoye Oil Export Terminal (Sakhalin-2)",
+      "name_local": "Нефтеэкспортный терминал Пригородное",
+      "lat": 46.626,
+      "lon": 142.916,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 200000,
+      "throughput_mt_yr": null,
+      "owner": "Sakhalin Energy (Gazprom-led)",
+      "operator": "Sakhalin Energy",
+      "region": "Sakhalin Oblast",
+      "status": "operational",
+      "notes": "Oil export terminal within the Prigorodnoye production complex (Aniva Bay) alongside the Sakhalin-2 LNG plant; remote tanker loading unit 5 km offshore; two 100,000 m3 floating-roof crude tanks; exports Sakhalin Blend.",
+      "source_urls": [
+        "https://www.sakhalinenergy.ru/en/company/assets/prigorodnoye/",
+        "https://www.nsenergybusiness.com/projects/sakhalin-2-oil-and-gas-project/"
+      ]
+    },
+    {
+      "id": "primorsk-oil-terminal",
+      "kind": "terminal",
+      "name": "Primorsk Oil Terminal",
+      "name_local": "Порт Приморск (Транснефть)",
+      "lat": 60.34,
+      "lon": 28.71,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 75,
+      "owner": "Transneft",
+      "operator": "Transneft Port Primorsk",
+      "region": "Leningrad Oblast",
+      "status": "damaged",
+      "notes": "Russia's largest crude export terminal, terminus of Baltic Pipeline System (BPS-1, 76.5 Mt/yr). Design: crude up to 75 Mt/yr plus ~20 Mt/yr diesel. Hit by drones Sept 2025 and March 2026; Reuters reported loss of at least 40% of tank capacity after the strikes.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Port_of_Primorsk",
+        "https://en.usm.media/russias-primorskyi-oil-terminal-loses-at-least-40-of-tank-capacity-after-drone-attacks-reuters/",
+        "https://www.pravda.com.ua/eng/news/2026/03/23/8026766/"
+      ]
+    },
+    {
+      "id": "sheskharis-oil-terminal",
+      "kind": "terminal",
+      "name": "Sheskharis Oil Terminal (Novorossiysk)",
+      "name_local": "Перевалочный комплекс «Шесхарис»",
+      "lat": 44.707,
+      "lon": 37.831,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 1400000,
+      "throughput_mt_yr": 75,
+      "owner": "Transneft",
+      "operator": "Chernomortransneft",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Largest Russian Black Sea crude/products export terminal; endpoint of Transneft trunk lines (Western Siberia, Kazakhstan, Azerbaijan crude). Throughput figure is design capacity (actual ~30-45 Mt/yr); storage ~1.4 mln m3 across the Sheskharis+Grushovaya hub. Struck by drones/naval drones May-June 2026 (tank fires, tanker hit nearby).",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/06/08/8038257/",
+        "https://charter97.org/en/news/2026/5/23/685118/",
+        "https://akrus-akz.ru/en/portfolios/supply-of-materials-for-chernomortransneft-jsc-pro",
+        "https://neftegaz.ru/tech-library/transportirovka-i-khranenie/142070-perevalochnyy-neftyanoy-kompleks-sheskharis/",
+        "https://www.kyivpost.com/post/77737"
+      ]
+    },
+    {
+      "id": "taman-oteko-terminal",
+      "kind": "terminal",
+      "name": "Taman Bulk Cargo / Oil Products Terminal (OTEKO)",
+      "name_local": "Таманский перегрузочный комплекс ОТЭКО (Тамань)",
+      "lat": 45.123,
+      "lon": 36.684,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 19.9,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "OTEKO Group",
+      "operator": "Tamanneftegas",
+      "region": "Krasnodar Krai",
+      "status": "operational",
+      "notes": "Black Sea deep-water terminal at Volna (Taman Peninsula) transshipping fuel oil, vacuum gasoil and LPG from rail; used as fallback outlet when Novorossiysk/Tuapse loadings disrupted in 2026. Was attacked by drones in 2024 (LPG tank fires).",
+      "source_urls": [
+        "https://www.oteko.ru/en/projects/filling_terminal/",
+        "https://maritime-executive.com/article/video-ukrainian-drones-damage-vital-russian-black-sea-oil-and-gas-terminal",
+        "https://www.ainvest.com/news/russia-oil-export-gridlock-sparks-urgent-rail-terminal-scramble-ust-luga-primorsk-vysotsk-taman-2604/"
+      ]
+    },
+    {
+      "id": "tuapse-oil-terminal",
+      "kind": "terminal",
+      "name": "Tuapse Oil Terminal",
+      "name_local": "Туапсинский нефтяной терминал (РН-Морской терминал Туапсе)",
+      "lat": 44.09,
+      "lon": 39.064,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 10,
+      "owner": "Rosneft",
+      "operator": "RN-Morskoy Terminal Tuapse",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "One of the biggest Black Sea oil terminals, integrated with the 12 Mt/yr Rosneft Tuapse refinery; terminal capacity ~71 mln bbl/yr (~9.7 Mt), mostly refined products. Repeated drone strikes; on 16 Apr 2026 strikes ignited major fires at refinery+terminal (at least 3 killed, benzene/xylene releases, Black Sea oil slick); further strikes 20/28 Apr and May 2026 kept operations suspended.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Tuapse_oil_terminal",
+        "https://en.wikipedia.org/wiki/2026_Tuapse_oil_terminal_disaster",
+        "https://www.rferl.org/a/tuapse-russian-oil-port-fire-drone-strike/33744191.html"
+      ]
+    },
+    {
+      "id": "ust-luga-crude-oil-terminal",
+      "kind": "terminal",
+      "name": "Ust-Luga Crude Oil Terminal",
+      "name_local": "Нефтеналивной терминал Усть-Луга",
+      "lat": 59.675,
+      "lon": 28.407,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 30,
+      "owner": "Transneft",
+      "operator": "Transneft Port Ust-Luga",
+      "region": "Leningrad Oblast",
+      "status": "damaged",
+      "notes": "Terminus of Baltic Pipeline System-2 (BTS-2); crude design capacity ~30 Mt/yr (expandable to 38). Port also ships ~33 Mt/yr of oil products. Hit in Ukraine's largest overnight drone attack of 2026 (25 Mar 2026); loadings suspended, then resumed at reduced rates.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Ust-Luga",
+        "https://www.themoscowtimes.com/2026/03/25/ukraine-hits-ust-luga-oil-terminal-in-largest-overnight-drone-attack-of-the-year-a92329",
+        "https://eutoday.net/ukraine-strike-on-ust-luga/"
+      ]
+    },
+    {
+      "id": "varandey-oil-terminal",
+      "kind": "terminal",
+      "name": "Varandey Oil Terminal",
+      "name_local": "Варандейский отгрузочный терминал",
+      "lat": 69.053,
+      "lon": 58.06,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": 240000,
+      "storage_m3": 325000,
+      "throughput_mt_yr": 12,
+      "owner": "Lukoil (Varandey Terminal Company)",
+      "operator": "Varandey Terminal Company",
+      "region": "Nenets Autonomous Okrug",
+      "status": "operational",
+      "notes": "Fixed offshore ice-resistant offloading terminal (FOIROT) ~21-22 km off the Barents Sea coast; world's northernmost year-round oil terminal (Guinness record); exports Timan-Pechora crude via shuttle tankers to Kola Bay FSUs. Coordinates approximate (offshore platform).",
+      "source_urls": [
+        "https://www.lukoil.com/PressCenter/Pressreleases/Pressrelease/lukoils-varandey-terminal-one-year-of",
+        "https://tankterminals.com/news/lukoil-varandey-terminal-registered-in-the-guinness-book-of-records/",
+        "https://www.offshore-mag.com/production/article/16772030/lukoil-marks-five-years-of-service-for-offshore-russia-oil-terminal"
+      ]
+    },
+    {
+      "id": "vysotsk-lukoil-terminal",
+      "kind": "terminal",
+      "name": "Vysotsk Oil Products Terminal (Lukoil)",
+      "name_local": "РПК «Высоцк-Лукойл-II»",
+      "lat": 60.608,
+      "lon": 28.515,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 11.6,
+      "owner": "Lukoil",
+      "operator": "RPK-Vysotsk Lukoil-II",
+      "region": "Leningrad Oblast",
+      "status": "operational",
+      "notes": "Baltic petroleum-products export terminal on Vysotsky Island, Gulf of Finland (design 11.6 Mt/yr per Lukoil, tank farm 460,000 m3, rail-fed; commissioned 2004-2005); considered as an alternative outlet during 2026 disruption of Primorsk/Ust-Luga.",
+      "source_urls": [
+        "https://www.lukoil.com/PressCenter/Pressreleases/Pressrelease/lukoil-completes-construction-of-terminal-in",
+        "https://www.gem.wiki/Vysotsk_Port",
+        "https://en.wikipedia.org/wiki/Vysotsk",
+        "https://www.ainvest.com/news/russia-oil-export-gridlock-sparks-urgent-rail-terminal-scramble-ust-luga-primorsk-vysotsk-taman-2604/"
+      ]
+    },
+    {
+      "id": "andreapol-lpds",
+      "kind": "depot",
+      "name": "Andreapol Oil Pumping Station (BTS-2)",
+      "name_local": "ЛПДС «Андреаполь»",
+      "lat": 56.65,
+      "lon": 32.29,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Baltika (BTS-2)",
+      "region": "Tver Oblast",
+      "status": "operational",
+      "notes": "Pumping station with tankage on BTS-2 feeding the Ust-Luga export terminal. Drone strikes 29 Jan and 13 Feb 2025 damaged filtration/pumping area and additive tanks, forcing temporary shutdown of the trunk line. Coordinates approximate (town-level).",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-hit-russian-missile-arsenal-oil-pumping-station-in-tver-oblast-sbu-source-claims/",
+        "https://www.pravda.com.ua/eng/news/2025/02/13/7498150/",
+        "https://www.jpost.com/breaking-news/article-842043",
+        "https://tverigrad.ru/publication/nps-andreapol-na-perekrestke-neftjanyh-putej/"
+      ]
+    },
+    {
+      "id": "atlas-oil-depot",
+      "kind": "depot",
+      "name": "Atlas Oil Depot (Rostov Oblast)",
+      "name_local": "Нефтебаза «Атлас»",
+      "lat": 48.453,
+      "lon": 40.306,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosrezerv (Federal Agency for State Reserves)",
+      "operator": "FGKU Kombinat Atlas of Rosrezerv (Molodezhny settlement)",
+      "region": "Rostov Oblast",
+      "status": "unknown",
+      "notes": "Rosrezerv petroleum products depot (FGKU Kombinat Atlas) at Molodezhny settlement, Kamensky district near Kamensk-Shakhtinsky, supplying Russian forces; struck repeatedly (3 and 28 Aug 2024, 28-29 Nov 2024) with multi-tank fires confirmed by satellite imagery. Coordinates settlement-level (Molodezhny).",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/ukrainian-intelligence-strike-on-atlas-oil-1724877463.html",
+        "https://www.themoscowtimes.com/2024/11/29/ukraine-claims-attack-on-oil-depot-in-southern-russias-rostov-region-a87171",
+        "https://kyivindependent.com/ukrainian-drones-hit-russian-oil-depot-in-rostov-oblast-source-confirms/",
+        "https://checko.ru/company/fgku-kombinat-atlas-rosrezerva-1026101084900",
+        "https://www.svoboda.org/a/v-rostovskoy-oblasti-posle-udarov-dronov-zagorelasj-neftebaza/33096279.html"
+      ]
+    },
+    {
+      "id": "grushovaya-oil-depot",
+      "kind": "depot",
+      "name": "Grushovaya Tank Farm (Novorossiysk)",
+      "name_local": "Резервуарный парк «Грушовая»",
+      "lat": 44.72,
+      "lon": 37.87,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 1280000,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Chernomortransneft",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Main accumulation tank farm of the Sheskharis transshipment hub, in Grushovaya Balka beyond the Markotkh Ridge (~12 km from Novorossiysk, linked by 3.3 km pipeline tunnel); ~40 tanks, 1.28 mln m3, 213 ha. Set ablaze by drone strike 8 June 2026. Coordinates approximate.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-novorossiysk-oil-depot-ablaze/",
+        "https://www.pravda.com.ua/eng/news/2026/06/08/8038257/",
+        "https://akrus-akz.ru/en/portfolios/supply-of-materials-for-chernomortransneft-jsc-pro"
+      ]
+    },
+    {
+      "id": "kavkazskaya-oil-transshipment",
+      "kind": "depot",
+      "name": "Kavkazskaya Oil Transshipment Complex (Kropotkin)",
+      "name_local": "Нефтеперевалочный комплекс «Кавказская»",
+      "lat": 45.46567,
+      "lon": 40.69602,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 6.6,
+      "capacity_bbl_d": null,
+      "storage_m3": 100000,
+      "throughput_mt_yr": null,
+      "owner": "Naftatrans (private)",
+      "operator": "Naftatrans rail terminal (Getmanovskaya station); 15.7 km link to CPC Kropotkinskaya PS",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Rail-to-pipeline transshipment hub (up to 6 Mt/yr) near Kropotkin with the Naftatrans depot (5 tanks x 20,000 m3, held ~100,000 t at time of attack); connects to CPC Kropotkinskaya PS. Drone strikes 19-21 Mar 2025 destroyed tanks and pipeline; CPC declared pumping via Kavkazskaya impossible for the foreseeable future. Coordinates approximate (stanitsa-level).",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/03/25/oil-pumping-through-russias-drone-struck-kavkazskaya-station-impossible-in-foreseeable-future-operator-says/",
+        "https://www.pravda.com.ua/eng/news/2025/03/21/7503888/",
+        "https://kyivindependent.com/ukrainian-drone-strike-halts-operations-at-russias-kavkazskaya-oil-station/",
+        "https://militarnyi.com/en/news/drones-strike-oil-transshipment-point-in-krasnodar-krai/",
+        "https://ria.ru/20250324/kavkazskaya-2007019710.html"
+      ]
+    },
+    {
+      "id": "klintsy-oil-depot",
+      "kind": "depot",
+      "name": "Klintsy Oil Depot (Bryansk Oblast)",
+      "name_local": "Клинцовская нефтебаза",
+      "lat": 52.76,
+      "lon": 32.24,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Bryansknefteprodukt (Rosneft group)",
+      "operator": "Klintsy oil depot",
+      "region": "Bryansk Oblast",
+      "status": "unknown",
+      "notes": "Regional fuel storage depot near the Ukrainian/Belarusian border; large tank fire after drone attack on 19 Jan 2024 (also struck May 2023), 32 residents evacuated. Coordinates approximate (town-level).",
+      "source_urls": [
+        "https://www.rferl.org/a/ukraine-russia-oil-depot-bryansk-klintsy-drone-attack/32783071.html",
+        "https://www.cbsnews.com/news/russia-ukraine-war-russian-oil-depot-ukrainian-drone-attack-klintsy/"
+      ]
+    },
+    {
+      "id": "krasny-yar-lpds",
+      "kind": "depot",
+      "name": "Krasny Yar LPDS (Volgograd Oblast)",
+      "name_local": "ЛПДС «Красный Яр»",
+      "lat": 50.692,
+      "lon": 44.716,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Privolga",
+      "region": "Volgograd Oblast",
+      "status": "damaged",
+      "notes": "Linear production dispatch station on the Kuibyshev-Tikhoretsk trunk crude line serving the Volgograd refinery and the Sheskharis export terminal. Drone strike and fire 8 June 2026. Coordinates approximate (settlement-level).",
+      "source_urls": [
+        "https://ru.themoscowtimes.com/2026/06/08/ukraina-udarila-po-krupneishemu-neftyanomu-terminalu-rossii-na-chernom-more-i-lpds-v-volgogradskoi-oblasti-a197550",
+        "https://kyivindependent.com/oil-depots-substations-reportedly-set-ablaze-in-western-russia-occupied-crimea-mariupol-following-ukrainian-drone-strikes/",
+        "https://nv.ua/ukraine/events/genshtab-pidtverdiv-urazhennya-naftobazi-grushovaya-ta-stanciji-krasniy-yar-u-rosiji-50614223.html",
+        "https://neftegaz.ru/news/Oborudovanie/199059-transneft-privolga-vvela-v-ekspluatatsiyu-novuyu-kotelnuyu-na-lpds-krasnyy-yar/"
+      ]
+    },
+    {
+      "id": "kristall-engels-fuel-depot",
+      "kind": "depot",
+      "name": "Kristall Fuel Depot (Engels)",
+      "name_local": "Нефтебаза «Кристалл» (Энгельс)",
+      "lat": 51.4369,
+      "lon": 46.0906,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosrezerv (Federal Agency for State Reserves)",
+      "operator": "Kristall plant",
+      "region": "Saratov Oblast",
+      "status": "damaged",
+      "notes": "Strategic aviation fuel storage supplying the Engels-2 strategic bomber airbase (Tu-95/Tu-160). Struck 8 and 13-14 Jan 2025 (fire burned ~5 days) and again 6 June 2026 (satellite imagery showed four tanks burning). Coordinates approximate.",
+      "source_urls": [
+        "https://www.cnn.com/2025/01/08/europe/ukraine-russia-engels-saratov-oil-depot-drone-intl/index.html",
+        "https://militarnyi.com/en/news/drones-hit-strategic-aviation-fuel-storage-facility-in-engels/",
+        "https://kyivindependent.com/ukraine-strikes-oil-depot-in-russias-saratov-oblast-military-confirms/",
+        "https://militarnyi.com/en/news/defense-forces-strike-rosrezerv-s-oil-storage-facility-in-engels/",
+        "https://united24media.com/latest-news/satellite-imagery-reveals-damage-to-key-russian-bomber-fuel-depot-in-engels-8948"
+      ]
+    },
+    {
+      "id": "lazarevo-lpds",
+      "kind": "depot",
+      "name": "Lazarevo LPDS (Kirov Oblast)",
+      "name_local": "ЛПДС «Лазарево»",
+      "lat": 56.8252,
+      "lon": 50.2014,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Prikamye",
+      "region": "Kirov Oblast",
+      "status": "damaged",
+      "notes": "Trunk-pipeline LPDS (in service since 1981) with ~50,000 t tank farm in s. Lazarevo, Urzhumsky district, pumping West Siberian crude on the Surgut-Polotsk and Kholmogory-Klin trunk lines (toward central Russia, Belarus/Polotsk and Baltic ports); hit by long-range drones (1,000+ km strike) on 31 May 2026, tank fire confirmed by governor.",
+      "source_urls": [
+        "https://www.dialog.ua/war/udar-na-km-vglub-rossii-porazhen-klyuchevoy-nefteperekachivayushchiy-uzel-lazarevo.html",
+        "https://www.svoboda.org/a/v-nochj-na-31-maya-bpla-atakovali-kirovskuyu-i-saratovskuyu-oblasti/33769384.html",
+        "https://nashcheremshan.ru/news/znayte/lpds-lazarevo-otmechaet-40-letniy-yubiley-deyatelnosti",
+        "https://urzhum.spravker.ru/org/transneft-prikame-lpds-lazarevo.htm"
+      ]
+    },
+    {
+      "id": "nikolskoye-lpds",
+      "kind": "depot",
+      "name": "Nikolskoye Oil Pumping Station (Tambov Oblast)",
+      "name_local": "ЛПДС «Никольское»",
+      "lat": 52.8245,
+      "lon": 40.4088,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Druzhba",
+      "region": "Tambov Oblast",
+      "status": "operational",
+      "notes": "Major Druzhba trunk station; reported annual station capacity 104.5 Mt of oil/products and daily throughput up to 300,000 t (multi-line node, figure as published by Militarnyi). Drone strike 18 Aug 2025 halted Druzhba pumping; later restored. Coordinates approximate (settlement-level).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukraine-s-defense-forces-hit-oil-pumping-station-of-druzhba-pipeline-in-russia-s-tambov-region/",
+        "https://oilprice.com/Latest-Energy-News/World-News/Ukraine-Strikes-Russias-Druzhba-Pipeline-Network.html",
+        "https://mos-nt.ru/info/articles/neftebazy?ELEMENT_ID=9548",
+        "https://ntk.com.ru/refinery/lpds-nikolskoe/"
+      ]
+    },
+    {
+      "id": "proletarsk-kavkaz-oil-depot",
+      "kind": "depot",
+      "name": "Kavkaz oil depot (Proletarsk)",
+      "name_local": "ФГКУ «Комбинат „Кавказ\"» Росрезерва",
+      "lat": 46.6935,
+      "lon": 41.7838,
+      "geometry": null,
+      "commodity": "products",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 370000,
+      "throughput_mt_yr": null,
+      "owner": "Rosrezerv (Russian Federal Agency for State Reserves)",
+      "operator": "FGKU Kombinat \"Kavkaz\" (reportedly renamed FGKU \"Flagman\" in 2023)",
+      "region": "Proletarsk, Rostov Oblast, Russia",
+      "status": "damaged",
+      "notes": "State fuel-reserve tank farm: ~74 tanks x 5,000 m3 (some sources cite 78 tanks) storing diesel, gasoline, aviation fuel and lubricants. Struck by Ukrainian drones on 2024-08-18 and again 2024-08-23; resulting fire burned 16 days and was extinguished 2024-09-02. OSINT satellite analysis: at least 14 tanks destroyed, 4 partially damaged. No public reports of restoration as of mid-2026.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/oil-depot-on-fire-in-the-rostov-region-the-fire-area-is-increasing/",
+        "https://en.wikipedia.org/wiki/Proletarsk,_Rostov_Oblast",
+        "https://www.kavkazr.com/a/lishitj-voynu-topliva-pyatyy-denj-pozhara-na-neftebaze-v-proletarske-posle-ataki-dronov/33088240.html",
+        "https://www.themoscowtimes.com/2024/09/02/firefighters-extinguish-oil-depot-blaze-in-southern-russia-2-weeks-after-drone-strike-a86221",
+        "https://newsukraine.rbc.ua/news/satellite-image-shows-rostov-oil-depot-after-1725306673.html"
+      ]
+    },
+    {
+      "id": "samara-lpds-hub",
+      "kind": "depot",
+      "name": "Samara LPDS / Oil Logistics Hub",
+      "name_local": "ЛПДС «Самара»",
+      "lat": 53.02,
+      "lon": 50.49,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": 1600000,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Privolga",
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "notes": "Head blending/dispatch hub of the Druzhba and Kuibyshev-Tikhoretsk systems where Urals blend is formed; largest tank farm in Europe (71 tanks, >1.6 mln m3, 216 ha). Located at Prosvet settlement, Volzhsky district, Samara Oblast. Struck by SSO drones 20 Sep 2025 (confirmed by Ukraine's General Staff) and again in the April 2026 strike campaign. Coordinates settlement-level (Prosvet); distinct from nearby LPDS Lopatino.",
+      "source_urls": [
+        "https://nv.ua/opinion/ataka-na-lpds-samara-udar-po-centru-neftyanoy-logistiki-rossii-50601986.html",
+        "https://focus.ua/opinions/751544-krupneyshiy-neftyanoy-hab-v-evrope-vne-igry-chto-porazili-ukrainskie-drony-pod-samaroy",
+        "https://nv.ua/ukraine/events/sili-oboroni-urazili-saratovskiy-ta-novokuybishevskiy-npz-u-rosiji-genshtab-50546569.html"
+      ]
+    },
+    {
+      "id": "stalnoy-kon-lpds",
+      "kind": "depot",
+      "name": "Stalnoy Kon LPDS (Oryol Oblast)",
+      "name_local": "ЛПДС «Стальной Конь»",
+      "lat": 53.0372,
+      "lon": 36.1334,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Druzhba",
+      "region": "Oryol Oblast",
+      "status": "unknown",
+      "notes": "One of Russia's largest oil-product LPDS (MNPP Ryazan-Tula-Oryol, Transneft-Druzhba/ex Yugo-Zapad Transnefteprodukt), ~170 km from the Ukrainian border; supports product supplies incl. toward Baltic export. Hit multiple times (Nov 2022, Dec 2024 twice with ~12-hour fire, Mar 2025). Coordinates settlement-level: poselok Stalnoy Kon, Orlovsky district, just north of Oryol.",
+      "source_urls": [
+        "https://www.spglobal.com/commodity-insights/en/news-research/latest-news/refined-products/122324-second-drone-attack-in-the-week-hits-russias-oryol-fuel-depot",
+        "https://kyivindependent.com/ukraine-strikes-russian-oil-facilities-in-moscow-oryol-oblasts-overnight-military-claims/",
+        "https://tass.com/emergencies/1537437",
+        "https://druzhba.transneft.ru/press/news?id=37802",
+        "https://www.nefteavtomatika.ru/ru/projects/lpds-stalnoy-kon-mnpp-ryazan-tula-orel/",
+        "https://energybase.ru/compressor-station/lpds-stalnoy-kon"
+      ]
+    },
+    {
+      "id": "tikhoretsk-lpds",
+      "kind": "depot",
+      "name": "Tikhoretsk Oil Hub / LPDS (Tikhoretskaya)",
+      "name_local": "ЛПДС «Тихорецкая»",
+      "lat": 45.855,
+      "lon": 40.126,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Chernomortransneft",
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "One of the largest oil hubs in southern Russia, junction of Kuibyshev-Tikhoretsk and Tikhoretsk-Novorossiysk trunk lines feeding the Sheskharis export terminal; large tank farm. Struck by drones 12 Mar and 18 Apr 2026 with tank fires. Coordinates approximate (town-level).",
+      "source_urls": [
+        "https://charter97.org/ru/news/2026/4/18/681016/",
+        "https://www.dialog.ua/russia/bpla-razbombili-odin-iz-krupneyshikh-neftyanykh-uzlov-na-yuge-rossii.html",
+        "https://neftegaz.ru/news/transport-and-storage/640406-chernomortransneft-vvela-v-ekspluatatsiyu-rezervuar-na-lpds-tikhoretskaya/"
+      ]
+    },
+    {
+      "id": "unecha-vysokoye-lpds",
+      "kind": "depot",
+      "name": "Unecha (Vysokoye) Oil Pumping Station / LPDS",
+      "name_local": "ЛПДС «Унеча» (с. Высокое)",
+      "lat": 52.755,
+      "lon": 32.92,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": "Transneft-Druzhba",
+      "region": "Bryansk Oblast",
+      "status": "operational",
+      "notes": "Key Druzhba pipeline node (capacity ~60 Mt/yr) at Vysokoye, Unechsky district, ~60 km from the Ukrainian border; routes crude to Druzhba (Belarus/EU) and to Ust-Luga via BTS-2. Struck repeatedly in Aug 2025 (two pumping stations wrecked per satellite imagery), later restored. Coordinates approximate (settlement-level).",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/08/22/7527287/",
+        "https://militarnyi.com/en/news/satellite-images-strike-on-unecha-station-wrecks-two-pumping-stations-of-druzhba-oil-pipeline/",
+        "https://www.kyivpost.com/post/58741"
+      ]
+    },
+    {
+      "id": "baku-novorossiysk-pipeline",
+      "kind": "pipeline",
+      "name": "Baku-Novorossiysk Pipeline (Northern Route)",
+      "name_local": "Нефтепровод Баку — Новороссийск",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            49.46,
+            40.19
+          ],
+          [
+            49.66,
+            40.59
+          ],
+          [
+            49.11,
+            41.08
+          ],
+          [
+            48.81,
+            41.46
+          ],
+          [
+            48.55,
+            41.84
+          ],
+          [
+            48.29,
+            42.06
+          ],
+          [
+            47.87,
+            42.56
+          ],
+          [
+            47.5,
+            42.98
+          ],
+          [
+            46.87,
+            43.21
+          ],
+          [
+            46.59,
+            43.25
+          ],
+          [
+            45.8,
+            43.6
+          ],
+          [
+            44.66,
+            43.74
+          ],
+          [
+            44.03,
+            43.76
+          ],
+          [
+            43.0,
+            44.3
+          ],
+          [
+            41.13,
+            44.99
+          ],
+          [
+            40.13,
+            45.85
+          ],
+          [
+            38.99,
+            45.04
+          ],
+          [
+            37.99,
+            44.93
+          ],
+          [
+            37.79,
+            44.72
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 5,
+      "owner": "Transneft (Russian section); SOCAR (Azerbaijani section)",
+      "operator": "Transneft / SOCAR",
+      "region": null,
+      "status": "operational",
+      "notes": "~1,330 km from the Sangachal Terminal near Baku along the Caspian coast through Dagestan (Makhachkala), bypassing Chechnya via Khasavyurt-Mozdok-Tikhoretsk corridor to the Sheskharis terminal at Novorossiysk. Design ~5 Mt/yr (105,000 b/d); actual flows ~1-2 Mt/yr, partly reverse/swap use. Simplified route.",
+      "source_urls": [
+        "https://www.gem.wiki/Baku-Novorossiysk_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Baku%E2%80%93Novorossiysk_pipeline"
+      ]
+    },
+    {
+      "id": "bts-1-baltic-pipeline-system",
+      "kind": "pipeline",
+      "name": "Baltic Pipeline System-1 (BPS-1, to Primorsk)",
+      "name_local": "Балтийская трубопроводная система-1 (БТС-1)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            39.87,
+            57.62
+          ],
+          [
+            39.0,
+            58.0
+          ],
+          [
+            38.0,
+            58.45
+          ],
+          [
+            36.9,
+            59.0
+          ],
+          [
+            35.94,
+            59.39
+          ],
+          [
+            34.8,
+            59.55
+          ],
+          [
+            33.55,
+            59.62
+          ],
+          [
+            32.02,
+            59.45
+          ],
+          [
+            31.0,
+            59.62
+          ],
+          [
+            30.15,
+            59.72
+          ],
+          [
+            29.4,
+            60.05
+          ],
+          [
+            28.72,
+            60.34
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 74,
+      "owner": "Transneft",
+      "operator": "Transneft",
+      "region": null,
+      "status": "operational",
+      "notes": "Trunk route Yaroslavl-Kirishi-Primorsk feeding the Primorsk export terminal on the Gulf of Finland; capacity ~74 Mt/yr after 2006 expansion. Main outlet for Urals crude exports by shadow-fleet tankers. Simplified route via Babaevo/Kirishi corridor.",
+      "source_urls": [
+        "https://www.gem.wiki/Baltic_Pipeline_System_1",
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System"
+      ]
+    },
+    {
+      "id": "bts-2-baltic-pipeline-system",
+      "kind": "pipeline",
+      "name": "Baltic Pipeline System-2 (BPS-2, Unecha-Ust-Luga)",
+      "name_local": "Балтийская трубопроводная система-2 (БТС-2)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32.68,
+            52.85
+          ],
+          [
+            32.55,
+            53.6
+          ],
+          [
+            32.4,
+            54.4
+          ],
+          [
+            31.9,
+            55.2
+          ],
+          [
+            30.53,
+            56.34
+          ],
+          [
+            30.2,
+            57.2
+          ],
+          [
+            29.9,
+            58.0
+          ],
+          [
+            29.85,
+            58.74
+          ],
+          [
+            29.2,
+            59.1
+          ],
+          [
+            28.61,
+            59.37
+          ],
+          [
+            28.41,
+            59.67
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 30,
+      "owner": "Transneft",
+      "operator": "Transneft",
+      "region": null,
+      "status": "operational",
+      "notes": "998 km from the Unecha junction of Druzhba to the Ust-Luga export terminal; commissioned 2012; ~30 Mt/yr first stage (expandable to 38), plus 172 km branch to Kirishi refinery (branch not modelled). Diverts Druzhba volumes to Baltic tanker exports. Simplified route via Velikiye Luki and Kingisepp.",
+      "source_urls": [
+        "https://www.gem.wiki/Baltic_Pipeline_System_2",
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System-II"
+      ]
+    },
+    {
+      "id": "cpc-pipeline",
+      "kind": "pipeline",
+      "name": "Caspian Pipeline Consortium (CPC) Pipeline (Tengiz-Novorossiysk)",
+      "name_local": "Нефтепровод Каспийского трубопроводного консорциума (КТК)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            53.41,
+            46.16
+          ],
+          [
+            53.0,
+            46.65
+          ],
+          [
+            52.6,
+            46.9
+          ],
+          [
+            51.92,
+            47.11
+          ],
+          [
+            50.8,
+            47.0
+          ],
+          [
+            49.9,
+            46.8
+          ],
+          [
+            48.3,
+            46.7
+          ],
+          [
+            47.2,
+            46.0
+          ],
+          [
+            46.03,
+            45.34
+          ],
+          [
+            45.0,
+            45.5
+          ],
+          [
+            44.0,
+            45.6
+          ],
+          [
+            42.9,
+            45.72
+          ],
+          [
+            41.8,
+            45.6
+          ],
+          [
+            40.58,
+            45.44
+          ],
+          [
+            39.7,
+            45.3
+          ],
+          [
+            38.98,
+            45.18
+          ],
+          [
+            37.99,
+            44.93
+          ],
+          [
+            37.6,
+            44.66
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": 83,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 63,
+      "owner": "Caspian Pipeline Consortium (Transneft 24%, KazMunayGas 19%, Chevron, LUKOIL, ExxonMobil et al.)",
+      "operator": "CPC-R / CPC-K",
+      "region": null,
+      "status": "operational",
+      "notes": "1,511 km Tengiz-Atyrau-Komsomolskaya-Kropotkin to the CPC Marine Terminal at Yuzhnaya Ozereyevka near Novorossiysk; capacity after the bottleneck-elimination program ~72.5 Mt/yr of Kazakh-origin oil and up to 83 Mt/yr total via Russia; 2024 shipments 63.01 Mt, ~55 Mt Kazakh-origin CPC Blend (not sanctioned). Kropotkinskaya pump station damaged by drone attack Feb 2025, since repaired. Simplified route.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Caspian_Pipeline_Consortium",
+        "https://www.cpc.ru/",
+        "https://interfax.com/newsroom/top-stories/104819/"
+      ]
+    },
+    {
+      "id": "druzhba-pipeline-north",
+      "kind": "pipeline",
+      "name": "Druzhba Pipeline (Northern Branch)",
+      "name_local": "Нефтепровод «Дружба» (северная ветка)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            52.3,
+            54.9
+          ],
+          [
+            51.05,
+            54.05
+          ],
+          [
+            50.17,
+            53.24
+          ],
+          [
+            48.46,
+            53.16
+          ],
+          [
+            46.6,
+            53.12
+          ],
+          [
+            45.02,
+            53.19
+          ],
+          [
+            43.2,
+            53.05
+          ],
+          [
+            41.45,
+            52.9
+          ],
+          [
+            40.51,
+            52.9
+          ],
+          [
+            39.6,
+            52.61
+          ],
+          [
+            38.5,
+            52.62
+          ],
+          [
+            36.08,
+            52.97
+          ],
+          [
+            34.3,
+            52.9
+          ],
+          [
+            32.68,
+            52.85
+          ],
+          [
+            31.3,
+            52.5
+          ],
+          [
+            29.25,
+            52.04
+          ],
+          [
+            27.85,
+            52.2
+          ],
+          [
+            26.1,
+            52.12
+          ],
+          [
+            24.36,
+            52.21
+          ],
+          [
+            23.55,
+            52.03
+          ],
+          [
+            22.29,
+            52.17
+          ],
+          [
+            21.0,
+            52.3
+          ],
+          [
+            19.7,
+            52.55
+          ],
+          [
+            18.2,
+            52.78
+          ],
+          [
+            16.74,
+            53.1
+          ],
+          [
+            15.5,
+            53.05
+          ],
+          [
+            14.28,
+            53.06
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 49.8,
+      "owner": "Transneft (Russian section); Gomeltransneft Druzhba (Belarus); PERN (Poland)",
+      "operator": "Transneft / Gomeltransneft Druzhba / PERN",
+      "region": null,
+      "status": "operational",
+      "notes": "Almetyevsk-Samara-Unecha-Mozyr, then via Brest to Adamowo (PL), Plock and Schwedt (DE). Design capacity of northern branch ~49.8 Mt/yr; Russian crude deliveries to Germany/Poland halted 2022-23, line now carries mainly Kazakh transit crude to Schwedt. Simplified route via published waypoints, tens-of-km accuracy.",
+      "source_urls": [
+        "https://www.gem.wiki/Druzhba_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline"
+      ]
+    },
+    {
+      "id": "druzhba-pipeline-south",
+      "kind": "pipeline",
+      "name": "Druzhba Pipeline (Southern Branch)",
+      "name_local": "Нефтепровод «Дружба» (южная ветка)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              29.25,
+              52.04
+            ],
+            [
+              28.65,
+              51.55
+            ],
+            [
+              28.64,
+              50.95
+            ],
+            [
+              27.62,
+              50.59
+            ],
+            [
+              26.25,
+              50.62
+            ],
+            [
+              25.15,
+              50.08
+            ],
+            [
+              24.4,
+              49.95
+            ],
+            [
+              23.85,
+              49.7
+            ],
+            [
+              23.5,
+              49.35
+            ],
+            [
+              23.1,
+              48.95
+            ],
+            [
+              22.65,
+              48.75
+            ],
+            [
+              22.3,
+              48.62
+            ],
+            [
+              21.95,
+              48.66
+            ],
+            [
+              21.3,
+              48.5
+            ],
+            [
+              20.55,
+              48.4
+            ],
+            [
+              20.02,
+              48.38
+            ],
+            [
+              18.94,
+              48.07
+            ],
+            [
+              18.1,
+              48.15
+            ],
+            [
+              17.16,
+              48.13
+            ]
+          ],
+          [
+            [
+              22.3,
+              48.62
+            ],
+            [
+              22.45,
+              48.4
+            ],
+            [
+              22.53,
+              48.2
+            ],
+            [
+              22.1,
+              48.27
+            ],
+            [
+              21.72,
+              48.05
+            ],
+            [
+              21.04,
+              47.93
+            ],
+            [
+              20.57,
+              47.81
+            ],
+            [
+              19.93,
+              47.78
+            ],
+            [
+              19.68,
+              47.67
+            ],
+            [
+              19.25,
+              47.45
+            ],
+            [
+              18.91,
+              47.32
+            ]
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 17,
+      "owner": "Transneft (RU); Gomeltransneft Druzhba (BY); UkrTransNafta (UA); Transpetrol (SK); MOL (HU)",
+      "operator": "Gomeltransneft Druzhba / UkrTransNafta / Transpetrol / MOL",
+      "region": null,
+      "status": "operational",
+      "notes": "Branches at Mozyr, crosses Ukraine via Brody and the Carpathians to Slovakia (Budkovce-Bratislava/Slovnaft) and Hungary (Fenyeslitke-Tiszaujvaros-Szazhalombatta). ~17 Mt/yr design; still supplies sanctioned-exempt crude to Hungary/Slovakia; flows repeatedly interrupted in 2024-25 by strikes on Russian pumping stations (e.g. Unecha). Simplified route.",
+      "source_urls": [
+        "https://www.gem.wiki/Druzhba_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline"
+      ]
+    },
+    {
+      "id": "espo-1-taishet-skovorodino",
+      "kind": "pipeline",
+      "name": "ESPO-1 Oil Pipeline (Taishet-Skovorodino)",
+      "name_local": "Восточная Сибирь — Тихий океан, ВСТО-1 (Тайшет — Сковородино)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            97.99,
+            55.94
+          ],
+          [
+            99.5,
+            56.1
+          ],
+          [
+            101.63,
+            56.08
+          ],
+          [
+            103.0,
+            56.4
+          ],
+          [
+            105.69,
+            56.79
+          ],
+          [
+            108.11,
+            57.79
+          ],
+          [
+            110.5,
+            59.0
+          ],
+          [
+            112.6,
+            59.95
+          ],
+          [
+            114.92,
+            60.73
+          ],
+          [
+            117.6,
+            60.65
+          ],
+          [
+            120.42,
+            60.38
+          ],
+          [
+            122.9,
+            59.5
+          ],
+          [
+            123.5,
+            59.3
+          ],
+          [
+            125.39,
+            58.61
+          ],
+          [
+            125.0,
+            57.6
+          ],
+          [
+            124.72,
+            56.66
+          ],
+          [
+            124.72,
+            55.15
+          ],
+          [
+            123.92,
+            54.0
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 80,
+      "owner": "Transneft",
+      "operator": "Transneft",
+      "region": null,
+      "status": "operational",
+      "notes": "First stage of ESPO, 2,694 km Taishet-Ust-Kut-Lensk-Olyokminsk-Aldan-Skovorodino, in service since Dec 2009, expanded to 80 Mt/yr design. Routed north of Lake Baikal. Carries ESPO-blend crude for Asian exports. Simplified route via published pump-station towns.",
+      "source_urls": [
+        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline"
+      ]
+    },
+    {
+      "id": "espo-2-skovorodino-kozmino",
+      "kind": "pipeline",
+      "name": "ESPO-2 Oil Pipeline (Skovorodino-Kozmino)",
+      "name_local": "Восточная Сибирь — Тихий океан, ВСТО-2 (Сковородино — Козьмино)",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            123.92,
+            54.0
+          ],
+          [
+            125.8,
+            53.45
+          ],
+          [
+            127.62,
+            52.0
+          ],
+          [
+            128.06,
+            51.36
+          ],
+          [
+            128.48,
+            50.92
+          ],
+          [
+            129.44,
+            50.11
+          ],
+          [
+            130.08,
+            49.42
+          ],
+          [
+            131.05,
+            49.02
+          ],
+          [
+            132.93,
+            48.79
+          ],
+          [
+            135.08,
+            48.48
+          ],
+          [
+            134.75,
+            47.54
+          ],
+          [
+            134.26,
+            46.82
+          ],
+          [
+            133.73,
+            45.93
+          ],
+          [
+            132.81,
+            44.59
+          ],
+          [
+            131.95,
+            43.8
+          ],
+          [
+            133.12,
+            43.12
+          ],
+          [
+            133.08,
+            42.74
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 50,
+      "owner": "Transneft",
+      "operator": "Transneft",
+      "region": null,
+      "status": "operational",
+      "notes": "Second stage of ESPO, ~2,046 km from Skovorodino via Belogorsk, Birobidzhan, Khabarovsk and Ussuriysk to the Kozmino export terminal near Nakhodka; commissioned Dec 2012; expanded to 50 Mt/yr. Sole pipeline supply to Kozmino, the main ESPO-blend loading port. Simplified route along the Trans-Siberian corridor.",
+      "source_urls": [
+        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline"
+      ]
+    },
+    {
+      "id": "espo-daqing-spur",
+      "kind": "pipeline",
+      "name": "ESPO China Spur (Skovorodino-Mohe-Daqing)",
+      "name_local": "Отвод ВСТО Сковородино — Мохэ — Дацин",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            123.92,
+            54.0
+          ],
+          [
+            123.7,
+            53.75
+          ],
+          [
+            123.57,
+            53.48
+          ],
+          [
+            122.53,
+            52.97
+          ],
+          [
+            122.8,
+            52.2
+          ],
+          [
+            123.5,
+            51.3
+          ],
+          [
+            124.13,
+            50.41
+          ],
+          [
+            124.6,
+            49.8
+          ],
+          [
+            125.22,
+            49.18
+          ],
+          [
+            125.4,
+            48.3
+          ],
+          [
+            124.9,
+            47.4
+          ],
+          [
+            125.0,
+            46.6
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 30,
+      "owner": "Transneft (Russian section); PetroChina/CNPC (Chinese section)",
+      "operator": "Transneft / PetroChina",
+      "region": null,
+      "status": "operational",
+      "notes": "Spur from ESPO at Skovorodino crossing the Amur near Mohe, then twin lines through Heilongjiang to Daqing. Initial 15 Mt/yr (2011), doubled to 30 Mt/yr with second line (2018) under Rosneft-CNPC supply contracts. Simplified route.",
+      "source_urls": [
+        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline"
+      ]
+    },
+    {
+      "id": "kuibyshev-tikhoretsk-pipeline",
+      "kind": "pipeline",
+      "name": "Kuibyshev–Tikhoretsk Trunk Oil Pipeline",
+      "name_local": "Магистральный нефтепровод Куйбышев — Тихорецк",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            50.55722,
+            53.11084
+          ],
+          [
+            50.38205,
+            52.86479
+          ],
+          [
+            49.38943,
+            52.71649
+          ],
+          [
+            48.54278,
+            52.25068
+          ],
+          [
+            48.19244,
+            52.02131
+          ],
+          [
+            47.67861,
+            51.90979
+          ],
+          [
+            47.13559,
+            51.7727
+          ],
+          [
+            46.37652,
+            51.52634
+          ],
+          [
+            46.01451,
+            51.26769
+          ],
+          [
+            45.9386,
+            51.13964
+          ],
+          [
+            45.89189,
+            50.98184
+          ],
+          [
+            45.57659,
+            50.93403
+          ],
+          [
+            45.34595,
+            50.72381
+          ],
+          [
+            45.01313,
+            50.52192
+          ],
+          [
+            44.72994,
+            50.34526
+          ],
+          [
+            44.65987,
+            50.03873
+          ],
+          [
+            44.61024,
+            49.80565
+          ],
+          [
+            44.48178,
+            49.55441
+          ],
+          [
+            44.43507,
+            49.08245
+          ],
+          [
+            44.25114,
+            48.61561
+          ],
+          [
+            44.365,
+            48.35438
+          ],
+          [
+            44.1694,
+            48.15805
+          ],
+          [
+            43.90664,
+            47.86509
+          ],
+          [
+            43.30815,
+            47.60788
+          ],
+          [
+            42.96949,
+            47.47189
+          ],
+          [
+            42.44398,
+            47.15718
+          ],
+          [
+            41.84841,
+            46.82861
+          ],
+          [
+            41.67324,
+            46.6345
+          ],
+          [
+            41.38713,
+            46.29466
+          ],
+          [
+            41.11562,
+            46.22401
+          ],
+          [
+            40.7682,
+            46.11685
+          ],
+          [
+            40.5434,
+            45.99124
+          ],
+          [
+            40.16679,
+            45.90598
+          ]
+        ]
+      },
+      "commodity": "crude",
+      "capacity_mt_yr": 40,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft PJSC",
+      "operator": "Transneft-Privolga (Transneft subsidiary)",
+      "region": "Samara Oblast / Saratov Oblast / Volgograd Oblast / Rostov Oblast / Krasnodar Krai, Russia",
+      "status": "damaged",
+      "notes": "1,282 km trunk crude line (820/1020 mm, in service 1974) from Samara/Kuibyshev hub to Tikhoretsk, Krasnodar Krai; main feed for Sheskharis export terminal at Novorossiysk via Tikhoretsk-Novorossiysk 1-3 lines, bypassing Ukraine. Base capacity 35 mtpa, raised to 40 mtpa on Samara-Zenzevatka section in 2022. Joined by Sukhodolnaya-Rodionovskaya link (209 km, 2001). LPDS/NPS along it struck repeatedly by Ukrainian drones: Samara LPDS (Prosvet) and Sovkhoznaya-2 (Progress, Samara Obl.) and Zenzevatka (Volgograd Obl.) hit 19-20 and 24 Sep 2025, halting pumping; Volgograd Obl. pipeline hub feeding this route struck again 8 Jun 2026. Line itself restored/operational between strikes; stations damaged. Geometry: 33-vertex simplification of Global Energy Monitor route polyline (86 pts).",
+      "source_urls": [
+        "https://www.gem.wiki/Kuibyshev-Tikhoretsk_Oil_Pipeline",
+        "https://energybase.ru/pipeline/kuybyshev-tikhoreck",
+        "https://iadevon.ru/news/other/magistralniy_nefteprovod_kuybishev_%E2%80%93_tihoretsk_moderniziruyut_i_rasshiryat-12134/",
+        "https://www.pravda.com.ua/eng/news/2025/09/20/7531728/",
+        "https://news.liga.net/en/politics/news/ukrainian-uavs-shut-down-a-number-of-oil-pumping-stations-in-russia---source",
+        "https://tass.com/economy/1570123"
+      ]
+    },
+    {
+      "id": "sever-products-pipeline",
+      "kind": "pipeline",
+      "name": "Sever Products Pipeline (Kstovo-Yaroslavl-Kirishi-Primorsk)",
+      "name_local": "Нефтепродуктопровод «Север»",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            44.18,
+            56.16
+          ],
+          [
+            43.5,
+            56.5
+          ],
+          [
+            42.5,
+            56.9
+          ],
+          [
+            41.3,
+            57.2
+          ],
+          [
+            39.87,
+            57.62
+          ],
+          [
+            38.5,
+            58.2
+          ],
+          [
+            37.0,
+            59.0
+          ],
+          [
+            35.94,
+            59.39
+          ],
+          [
+            34.0,
+            59.6
+          ],
+          [
+            32.02,
+            59.45
+          ],
+          [
+            30.5,
+            59.7
+          ],
+          [
+            29.4,
+            60.05
+          ],
+          [
+            28.72,
+            60.34
+          ]
+        ]
+      },
+      "commodity": "products",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 25,
+      "owner": "Transneft (Transnefteproduct subsidiary)",
+      "operator": "Transnefteproduct",
+      "region": null,
+      "status": "operational",
+      "notes": "Diesel (EN-590) export pipeline from Kstovo via Yaroslavl and Kirishi refineries to Primorsk port; expanded to ~25 Mt/yr by 2020 under Project Sever. Main pipeline outlet for Russian diesel exports via Baltic tankers. Simplified route, shares corridor with BPS-1 west of Yaroslavl.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Sever_Pipeline",
+        "https://en.transneft.ru/about/projects/current"
+      ]
+    },
+    {
+      "id": "yug-products-pipeline",
+      "kind": "pipeline",
+      "name": "Yug Products Pipeline (Volgograd-Tikhoretsk-Novorossiysk)",
+      "name_local": "Нефтепродуктопровод «Юг»",
+      "lat": null,
+      "lon": null,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            44.55,
+            48.46
+          ],
+          [
+            44.3,
+            48.18
+          ],
+          [
+            43.8,
+            47.9
+          ],
+          [
+            43.13,
+            47.63
+          ],
+          [
+            42.46,
+            47.15
+          ],
+          [
+            41.54,
+            46.48
+          ],
+          [
+            40.8,
+            46.1
+          ],
+          [
+            40.13,
+            45.85
+          ],
+          [
+            39.4,
+            45.4
+          ],
+          [
+            38.99,
+            45.04
+          ],
+          [
+            37.99,
+            44.93
+          ],
+          [
+            37.81,
+            44.72
+          ]
+        ]
+      },
+      "commodity": "products",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": 6,
+      "owner": "Transneft (Transnefteproduct subsidiary)",
+      "operator": "Transnefteproduct",
+      "region": null,
+      "status": "operational",
+      "notes": "Diesel pipeline Volgograd Refinery-Tinguta-Tikhoretsk-Novorossiysk, commissioned Apr 2018; up to ~6 Mt/yr of diesel to the Black Sea coast (Sheskharis/Novorossiysk export). Simplified route via Kotelnikovo-Zimovniki-Salsk corridor.",
+      "source_urls": [
+        "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
+        "https://interfax.com/newsroom/top-stories/96881/",
+        "https://en.wikipedia.org/wiki/Oil_industry_in_Russia"
+      ]
+    }
+  ]
+}

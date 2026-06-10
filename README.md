@@ -19,6 +19,11 @@ journalism and compliance research.
 
 - **Live map** of sanctioned tankers (Leaflet) — risk-coded markers, suspect-zone overlay,
   STS event markers, click-to-detail side panel.
+- **Oil-infrastructure layer** — Russian refineries, depots, export terminals and trunk
+  pipelines with capacity/owner cards and per-record source links (`/api/infra`).
+- **Tanker-attacks layer** — Russia-linked attacks on tankers 2022–2026 (USV strikes,
+  limpet mines, port strikes) with incident cards; linked to vessel panels by IMO
+  (`/api/attacks`, CSV export).
 - **Vessel detail** — risk score with factor breakdown, sanctions sources/programmes,
   cargo type + load status (loaded / partial / ballast) inferred from draught,
   decoded UN/LOCODE destination, FtM ownership graph (vis-network), 24h track + AIS
@@ -159,6 +164,8 @@ bun run load-ownership          # OpenSanctions FtM JSON — 321 MB stream, ~20 
 bun run load-war-sanctions      # GUR Defence-Intelligence "War & Sanctions" — ~32 MB, ~4 s
                                 # → 1.4k vessels + ~5.8k masters/officers + owners/managers,
                                 #   merged into the same ownership graph (dataset ua_war_sanctions)
+bun run load-infra              # oil-infrastructure reference layer (data/oil-infra.json)
+bun run load-attacks            # tanker-attack incidents (data/tanker-attacks.json)
 ```
 
 Total downloads ≈ 350 MB. After this you have ~9k unique sanctioned IMOs in the DB,
@@ -266,6 +273,12 @@ bun run load-ownership
 
 These overwrite previous entries (ON CONFLICT UPDATE) so it's safe to run anytime.
 
+### Refresh reference layers (quarterly / as needed)
+```bash
+bun run load-infra      # oil-infrastructure reference layer (data/oil-infra.json)
+bun run load-attacks    # tanker-attack incidents (data/tanker-attacks.json)
+```
+
 ---
 
 ## Troubleshooting
@@ -328,6 +341,8 @@ These overwrite previous entries (ON CONFLICT UPDATE) so it's safe to run anytim
 | `bun run load-psc` | (Re-)load Port State Control detentions |
 | `bun run load-cases` | (Re-)load documented investigative cases |
 | `bun run load-crea` | (Re-)load CREA shadow-fleet revenue + P&I-insurance signals |
+| `bun run load-infra` | (Re-)load oil-infrastructure reference layer (`data/oil-infra.json`) |
+| `bun run load-attacks` | (Re-)load tanker-attack incidents (`data/tanker-attacks.json`) |
 | `bun run test` | Run the risk-scoring unit tests (Node) |
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
 | `bun run db:psql` | Open a `psql` shell into the DB |
