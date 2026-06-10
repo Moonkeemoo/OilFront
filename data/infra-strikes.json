@@ -1,0 +1,2999 @@
+{
+  "strikes": [
+    {
+      "id": "2022-06-22-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2022-06-22",
+      "weapon": "uav",
+      "summary": "Two kamikaze drones hit the Novoshakhtinsk refinery in the first-ever Ukrainian UAV strike on a Russian oil refinery, striking a crude distillation unit/heat-exchanger area and sparking a fire; operations were briefly suspended.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2022/6/22/russian-oil-refinery-near-ukraine-says-it-was-hit-by-drone-attack",
+        "https://www.ukrinform.net/rubric-ato/3512484-oil-refinery-in-russias-rostov-region-on-fire-in-kamikaze-drone-attack.html",
+        "https://babel.ua/en/news/80351-in-russia-the-novoshakhtinsk-oil-refinery-was-on-fire-the-authorities-say-about-the-drone-attack-what-is-already-known"
+      ]
+    },
+    {
+      "id": "2022-11-16-stalnoy-kon-lpds",
+      "infra_id": "stalnoy-kon-lpds",
+      "occurred_on": "2022-11-16",
+      "weapon": "uav",
+      "summary": "A drone detonated at the Stalnoy Kon oil depot/LPDS of the Druzhba pipeline system in Oryol Oblast, about 170 km from the Ukrainian border, in one of the earliest long-range strikes on Russian oil infrastructure. Officials reported damage to a reservoir but no fire or casualties.",
+      "source_urls": [
+        "https://ria.ru/20221116/neftebaza-1831814975.html",
+        "https://www.gazeta.ru/social/2022/11/16/15789967.shtml",
+        "https://focus.ua/world/537225-pochti-170-km-do-granicy-s-ukrainoy-v-orlovskoy-oblasti-rf-vzorvalas-neftebaza-foto",
+        "https://www.pravda.com.ua/eng/news/2022/11/16/7376548/"
+      ]
+    },
+    {
+      "id": "2023-03-21-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2023-03-21",
+      "weapon": "uav",
+      "summary": "Bryansk region's governor said a Ukrainian UAV attacked the territory of Transneft's Novozybkov pumping station on the Druzhba pipeline, the last station before Belarus; no casualties were reported and power to five nearby villages was temporarily cut. Ukraine did not comment and the claim was not independently verified.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2023/03/21/russia-accuses-kyiv-of-drone-strike-on-oil-facility-near-border-a80561",
+        "https://www.newsweek.com/ukraine-drone-strikes-major-oil-pipeline-russian-territory-1789288"
+      ]
+    },
+    {
+      "id": "2023-05-04-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2023-05-04",
+      "weapon": "uav",
+      "summary": "An overnight drone attack around 3:30 a.m. set a fuel storage tank ablaze at the Ilsky refinery, with the fire covering roughly 400 sq m; reports said four drones took part in the almost hour-long raid. No casualties were reported.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2023/5/4/russian-drone-attack-in-ukraine-after-oil-refinery-targeted",
+        "https://easternherald.com/2023/05/04/ilsky-oil-refinery-tank-caught-fire-in-kuban-due-to-drone-attack/"
+      ]
+    },
+    {
+      "id": "2023-05-05-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2023-05-05",
+      "weapon": "uav",
+      "summary": "In a second attack in two days, a drone struck the Ilsky refinery on the morning of May 5 (explosion reported around 9:10 a.m. Moscow time), hitting an aerial cooler of the CDU-5 (AT-5) primary distillation column (1.8 million t/yr capacity) according to a Reuters refinery source; the resulting fire covered about 60 sq m and was extinguished with no casualties.",
+      "source_urls": [
+        "https://www.rferl.org/a/russia-refinery-fire-drone/32397343.html",
+        "https://english.alarabiya.net/News/world/2023/05/05/Drone-attack-on-Ilsky-oil-refinery-in-southern-Russia-causes-fire",
+        "https://www.interfax.ru/russia/900218"
+      ]
+    },
+    {
+      "id": "2023-05-11-klintsy-oil-depot",
+      "infra_id": "klintsy-oil-depot",
+      "occurred_on": "2023-05-11",
+      "weapon": "uav",
+      "summary": "A drone attacked the Rosneft Bryansknefteprodukt oil depot in Klintsy, Bryansk Oblast, dropping an explosive device that partially damaged one storage tank, according to the regional governor. No casualties were reported and damage was limited.",
+      "source_urls": [
+        "https://english.alarabiya.net/News/world/2023/05/11/Ukrainian-drone-attacks-oil-storage-depot-in-Russian-border-region-Governor",
+        "https://liveuamap.com/en/2023/11-may-suspected-drone-dropped-an-explosive-device-at-rosneft",
+        "https://www.globalsecurity.org/wmd/library/news/ukraine/2023/05/ukraine-230511-sputnik06.htm"
+      ]
+    },
+    {
+      "id": "2023-05-31-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2023-05-31",
+      "weapon": "uav",
+      "summary": "A fire erupted at the Afipsky refinery after a likely kamikaze drone attack; the governor said the blaze burned for a few hours before being extinguished with no casualties.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2023/05/31/drones-target-southern-russia-oil-refineries-a81338",
+        "https://www.gazeta.ru/social/news/2023/05/31/20562434.shtml"
+      ]
+    },
+    {
+      "id": "2023-05-31-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2023-05-31",
+      "weapon": "uav",
+      "summary": "A drone fell and broke apart on the territory of the Ilsky refinery during a drone raid on Krasnodar Krai refineries; officials said infrastructure was not damaged and there was no fire, and a bomb-disposal team destroyed the downed drone.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2023/05/31/drones-target-southern-russia-oil-refineries-a81338",
+        "https://english.alarabiya.net/News/world/2023/05/31/Drone-crashes-into-Ilsky-oil-refinery-in-Russia-s-Krasnodar-region-Report",
+        "https://www.upi.com/Top_News/World-News/2023/05/31/ukraine-oil-refineries-fire/9381685539603/"
+      ]
+    },
+    {
+      "id": "2023-10-29-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2023-10-29",
+      "weapon": "uav",
+      "summary": "A drone fell and exploded on the territory of the Afipsky refinery at about 3:24 a.m., starting a fire that plant workers extinguished in roughly 30 minutes; no casualties were reported. Ukrainian media later linked the strike to the SBU.",
+      "source_urls": [
+        "https://lenta.ru/news/2023/10/29/na-kubani-proizoshel-pozhar-na-npz-k-vozgoraniyu-mogla-privesti-ataka-drona/",
+        "https://fakty.com.ua/ru/svit/20231029-u-rosiyi-na-terytoriyi-afipskogo-npz-vybuhnuv-dron-gazonokosarka/"
+      ]
+    },
+    {
+      "id": "2024-01-18-petersburg-oil-terminal",
+      "infra_id": "petersburg-oil-terminal",
+      "occurred_on": "2024-01-18",
+      "weapon": "uav",
+      "summary": "A Ukrainian (HUR) long-range drone crashed and exploded on the territory of the Petersburg Oil Terminal on the night of 17-18 January 2024, the first drone to reach St. Petersburg; Russia said the attack was thwarted and no significant damage was reported.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/01/18/7437771/",
+        "https://tankstorage.com/news/ukrainian-drones-hit-st-petersburg-oil-terminal/"
+      ]
+    },
+    {
+      "id": "2024-01-19-klintsy-oil-depot",
+      "infra_id": "klintsy-oil-depot",
+      "occurred_on": "2024-01-19",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone (attributed to HUR) dropped its munition on the Klintsy oil depot after being jammed by Russian electronic warfare, igniting fuel storage tanks; the fire covered around 1,000 m2 with four tanks reported burning and thick black smoke visible for kilometers. About 30 residents were evacuated; no casualties were reported.",
+      "source_urls": [
+        "https://www.rferl.org/a/ukraine-russia-oil-depot-bryansk-klintsy-drone-attack/32783071.html",
+        "https://www.cbsnews.com/news/russia-ukraine-war-russian-oil-depot-ukrainian-drone-attack-klintsy/",
+        "https://meduza.io/feature/2024/01/19/v-bryanskoy-oblasti-posle-ataki-ukrainskih-bespilotnikov-zagorelas-neftebaza"
+      ]
+    },
+    {
+      "id": "2024-01-21-ust-luga-novatek-complex",
+      "infra_id": "ust-luga-novatek-complex",
+      "occurred_on": "2024-01-21",
+      "weapon": "uav",
+      "summary": "SBU drones caused two explosions and a large-scale fire at Novatek's Ust-Luga gas condensate processing complex, stopping the condensate splitter units; the complex resumed only transshipment within days, with processing restored in mid-February and naphtha exports cut.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2024-01-21/novatek-s-ust-luga-terminal-is-on-fire-leningrad-governor-says",
+        "https://t-intell.com/2024/01/25/russia-attack-on-novateks-ust-luga-gas-complex-damage-and-effects/",
+        "https://www.hellenicshippingnews.com/russias-novatek-wont-resume-condensate-processing-at-ust-luga-this-month-sources/"
+      ]
+    },
+    {
+      "id": "2024-01-25-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2024-01-25",
+      "weapon": "uav",
+      "summary": "Ukrainian drones caused a large fire at Rosneft's Tuapse refinery, burning down the vacuum distillation unit; the plant stopped refining and only resumed operations after roughly three months of repairs in late April 2024.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/01/26/7439024/",
+        "https://kyivindependent.com/reuters-tuapse-refinery-hit-by-drone-resumes-work-after-3-months-of-repairs/"
+      ]
+    },
+    {
+      "id": "2024-02-03-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2024-02-03",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone came down on the Lukoil Volgograd refinery, damaging the recently reconstructed ELOU-AVT-5 primary crude processing unit and starting a fire that took over three hours to extinguish. The unit was restored and restarted on February 21, 2024.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/02/03/drone-attack-sets-russian-refinery-ablaze-governor-a83964",
+        "https://www.bloomberg.com/news/articles/2024-02-03/russia-ukraine-war-major-oil-refinery-set-ablaze-after-drone-downed"
+      ]
+    },
+    {
+      "id": "2024-02-09-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2024-02-09",
+      "weapon": "uav",
+      "summary": "An overnight drone attack on the Ilsky refinery caused an explosion and a large fire in the area of the primary processing (AVT) unit; the blaze was extinguished within about two hours with no casualties reported.",
+      "source_urls": [
+        "https://lenta.ru/news/2024/02/09/stalo-izvestno-ob-atake-bpla-na-rossiyskiy-neftepererabatyvayuschiy-zavod/",
+        "https://www.rbc.ru/society/09/02/2024/65c5a1759a7947393dbc3ffa",
+        "https://www.pravda.com.ua/eng/news/2024/02/9/7441065/"
+      ]
+    },
+    {
+      "id": "2024-03-12-kirishi-refinery",
+      "infra_id": "kirishi-refinery",
+      "occurred_on": "2024-03-12",
+      "weapon": "uav",
+      "summary": "A fixed-wing attack drone was shot down by a mobile air-defense group on approach to the KINEF (Kirishi) refinery; the plant continued operating normally with no casualties or destruction reported. Reuters later counted this as the refinery's first drone attack.",
+      "source_urls": [
+        "https://www.fontanka.ru/2024/03/12/73322216/",
+        "https://www.interfax.ru/russia/949878"
+      ]
+    },
+    {
+      "id": "2024-03-12-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2024-03-12",
+      "weapon": "uav",
+      "summary": "A drone struck the Lukoil NORSI refinery in Kstovo, hitting the AVT-6 primary crude unit (25,700 tonnes/day, 53% of capacity); Reuters reported at least half of the refinery's production was halted.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/at-least-half-of-production-at-russian-oil-1710251673.html",
+        "https://www.arabnews.com/node/2644489/world",
+        "https://english.nv.ua/nation/lukoil-resumes-operations-at-norsi-refinery-after-march-drone-attack-reuters-50430315.html"
+      ]
+    },
+    {
+      "id": "2024-03-13-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2024-03-13",
+      "weapon": "uav",
+      "summary": "Ukrainian military intelligence (HUR) drones crashed onto the territory of the Novoshakhtinsk refinery, forcing suspension of its technological facilities; the Rostov governor confirmed the halt with no casualties.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/03/13/7446257/",
+        "https://newsukraine.rbc.ua/news/drones-crash-on-novoshakhtynsk-oil-refinery-1710333332.html",
+        "https://lenta.ru/news/2024/03/13/krupneyshiy-neftepererabatyvayuschiy-zavod-yuga-rossii-ostanovil-rabotu-ego-atakovali-ukrainskie-drony/"
+      ]
+    },
+    {
+      "id": "2024-03-13-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2024-03-13",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck Rosneft's Ryazan refinery, hitting primary oil processing units and causing a major blaze at one of Russia's largest refineries (about 5.8% of national refining).",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2024-03-13/russia-s-ryazan-refinery-is-on-fire-after-drone-attack-tass-says",
+        "https://www.newsweek.com/russia-ukraine-drone-attack-oil-refinery-ryazan-1895908",
+        "https://www.rferl.org/a/ukraine-russia-air-strikes/32859724.html"
+      ]
+    },
+    {
+      "id": "2024-03-16-kuibyshev-refinery",
+      "infra_id": "kuibyshev-refinery",
+      "occurred_on": "2024-03-16",
+      "weapon": "uav",
+      "summary": "Targeted in a coordinated SBU drone attack on three Rosneft refineries in Samara Oblast (Syzran, Novokuibyshevsk, Kuibyshev). Fires broke out at Syzran and Novokuibyshevsk, while no fire or damage was officially reported at the Kuibyshev plant itself.",
+      "source_urls": [
+        "https://euromaidanpress.com/2024/03/16/media-ukraines-security-service-attacks-3-russian-refineries-in-the-samara-oblast-overnight/",
+        "https://newsukraine.rbc.ua/news/ukraine-s-security-service-attacks-3-rosneft-1710596902.html"
+      ]
+    },
+    {
+      "id": "2024-03-16-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2024-03-16",
+      "weapon": "uav",
+      "summary": "SBU drones attacked the Rosneft Novokuibyshevsk refinery as part of a strike on three Samara Oblast refineries; a fire broke out at the plant and was extinguished about half an hour later.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/03/16/7446752/",
+        "https://newsukraine.rbc.ua/news/drones-attacked-two-oil-refineries-in-samara-1710566348.html",
+        "https://en.interfax.com.ua/news/general/973928.html"
+      ]
+    },
+    {
+      "id": "2024-03-16-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2024-03-16",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Rosneft Syzran refinery at around 6 a.m., sparking a fire of about 500 sq m on the plant's territory; the Novokuibyshevsk refinery was attacked the same morning. Personnel were evacuated and no casualties were reported.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/drones-attacked-two-oil-refineries-in-samara-1710566348.html",
+        "https://www.aljazeera.com/news/2024/3/16/russia-says-people-killed-in-ukrainian-shelling-and-drones-hit-oil-refinery"
+      ]
+    },
+    {
+      "id": "2024-03-17-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2024-03-17",
+      "weapon": "uav",
+      "summary": "SBU and Special Operations Forces drones attacked the Slavyansk ECO refinery on the night of March 16-17, damaging a distillation/separation unit and starting a fire; the plant partially suspended operations and one employee died of a reported heart attack during the raid.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2024/03/17/7446848/",
+        "https://newsukraine.rbc.ua/news/drones-attacked-oil-refinery-in-slavyansk-1710642501.html",
+        "https://www.kommersant.ru/doc/6578419"
+      ]
+    },
+    {
+      "id": "2024-03-23-kuibyshev-refinery",
+      "infra_id": "kuibyshev-refinery",
+      "occurred_on": "2024-03-23",
+      "weapon": "uav",
+      "summary": "Drone strike set the Rosneft-owned Kuibyshev refinery in Samara on fire; Reuters reported the CDU-5 primary distillation unit (about 9,500 tonnes/day, roughly half the plant's capacity) was knocked offline, halting part of the production cycle.",
+      "source_urls": [
+        "https://kyivindependent.com/reuters-9/",
+        "https://euromaidanpress.com/2024/03/25/russias-kuibyshev-oil-refinery-lost-half-of-its-capacity-after-the-last-drone-attack-reuters/",
+        "https://www.themoscowtimes.com/2024/03/23/one-dead-oil-refinery-on-fire-after-drone-attacks-in-russia-a84585"
+      ]
+    },
+    {
+      "id": "2024-04-02-taneco-nizhnekamsk-refinery",
+      "infra_id": "taneco-nizhnekamsk-refinery",
+      "occurred_on": "2024-04-02",
+      "weapon": "uav",
+      "summary": "A long-range SBU/HUR drone (about 1,200 km) struck the TANECO refinery in Nizhnekamsk; Ukrainian sources said it hit the primary oil processing unit (~8 million t/yr), while Russian officials said the drone crashed at the perimeter and a fire was extinguished within 20 minutes with no production impact.",
+      "source_urls": [
+        "https://kyivindependent.com/drone-attack-reportedly-targets-oil-refinery-in-russias-tatarstan/",
+        "https://www.kommersant.ru/doc/6610424"
+      ]
+    },
+    {
+      "id": "2024-04-12-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2024-04-12",
+      "weapon": "uav",
+      "summary": "Four drones attacked the Novoshakhtinsk refinery overnight and at least one fell on plant territory, disrupting the technological process; officials claimed all drones were downed and reported no casualties.",
+      "source_urls": [
+        "https://www.svoboda.org/a/ukrainskie-drony-v-tretiy-raz-atakovali-novoshahtinskiy-npz/32981323.html",
+        "https://www.interfax.ru/russia/965730",
+        "https://news.obozrevatel.com/russia/dronyi-atakovali-novoshahtinskij-npz-v-rostovskoj-oblasti-rossiyane-uveryayut-chto-vse-sbili.htm"
+      ]
+    },
+    {
+      "id": "2024-04-27-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2024-04-27",
+      "weapon": "uav",
+      "summary": "A night drone attack on Kuban refineries damaged a pipeline at the Ilsky refinery; the plant said core equipment was protected and technological processes resumed by 11:00 with no casualties. The same night drones hit the nearby Slavyansk ECO refinery.",
+      "source_urls": [
+        "https://www.kommersant.ru/doc/6678754",
+        "https://www.pravda.com.ua/eng/news/2024/04/27/7453225/"
+      ]
+    },
+    {
+      "id": "2024-04-27-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2024-04-27",
+      "weapon": "uav",
+      "summary": "An overnight SBU drone strike saw about 10 drones hit the Slavyansk ECO refinery, causing a strong fire; the refinery partially suspended operations, per TASS and company officials.",
+      "source_urls": [
+        "https://www.cnbc.com/2024/04/27/oil-refinery-in-russia-region-damaged-in-ukraine-drone-attack-authorities.html",
+        "https://www.pravda.com.ua/eng/news/2024/04/27/7453262/",
+        "https://amp.cnn.com/cnn/2024/04/27/europe/ukraine-russia-oil-refinery-drone-attack-intl"
+      ]
+    },
+    {
+      "id": "2024-05-01-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2024-05-01",
+      "weapon": "uav",
+      "summary": "An overnight Ukrainian drone attack set a primary oil refining unit on fire at the Ryazan refinery, shortly after the plant had recovered from the March strike.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2024-05-01/ukrainian-drone-attack-sets-major-russian-oil-refinery-on-fire",
+        "https://www.hydrocarbonprocessing.com/news/2024/05/ryazan-refinery-russia-hit-by-drone-strike/",
+        "https://www.gazeta.ru/army/news/2024/05/01/22908613.shtml"
+      ]
+    },
+    {
+      "id": "2024-05-09-salavat-refinery",
+      "infra_id": "salavat-refinery",
+      "occurred_on": "2024-05-09",
+      "weapon": "uav",
+      "summary": "In the first drone attack on Bashkortostan of the war, an SBU long-range drone flew about 1,500 km and hit the Gazprom Neftekhim Salavat complex, colliding with a fluid catalytic cracking unit and causing smoke at one installation.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/05/09/in-first-drone-attacks-oil-refinery-in-russias-bashkortostan-a85078",
+        "https://www.pravda.com.ua/eng/news/2024/05/9/7454980/"
+      ]
+    },
+    {
+      "id": "2024-05-12-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2024-05-12",
+      "weapon": "uav",
+      "summary": "A drone fell and detonated on the Volgograd refinery grounds, causing a fire at the complex, according to the regional governor, who said the blaze was extinguished with no casualties. The refinery is Lukoil's biggest fuel producer in southern Russia.",
+      "source_urls": [
+        "https://tass.com/emergencies/1786575",
+        "https://www.pravda.com.ua/eng/news/2024/05/12/7455381/",
+        "https://www.bssnews.net/news/188575",
+        "https://neftegaz.ru/news/incidental/897401-volgogradskiy-npz-vnov-podvergsya-atake-bpla/"
+      ]
+    },
+    {
+      "id": "2024-05-17-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2024-05-17",
+      "weapon": "uav",
+      "summary": "A drone attack started a fire at the Tuapse refinery, damaging the rectification section of the propane-butane unit and halting the plant; processing resumed around July 1, 2024.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Tuapse_Refinery",
+        "https://fomag.ru/news-streem/avarii_na_rossiyskikh_npz_v_2024_2025gg/",
+        "https://www.hydrocarbonprocessing.com/news/2024/05/russias-tuapse-oil-refinery-remains-idle-after-may-17-drone-attack/",
+        "https://biz.liga.net/en/all/tek/novosti/rossiyskiy-npz-v-tuapse-ostanovil-rabotu-posle-ataki-dronov-reuters"
+      ]
+    },
+    {
+      "id": "2024-05-31-port-kavkaz-oil-ferry-terminal",
+      "infra_id": "port-kavkaz-oil-ferry-terminal",
+      "occurred_on": "2024-05-31",
+      "weapon": "uav",
+      "summary": "A drone attack on the night of 30-31 May 2024 set the oil depot at Port Kavkaz on fire, burning three railway tank cars with fuel oil; the blaze was visible from satellites and several workers were injured. Russia claimed downing 5 Neptune missiles and 29 drones over Krasnodar Krai that night.",
+      "source_urls": [
+        "https://tsn.ua/ru/svit/ataka-na-port-kavkaz-v-rf-pozhar-na-neftebaze-viden-so-sputnikov-foto-video-2590521.html",
+        "https://nv.ua/world/countries/port-kavkaz-bpla-atakovali-neftebazu-v-krasnodarskom-krae-poyavilis-foto-novosti-rossii-50423310.html",
+        "https://www.themoscowtimes.com/2024/05/31/ukrainian-drone-attack-sparks-oil-depot-fire-in-southern-russia-a85276"
+      ]
+    },
+    {
+      "id": "2024-06-06-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2024-06-06",
+      "weapon": "uav",
+      "summary": "Long-range drones struck the Novoshakhtinsk refinery overnight, hitting the ELOU-AVT-2.5 primary processing complex; several hits damaged two AVT-type primary oil processing units and knocked out first-stage refining capacity.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/strike-on-oil-refinery-in-rostov-region-media-1717699481.html",
+        "https://en.defence-ua.com/news/ukraines_drone_strikes_on_oil_facilities_evolve_example_of_the_novoshakhtinsk_refinery-10752.html"
+      ]
+    },
+    {
+      "id": "2024-06-21-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2024-06-21",
+      "weapon": "uav",
+      "summary": "Ukraine said its drones struck the Afipsky refinery in one of the war's largest drone swarm attacks, which targeted four Russian refineries supplying the Black Sea Fleet; drone debris reportedly hit a tank and administrative buildings were damaged, with a small fire extinguished by morning.",
+      "source_urls": [
+        "https://www.swissinfo.ch/eng/ukraine-says-its-drones-struck-four-russian-oil-refineries-in-major-attack/81351137",
+        "https://www.rigzone.com/news/wire/russian_refineries_targeted_in_overnight_drone_swarm_attack-21-jun-2024-177171-article/"
+      ]
+    },
+    {
+      "id": "2024-06-21-astrakhan-gas-processing-plant",
+      "infra_id": "astrakhan-gas-processing-plant",
+      "occurred_on": "2024-06-21",
+      "weapon": "uav",
+      "summary": "Ukraine's military said its long-range drones struck the Astrakhan refinery (Gazprom's Astrakhan gas processing complex) as part of a major attack on four Russian refineries; no damage at the plant was officially confirmed.",
+      "source_urls": [
+        "https://www.swissinfo.ch/eng/ukraine-says-its-drones-struck-four-russian-oil-refineries-in-major-attack/81351137",
+        "https://www.rigzone.com/news/wire/russian_refineries_targeted_in_overnight_drone_swarm_attack-21-jun-2024-177171-article/"
+      ]
+    },
+    {
+      "id": "2024-06-21-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2024-06-21",
+      "weapon": "uav",
+      "summary": "Ukraine's military said long-range drones struck the Ilsky refinery in a major swarm attack on four Russian refineries; in Seversky district administrative buildings on refinery territory were damaged, a ~50 sq m fire was put out by morning and two people were injured.",
+      "source_urls": [
+        "https://www.swissinfo.ch/eng/ukraine-says-its-drones-struck-four-russian-oil-refineries-in-major-attack/81351137",
+        "https://www.rigzone.com/news/wire/russian_refineries_targeted_in_overnight_drone_swarm_attack-21-jun-2024-177171-article/"
+      ]
+    },
+    {
+      "id": "2024-07-22-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2024-07-22",
+      "weapon": "uav",
+      "summary": "HUR drones attacked the Tuapse refinery in the early morning; explosions were followed by a fire of about 50 sq m on the plant's territory, in the refinery's first major drone strike in over a month.",
+      "source_urls": [
+        "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/072224-russias-tuapse-refinery-hit-by-first-major-drone-strike-in-over-a-month",
+        "https://euromaidanpress.com/2024/07/22/drones-attack-russian-oil-refinery-in-tuapse/"
+      ]
+    },
+    {
+      "id": "2024-07-23-port-kavkaz-oil-ferry-terminal",
+      "infra_id": "port-kavkaz-oil-ferry-terminal",
+      "occurred_on": "2024-07-23",
+      "weapon": "uav",
+      "summary": "Ukrainian forces struck the rail ferry Slavyanin at Port Kavkaz on 23 July 2024, scoring several direct hits and causing significant damage to the vessel used to ferry military cargo and fuel across the Kerch Strait.",
+      "source_urls": [
+        "https://maritime-executive.com/article/ukraine-claims-strike-on-kerch-strait-s-strategic-rail-ferry",
+        "https://www.aa.com.tr/en/world/russia-says-ukrainian-drone-attack-struck-ferry-in-krasnodar-s-kavkaz-port/3282979",
+        "https://militarnyi.com/en/news/ukrainian-forces-strike-russian-ferry-in-kavkaz-port/"
+      ]
+    },
+    {
+      "id": "2024-08-18-proletarsk-kavkaz-oil-depot",
+      "infra_id": "proletarsk-kavkaz-oil-depot",
+      "occurred_on": "2024-08-18",
+      "weapon": "uav",
+      "summary": "Ukrainian drones hit the Kavkaz state-reserve fuel depot in Proletarsk, Rostov Oblast, igniting diesel tanks; the blaze spread over ~10,000 sq m and ultimately destroyed dozens of the site's 74 tanks. The fire burned for roughly two weeks and injured ~47 firefighters before being fully extinguished in early September.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/08/20/russia-struggles-to-contain-oil-depot-fire-2-days-after-drone-attack-a86078",
+        "https://www.pbs.org/newshour/world/fire-rages-for-a-third-day-at-a-russian-oil-depot-targeted-in-a-ukrainian-drone-attack",
+        "https://www.pravda.com.ua/eng/news/2024/08/19/7470968/"
+      ]
+    },
+    {
+      "id": "2024-08-22-port-kavkaz-oil-ferry-terminal",
+      "infra_id": "port-kavkaz-oil-ferry-terminal",
+      "occurred_on": "2024-08-22",
+      "weapon": "missile",
+      "summary": "A Ukrainian missile strike on 22 August 2024 set ablaze and sank the rail ferry Conro Trader, loaded with about 30 fuel tank cars, at Port Kavkaz; one injured worker later died and fuel-oil shipments through the port (~110,000 b/d) were disrupted.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/08/22/ukrainian-missile-strike-sets-railway-ferry-ablaze-in-krasnodar-region-a86116",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/082224-ukraine-sinks-ferry-carrying-fuel-supplies-in-russian-port-of-kavkaz"
+      ]
+    },
+    {
+      "id": "2024-08-23-proletarsk-kavkaz-oil-depot",
+      "infra_id": "proletarsk-kavkaz-oil-depot",
+      "occurred_on": "2024-08-23",
+      "weapon": "uav",
+      "summary": "Around 5 a.m. on 23 August a follow-up Ukrainian drone attack hit the still-burning Kavkaz oil depot in Proletarsk, reportedly aiming to spread the fire to kerosene storage tanks. The blaze, burning since 18 August, expanded further after the repeat strike.",
+      "source_urls": [
+        "https://euromaidanpress.com/2024/08/23/six-day-blaze-expands-in-rostov-oil-depot-after-reported-follow-up-ukrainian-drone-strike/",
+        "https://newsukraine.rbc.ua/news/another-drone-strikes-oil-depot-in-rostov-1724403845.html",
+        "https://lenta.ru/news/2024/08/23/vsu-povtorno-udarili-dronami-po-neftebaze-pod-rostovom-na-donu-ona-gorit-uzhe-shestye-sutki/"
+      ]
+    },
+    {
+      "id": "2024-08-28-atlas-oil-depot",
+      "infra_id": "atlas-oil-depot",
+      "occurred_on": "2024-08-28",
+      "weapon": "uav",
+      "summary": "HUR and Special Operations Forces drones struck the Rosrezerv Atlas oil depot near Kamensk-Shakhtinsky, which stores petroleum products supplied to the Russian army; three tanks caught fire and a fourth later ignited after a new explosion. Over 200 firefighters fought the blaze, which burned for days.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2024/8/28/fire-rages-at-oil-depot-in-russias-rostov-after-ukraine-drone-attack",
+        "https://kyivindependent.com/ukrainian-drones-hit-russian-oil-depot-in-rostov-oblast-source-confirms/",
+        "https://www.kyivpost.com/post/38087"
+      ]
+    },
+    {
+      "id": "2024-09-01-moscow-refinery",
+      "infra_id": "moscow-refinery",
+      "occurred_on": "2024-09-01",
+      "weapon": "uav",
+      "summary": "Drones hit the Gazprom Neft Moscow refinery in Kapotnya during a large overnight attack; the Euro+ combined unit (6 mt/yr, about half the plant's capacity) was damaged and a fire initially assigned the highest complexity level broke out, with Reuters reporting the plant halted some oil processing.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/moscow-s-oil-refinery-halted-oil-processing-1725316244.html",
+        "https://www.forbes.ru/society/520333-na-moskovskom-npz-nacalsa-pozar-posle-ataki-dronov",
+        "https://militarnyi.com/en/news/ssu-drones-strike-damages-oil-refinery-in-moscow/"
+      ]
+    },
+    {
+      "id": "2024-10-07-feodosia-oil-terminal",
+      "infra_id": "feodosia-oil-terminal",
+      "occurred_on": "2024-10-07",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Feodosia Marine Oil Terminal, the largest oil storage facility in occupied Crimea (up to 250,000 tonnes), igniting a massive blaze that was still burning two days later and forced local evacuations.",
+      "source_urls": [
+        "https://www.kyivpost.com/post/40138",
+        "https://www.rferl.org/a/crimea-drones-feodosia-belgorod/33148782.html",
+        "https://www.themoscowtimes.com/2024/10/08/over-1k-evacuated-after-ukraine-hits-annexed-crimeas-largest-oil-depot-a86596"
+      ]
+    },
+    {
+      "id": "2024-10-31-ufaneftekhim-refinery",
+      "infra_id": "ufaneftekhim-refinery",
+      "occurred_on": "2024-10-31",
+      "weapon": "uav",
+      "summary": "Three drones attacked Ufa's fuel-energy enterprises; one fell on the territory of Bashneft-Ufaneftekhim causing minor damage (broken windows in an operator room) while two others were downed by electronic warfare over the industrial zone. No casualties; the plant continued operating.",
+      "source_urls": [
+        "https://ufa.rbc.ru/ufa/31/10/2024/6723b8329a7947147e9ed021",
+        "https://www.vedomosti.ru/strana/privolzhsky/news/2024/10/31/1072265-habirov-bespilotniki-atakovali"
+      ]
+    },
+    {
+      "id": "2024-11-29-atlas-oil-depot",
+      "infra_id": "atlas-oil-depot",
+      "occurred_on": "2024-11-29",
+      "weapon": "uav",
+      "summary": "A second drone strike on the Atlas oil depot near Kamensk-Shakhtinsky overnight on November 29 set the facility on fire amid a wave of ~30 drones over Rostov Oblast. The governor confirmed the fire at the Rosrezerv-run depot; no casualties were reported.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/fire-breaks-out-at-atlas-oil-depot-in-russia-1732841329.html",
+        "https://charter97.org/en/news/2024/11/29/620641/",
+        "https://www.kyivpost.com/post/43026"
+      ]
+    },
+    {
+      "id": "2024-12-14-stalnoy-kon-lpds",
+      "infra_id": "stalnoy-kon-lpds",
+      "occurred_on": "2024-12-14",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a strike on the Stalnoy Kon linear production dispatch station in Oryol Oblast overnight on 14 December; the governor said at least 11 drones were involved. Two storage tanks and a pipeline were damaged and the resulting fire burned for around 12 hours.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/12/14/ukraine-says-it-struck-russian-oil-terminal-a87334",
+        "https://kyivindependent.com/ukraine-reportedly-strikes-oil-depot-in-russias-oryol-oblast/",
+        "https://thedefensepost.com/2024/12/14/ukraine-russian-oil-terminal/"
+      ]
+    },
+    {
+      "id": "2024-12-19-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2024-12-19",
+      "weapon": "missile",
+      "summary": "A combined Ukrainian Navy/SBU attack used drones to saturate air defenses while domestically produced missiles (reported as Neptune) hit the Novoshakhtinsk refinery, damaging the catalytic cracking unit and causing a large fire; the plant later ceased operations citing equipment damage.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/12/19/ukraine-drones-missiles-spark-blaze-at-oil-refinery-in-russias-rostov-region-a87394",
+        "https://www.pravda.com.ua/eng/news/2024/12/20/7490046/",
+        "https://en.defence-ua.com/news/details_of_the_attack_on_novoshakhtinsk_oil_refinery_in_rostov_region_revealed_drones_and_neptune_missiles_were_used-12910.html"
+      ]
+    },
+    {
+      "id": "2024-12-22-stalnoy-kon-lpds",
+      "infra_id": "stalnoy-kon-lpds",
+      "occurred_on": "2024-12-22",
+      "weapon": "uav",
+      "summary": "Drones hit the Stalnoy Kon fuel depot in Oryol Oblast for the second time in nine days around 2 a.m. on 22 December, setting fuel ablaze at the Druzhba-linked terminal. The governor reported a 'massive' UAV attack; Ukraine's NSDC called the depot a key logistics node supplying the Russian army.",
+      "source_urls": [
+        "https://www.spglobal.com/commodity-insights/en/news-research/latest-news/refined-products/122324-second-drone-attack-in-the-week-hits-russias-oryol-fuel-depot",
+        "https://euromaidanpress.com/2024/12/22/drones-attack-oil-depot-in-russias-oryol-oblast-causes-fire/",
+        "https://kyivindependent.com/fire-reported-at-oil-depot-in-russias-oryol-oblast-amid-ukrainian-drone-attack/"
+      ]
+    },
+    {
+      "id": "2024-12-30-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2024-12-30",
+      "weapon": "uav",
+      "summary": "Russian reports said Ukrainian 'Peklo' missile-drones attacked the Novozybkov oil pumping station of the Druzhba pipeline in Bryansk Oblast; no casualties were reported and power was cut to nearby settlements during the response. No lasting disruption to pipeline flows was reported.",
+      "source_urls": [
+        "https://liveuamap.com/en/2024/30-december-10-drones-have-reportedly-attacked-oil-transport",
+        "https://militarnyi.com/en/news/russia-claims-use-of-peklo-drones-against-them/",
+        "https://charter97.org/en/news/2024/12/30/624430/"
+      ]
+    },
+    {
+      "id": "2025-01-04-ust-luga-novatek-complex",
+      "infra_id": "ust-luga-novatek-complex",
+      "occurred_on": "2025-01-04",
+      "weapon": "uav",
+      "summary": "SBU drones flying over 900 km struck the Ust-Luga complex again, hitting gas condensate tanks: one tank was heavily damaged and three others damaged by blast debris, in the second attack on the facility within a year.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/01/05/russias-strategic-ust-luga-port-targeted-by-drones-for-second-time-in-a-year/",
+        "https://kyivindependent.com/sbu-behind-drone-attack-on/"
+      ]
+    },
+    {
+      "id": "2025-01-08-kristall-engels-fuel-depot",
+      "infra_id": "kristall-engels-fuel-depot",
+      "occurred_on": "2025-01-08",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Rosrezerv Kombinat Kristall fuel depot in Engels, which supplies aviation fuel to the Engels-2 strategic bomber base, triggering a massive fire that burned for about five days; two firefighters were killed responding. Ukraine's military said the strike created major logistics problems for Russian strategic aviation.",
+      "source_urls": [
+        "https://www.cnn.com/2025/01/08/europe/ukraine-russia-engels-saratov-oil-depot-drone-intl/index.html",
+        "https://kyivindependent.com/ukraine-strikes-oil-depot-in-russias-saratov-oblast-military-confirms/",
+        "https://militarnyi.com/en/news/defense-forces-strike-rosrezerv-s-oil-storage-facility-in-engels/"
+      ]
+    },
+    {
+      "id": "2025-01-11-taneco-nizhnekamsk-refinery",
+      "infra_id": "taneco-nizhnekamsk-refinery",
+      "occurred_on": "2025-01-11",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone hit the TANECO refinery (over 16 million t/yr capacity) in Nizhnekamsk, with workers evacuated and footage showing smoke and flames; Tatarstan authorities denied a fire, attributing the glow to flare stacks. It was the second strike on the facility in under a year.",
+      "source_urls": [
+        "https://www.cnn.com/2025/01/11/europe/ukraine-drone-strike-russia-oil-refinery-intl-latam/index.html",
+        "https://www.pravda.com.ua/eng/news/2025/01/11/7493070/"
+      ]
+    },
+    {
+      "id": "2025-01-14-kristall-engels-fuel-depot",
+      "infra_id": "kristall-engels-fuel-depot",
+      "occurred_on": "2025-01-14",
+      "weapon": "uav",
+      "summary": "Drones re-attacked the Kristall fuel depot in Engels on the night of January 13-14, scoring at least two hits and reigniting a large fire just after the previous blaze had been contained. Across the two January strikes four fuel tanks were destroyed and around ten damaged, with a state of emergency declared in Engels.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/01/14/new-drone-attack-hits-oil-depot-in-russias-engels-video/",
+        "https://eadaily.com/en/news/2025/01/14/a-new-attack-by-the-ukrainian-armed-forces-on-an-oil-depot-in-engels-the-glow-of-a-fire-and-a-column-of-smoke-are",
+        "https://www.pravda.com.ua/eng/news/2025/01/17/7494036/"
+      ]
+    },
+    {
+      "id": "2025-01-14-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-01-14",
+      "weapon": "uav",
+      "summary": "Ukrainian drones hit the Saratov refinery on the night of January 13-14, destroying at least one fuel tank and damaging a pipeline overpass, later confirmed by Planet Labs satellite imagery.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukrainian-drones-hit-an-oil-refinery-in-saratov/",
+        "https://militarnyi.com/en/news/satellite-images-of-the-damaged-saratov-oil-refinery-have-been-released/",
+        "https://www.stripes.com/theaters/europe/2025-01-14/ukraine-drones-russia-energy-military-sites-16479574.html"
+      ]
+    },
+    {
+      "id": "2025-01-24-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-01-24",
+      "weapon": "uav",
+      "summary": "Drones hit the Ryazan refinery overnight, setting oil storage ablaze and damaging a railway loading rack and a hydrotreater unit, according to Reuters industry sources; at least three tanks caught fire.",
+      "source_urls": [
+        "https://www.marketscreener.com/quote/currency/US-DOLLAR-RUSSIAN-ROUBLE--2370597/news/Ukrainian-drones-hit-big-Russian-oil-refinery-at-Ryazan-sources-say-48865279/",
+        "https://forbes.ua/ru/news/u-rosii-droni-atakuvali-ryazanskiy-npz-ta-zavod-mikroelektroniki-yakiy-vigotovlyae-komplektuyuchi-dlya-droniv-i-sistem-ppo-24012025-26571"
+      ]
+    },
+    {
+      "id": "2025-01-26-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-01-26",
+      "weapon": "uav",
+      "summary": "A second drone strike in three days hit the Ryazan refinery, setting a primary oil processing unit (including the AVT-4 area) on fire; Reuters reported the plant suspended operations due to the damage.",
+      "source_urls": [
+        "https://kyivindependent.com/russias-ryazan-oil-refinery-suspends-operations-after-drone-strike-reuters-reports/",
+        "https://euromaidanpress.com/2026/05/15/moscows-fuel-supplier-under-fire-ukrainian-drones-strike-rosnefts-ryazan-refinery/",
+        "https://www.blackseanews.net/en/read/235248"
+      ]
+    },
+    {
+      "id": "2025-01-29-andreapol-lpds",
+      "infra_id": "andreapol-lpds",
+      "occurred_on": "2025-01-29",
+      "weapon": "uav",
+      "summary": "SBU and Special Operations Forces drones struck the Andreapol oil pumping station on Transneft's Baltic Pipeline System-2, damaging the filtration-pumping area and additive tanks and causing an oil spill and fire. Russia had to suspend the trunk pipeline feeding the Ust-Luga export terminal (~650,000 bbl/day).",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/01/29/7495843/",
+        "https://kyivindependent.com/ukrainian-drones-hit-russian-missile-arsenal-oil-pumping-station-in-tver-oblast-sbu-source-claims/",
+        "https://en.interfax.com.ua/news/general/1044201.html"
+      ]
+    },
+    {
+      "id": "2025-01-29-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2025-01-29",
+      "weapon": "uav",
+      "summary": "Large overnight drone attack on Kstovo caused explosions and fires in several units of the NORSI refinery's industrial zone (Ukrainian sources said 4 of 4 drones hit); the refinery suspended operations and an adjacent Sibur petrochemical plant blaze burned for about two days.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attacked-an-oil-refinery-in-kstov/",
+        "https://www.usnews.com/news/world/articles/2025-01-28/ukraine-drone-attacks-target-russian-power-oil-facilities-officials-and-media-say"
+      ]
+    },
+    {
+      "id": "2025-01-30-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2025-01-30",
+      "weapon": "uav",
+      "summary": "Drones struck the Novozybkov pumping station of the Druzhba pipeline in Bryansk Oblast; residents reported explosions and a fire broke out at the facility, later confirmed by satellite imagery. No lasting halt to Druzhba flows was reported.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/01/30/explosions-reported-near-internationally-important-druzhba-pipeline-in-russias-bryansk-oblast/",
+        "https://charter97.org/en/news/2025/1/30/627975/",
+        "https://english.nv.ua/nation/attack-reported-near-druzhba-pipeline-in-russia-s-bryansk-oblast-50485730.html"
+      ]
+    },
+    {
+      "id": "2025-01-31-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-01-31",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone attack sparked a fire at one of the Lukoil Volgograd refinery's key processing units; Russian officials said the fire was quickly extinguished. Kyiv confirmed the strike on the facility.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2025/1/31/ukraine-drone-attack-sparks-fire-at-major-volgograd-oil-refinery",
+        "https://www.rbc.ru/politics/31/01/2025/679c52299a794771be8fda7e"
+      ]
+    },
+    {
+      "id": "2025-02-03-astrakhan-gas-processing-plant",
+      "infra_id": "astrakhan-gas-processing-plant",
+      "occurred_on": "2025-02-03",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone strike caused a fire at Gazprom's Astrakhan gas processing plant, forcing it to suspend operations; motor fuel production was knocked out for months (until around September 2025) after severe damage, and a gas odor spread over Astrakhan in following days.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraines-drones-reportedly-strike-russian-energy-facilities-in-astrakhan-volgograd-oblasts/",
+        "https://www.themoscowtimes.com/2025/02/05/gas-odor-spreads-over-astrakhan-after-drone-strike-on-processing-plant-a87871"
+      ]
+    },
+    {
+      "id": "2025-02-03-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-02-03",
+      "weapon": "uav",
+      "summary": "In the second strike on the plant in four days, a large drone attack overnight on February 2-3 hit the Lukoil Volgograd refinery, with fires reported at a flare farm and primary processing/technological units; more than 50 explosions were reported and six regional airports temporarily closed.",
+      "source_urls": [
+        "https://www.kyivpost.com/post/46463",
+        "https://militarnyi.com/en/news/drones-hit-lukoil-refinery-in-volgograd/",
+        "https://www.rbc.ru/politics/03/02/2025/67a0380b9a79475b20d41aee"
+      ]
+    },
+    {
+      "id": "2025-02-10-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2025-02-10",
+      "weapon": "uav",
+      "summary": "An overnight Ukrainian drone attack (night of Feb 9-10) caused a fire at the Afipsky refinery, which supplies gasoline, diesel and jet fuel to the Russian military; drone debris fell on one of its units and the roughly 30 sq m fire was extinguished with no casualties, while drone debris also damaged a high-rise residential building in Krasnodar city.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/02/10/drones-strike-strategic-oil-refinery-in-kuban-southern-russia/",
+        "https://newsukraine.rbc.ua/news/drones-attacked-refinery-in-kuban-high-rise-1739150759.html",
+        "https://nv.ua/world/countries/ataka-dronami-neftezavodov-v-rossii-bespilotniki-atakovali-afipskiy-npz-na-kubani-video-50488602.html"
+      ]
+    },
+    {
+      "id": "2025-02-11-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-02-11",
+      "weapon": "uav",
+      "summary": "A drone attack damaged the Saratov refinery (described by the governor as an 'industrial facility'), with around six explosions and a fire; processing activity was suspended.",
+      "source_urls": [
+        "https://www.rferl.org/a/saratov-oil-refinery-ukraine-russia-drone-attack/33310467.html",
+        "https://www.themoscowtimes.com/2025/02/11/ukrainian-drone-attack-sparks-fire-at-saratov-region-industrial-site-a87936",
+        "https://www.blackseanews.net/en/read/235248"
+      ]
+    },
+    {
+      "id": "2025-02-13-andreapol-lpds",
+      "infra_id": "andreapol-lpds",
+      "occurred_on": "2025-02-13",
+      "weapon": "uav",
+      "summary": "SBU drones hit the Andreapol oil pumping station for the second time on the night of 12-13 February, causing a fire near an enclosed switchgear and a warehouse with boiler equipment. Oil pumping at the BTS-2 station was temporarily suspended.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/02/13/7498150/",
+        "https://kyivindependent.com/ukrainian-drones-again-hit-oil-pumping-station-in-russias-tver-oblast-sbu-source-claims/"
+      ]
+    },
+    {
+      "id": "2025-02-14-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2025-02-14",
+      "weapon": "uav",
+      "summary": "Drones hit the Slavyansk ECO refinery overnight on February 13-14 in the third strike on the facility, causing fires; Russian authorities acknowledged the attack but attributed local fires to falling debris.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/02/14/drone-attack-hits-slavyansk-na-kubani-in-southern-russias-krasnodar-krai/",
+        "https://cepa.org/article/ukraines-drones-say-just-stop-oil/",
+        "https://www.blackseanews.net/en/read/235248"
+      ]
+    },
+    {
+      "id": "2025-02-17-cpc-pipeline",
+      "infra_id": "cpc-pipeline",
+      "occurred_on": "2025-02-17",
+      "weapon": "uav",
+      "summary": "Seven explosive-laden Ukrainian drones struck the CPC's Kropotkinskaya pumping station in Krasnodar Krai, the pipeline's largest in Russia, destroying its gas turbine unit, transformers and switchgear. Oil transit on the Tengiz-Novorossiysk system continued at reduced volumes, with Kazakh export flows cut by roughly 30-40% during months of repairs.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/02/17/ukrainian-drones-hit-major-pipeline-in-southern-russia-disrupting-oil-supplies-a88043",
+        "https://www.cpc.ru/RU/press/releases/2025/Pages/20250217.aspx",
+        "https://interfax.com/newsroom/top-stories/111607/"
+      ]
+    },
+    {
+      "id": "2025-02-17-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2025-02-17",
+      "weapon": "uav",
+      "summary": "Ukrainian SSO/SBU drones hit the Ilsky refinery overnight during a massive attack on Krasnodar Krai, sparking a large fire at the facility; explosions were heard around 1:30 a.m. local time.",
+      "source_urls": [
+        "https://kyivindependent.com/fire-reported-at-oil-refinery-in-russias-krasnodar-krai-following-massive-drone-attack/",
+        "https://forbes.ua/ru/news/u-rosii-pislya-dronovoi-ataki-gorit-ilskiy-pz-ta-zupinilas-naftoperekachuvalna-stantsiya-kropotkinskaya-sso-17022025-27250"
+      ]
+    },
+    {
+      "id": "2025-02-19-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2025-02-19",
+      "weapon": "uav",
+      "summary": "Overnight drone attack with at least three explosions caused a large fire at the Syzran refinery; the plant suspended its only operating primary unit (AVT-6), halting processing. No casualties were reported.",
+      "source_urls": [
+        "https://kyivindependent.com/drones-attack-at-syzran-oil-refinery-in-russias-samara-oblast-causes-fire/",
+        "https://newsukraine.rbc.ua/news/drones-attack-the-syzran-oil-refinery-fire-1739929212.html"
+      ]
+    },
+    {
+      "id": "2025-02-24-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-02-24",
+      "weapon": "uav",
+      "summary": "Drones hit the Ryazan refinery for the third time in 2025, causing a massive fire; the main crude distillation unit CDU-6 was damaged and the refinery fully halted operations.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-hit-ryazan-oil-refinery-for-third-time-in-2025/",
+        "https://euromaidanpress.com/2026/05/15/moscows-fuel-supplier-under-fire-ukrainian-drones-strike-rosnefts-ryazan-refinery/",
+        "https://www.usnews.com/news/world/articles/2025-02-24/russias-ryazan-oil-refinery-halts-operations-after-drone-strike-sources-say"
+      ]
+    },
+    {
+      "id": "2025-02-26-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2025-02-26",
+      "weapon": "uav",
+      "summary": "Two drones attacked the refinery overnight; despite air-defense intercepts, part of the plant near the ELOU-AVT-12 unit was hit, a crude oil pipeline was damaged and a roughly 50 sq m fire broke out.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attack-pipeline-and-oil-refinery-in-tuapse/",
+        "https://www.bloomberg.com/news/articles/2025-02-26/ukraine-drones-attacked-russia-s-tuapse-refinery-major-port"
+      ]
+    },
+    {
+      "id": "2025-03-04-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2025-03-04",
+      "weapon": "uav",
+      "summary": "Drones hit the Syzran refinery again just as repairs from the February 19 strike were being completed, igniting a fire of about 30 sq m at the AVT-6 primary processing unit; operations were temporarily suspended.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-targets-oil-refinery-in-syzran/",
+        "https://fomag.ru/news-streem/avarii_na_rossiyskikh_npz_v_2024_2025gg/"
+      ]
+    },
+    {
+      "id": "2025-03-08-kirishi-refinery",
+      "infra_id": "kirishi-refinery",
+      "occurred_on": "2025-03-08",
+      "weapon": "uav",
+      "summary": "Drones targeted the Kirishi (KINEF) refinery about 800 km from Ukraine; debris from an intercepted drone damaged the external structure of one of the storage tanks, and oil processing continued without interruption.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/03/08/drones-targeted-oil-refinery-in-russias-leningrad-oblast-about-800-km-from-ukraine/",
+        "https://www.rbc.ru/spb_sz/08/03/2025/67cc7a349a794787ef2068f3"
+      ]
+    },
+    {
+      "id": "2025-03-11-stalnoy-kon-lpds",
+      "infra_id": "stalnoy-kon-lpds",
+      "occurred_on": "2025-03-11",
+      "weapon": "uav",
+      "summary": "During the mass drone attack on the night of 11 March 2025, Ukraine's General Staff said its drones struck the Stalnoy Kon LPDS in Oryol Oblast, a control node of the Druzhba pipeline, alongside the Moscow oil refinery. Explosions were recorded in the area of the facility.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/deep-strike-on-russia-ukraine-attacks-two-1741705602.html",
+        "https://euromaidanpress.com/2025/03/11/moscow-oil-refinery-and-druzhba-pipeline-targeted-in-drone-attack-ukraines-military-says/",
+        "https://liveuamap.com/en/2025/11-march-12-general-staff-of-armed-forces-of-ukraine-claims"
+      ]
+    },
+    {
+      "id": "2025-03-14-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2025-03-14",
+      "weapon": "missile",
+      "summary": "A strike on the night of March 13-14 set a roughly 20,000-tonne gasoline storage tank ablaze at the Tuapse refinery after about ten explosions; Russian officials blamed drones, while Ukrainian sources reported the first combat use of the Long Neptune cruise missile. The fire spread over more than 1,000 sq m and was fully extinguished only on March 17.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-03-14/russia-says-drone-attack-causes-fire-at-tuapse-oil-refinery",
+        "https://kyivindependent.com/ukrainian-drones-hit-russias-tuapse-oil-refinery-reportedly-setting-fuel-tank-on-fire/",
+        "https://www.pravda.com.ua/eng/news/2025/03/17/7503260/"
+      ]
+    },
+    {
+      "id": "2025-03-19-cpc-pipeline",
+      "infra_id": "cpc-pipeline",
+      "occurred_on": "2025-03-19",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Kavkazskaya station in Krasnodar Krai, which transships oil from rail into the CPC pipeline system; a pipeline between storage tanks was damaged, a tank exploded and the fire burned for about five days. CPC said the station was no longer usable for oil transport for the foreseeable future.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drone-strike-halts-operations-at-russias-kavkazskaya-oil-station/",
+        "https://kyivindependent.com/oil-pumping-station-in-krasnodar-krai-shut-down-due-to-damage-caused-by-drones/",
+        "https://euromaidanpress.com/2025/03/25/oil-pumping-through-russias-drone-struck-kavkazskaya-station-impossible-in-foreseeable-future-operator-says/"
+      ]
+    },
+    {
+      "id": "2025-03-19-kavkazskaya-oil-transshipment",
+      "infra_id": "kavkazskaya-oil-transshipment",
+      "occurred_on": "2025-03-19",
+      "weapon": "uav",
+      "summary": "Drones struck the Kavkazskaya rail-to-pipeline oil transshipment complex near Kropotkin, which feeds Russian crude into the Caspian Pipeline Consortium system (~6 million tons/year), damaging a storage tank and inter-tank pipeline and igniting a ~2,000 m2 fire that burned for at least five days. Operations were halted and CPC said pumping via Kavkazskaya was impossible for the foreseeable future.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/03/19/7503539/",
+        "https://kyivindependent.com/ukrainian-drone-strike-halts-operations-at-russias-kavkazskaya-oil-station/",
+        "https://euromaidanpress.com/2025/03/25/oil-pumping-through-russias-drone-struck-kavkazskaya-station-impossible-in-foreseeable-future-operator-says/"
+      ]
+    },
+    {
+      "id": "2025-05-22-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-05-22",
+      "weapon": "uav",
+      "summary": "Ukrainian drones again attacked the Ryazan refinery in the first reported strike on the plant after the spring 2025 lull; Russian reports acknowledged the attack with limited damage details.",
+      "source_urls": [
+        "https://www.gazeta.ru/army/news/2025/05/22/25848812.shtml",
+        "https://www.svoboda.org/a/ukrainskie-bespilotniki-vnovj-atakovali-npz-v-ryazani/33615003.html",
+        "https://euromaidanpress.com/2026/05/15/moscows-fuel-supplier-under-fire-ukrainian-drones-strike-rosnefts-ryazan-refinery/"
+      ]
+    },
+    {
+      "id": "2025-06-06-kristall-engels-fuel-depot",
+      "infra_id": "kristall-engels-fuel-depot",
+      "occurred_on": "2025-06-06",
+      "weapon": "uav",
+      "summary": "Ukrainian forces hit the Kristall fuel storage base in Engels for the third time on the night of June 6, setting fuel reservoirs ablaze. Satellite imagery showed at least five to seven fuel reservoirs destroyed or critically damaged at the depot serving the Engels-2 bomber airfield.",
+      "source_urls": [
+        "https://kyivindependent.com/explosions-rock-engels-in-russias-saratov-oblast-amid-reported-drone-attack/",
+        "https://militarnyi.com/en/news/satellite-confirms-damage-to-strategic-aviation-fuel-storage-facility-in-engels/",
+        "https://english.nv.ua/nation/attack-on-oil-depot-in-engels-and-plant-in-cheboksary-nv-receives-new-satellite-images-50520988.html"
+      ]
+    },
+    {
+      "id": "2025-07-07-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2025-07-07",
+      "weapon": "uav",
+      "summary": "Ukrainian long-range drones struck the Ilsky refinery, hitting one of its technological workshops, according to a Ukrainian military intelligence (HUR) source; Russia's regional headquarters said only that drone debris fell on the facility with no visible damage or fire.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drone-strike-hits-major-oil-refinery-in-russias-krasnodar-krai-06-2025/",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2025-08-02-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2025-08-02",
+      "weapon": "uav",
+      "summary": "Morning drone strike caused a large-scale fire with a column of flame; the atmospheric column of the AVT-11 primary unit (18,900 tonnes/day) was damaged and Reuters reported the refinery halted oil processing.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-strike-oil-refineries-in-ryazan-and-novokuibyshevsk/",
+        "https://www.hydrocarbonprocessing.com/news/2025/08/russias-novokuibyshevsk-oil-refinery-halts-operations-after-drone-attacks/",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2025-08-06-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2025-08-06",
+      "weapon": "uav",
+      "summary": "A drone attack caused a fire at the Unecha pumping station in Bryansk Oblast, the largest hub of the Druzhba pipeline network; no significant equipment damage was reported and flows continued.",
+      "source_urls": [
+        "https://isans.org/energy-sector/attacks-on-the-russian-energy-system-in-august-2025.html",
+        "https://militarnyi.com/en/news/drones-attack-unecha-oil-pumping-station-in-bryansk-region/"
+      ]
+    },
+    {
+      "id": "2025-08-06-unecha-vysokoye-lpds",
+      "infra_id": "unecha-vysokoye-lpds",
+      "occurred_on": "2025-08-06",
+      "weapon": "uav",
+      "summary": "At least one drone hit the territory of the Unecha LPDS (village of Vysokoye, Bryansk Oblast), the largest hub of the Druzhba pipeline network, causing a fire, according to Russian independent outlet Astra. The damage was limited and no abnormal heat signature was registered by NASA FIRMS.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attack-unecha-oil-pumping-station-in-bryansk-region/",
+        "https://zn.ua/war/v-brjanskoj-oblasti-pod-udarom-bpla-okazalsja-uzel-nefteprovoda-druzhba-rossmi.html"
+      ]
+    },
+    {
+      "id": "2025-08-07-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2025-08-07",
+      "weapon": "uav",
+      "summary": "An overnight Ukrainian drone strike sparked a fire at the Afipsky refinery when falling drone debris ignited a gas and gas-condensate processing unit; a primary processing unit was halted as a result.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/08/07/ukrainian-drone-attack-sparks-fire-at-krasnodar-oil-refinery-a90122",
+        "https://www.rigzone.com/news/wire/russia_says_drone_attack_caused_fire_at_afipsky_refinery-07-aug-2025-181405-article/"
+      ]
+    },
+    {
+      "id": "2025-08-10-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-08-10",
+      "weapon": "uav",
+      "summary": "Ukraine said it hit the Rosneft-owned Saratov refinery in an overnight drone attack that damaged the ELOU-AVT-6 unit area and halted operations; Russian officials reported one person killed in Saratov.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2025/8/10/ukraine-says-it-hit-oil-refinery-in-russias-saratov-moscow-says-one-dead",
+        "https://www.themoscowtimes.com/2025/08/11/ukrainian-drone-strike-halts-operations-at-rosneft-refinery-in-saratov-a90168"
+      ]
+    },
+    {
+      "id": "2025-08-10-ukhta-refinery",
+      "infra_id": "ukhta-refinery",
+      "occurred_on": "2025-08-10",
+      "weapon": "uav",
+      "summary": "In the first-ever drone strike on the Komi Republic (~2,000 km from the border), HUR drones hit the LUKOIL-Ukhtaneftepererabotka refinery, puncturing a tank; the facility and a nearby shopping center were evacuated and no injuries or fire were reported.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drone-attack-struck-oil-refinery-about-2-000-kilometers-from-border-russian-media-report/",
+        "https://www.pravda.com.ua/eng/news/2025/08/10/7525507/",
+        "https://newsukraine.rbc.ua/news/explosions-rock-russia-s-ukhta-as-drones-1754833097.html"
+      ]
+    },
+    {
+      "id": "2025-08-13-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2025-08-13",
+      "weapon": "uav",
+      "summary": "Ukrainian HUR kamikaze drones struck the Unecha pumping station overnight on 12-13 August, damaging main and booster pumps and starting fires confirmed by NASA satellite data. Pumping through Druzhba was temporarily suspended and Hungary said crude deliveries were briefly halted.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attack-unecha-oil-pumping-station-in-bryansk-region/",
+        "https://www.kyivpost.com/post/58040",
+        "https://newsukraine.rbc.ua/news/satellite-photos-expose-refinery-hit-in-unecha-1755173910.html"
+      ]
+    },
+    {
+      "id": "2025-08-13-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2025-08-13",
+      "weapon": "uav",
+      "summary": "Drone wreckage fell on the Slavyansk ECO refinery territory during an overnight attack on Krasnodar Krai, setting a vehicle on fire; officials reported no casualties and a quickly extinguished blaze.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/russia-says-oil-refinery-in-slavyansk-on-1755072152.html",
+        "https://kubnews.ru/obshchestvo/2025/08/13/oblomki-bpla-obnaruzhili-eshche-po-neskolkimi-adresam-v-slavyanske-na-kubani/",
+        "https://24tv.ua/ru/ataka-na-npz-rossii-13-avgusta-2025-kakie-posledstvija-est-li-postradavshie-24-kanal_n2892583"
+      ]
+    },
+    {
+      "id": "2025-08-13-unecha-vysokoye-lpds",
+      "infra_id": "unecha-vysokoye-lpds",
+      "occurred_on": "2025-08-13",
+      "weapon": "uav",
+      "summary": "Ukrainian HUR-organized drones struck the Unecha LPDS in Vysokoye late on 12 August/overnight into 13 August, with the General Staff confirming the hit; NASA satellites recorded a large fire from about 10:30 p.m. The strike damaged the booster pump area and temporarily halted Druzhba pipeline deliveries, including to Hungary.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/08/13/7525939/",
+        "https://www.kyivpost.com/post/58040",
+        "https://militarnyi.com/en/news/drones-attack-unecha-oil-pumping-station-in-bryansk-region/"
+      ]
+    },
+    {
+      "id": "2025-08-14-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-08-14",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone strike caused an oil leak and fire at the Volgograd refinery, disabling two process pipelines and forcing the primary crude processing unit offline; NASA FIRMS satellites confirmed an extensive fire at the site.",
+      "source_urls": [
+        "https://www.rbc.ru/politics/14/08/2025/689d326f9a7947f9d5b548ac",
+        "https://militarnyi.com/en/news/drone-attack-hits-lukoil-oil-refinery-in-volgograd/",
+        "https://www.bloomberg.com/news/articles/2025-08-14/ukraine-hits-another-key-russia-refinery-in-flurry-of-attacks"
+      ]
+    },
+    {
+      "id": "2025-08-15-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2025-08-15",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone strike damaged the ELOU-AVT-6 crude distillation unit and several storage tanks, forcing the Syzran refinery to halt crude processing and oil intake, with repairs expected to last at least to the end of the month.",
+      "source_urls": [
+        "https://kyivindependent.com/drones-reportedly-attack-oil-refinery-in-russias-samara-oblast-sparking-fire/",
+        "https://militarnyi.com/en/news/ukrainian-drone-attack-disables-critical-equipment-at-syzran-oil-refinery/",
+        "https://newsukraine.rbc.ua/news/-1755229704.html"
+      ]
+    },
+    {
+      "id": "2025-08-18-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2025-08-18",
+      "weapon": "uav",
+      "summary": "Ukraine's Unmanned Systems Forces struck the Nikolskoye oil pumping station in Tambov Oblast on the night of 18 August, causing a fire and a complete halt of pumping through the Druzhba pipeline. Hungary and Slovakia reported their oil supplies stopped, with transportation resuming the evening of 19 August.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/08/18/7526802/",
+        "https://www.themoscowtimes.com/2025/08/20/russian-oil-flows-to-hungary-and-slovakia-resume-after-ukrainian-pipeline-strike-a90290",
+        "https://ru.interfax.com.ua/news/general/1097045.html"
+      ]
+    },
+    {
+      "id": "2025-08-18-nikolskoye-lpds",
+      "infra_id": "nikolskoye-lpds",
+      "occurred_on": "2025-08-18",
+      "weapon": "uav",
+      "summary": "Ukrainian Unmanned Systems Forces (14th UAV Regiment) struck the Nikolskoye oil pumping station of the Druzhba pipeline in Tambov Oblast overnight on 18 August, sparking a fire at the facility. Oil pumping through the Druzhba pipeline was completely halted, cutting crude deliveries to Hungary and Slovakia for several days.",
+      "source_urls": [
+        "https://kyivindependent.com/druzhba-pipeline/",
+        "https://unn.ua/en/news/uaf-drones-struck-the-nikolskoye-oil-pumping-station-in-russias-tambov-region",
+        "https://en.defence-ua.com/news/the_strike_on_the_tambov_pumping_station_stopped_operations_on_the_druzhba_pipeline_for_europe-15521.html"
+      ]
+    },
+    {
+      "id": "2025-08-19-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-08-19",
+      "weapon": "uav",
+      "summary": "An overnight drone attack on Volgograd sparked a fire on the grounds of the Lukoil refinery, which the governor attributed to falling drone debris; a city hospital roof also caught fire. Authorities said the refinery blaze was put out within hours with no injuries.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/08/19/ukrainian-drone-attack-sparks-fire-at-volgograd-oil-refinery-a90274",
+        "https://english.nv.ua/nation/overnight-explosions-in-volgograd-drone-debris-sets-refinery-and-hospital-ablaze-50538140.html"
+      ]
+    },
+    {
+      "id": "2025-08-21-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2025-08-21",
+      "weapon": "uav",
+      "summary": "Drones of Ukraine's 14th Unmanned Systems Regiment struck the Unecha pumping station again on the evening of 21 August (Hungary claimed missiles were also used), setting the facility ablaze and destroying pumping capacity. Druzhba deliveries to Hungary and Slovakia were halted for about five days, resuming 28 August.",
+      "source_urls": [
+        "https://meduza.io/en/news/2025/08/22/russian-oil-flow-to-hungary-halted-again-after-ukrainian-drone-strike-on-druzhba-pipeline",
+        "https://www.usnews.com/news/world/articles/2025-08-22/ukraine-says-it-struck-russias-unecha-oil-pumping-station-on-thursday",
+        "https://euromaidanpress.com/2025/08/22/ukraine-drones-turned-russias-druzhba-oil-lifeline-into-fire-second-hit-in-bryansks-unecha-this-month-video/"
+      ]
+    },
+    {
+      "id": "2025-08-21-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2025-08-21",
+      "weapon": "uav",
+      "summary": "An overnight drone strike sparked a major blaze at the Novoshakhtinsk refinery after at least five explosions; the fire burned for nearly a week and was only extinguished around August 26.",
+      "source_urls": [
+        "https://kyivindependent.com/drone-strike-sparks-blaze-at-oil-refinery-in-russias-rostov-oblast-media-reports/",
+        "https://www.themoscowtimes.com/2025/08/26/fire-at-rostov-oil-refinery-extinguished-nearly-a-week-after-ukrainian-drone-attack-a90349",
+        "https://english.nv.ua/russian-war/novoshakhtinsk-refinery-blaze-in-rostov-oblast-burns-into-fifth-day-after-massive-fire-50539789.html"
+      ]
+    },
+    {
+      "id": "2025-08-22-unecha-vysokoye-lpds",
+      "infra_id": "unecha-vysokoye-lpds",
+      "occurred_on": "2025-08-22",
+      "weapon": "uav",
+      "summary": "Kamikaze drones of Ukraine's 14th Unmanned Systems Regiment hit the Unecha oil pumping station again overnight on 21-22 August, reportedly destroying the main pumping station building and sparking a large fire. Druzhba pipeline flows stopped and Hungary said crude deliveries were halted for at least five days.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/08/22/7527287/",
+        "https://meduza.io/en/news/2025/08/22/russian-oil-flow-to-hungary-halted-again-after-ukrainian-drone-strike-on-druzhba-pipeline",
+        "https://militarnyi.com/en/news/new-strike-on-russia-s-unecha-destroys-pumping-station-and-halts-druzhba-oil-pipeline/"
+      ]
+    },
+    {
+      "id": "2025-08-24-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2025-08-24",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a drone strike on the Syzran refinery (the same night Ust-Luga was hit), reporting hits, fires and secondary detonations at the plant, which supplies gasoline, diesel and jet fuel to the Russian military.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/ukraine-s-general-staff-confirms-drone-strikes-1756040830.html",
+        "https://en.defence-ua.com/news/ukraines_general_staff_confirms_strike_on_syzran_oil_refinery_in_russias_samara_region-15590.html"
+      ]
+    },
+    {
+      "id": "2025-08-24-ust-luga-novatek-complex",
+      "infra_id": "ust-luga-novatek-complex",
+      "occurred_on": "2025-08-24",
+      "weapon": "uav",
+      "summary": "A General Staff-confirmed drone strike set Novatek's Ust-Luga fuel terminal ablaze, damaging two of the complex's three gas condensate fractionation units and roughly halving processing; partial operations resumed August 26 and full capacity was restored only around November 1, 2025.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-08-24/russia-says-novatek-fuel-terminal-at-ust-luga-port-catches-fire",
+        "https://newsukraine.rbc.ua/news/ukraine-s-general-staff-confirms-drone-strikes-1756040830.html",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2025-08-28-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2025-08-28",
+      "weapon": "uav",
+      "summary": "Drones attacked the Afipsky refinery for the second time in August 2025, with explosions reported and a fire from drone debris on the plant's territory; Ukraine's General Staff said the Kuibyshev refinery in Samara Oblast was struck the same night (initial reports misidentified it as Novokuibyshevsk).",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/unknown-drones-strike-russia-hits-reported-1756355219.html",
+        "https://kyivindependent.com/russian-oil-refinery-in-samara-oblast-in-flames-after-drone-attack-media-reports/",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2025-08-28-kuibyshev-refinery",
+      "infra_id": "kuibyshev-refinery",
+      "occurred_on": "2025-08-28",
+      "weapon": "uav",
+      "summary": "Massive drone attack (Russian sources cited at least 29 drones) caused multiple fires; Reuters reported both main crude distillation units, CDU-4 and CDU-5 (about 70,000 bpd each), were damaged and oil processing was halted.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drone-strikes-halt-operations-at-russias-kuibyshevsk-refinery-sources-tell-reuters/",
+        "https://www.pravda.com.ua/eng/news/2025/08/29/7528483/",
+        "https://militarnyi.com/en/news/drone-strike-sets-kuibyshev-oil-refinery-ablaze-in-russia-s-samara/"
+      ]
+    },
+    {
+      "id": "2025-08-30-krasnodar-refinery",
+      "infra_id": "krasnodar-refinery",
+      "occurred_on": "2025-08-30",
+      "weapon": "uav",
+      "summary": "Ukrainian drones hit the Krasnodar refinery (Krasnodareconeft, ~3 mt/yr) around 3:45 a.m., striking near the AVT atmospheric-vacuum unit; the fire spread to about 300 square metres before being extinguished, and a nearby bridge was temporarily closed.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/oil-refinery-burns-in-krasnodar-after-drone-attack/",
+        "https://crimea.ria.ru/20250830/posle-ataki-bespilotnikov-na-krasnodar-v-gorode-gorit-npz-1149081521.html",
+        "https://kubnews.ru/obshchestvo/2025/08/30/ataka-bespilotnikov-po-krasnodaru-chto-izvestno-k-etomu-chasu/"
+      ]
+    },
+    {
+      "id": "2025-09-04-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2025-09-04",
+      "weapon": "missile",
+      "summary": "Hybrid attacks combining drones and missiles on the nights of September 3 and 4 hit the Slavyansk ECO refinery, causing fires and damage that forced a complete, indefinite shutdown of all processing units.",
+      "source_urls": [
+        "https://www.obozrevatel.com/novosti-rossii/slavyanskij-npz-priostanovil-rabotu-posle-raketnogo-udara-chto-izvestno.htm",
+        "https://neftegaz.ru/news/incidental/898885-slavyanskiy-npz-priostanovil-rabotu-posle-raketnogo-udara/",
+        "https://ukrainetoday.org/slavyansk-refinery-suspends-operations-after-missile-strike-whats-known/"
+      ]
+    },
+    {
+      "id": "2025-09-05-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-09-05",
+      "weapon": "uav",
+      "summary": "Ukraine confirmed a drone strike on the Ryazan refinery that caused a major blaze (corroborated by NASA FIRMS fire data); the plant subsequently reduced/suspended processing.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-reportedly-strike-oil-facilities-in-russias-ryazan-oblast-occupied-luhansk-oblast/",
+        "https://www.themoscowtimes.com/2025/09/05/ukrainian-drones-strike-rosneft-refinery-in-ryazan-region-a90438",
+        "https://euromaidanpress.com/2026/05/15/moscows-fuel-supplier-under-fire-ukrainian-drones-strike-rosnefts-ryazan-refinery/"
+      ]
+    },
+    {
+      "id": "2025-09-07-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2025-09-07",
+      "weapon": "uav",
+      "summary": "A drone attack set a technological unit at the Ilsky refinery on fire; Ukraine's Special Operations Forces said they destroyed the key ELOU-AT-6 primary oil processing unit in a joint operation, while Russian officials reported a fire from drone debris that was extinguished.",
+      "source_urls": [
+        "https://www.rbc.ru/politics/07/09/2025/68bcd47c9a794763453dc66c",
+        "https://www.svoboda.org/a/v-krasnodarskom-krae-atakovan-iljskiy-npz-tam-sluchilsya-pozhar/33523954.html"
+      ]
+    },
+    {
+      "id": "2025-09-12-bts-2-baltic-pipeline-system",
+      "infra_id": "bts-2-baltic-pipeline-system",
+      "occurred_on": "2025-09-12",
+      "weapon": "uav",
+      "summary": "In the large SBU drone operation of 12 September 2025, Ukraine struck oil pumping stations NPS-3 and NPS-7 (along with NPS Andreapol, tracked separately) that keep the BPS-2 trunk pipeline supplying crude to the Ust-Luga export terminal running. The strikes, carried out the same night as the Primorsk port attack, were aimed at suspending pipeline deliveries to Russia's Baltic export outlets.",
+      "source_urls": [
+        "https://charter97.org/en/news/2025/9/12/655457/",
+        "https://unn.ua/en/news/oil-shipments-suspended-sbu-drones-hit-key-russian-export-hub-port-of-primorsk",
+        "https://news.liga.net/en/politics/news/sbu-drones-hit-russias-key-export-port-of-primorsk-sources"
+      ]
+    },
+    {
+      "id": "2025-09-12-primorsk-oil-terminal",
+      "infra_id": "primorsk-oil-terminal",
+      "occurred_on": "2025-09-12",
+      "weapon": "uav",
+      "summary": "SBU drones attacked Primorsk, Russia's largest Baltic crude export port, on 12 September 2025, causing fires on a vessel and at a pumping station and damaging shadow-fleet tankers Kusto and Cai Yun; loadings were suspended and resumed days later.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/13/7530694/",
+        "https://www.bloomberg.com/news/articles/2025-09-15/russia-s-primorsk-port-resumes-oil-loadings-after-drone-attacks",
+        "https://maritime-executive.com/article/ukraine-attacks-russia-s-baltic-oil-terminals-and-starts-fire-at-primorsk"
+      ]
+    },
+    {
+      "id": "2025-09-13-novoil-refinery",
+      "infra_id": "novoil-refinery",
+      "occurred_on": "2025-09-13",
+      "weapon": "uav",
+      "summary": "Ukrainian military-intelligence (HUR) long-range drones struck the Bashneft-Novoil refinery in Ufa, ~1,400 km from Ukraine, causing explosions and a fire; the primary distillation area (AVT-1/vacuum column) was reported damaged, while officials said output was not interrupted.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-09-13/russia-says-ukrainian-drone-hits-oil-facility-in-bashkortostan",
+        "https://www.pravda.com.ua/eng/news/2025/09/13/7530727/",
+        "https://eadaily.com/en/ampnews/2025/09/13/kiev-attacked-the-novo-ufa-refinery-there-was-a-fire-at-the-plant-khabirov"
+      ]
+    },
+    {
+      "id": "2025-09-13-ufa-refinery-unpz",
+      "infra_id": "ufa-refinery-unpz",
+      "occurred_on": "2025-09-13",
+      "weapon": "uav",
+      "summary": "In one of the deepest strikes of the war (~1,400 km), a Ukrainian drone hit the AVT-6 unit at Bashneft-UNPZ in Ufa, damaging water and nitrogen pipelines; about 70 workers were evacuated and no casualties were reported. The neighboring Novoil refinery was hit the same night.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/09/14/ukraine-hits-one-of-russias-largest-oil-refining-complexes-a90521",
+        "https://nv.ua/world/countries/drony-atakovali-srazu-dva-rossiyskih-npz-stalo-izvestno-o-posledstviyah-50545118.html",
+        "https://komersant.ua/en/dva-udary-za-odyn-nalit-shcho-vidomo-pro-ataku-ukrainskykh-droniv-na-npz-v-ufi/"
+      ]
+    },
+    {
+      "id": "2025-09-14-kirishi-refinery",
+      "infra_id": "kirishi-refinery",
+      "occurred_on": "2025-09-14",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Kirishi refinery overnight, causing explosions and a fire confirmed by Ukraine's General Staff; industry sources told Reuters the ELOU-AVT-6 primary unit, responsible for about 40% of the plant's capacity, was damaged and shut for roughly a month.",
+      "source_urls": [
+        "https://www.pbs.org/newshour/world/ukrainian-drone-strike-sparks-fire-at-one-of-russias-top-oil-refineries",
+        "https://www.kyivpost.com/post/72621"
+      ]
+    },
+    {
+      "id": "2025-09-16-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-09-16",
+      "weapon": "uav",
+      "summary": "Ukraine's Special Operations Forces struck the Saratov refinery overnight, causing explosions and a fire at the facility that supplies fuel to the Russian military.",
+      "source_urls": [
+        "https://www.kyivpost.com/post/62194",
+        "https://militarnyi.com/en/news/ukrainian-special-operations-forces-hit-the-saratov-oil-refinery/",
+        "https://www.pravda.com.ua/eng/news/2025/09/16/7531084/"
+      ]
+    },
+    {
+      "id": "2025-09-18-salavat-refinery",
+      "infra_id": "salavat-refinery",
+      "occurred_on": "2025-09-18",
+      "weapon": "uav",
+      "summary": "Long-range SBU drones struck the Gazprom Neftekhim Salavat refinery/petrochemical complex, hitting the ELOU-AVT-4 crude processing unit and triggering a massive explosion and fire.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/09/18/ukrainian-drones-spark-fire-at-gazprom-oil-plant-in-bashkortostan-a90555",
+        "https://kyivindependent.com/ukraine-struck-russian-oil-facilities-in-bashkortostan-volgograd-oblast/",
+        "https://www.spglobal.com/energy/en/news-research/latest-news/shipping/091825-ukraine-hits-russias-salavat-refinery-in-new-long-range-drone-strike"
+      ]
+    },
+    {
+      "id": "2025-09-18-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-09-18",
+      "weapon": "uav",
+      "summary": "Ukraine's Special Operations Forces struck the Volgograd refinery with at least 11 long-range drones overnight, triggering large fires and a reported complete shutdown of operations; more than ten explosions were heard over the city.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/18/7531388/",
+        "https://militarnyi.com/en/news/volgograd-refinery-shut-down-after-drone-attack-by-ukrainian-sof/"
+      ]
+    },
+    {
+      "id": "2025-09-20-kuibyshev-tikhoretsk-pipeline",
+      "infra_id": "kuibyshev-tikhoretsk-pipeline",
+      "occurred_on": "2025-09-20",
+      "weapon": "uav",
+      "summary": "SBU and Special Operations Forces long-range drones struck three facilities of the Kuibyshev-Tikhoretsk trunk pipeline overnight: the Zenzevatka pumping station in Volgograd Oblast and the Sovkhoznaya-2 station and Samara LPDS in Samara Oblast. Station operations were halted and oil pumping toward the Novorossiysk export route stopped.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/20/7531728/",
+        "https://kyivindependent.com/oil-pumping-stations-in-volgograd-and-samara-stop-work-after-ukrainian-drone-attack-sbu-source-says/",
+        "https://kp.ua/incidents/a718031-drony-ukrainskikh-spetssluzhb-atakovali-nefteperekachivajushchie-stantsii-v-rossii"
+      ]
+    },
+    {
+      "id": "2025-09-20-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2025-09-20",
+      "weapon": "uav",
+      "summary": "Drone attack ignited a fire near the ELOU-AVT-11 primary processing unit; both primary units (AVT-11 and AVT-9) were shut down and Reuters reported the refinery suspended oil refining until early November.",
+      "source_urls": [
+        "https://ukranews.com/en/news/1112419-novokuibyshevsk-refinery-suspends-oil-refining-until-early-november-reuters",
+        "https://kyivindependent.com/ukraine-war-latest-117/",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2025-09-20-samara-lpds-hub",
+      "infra_id": "samara-lpds-hub",
+      "occurred_on": "2025-09-20",
+      "weapon": "uav",
+      "summary": "On the night of 19-20 September Ukrainian SOF and SBU long-range drones hit the Samara LPDS near Prosvet, Europe's largest tank farm where Urals export blend is formed; Ukraine's General Staff confirmed the strike on the trunk-pipeline facility. The SBU said pumping stations on the Kuibyshev-Tikhoretsk export route stopped work after the attack.",
+      "source_urls": [
+        "https://ru.interfax.com.ua/news/general/1106125.html",
+        "https://www.pravda.com.ua/eng/news/2025/09/20/7531728/",
+        "https://kyivindependent.com/oil-pumping-stations-in-volgograd-and-samara-stop-work-after-ukrainian-drone-attack-sbu-source-says/"
+      ]
+    },
+    {
+      "id": "2025-09-20-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-09-20",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed overnight strikes on the Saratov refinery (second hit in four days) and the Novokuibyshevsk refinery, with explosions and fires recorded at both facilities.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraine-reportedly-strike-oil-refinery-in-russia-saratov-oblast-explosions-reported-deep-inside-russia/",
+        "https://war.obozrevatel.com/saratov-atakovali-dronyi-porazhen-npz-vspyihnul-pozhar-foto-i-video.htm"
+      ]
+    },
+    {
+      "id": "2025-09-22-astrakhan-gas-processing-plant",
+      "infra_id": "astrakhan-gas-processing-plant",
+      "occurred_on": "2025-09-22",
+      "weapon": "uav",
+      "summary": "A drone attack caused a major fire at the Astrakhan gas processing plant, damaging the U-1.731 combined stable-condensate processing unit (3 million t/yr) and halting gasoline and diesel production just weeks after it had resumed; sources said recovery could take until the end of the year.",
+      "source_urls": [
+        "https://www.moscowtimes.ru/2025/09/23/astrahanskii-gpz-gazproma-mozhet-do-kontsa-goda-ostanovit-proizvodstvo-motornogo-topliva-iz-za-pozhara-posle-ataki-bpla-a175182",
+        "https://biz.liga.net/all/tek/novosti/reuters-zavod-gazproma-v-astrahani-ostanovilsya-posle-ataki-bpla"
+      ]
+    },
+    {
+      "id": "2025-09-23-samara-lpds-hub",
+      "infra_id": "samara-lpds-hub",
+      "occurred_on": "2025-09-23",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a repeat drone strike by the Unmanned Systems Forces on the Samara LPDS in Prosvet on the night of 22-23 September, three days after the first hit. Damage assessment was ongoing; the station blends high- and low-sulphur crude into the Urals export grade.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/23/7532117/",
+        "https://kp.ua/incidents/a718157-v-henshtabe-podtverdili-porazhenie-vazhnykh-obektov-v-rossii",
+        "https://nv.ua/ukraine/events/sili-oboroni-urazili-ob-yekti-na-teritoriji-okupovanogo-krimu-bryanskoji-ta-samarskoji-oblasti-rf-genshtab-50547239.html"
+      ]
+    },
+    {
+      "id": "2025-09-24-cpc-pipeline",
+      "infra_id": "cpc-pipeline",
+      "occurred_on": "2025-09-24",
+      "weapon": "uav",
+      "summary": "Ukrainian aerial and naval drones struck Novorossiysk, damaging the Caspian Pipeline Consortium's office building; two people were killed and several injured, including two CPC employees, and the office suspended operations. Kazakhstan said oil transportation through the CPC system was not durably affected.",
+      "source_urls": [
+        "https://meduza.io/en/feature/2025/09/24/ukrainian-drones-strike-russian-black-sea-port-city-by-air-and-sea-killing-two-and-damaging-caspian-pipeline-consortium-office",
+        "https://www.themoscowtimes.com/2025/09/24/ukrainian-drone-attack-on-novorossiysk-port-kills-at-least-2-a90614",
+        "https://www.ukrinform.net/rubric-ato/4040004-drones-strike-caspian-pipeline-consortium-office-in-novorossiysk.html"
+      ]
+    },
+    {
+      "id": "2025-09-24-kuibyshev-tikhoretsk-pipeline",
+      "infra_id": "kuibyshev-tikhoretsk-pipeline",
+      "occurred_on": "2025-09-24",
+      "weapon": "uav",
+      "summary": "Drones again hit Kuibyshev-Tikhoretsk pipeline facilities in Volgograd Oblast, starting fires at the Zenzevatka pumping station (its second hit in four days) and the Kuzmichi-1 linear production-dispatch station; an attempted strike on the Efimovka LPDS was also reported. Russian officials claimed the attack was repelled despite visible fires.",
+      "source_urls": [
+        "https://vchaspik.ua/v-mire/592342-bpla-atakovali-obekty-toplivno-energeticheskoy-infrastruktury-v-volgogradskoy-oblasti",
+        "https://focus.ua/voennye-novosti/725753-udary-vsu-po-volgogradskoy-oblasti-atakovany-klyuchevye-energeticheskie-obekty-detali",
+        "https://www.pravda.com.ua/eng/news/2025/09/24/7532313/"
+      ]
+    },
+    {
+      "id": "2025-09-24-salavat-refinery",
+      "infra_id": "salavat-refinery",
+      "occurred_on": "2025-09-24",
+      "weapon": "uav",
+      "summary": "SBU drones hit Gazprom Neftekhim Salavat for the second time in under a week, striking the ELOU-AVT-6 primary refining unit and causing a large fire at the complex.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/09/24/ukrainian-drones-hit-gazprom-plant-in-bashkortostan-for-second-time-in-a-week-a90608",
+        "https://www.cnbc.com/2025/09/24/ukrainian-drones-stage-new-attack-on-major-russian-petrochemical-complex.html",
+        "https://www.ukrinform.net/rubric-ato/4039891-sbu-drones-strike-gazprom-plant-in-bashkortostan-for-the-second-time-in-a-week-source.html"
+      ]
+    },
+    {
+      "id": "2025-09-24-sheskharis-oil-terminal",
+      "infra_id": "sheskharis-oil-terminal",
+      "occurred_on": "2025-09-24",
+      "weapon": "uav",
+      "summary": "A combined aerial and naval drone attack on Novorossiysk on 24 September 2025 started a fire that engulfed one of the main berths at the Sheskharis oil terminal, per industry sources; Sheskharis and the nearby CPC terminal (whose city office was damaged) suspended loadings, and two people were killed in the city.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/09/24/7532369/",
+        "https://www.themoscowtimes.com/2025/09/24/ukrainian-drone-attack-on-novorossiysk-port-kills-at-least-2-a90614",
+        "https://maritime-executive.com/article/ukraine-strikes-russians-in-black-sea-novorossiysk-port"
+      ]
+    },
+    {
+      "id": "2025-09-26-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2025-09-26",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Afipsky refinery overnight, hitting the AT-22/4 primary processing unit (about 8,830 tons/day capacity); a roughly 30 sq m fire broke out and was extinguished. Ukraine confirmed the strike and vowed to continue attacks.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-09-26/russia-s-afipsky-refinery-caught-fire-after-ukraine-drone-strike",
+        "https://kyivindependent.com/ukrainian-drones-strike-afipsky-oil-refinery-in-russias-krasnodar-krai/"
+      ]
+    },
+    {
+      "id": "2025-10-03-orsk-refinery",
+      "infra_id": "orsk-refinery",
+      "occurred_on": "2025-10-03",
+      "weapon": "uav",
+      "summary": "In the first strike on the Orsknefteorgsintez refinery, SBU 'Alfa' Liutyi drones flew about 1,400 km and hit the plant; analysts assessed the LC-24-2000 gasoline/diesel hydrotreating unit was struck, with fire reported.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/10/03/ukrainian-drones-hit-major-oil-refinery-chemical-plant-a90706",
+        "https://euromaidanpress.com/2025/10/03/ukraines-drones-flew-1400-km-to-strike-orsk-refinery-russian-propagandist-blames-kazakhstan-and-calls-for/",
+        "https://english.nv.ua/nation/ukrainian-drones-strike-orsk-refinery-deep-inside-russian-territory-video-50549872.html"
+      ]
+    },
+    {
+      "id": "2025-10-04-kirishi-refinery",
+      "infra_id": "kirishi-refinery",
+      "occurred_on": "2025-10-04",
+      "weapon": "uav",
+      "summary": "Drones hit the Kirishi refinery again in the early hours, igniting a fire in the industrial zone and forcing the plant to halt its key AVT-6 crude desalting and primary distillation unit, its most productive unit, weeks after the previous strike.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/10/04/another-refinery-attack-another-fire-kinef-refinery-ablaze-in-leningrad-oblast-drone-strike-video/",
+        "https://www.ukrinform.net/rubric-ato/4044461-russias-kirishi-refinery-halts-key-distillation-unit-after-drone-attack.html"
+      ]
+    },
+    {
+      "id": "2025-10-05-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2025-10-05",
+      "weapon": "uav",
+      "summary": "Drones attacked the NORSI refinery at Kstovo on the night of 5 October; residents reported a series of powerful explosions (at least four) over the industrial zone and a large fire on the territory of the plant.",
+      "source_urls": [
+        "https://charter97.org/en/news/2025/10/5/658142/",
+        "https://censor.net/en/videonews/3577904/series-of-explosions-at-the-kstovo-oil-refinery-drone-attack"
+      ]
+    },
+    {
+      "id": "2025-10-06-antipinsky-refinery",
+      "infra_id": "antipinsky-refinery",
+      "occurred_on": "2025-10-06",
+      "weapon": "uav",
+      "summary": "Drones reached the Antipinsky refinery in Tyumen, ~2,000 km from Ukraine, in what may have been Ukraine's farthest strike at the time; authorities said three drones were 'detected and neutralized' on the premises with no fire, while locals reported explosions and a Ukrainian official appeared to confirm the attack.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/10/07/drones-target-oil-refinery-in-western-siberias-tyumen-region-in-what-may-be-ukraines-farthest-strike-yet-a90743",
+        "https://militarnyi.com/en/news/explosion-antipinsky-oil-refinery-in-tyumen/",
+        "https://newsukraine.rbc.ua/news/drones-attack-oil-refinery-in-russia-s-tyumen-1759846712.html"
+      ]
+    },
+    {
+      "id": "2025-10-06-feodosia-oil-terminal",
+      "infra_id": "feodosia-oil-terminal",
+      "occurred_on": "2025-10-06",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a drone strike on the Feodosia oil terminal about 250 km from Ukrainian-controlled territory; a fuel tank exploded and a large fire engulfed part of the tank farm, which supplies fuel to Russian forces.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-hit-largest-oil-terminal-in-russian-occupied-crimea/",
+        "https://united24media.com/latest-news/drone-strike-sparks-massive-blaze-at-crimeas-largest-oil-terminal-12208"
+      ]
+    },
+    {
+      "id": "2025-10-06-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2025-10-06",
+      "weapon": "uav",
+      "summary": "Debris from intercepted Ukrainian drones fell on the Tuapse refinery, starting a fire at a security post that was quickly extinguished; two people were injured and hospitalized.",
+      "source_urls": [
+        "https://www.rbc.ru/politics/06/10/2025/68e361c89a79472b73d63925",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2025-10-09-kuibyshev-tikhoretsk-pipeline",
+      "infra_id": "kuibyshev-tikhoretsk-pipeline",
+      "occurred_on": "2025-10-09",
+      "weapon": "uav",
+      "summary": "Ukrainian Special Operations Forces drones struck the Efimovka LPDS in Volgograd Oblast's Kotovsky district, a Transneft-Privolga station serving the Kuibyshev-Tikhoretsk trunk line (throughput ~50 mt/year), the same night as the Korobkovsky gas processing plant; satellite imagery showed fire at the station.",
+      "source_urls": [
+        "https://www.moscowtimes.ru/2025/10/09/ukrainskie-droni-atakovali-krupneishii-gazopererabativayuschii-zavod-na-yuge-rossii-a176664",
+        "https://ostannipodii.com/ru/a/202510/sso-porazili-gazopererabatyvayuschiy-zavod-i-nefteperekachivayuschuyu-stanciyu-v-110034107/"
+      ]
+    },
+    {
+      "id": "2025-10-11-ufa-refinery-unpz",
+      "infra_id": "ufa-refinery-unpz",
+      "occurred_on": "2025-10-11",
+      "weapon": "uav",
+      "summary": "SBU long-range drones struck Bashneft-UNPZ in Ufa, causing explosions and a fire in the area of the ELOU-AVT-6 primary crude processing unit; it was Ukraine's third deep strike on Bashkortostan refineries in a month.",
+      "source_urls": [
+        "https://kyivindependent.com/kyiv-strikes-russian-oil-refinery/",
+        "https://www.ukrinform.net/rubric-ato/4046282-ssu-drones-cause-explosions-at-bashneft-oil-refinery-located-1400-kilometers-from-ukraine.html",
+        "https://english.nv.ua/nation/bashneft-unpz-in-ufa-attacked-by-ukraine-s-sbu-long-range-drones-fire-reported-50551862.html"
+      ]
+    },
+    {
+      "id": "2025-10-13-feodosia-oil-terminal",
+      "infra_id": "feodosia-oil-terminal",
+      "occurred_on": "2025-10-13",
+      "weapon": "uav",
+      "summary": "A second drone strike within a week hit the Feodosia oil terminal overnight on October 12-13, setting large sections of the facility ablaze; the fire burned into a second day with smoke visible 25 km away.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/10/13/ukrainian-drone-strike-sets-fire-at-crimean-oil-depot-for-second-time-in-a-week-a90791",
+        "https://www.pravda.com.ua/eng/news/2025/10/14/8002710/"
+      ]
+    },
+    {
+      "id": "2025-10-15-ufaneftekhim-refinery",
+      "infra_id": "ufaneftekhim-refinery",
+      "occurred_on": "2025-10-15",
+      "weapon": "uav",
+      "summary": "A drone attack and fire on October 15 damaged the AVT-4 primary refining unit (about 8,570 t/day) at Bashneft-Ufaneftekhim, and the technologically linked AVT-3 may also have been idled; a second downed drone damaged the technical water supply. Officials claimed no output reduction.",
+      "source_urls": [
+        "https://ru.themoscowtimes.com/2025/10/16/npz-ufaneftekhim-ostanovil-ustanovku-pervichnoy-pererabotki-nefti-posle-ataki-bpla-15-okt-istochniki-a177371",
+        "https://neftegaz.ru/news/incidental/903514-npz-ufaneftekhim-posle-ataki-bpla-ostanovil-kak-minimum-odnu-ustanovku-pervichnoy-pererabotki-nefti-/"
+      ]
+    },
+    {
+      "id": "2025-10-15-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-10-15",
+      "weapon": "uav",
+      "summary": "Drones struck the Lukoil Volgograd refinery overnight on October 14-15 according to the Crimean Wind monitoring channel, with residents reporting explosions and a fire glow at the site; the governor claimed only drone debris fell in a nearby village.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-reportedly-hits-one-of-russia-s-largest-oil-refineries-in-volgograd/",
+        "https://united24media.com/latest-news/volgograd-oil-refinery-hit-in-overnight-drone-strike-fire-erupts-at-lukoil-facility-12518"
+      ]
+    },
+    {
+      "id": "2025-10-16-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2025-10-16",
+      "weapon": "uav",
+      "summary": "Drone strike on NORSI likely damaged the L-24/300 hydrotreatment unit (sulfur removal for gasoline/gasoil); the refinery confirmed one processing unit was temporarily suspended after the incident.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attacked-lukoil-nizhegorodnefteorgsintez-facility-shut-down-and-on-fire/",
+        "https://war.obozrevatel.com/byil-viden-dyim-v-kstovo-pod-nizhnim-novgorodom-porazhen-npz-foto.htm",
+        "https://www.qcintel.com/article/ukraine-targets-kstovo-refinery-again-in-latest-drone-attack-65239.html"
+      ]
+    },
+    {
+      "id": "2025-10-16-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-10-16",
+      "weapon": "uav",
+      "summary": "Ukraine confirmed a drone strike on the Saratov refinery exactly one month after the September 16 hit; explosions and a fire followed and Saratov airport was temporarily closed.",
+      "source_urls": [
+        "https://kyivindependent.com/drones-reportedly-attack-oil-refinery-in-russias-saratov-oblast-for-2nd-time-in-a-month/",
+        "https://newsukraine.rbc.ua/news/ukrainian-forces-hit-russia-s-saratov-oil-1760608201.html",
+        "https://english.nv.ua/nation/drones-strike-saratov-refinery-overnight-fire-erupts-50552966.html"
+      ]
+    },
+    {
+      "id": "2025-10-19-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2025-10-19",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a drone strike that ignited a major oil fire; the AVT-11 and AVT-9 crude distillation units were halted, stopping all crude processing for the second time in a month.",
+      "source_urls": [
+        "https://news.liga.net/en/politics/news/general-staff-confirms-strikes-on-novokuibyshevsk-refinery-and-gas-plant-in-orenburg",
+        "https://euromaidanpress.com/2025/10/21/russias-novokuibyshevsk-refinery-shuts-down-again-after-recent-back-to-back-drone-attacks/",
+        "https://oilprice.com/Latest-Energy-News/World-News/Ukraine-Strike-Halts-Oil-Processing-at-Novokuibyshevsk-Refinery.html"
+      ]
+    },
+    {
+      "id": "2025-10-23-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-10-23",
+      "weapon": "uav",
+      "summary": "A drone attack put the AVT-4 primary distillation unit and several adjacent units out of action, costing the Ryazan refinery about a quarter of its throughput; explosions and a large fire were reported.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/10/23/8004053/",
+        "https://united24media.com/latest-news/russias-ryazan-mega-refinery-rocked-by-explosions-in-latest-long-range-drone-strike-video-13610",
+        "https://kyivindependent.com/explosions-reported-in-ryazan-russia-amid-alleged-drone-strike-on-oil-refinery/",
+        "https://www.pravda.com.ua/eng/news/2025/11/18/8007896/"
+      ]
+    },
+    {
+      "id": "2025-10-29-mari-refinery",
+      "infra_id": "mari-refinery",
+      "occurred_on": "2025-10-29",
+      "weapon": "uav",
+      "summary": "Ukrainian Special Operations Forces kamikaze drones hit the Mari refinery in Tabashino (Mari El, ~1.3-1.6 mt/yr) during a coordinated three-region strike; explosions and a fire were recorded at the plant, with SSO confirming the hit.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/10/29/major-energy-and-chemical-facilities-hit-deep-inside-russia-in-coordinated-drone-campaign/",
+        "https://www.kyivpost.com/post/63183",
+        "https://www.moscowtimes.ru/2025/10/29/ukrainskie-droni-atakovali-dva-rossiiskih-neftezavoda-i-odno-himicheskoe-predpriyatie-za-noch-a178586"
+      ]
+    },
+    {
+      "id": "2025-11-02-tuapse-oil-terminal",
+      "infra_id": "tuapse-oil-terminal",
+      "occurred_on": "2025-11-02",
+      "weapon": "uav",
+      "summary": "A drone strike on the night of 1-2 November 2025 hit the Tuapse oil terminal, setting a tanker's deck superstructure ablaze and damaging export infrastructure; at least four loading piers were rendered inoperable, an oil slick spread ~3.6 km into the Black Sea, and the adjacent Rosneft refinery halted processing as exports stopped.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraine-reportedly-strikes-oil-terminal-in-russias-krasnodar-krai/",
+        "https://charter97.org/en/news/2025/11/2/661469/"
+      ]
+    },
+    {
+      "id": "2025-11-02-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2025-11-02",
+      "weapon": "uav",
+      "summary": "An SBU drone strike on the night of November 1-2 hit the refinery's export terminal in Tuapse port, setting an oil tanker and port infrastructure ablaze and knocking out loading piers; the refinery suspended crude processing from November 2-3 due to the damage, Reuters reported.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/05/8005962/",
+        "https://gcaptain.com/ukrainian-drone-attack-sets-oil-tanker-tuapse-port-infrastructure-ablaze/",
+        "https://maritime-executive.com/article/ukraine-hits-port-of-tuapse-for-a-third-time-in-long-range-strike"
+      ]
+    },
+    {
+      "id": "2025-11-03-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-11-03",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Saratov refinery for the third time that autumn, causing a fire; OSINT analysts geolocated the impact area on the plant's territory.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/11/03/ukrainian-drones-strike-saratov-oil-refinery-a91020",
+        "https://www.svoboda.org/a/v-saratove-atakovan-npz-osint-analitiki-/33579928.html"
+      ]
+    },
+    {
+      "id": "2025-11-04-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2025-11-04",
+      "weapon": "uav",
+      "summary": "More than 50 Ukrainian-made long-range drones (Bober, FP-1) operated by HUR/SSO units attacked NORSI; a direct hit and fire were recorded in the south-eastern part of the refinery, and falling debris damaged several residential buildings in Kstovo.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/04/8005693/",
+        "https://www.rbc.ua/ukr/news/zsu-pidtverdili-urazhennya-npz-kstovo-ta-1762284867.html",
+        "https://24tv.ua/ru/drony-atakovali-npz-v-kstovo-4112025-kakie-posledstvija-ataki-24-kanal_n2946578"
+      ]
+    },
+    {
+      "id": "2025-11-06-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2025-11-06",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone strike damaged the CDU-5 primary processing unit (9,100 tonnes/day) and an 11,000 tonnes/day hydrocracker at Lukoil's Volgograd refinery, halting oil processing at the plant, Reuters and Bloomberg reported.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-11-06/ukraine-claims-drone-attack-at-lukoil-oil-refinery-in-russia",
+        "https://www.ukrinform.net/rubric-ato/4055941-volgograd-oil-refinery-halts-operations-after-ukrainian-drone-attack-reuters.html",
+        "https://euromaidanpress.com/2025/11/06/ukrainian-drone-strike-forces-shutdown-at-major-russian-oil-refinery-in-volgograd/"
+      ]
+    },
+    {
+      "id": "2025-11-11-orsk-refinery",
+      "infra_id": "orsk-refinery",
+      "occurred_on": "2025-11-11",
+      "weapon": "uav",
+      "summary": "SBU long-range drones struck the Orsk refinery again, reportedly hitting the AVT primary distillation unit; smoke and fire were recorded on the plant's premises and Ukraine's General Staff confirmed the strike.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/1-400-km-deep-strike-security-service-drones-1762873499.html",
+        "https://militarnyi.com/en/news/video-drones-strike-a-refinery-in-the-russian-city-of-orsk-1400-kilometers-from-the-ukrainian-border/",
+        "https://kyivindependent.com/russias-orsk-oil-refinery-hit-in-ukrainian-strike-general-staff-says/"
+      ]
+    },
+    {
+      "id": "2025-11-11-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-11-11",
+      "weapon": "uav",
+      "summary": "A drone strike set the Saratov refinery ablaze and stopped primary oil processing; Reuters sources said the plant's single crude distillation unit (CDU-6) was likely damaged and the refinery stayed offline for weeks.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/14/8007367/",
+        "https://zn.ua/war/saratov-v-ohne-bespilotniki-atakovali-npz-rosnefti.html"
+      ]
+    },
+    {
+      "id": "2025-11-14-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-11-14",
+      "weapon": "uav",
+      "summary": "A repeat drone attack hit the already-idled Saratov refinery, setting a large oil tank on fire and extending the shutdown to around the end of November, per Reuters sources.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/14/8007367/",
+        "https://www.moscowtimes.ru/2025/11/14/ataka-dronov-ostanovila-dokontsa-mesyatsa-saratovskii-npz-rosnefti-a180147",
+        "https://militarnyi.com/en/news/strike-on-saratov-oil-refinery-large-fuel-tank-destroyed/"
+      ]
+    },
+    {
+      "id": "2025-11-14-sheskharis-oil-terminal",
+      "infra_id": "sheskharis-oil-terminal",
+      "occurred_on": "2025-11-14",
+      "weapon": "uav",
+      "summary": "A massive overnight attack on 14 November 2025 (Neptune missiles and strike drones per Ukraine's General Staff) damaged the Sheskharis oil-loading terminal and berth infrastructure (berths 1 and 1A), triggering fires; Transneft halted shipments, suspending ~700,000 b/d of Sheskharis crude loadings, and the wider Novorossiysk port halted exports of ~2.2 million b/d (about 2% of world supply) for days.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/11/14/major-ukrainian-drone-strike-halts-oil-deliveries-at-novorossiysk-terminal-a91122",
+        "https://www.kpler.com/blog/drone-strikes-near-novorossiysk-to-temporarily-halt-700-kbd-in-sheskaris-oil-loadings",
+        "https://newsukraine.rbc.ua/news/ukraine-attack-on-novorossiysk-cuts-world-1763148458.html"
+      ]
+    },
+    {
+      "id": "2025-11-15-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-11-15",
+      "weapon": "uav",
+      "summary": "Drones struck the Ryazan refinery's main processing unit (over 8 million t/yr, nearly half of plant capacity), forcing the refinery to suspend oil processing for the second time in a month.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/18/8007896/",
+        "https://kyivindependent.com/ukraine-strikes-ryazan-oil-refinery-hits-multiple-other-russian-military-targets-general-staff-says/",
+        "https://www.hydrocarbonprocessing.com/news/2025/11/rosneft-s-ryazan-refinery-suspended-crude-processing-after-drone-strike/"
+      ]
+    },
+    {
+      "id": "2025-11-16-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2025-11-16",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff said overnight drones hit the Novokuibyshevsk refinery; residents and monitoring channels reported dozens of explosions, with explosions and fire recorded at the facility and damage assessment ongoing.",
+      "source_urls": [
+        "https://ru.themoscowtimes.com/2025/11/16/ukraina-soobschila-oporazhenii-novokuibishevskogo-npz-pod-samaroi-a180185",
+        "https://gordonua.com/news/military-actions/smarahdove-nebo-v-rf-pabliki-pishut-o-porazhenijakh-novokujbyshevskoho-npz-1763592.html",
+        "https://kyivindependent.com/ukraine-strikes-rosneft-oil-refinery-in-samara-oblast-and-drone-storage-of-elite-russian-unit/"
+      ]
+    },
+    {
+      "id": "2025-11-19-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2025-11-19",
+      "weapon": "uav",
+      "summary": "Drones of Ukraine's Unmanned Systems Forces ('Madyar's Birds') struck the Ilsky refinery overnight; a series of explosions was reported and Ukraine's General Staff confirmed the hit, while nearby airports suspended operations.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukrainian-drones-strike-ilsky-largest-refinery-in-southern-russia/",
+        "https://24tv.ua/ru/vzryvy-rossii-19-nojabrja-2025-goda-drony-udarili-ob-ilskom-npz_n2955683"
+      ]
+    },
+    {
+      "id": "2025-11-20-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-11-20",
+      "weapon": "uav",
+      "summary": "Ukraine confirmed another drone strike on the Ryazan refinery in the early hours of November 20, with eyewitnesses reporting a series of explosions after 2 a.m.; it followed a hit on the Ilsky refinery the previous night.",
+      "source_urls": [
+        "https://www.kyivpost.com/post/64575",
+        "https://militarnyi.com/en/news/drones-attack-one-of-russia-s-largest-oil-refineries-in-ryazan/"
+      ]
+    },
+    {
+      "id": "2025-11-25-cpc-marine-terminal",
+      "infra_id": "cpc-marine-terminal",
+      "occurred_on": "2025-11-25",
+      "weapon": "uav",
+      "summary": "A night drone attack on the Novorossiysk area damaged an administrative building at the CPC marine terminal with warhead fragments; staff were evacuated and oil loading at the single point moorings was suspended during the attack, with no injuries reported.",
+      "source_urls": [
+        "https://tass.com/economy/2048699",
+        "https://www.specialeurasia.com/2025/12/01/kazakh-oil-ukraine-cpc/"
+      ]
+    },
+    {
+      "id": "2025-11-27-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2025-11-27",
+      "weapon": "uav",
+      "summary": "Drones attacked the refinery overnight; locals heard around ten explosions and OSINT geolocation of videos placed the blasts and a fire directly over the plant — its sixth reported strike of 2025.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/11/27/8009167/",
+        "https://24tv.ua/ru/ataka-na-novokujbyshevskij-npz-27-nojabrja-2025-detali-i-posledstvija-vzryvov-v-rossii-24-kanal_n2960304",
+        "https://news.liga.net/en/politics/news/russians-claim-a-new-attack-on-novokuibyshevsk-oil-refinery-video"
+      ]
+    },
+    {
+      "id": "2025-11-28-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-11-28",
+      "weapon": "uav",
+      "summary": "Drones attacked Saratov from roughly 01:10 to 05:00 with at least 10 explosions reported; the Saratov refinery and the Engels airfield area were the reported targets and fires broke out in the city.",
+      "source_urls": [
+        "https://24tv.ua/ru/ataka-dronov-na-rossiju-28112025-v-saratove-i-jengelse-vzryvy-chto-izvestno-24-kanal_n2961069",
+        "https://www.bloomberg.com/news/articles/2025-11-28/ukraine-says-it-hit-saratov-refinery-in-russian-volga-region",
+        "https://www.unian.net/war/drony-atakovali-saratov-i-engels-tam-zagorelsya-mestnyy-npz-13219044.html"
+      ]
+    },
+    {
+      "id": "2025-11-29-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2025-11-29",
+      "weapon": "uav",
+      "summary": "Drones hit the Afipsky refinery with explosions reported for about 30 minutes; a fire covering roughly 250 sq m damaged part of the technical equipment, and satellite imagery later confirmed damage to the facility.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/drones-hit-major-russian-refinery-explosions-1764384654.html",
+        "https://euromaidanpress.com/2025/12/05/satellite-images-confirm-damage-to-afipsky-oil-refinery-after-ukrainian-drone-strike/"
+      ]
+    },
+    {
+      "id": "2025-11-29-cpc-marine-terminal",
+      "infra_id": "cpc-marine-terminal",
+      "occurred_on": "2025-11-29",
+      "weapon": "uav",
+      "summary": "Ukrainian naval drones (uncrewed surface vessels) attacked the CPC marine terminal at Yuzhnaya Ozereyevka on the morning of November 29, seriously damaging the SPM-2 single point mooring and rendering it inoperable; the consortium suspended oil loadings and Kazakhstan, whose exports mostly transit the terminal, lodged a protest.",
+      "source_urls": [
+        "https://www.euronews.com/2025/11/29/one-of-russias-largest-oil-terminals-suspends-operations-following-drone-attack",
+        "https://www.pravda.com.ua/eng/news/2025/11/29/8009546/",
+        "https://militarnyi.com/en/news/naval-drones-put-caspian-pipeline-consortium-s-marine-terminal-out-of-commission/"
+      ]
+    },
+    {
+      "id": "2025-11-29-cpc-pipeline",
+      "infra_id": "cpc-pipeline",
+      "occurred_on": "2025-11-29",
+      "weapon": "unknown",
+      "summary": "Ukrainian naval drones struck the CPC Marine Terminal near Novorossiysk, severely damaging single-point mooring SPM-2 and forcing a suspension of tanker loadings. With only one SPM left fully operational, CPC throughput fell about 19% and Kazakhstan was forced to curb oil output and exports.",
+      "source_urls": [
+        "https://www.euronews.com/2025/11/29/one-of-russias-largest-oil-terminals-suspends-operations-following-drone-attack",
+        "https://www.osw.waw.pl/en/publikacje/analyses/2026-02-04/ukrainian-attacks-cpc-oil-pipeline-outlook-kazakhstans-oil-sector",
+        "https://unn.ua/en/news/russia-reports-drone-attack-on-cpc-oil-terminal-in-black-sea-reuters"
+      ]
+    },
+    {
+      "id": "2025-11-30-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2025-11-30",
+      "weapon": "uav",
+      "summary": "An overnight drone attack damaged a gas pipe at the Slavyansk ECO refinery and nearby houses (one destroyed, windows broken in seven apartments); no fire broke out at the plant and no casualties were reported.",
+      "source_urls": [
+        "https://rg.ru/2025/11/30/reg-ufo/pri-atake-bespilotnikov-v-slavianske-na-kubani-povrezhdeny-npz-i-dva-doma.html",
+        "https://www.moscowtimes.ru/2025/11/30/ukraina-udarila-poslavyanskomu-npz-nakubani-ikotelnoi-vrostovskoi-oblasti-a181378"
+      ]
+    },
+    {
+      "id": "2025-12-05-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2025-12-05",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Syzran refinery overnight on December 5, damaging the AVT-6 primary processing unit — the plant's main crude distillation unit; per Reuters (Dec. 9), the refinery fully halted crude processing after the attack, with repairs expected to take about a month.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/12/09/8011110/",
+        "https://euromaidanpress.com/2025/12/09/russias-syzran-refinery-goes-offline/",
+        "https://babel.ua/en/news/123623-reuters-syzran-refinery-shuts-down-after-drone-attack"
+      ]
+    },
+    {
+      "id": "2025-12-06-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2025-12-06",
+      "weapon": "uav",
+      "summary": "The ninth confirmed strike of 2025 on the Ryazan refinery hit the area of hydrotreating, catalytic cracking and reforming units, causing a fire; Ukraine's General Staff confirmed a successful hit.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/9th-strike-in-2025-drones-attack-one-of-russia-s-largest-oil-refineries-in-ryazan/",
+        "https://kyivindependent.com/ukrainian-drones-reportedly-strikes-russias-ryazan-oil-refinery/",
+        "https://www.ukrinform.net/rubric-ato/4066697-drones-strike-ryazan-oil-refinery-in-russia-for-ninth-time-this-year.html"
+      ]
+    },
+    {
+      "id": "2025-12-12-yaroslavl-yanos-refinery",
+      "infra_id": "yaroslavl-yanos-refinery",
+      "occurred_on": "2025-12-12",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed an overnight drone strike on the Slavneft-YANOS refinery in Yaroslavl, one of Russia's five largest (about 15 million tonnes/year), causing a fire; Reuters reported a key unit was damaged and the plant halted fuel production.",
+      "source_urls": [
+        "https://kyivindependent.com/yaroslavl-oil-refinery-in-russia-damaged-in-overnight-drone-attack-reportedly-on-fire/",
+        "https://nv.ua/world/countries/udar-dronov-po-npz-slavneft-yanos-povrezhdeny-klyuchevaya-ustanovka-i-moshchnosti-50568652.html"
+      ]
+    },
+    {
+      "id": "2025-12-13-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2025-12-13",
+      "weapon": "uav",
+      "summary": "Drones attacked the Saratov refinery on the night of December 12-13, causing a fire on the plant's territory according to local reports and Russian refinery-incident trackers.",
+      "source_urls": [
+        "https://war.obozrevatel.com/dronyi-atakovali-npz-v-rossijskom-saratove-vspyihnul-pozhar-foto-i-video.htm",
+        "https://newsukraine.rbc.ua/news/unknown-drones-attack-saratov-refinery-fire-1765591930.html",
+        "https://www.radiosvoboda.org/a/news-npz-rosiya-urazhennya/33769370.html"
+      ]
+    },
+    {
+      "id": "2025-12-17-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2025-12-17",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a 'Deep Strike' drone attack on the Slavyansk refinery with explosions and fire; two high-voltage lines were damaged, cutting power to over 38,000 people, and two people were injured by falling debris.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-reportedly-strike-oil-refinery-in-russias-krasnodar-krai-2/",
+        "https://united24media.com/latest-news/nighttime-drone-attack-targets-major-russian-oil-refinery-near-black-sea-video-14338",
+        "https://www.moscowtimes.ru/2025/12/17/v-slavyanske-na-kubani-pri-atake-na-npz-droni-povredili-zhilie-doma-dva-cheloveka-postradali-a182959"
+      ]
+    },
+    {
+      "id": "2025-12-22-taman-oteko-terminal",
+      "infra_id": "taman-oteko-terminal",
+      "occurred_on": "2025-12-22",
+      "weapon": "uav",
+      "summary": "HUR strike drones hit the Tamanneftegaz (OTEKO) marine oil terminal at Taman on the night of 21-22 December 2025, damaging a pipeline, two piers and two vessels and starting fires over more than 1,000 m2, including in the tank-farm area.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/12/22/8012969/",
+        "https://euromaidanpress.com/2025/12/22/ukrainian-drones-hit-russian-tankers-and-oil-terminals-pipeline-at-black-sea-port-of-taman-map/",
+        "https://gcaptain.com/drones-hit-piers-and-ships-at-russias-taman-black-sea-port/"
+      ]
+    },
+    {
+      "id": "2025-12-25-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2025-12-25",
+      "weapon": "missile",
+      "summary": "Ukraine's General Staff said UK-supplied Storm Shadow cruise missiles struck the Novoshakhtinsk refinery, triggering multiple explosions and a fire in which one firefighter was injured; the refinery halted crude intake in late December.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-forces-strike-oil-refinery-in-russias-rostov-oblast-with-storm-shadow-missiles-general-staff-says/",
+        "https://www.themoscowtimes.com/2025/12/25/ukrainian-drone-attacks-spark-blazes-at-seaport-and-oil-refinery-in-southern-russia-a91542",
+        "https://www.pravda.com.ua/eng/news/2025/12/25/8013371/"
+      ]
+    },
+    {
+      "id": "2025-12-28-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2025-12-28",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed another overnight strike-drone attack on the Syzran refinery, with hits on the plant's territory followed by a fire, weeks after the December 5 strike had idled the facility.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2025/12/28/8013696/",
+        "https://www.themoscowtimes.com/2025/12/28/russias-syzran-oil-refinery-targeted-in-overnight-ukrainian-drone-strike-reports-a91566"
+      ]
+    },
+    {
+      "id": "2025-12-31-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2025-12-31",
+      "weapon": "uav",
+      "summary": "An overnight drone attack damaged equipment at the Tuapse refinery (a fire covering about 300 sq m), one port pier and a gas pipeline in a residential area; two people were injured.",
+      "source_urls": [
+        "https://www.usnews.com/news/world/articles/2025-12-30/ukraine-drone-attack-damages-port-gas-pipeline-in-tuapse-russia-says",
+        "https://en.iz.ru/en/2018673/2025-12-31/pier-port-tuapse-was-damaged-result-drone-attack",
+        "https://www.ukrinform.net/rubric-ato/4075302-russia-reports-drone-strike-on-oil-refinery-in-tuapse.html"
+      ]
+    },
+    {
+      "id": "2026-01-01-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2026-01-01",
+      "weapon": "uav",
+      "summary": "In the first Ukrainian refinery strike of 2026, drones attacked the Ilsky refinery on New Year's night, causing a fire officials put at about 25 sq m; Ukraine's General Staff confirmed direct hits with a subsequent fire on the facility's territory.",
+      "source_urls": [
+        "https://www.kavkazr.com/a/v-novogodnyuyu-nochj-drony-atakovali-iljskiy-npz-na-kubani-tam-voznik-pozhar-/33637818.html",
+        "https://24tv.ua/ru/vzryvy-v-rossii-drony-atakovali-ilskij-npz-i-neftebazu-v-ljudinovo_n2981031"
+      ]
+    },
+    {
+      "id": "2026-01-02-kuibyshev-refinery",
+      "infra_id": "kuibyshev-refinery",
+      "occurred_on": "2026-01-02",
+      "weapon": "uav",
+      "summary": "Overnight drone attack on Samara Oblast targeted both the Kuibyshev and Novokuibyshevsk refineries; a fire was reported in Samara near the Kuibyshev plant, and later reporting confirmed the refinery was hit again in January 2026.",
+      "source_urls": [
+        "https://www.rbc.ua/ukr/news/nevidomi-droni-atakuyut-samarsku-oblast-rf-1767309693.html",
+        "https://charter97.org/en/news/2026/1/2/668584/",
+        "https://euromaidanpress.com/2026/06/10/fire-reported-at-kuibyshev-oil-refinery-in-russias-samara-after-drone-strike/"
+      ]
+    },
+    {
+      "id": "2026-01-02-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2026-01-02",
+      "weapon": "uav",
+      "summary": "Overnight drone attack on Samara Oblast; residents of Novokuibyshevsk reported more than 10 powerful explosions around 1:30 a.m. and a fire was filmed at the refinery, which was among the night's targets.",
+      "source_urls": [
+        "https://www.rbc.ua/ukr/news/nevidomi-droni-atakuyut-samarsku-oblast-rf-1767309693.html",
+        "https://echofm.online/news/v-samarskoj-oblasti-posle-nochnoj-ataki-bpla-razdalis-vzryvy-v-novokujbyshevske-veroyatno-atakovany-npz",
+        "https://focus.ua/voennye-novosti/738891-bpla-atakovali-npz-v-samarskoy-oblasti-rf-podnyalsya-pozhar-video"
+      ]
+    },
+    {
+      "id": "2026-01-21-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2026-01-21",
+      "weapon": "uav",
+      "summary": "During a massive overnight drone attack on Krasnodar Krai and Adygea, drone fragments fell on the Afipsky refinery and started a fire that was quickly extinguished; officials reported no casualties or infrastructure damage.",
+      "source_urls": [
+        "https://www.interfax.ru/russia/1068616",
+        "https://ria.ru/20260121/npz-2069193698.html"
+      ]
+    },
+    {
+      "id": "2026-01-21-taman-oteko-terminal",
+      "infra_id": "taman-oteko-terminal",
+      "occurred_on": "2026-01-21",
+      "weapon": "uav",
+      "summary": "A drone strike on the evening of 21 January 2026 set four petroleum-product storage tanks on fire and damaged berth pipelines at the Tamanneftegaz terminal in Volna; three people were killed and eight wounded, with fires over ~7,000 m2 and preliminary losses estimated at ~$50 million.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-hit-russias-air-defenses-and-oil-terminal-military-reports/",
+        "https://www.aa.com.tr/ru/%D0%BC%D0%B8%D1%80/%D0%B2-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%D1%81%D0%BA%D0%BE%D0%BC-%D0%BA%D1%80%D0%B0%D0%B5-%D1%80%D1%84-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B8%D0%BB%D0%B8-%D0%BE-3-%D0%BF%D0%BE%D0%B3%D0%B8%D0%B1%D1%88%D0%B8%D1%85-%D0%B2-%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5-%D0%B0%D1%82%D0%B0%D0%BA%D0%B8-%D0%B4%D1%80%D0%BE%D0%BD%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%BF%D0%BE%D1%80%D1%82-%D1%82%D0%B0%D0%BC%D0%B0%D0%BD%D1%8C/3807257",
+        "https://english.nv.ua/nation/ukrainian-drones-heavily-damage-tamanneftegaz-oil-terminal-in-krasnodar-krai-50585679.html"
+      ]
+    },
+    {
+      "id": "2026-01-26-slavyansk-eco-refinery",
+      "infra_id": "slavyansk-eco-refinery",
+      "occurred_on": "2026-01-26",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a drone strike on the Slavyansk ECO refinery that damaged elements of primary oil refining equipment and set a petroleum storage tank on fire; one person was hospitalized.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraines-military-reportedly-strikes-oil-refinery-in-russias-krasnodar-krai/",
+        "https://militarnyi.com/en/news/ukrainian-drones-strike-oil-refinery-in-slavyansk-on-kuban-krasnodar-krai/",
+        "https://meduza.io/news/2026/01/26/v-slavyanske-na-kubani-ukrainskie-drony-atakovali-npz"
+      ]
+    },
+    {
+      "id": "2026-02-11-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2026-02-11",
+      "weapon": "uav",
+      "summary": "Drones struck the Lukoil Volgograd refinery overnight on February 10-11, the ninth reported strike on the plant, causing a massive fire; fuel and lubricant storage tanks were likely hit and the facility ran emergency flaring at full capacity.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-strike-lukoil-oil-refinery/",
+        "https://euromaidanpress.com/2026/02/11/lukoils-volgograd-refinery-burns-again-after-ninth-drone-strike-in-two-years/"
+      ]
+    },
+    {
+      "id": "2026-02-12-ukhta-refinery",
+      "infra_id": "ukhta-refinery",
+      "occurred_on": "2026-02-12",
+      "weapon": "uav",
+      "summary": "SBU drones struck the Lukoil Ukhta refinery in a record-range attack (~1,750 km from the border), setting fire to the primary crude distillation unit (AVT-1, ~6,000 t/day, about a third of capacity) and the visbreaking unit; no injuries were reported and satellite imagery later confirmed severe damage.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/02/12/ukrainian-drone-attack-sparks-fire-at-lukoil-refinery-in-republic-of-komi-a91930",
+        "https://kyivindependent.com/ukraine-strike-ukhta-oil-refinery-in-record-range-attack-sbu-source/",
+        "https://www.pravda.com.ua/eng/news/2026/02/12/8020689/"
+      ]
+    },
+    {
+      "id": "2026-02-15-taman-oteko-terminal",
+      "infra_id": "taman-oteko-terminal",
+      "occurred_on": "2026-02-15",
+      "weapon": "uav",
+      "summary": "A mass drone attack early on 15 February 2026 set a petroleum-product storage tank on fire and damaged warehouses and terminal facilities at the OTEKO/Tamanneftegaz complex in Volna; about 126 firefighters were deployed and at least two people were injured in the region.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-strike-port-of-taman/",
+        "https://epravda.com.ua/rus/svit/moshchnaya-ataka-dronov-na-port-taman-povrezhdeny-infrastruktura-i-rezervuary-817953/"
+      ]
+    },
+    {
+      "id": "2026-02-17-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2026-02-17",
+      "weapon": "uav",
+      "summary": "A drone attack damaged an oil-products tank at the Ilsky refinery and started a roughly 700 sq m fire that took about two days to fully extinguish; drone debris also damaged houses in the nearby settlement, injuring two people.",
+      "source_urls": [
+        "https://kyivindependent.com/drones-strike-multiple-russian-regions-sparking-major-fire-at-oil-refinery-in-krasnodar-krai/",
+        "https://www.rbc.ru/politics/17/02/2026/6993f95a9a79478c9c823e36"
+      ]
+    },
+    {
+      "id": "2026-02-23-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2026-02-23",
+      "weapon": "uav",
+      "summary": "SBU long-range drones (a 35+ aircraft package) struck the Kaleykino oil pumping station in Tatarstan, some 1,200 km from Ukraine, a strategic Druzhba hub mixing West Siberian and Volga crude for export; explosions ignited a large fire that engulfed two 50,000 m3 storage tanks. Transneft was forced to cut crude intake by about 250,000 bpd.",
+      "source_urls": [
+        "https://kyivindependent.com/russias-transneft-cuts-oil-intake-after-ukrainian-drone-strike-on-druzhba-pipeline-hub-in-tatarstan-reuters-reports/",
+        "https://tvpworld.com/91741478/ukrainian-drones-strike-russias-druzhba-oil-pipeline-1200-km-away",
+        "https://newsukraine.rbc.ua/news/major-russian-oil-facility-burning-after-1771936745.html"
+      ]
+    },
+    {
+      "id": "2026-02-24-druzhba-pipeline-south",
+      "infra_id": "druzhba-pipeline-south",
+      "occurred_on": "2026-02-24",
+      "weapon": "uav",
+      "summary": "Drones attacked the Kaleykino pumping station near Almetyevsk for a second consecutive day, with explosions heard and smoke rising over the facility around 09:00; authorities confirmed the strike and reported no casualties, while damage from the previous day's fire was still being contained.",
+      "source_urls": [
+        "https://focus.ua/voennye-novosti/745017-vzryvy-v-rf-bpla-proletali-1200-km-i-udarili-po-druzhbe-video",
+        "https://apostrophe.ua/ru/world/almetevsk-v-tatarstane-pod-povtornoj-atakoj-drony-atakujut-nps-kalejkino.html",
+        "https://neva.today/news/2026/2/24/720332"
+      ]
+    },
+    {
+      "id": "2026-03-02-sheskharis-oil-terminal",
+      "infra_id": "sheskharis-oil-terminal",
+      "occurred_on": "2026-03-02",
+      "weapon": "uav",
+      "summary": "An SBU 'Alpha' drone wave overnight on 1-2 March 2026 hit six of the seven oil-loading stands at the Sheskharis terminal, causing a large fire and suspending crude exports; warships and air-defense assets in Novorossiysk were struck in the same raid.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/03/02/8023404/",
+        "https://www.themoscowtimes.com/2026/03/02/major-russian-oil-terminal-ablaze-after-ukrainian-drone-attack-reports-a92086",
+        "https://kyivindependent.com/ukrainian-drones-reportedly-strike-novorossiysk-oil-terminal-in-southern-russia/"
+      ]
+    },
+    {
+      "id": "2026-03-12-kuibyshev-tikhoretsk-pipeline",
+      "infra_id": "kuibyshev-tikhoretsk-pipeline",
+      "occurred_on": "2026-03-12",
+      "weapon": "uav",
+      "summary": "SBU 'Alfa' drones struck the Tikhoretsk oil hub in Krasnodar Krai overnight on 11-12 March -- the terminus of the Kuibyshev-Tikhoretsk pipeline and the junction feeding oil and products toward Novorossiysk; fuel tanks burned, with two tanks reported destroyed and 83 firefighters and 26 vehicles deployed. SBU called it a significant blow to Russian oil logistics.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-03-12/ukraine-strikes-key-hub-for-oil-pipelines-in-southern-russia",
+        "https://kyivindependent.com/fuel-tanks-are-burning-major-russian-oil-hub-ablaze-after-ukrainian-drone-strike-in-krasnodar-krai-sbu-source-says/",
+        "https://www.pravda.com.ua/eng/news/2026/03/12/8025129/"
+      ]
+    },
+    {
+      "id": "2026-03-12-tikhoretsk-lpds",
+      "infra_id": "tikhoretsk-lpds",
+      "occurred_on": "2026-03-12",
+      "weapon": "uav",
+      "summary": "SBU Alpha special operations center drones struck the Tikhoretsk oil hub (Tikhoretsk-Nafta, a Transneft subsidiary) in Krasnodar Krai overnight on 12 March 2026, one of southern Russia's largest oil transshipment points feeding Black Sea export terminals. Two storage tanks were destroyed and the fire grew to ~3,800 sq m, requiring some 257 personnel and a fire train to extinguish.",
+      "source_urls": [
+        "https://www.kyivpost.com/post/71755",
+        "https://www.ukrinform.net/rubric-ato/4100745-ssu-strikes-one-of-largest-oil-hubs-in-southern-russia-in-tikhoretsk-source-says.html",
+        "https://meduza.io/news/2026/03/12/v-krasnodarskom-krae-v-rezultate-ataki-dronov-zagorelsya-npz-v-tihoretske"
+      ]
+    },
+    {
+      "id": "2026-03-14-afipsky-refinery",
+      "infra_id": "afipsky-refinery",
+      "occurred_on": "2026-03-14",
+      "weapon": "uav",
+      "summary": "Strike drones hit the Afipsky refinery overnight, setting a column of a key processing unit on fire and causing a gas leak from an adjacent rack; Ukraine's General Staff confirmed the hit. The Kavkaz port was attacked the same night.",
+      "source_urls": [
+        "https://ru.themoscowtimes.com/2026/03/14/ukraina-atakovala-afipskii-npz-iport-kavkaz-nakubani-a189729",
+        "https://www.pravda.com.ua/eng/news/2026/03/14/8025465/"
+      ]
+    },
+    {
+      "id": "2026-03-14-port-kavkaz-oil-ferry-terminal",
+      "infra_id": "port-kavkaz-oil-ferry-terminal",
+      "occurred_on": "2026-03-14",
+      "weapon": "uav",
+      "summary": "Ukrainian drones hit Port Kavkaz overnight on 14 March 2026, starting a fire at the pier complex, damaging a technical vessel and injuring three people; HUR operatives also struck the rail ferry Slavyanin in the same attack (Afipsky refinery was hit the same night).",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-reportedly-hit-major-oil-refinery-key-port-in-russias-krasnodar-krai/",
+        "https://english.nv.ua/russian-war/ukraine-intelligence-disables-russian-ferry-damages-vessel-in-kerch-military-supply-route-photo-50591807.html"
+      ]
+    },
+    {
+      "id": "2026-03-15-tikhoretsk-lpds",
+      "infra_id": "tikhoretsk-lpds",
+      "occurred_on": "2026-03-15",
+      "weapon": "uav",
+      "summary": "Drones hit the Tikhoretsk oil depot again on 15 March 2026, the second strike within four days; Russian officials blamed falling drone debris that ignited a fire and damaged power lines, while footage suggested at least one fuel storage tank was hit. The new fire was extinguished the same day.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-hit-oil-depot-in-russia-s-tikhoretsk-for-second-time-in-four-days/",
+        "https://www.kavkaz-uzel.eu/articles/421619",
+        "https://kuban.mk.ru/amp/incident/2026/03/15/v-prigorode-tikhorecka-zagorelas-neftebaza-posle-padeniya-oblomkov-drona.html"
+      ]
+    },
+    {
+      "id": "2026-03-21-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2026-03-21",
+      "weapon": "uav",
+      "summary": "A large-scale overnight drone attack damaged a secondary processing unit and an RVS-10000 storage tank and set a 10,000-ton diesel tank on fire, halting the Saratov refinery's operations; Ukraine's General Staff credited drone units including the 414th 'Magyar's Birds' brigade.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-03-21/russia-says-drone-attacks-repelled-near-bashneft-oil-refineries",
+        "https://militarnyi.com/en/news/saratov-oil-refinery-halts-operations-after-drone-strike/",
+        "https://english.nv.ua/nation/drone-attack-damages-historic-russian-oil-facility-50594296.html"
+      ]
+    },
+    {
+      "id": "2026-03-23-primorsk-oil-terminal",
+      "infra_id": "primorsk-oil-terminal",
+      "occurred_on": "2026-03-23",
+      "weapon": "uav",
+      "summary": "An overnight drone attack on 23 March 2026 damaged a fuel storage tank and started fires near Primorsk's crude and product loading terminals; tanker loadings were paused, resuming about three days later. The governor claimed over 60 drones were downed with Primorsk the main target.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-03-23/russia-s-primorsk-oil-port-hit-by-drones-with-fuel-tank-on-fire",
+        "https://militarnyi.com/en/news/drones-hit-fuel-tanks-at-primorsk-russia-s-largest-baltic-oil-port/",
+        "https://english.nv.ua/nation/russian-oil-port-of-primorsk-hit-by-major-drone-attack-50604934.html"
+      ]
+    },
+    {
+      "id": "2026-03-25-ust-luga-crude-oil-terminal",
+      "infra_id": "ust-luga-crude-oil-terminal",
+      "occurred_on": "2026-03-25",
+      "weapon": "uav",
+      "summary": "In the largest overnight drone attack of the year (night of 24-25 March 2026), several oil storage tanks caught fire at the Ust-Luga oil terminal and a railway unloading rack for petroleum products was damaged; Reuters calculated about 40% of Russia's oil shipping capacity was offline after the March strikes.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/03/25/ukraine-hits-ust-luga-oil-terminal-in-largest-overnight-drone-attack-of-the-year-a92329",
+        "https://www.bloomberg.com/news/articles/2026-03-25/fire-at-russia-s-ust-luga-oil-port-on-baltic-after-drone-attack",
+        "https://www.themoscowtimes.com/2026/03/30/russia-faces-fuel-production-crunch-after-ukraine-hits-baltic-export-hubs-reuters-a92378",
+        "https://www.nbcnews.com/world/russia/least-40-russias-oil-export-capacity-halted-reuters-calculations-show-rcna265150"
+      ]
+    },
+    {
+      "id": "2026-03-25-ust-luga-novatek-complex",
+      "infra_id": "ust-luga-novatek-complex",
+      "occurred_on": "2026-03-25",
+      "weapon": "uav",
+      "summary": "In Ukraine's largest overnight drone attack of 2026 (night of March 24-25), the General Staff confirmed hits on the Novatek Ust-Luga complex, setting storage tanks and loading racks ablaze; Astra reported damage to three tankers, five fuel tanks and three berths, and Novatek suspended gas condensate processing and naphtha loadings.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/03/25/ukraine-hits-ust-luga-oil-terminal-in-largest-overnight-drone-attack-of-the-year-a92329",
+        "https://www.bloomberg.com/news/articles/2026-03-25/fire-at-russia-s-ust-luga-oil-port-on-baltic-after-drone-attack",
+        "https://www.ukrinform.net/rubric-ato/4105390-general-staff-confirms-strike-on-novatekustluga-plant-in-russias-leningrad-region.html"
+      ]
+    },
+    {
+      "id": "2026-03-26-kirishi-refinery",
+      "infra_id": "kirishi-refinery",
+      "occurred_on": "2026-03-26",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone attack overnight caused explosions and an extensive fire at the Kirishi refinery (detected by NASA satellites), damaging the plant; Reuters sources said the refinery, which accounts for about 6.6% of Russia's refining, halted operations.",
+      "source_urls": [
+        "https://www.usnews.com/news/world/articles/2026-03-26/area-near-one-of-russias-biggest-oil-refineries-damaged-by-ukrainian-drones-official-says",
+        "https://www.themoscowtimes.com/2026/03/26/major-oil-refinery-in-leningrad-region-reportedly-damaged-in-ukrainian-drone-strike-a92341"
+      ]
+    },
+    {
+      "id": "2026-03-27-ust-luga-crude-oil-terminal",
+      "infra_id": "ust-luga-crude-oil-terminal",
+      "occurred_on": "2026-03-27",
+      "weapon": "uav",
+      "summary": "Drones hit the Ust-Luga oil terminal again on 27 March 2026, with flames at the site and satellite imagery later showing major damage to several storage and service buildings.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-reportedly-strike-oil-terminals-in-russias-leningrad-oblast-in-third-straight-night-of-attacks/",
+        "https://www.pravda.com.ua/eng/news/2026/03/27/8027488/",
+        "https://euromaidanpress.com/2026/03/27/ukraine-hits-ust-luga-and-primorsk-for-the-third-time-in-five-days-the-pace-suggests-kyiv-is-trying-to-destroy-russias-baltic-oil-export-ports-beyond-repair/"
+      ]
+    },
+    {
+      "id": "2026-03-27-ust-luga-novatek-complex",
+      "infra_id": "ust-luga-novatek-complex",
+      "occurred_on": "2026-03-27",
+      "weapon": "uav",
+      "summary": "A repeat drone strike on the night of March 26-27 hit the Ust-Luga terminal area again while fires from the March 25 attack still burned, with new fires near fuel storage tanks; satellite imagery showed one of the complex's oil-loading piers completely destroyed.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/03/27/8027488/",
+        "https://euromaidanpress.com/2026/03/27/ukraine-hits-ust-luga-and-primorsk-for-the-third-time-in-five-days-the-pace-suggests-kyiv-is-trying-to-destroy-russias-baltic-oil-export-ports-beyond-repair/"
+      ]
+    },
+    {
+      "id": "2026-03-28-yaroslavl-yanos-refinery",
+      "infra_id": "yaroslavl-yanos-refinery",
+      "occurred_on": "2026-03-28",
+      "weapon": "uav",
+      "summary": "Ukrainian FP-1 long-range kamikaze drones struck the Slavneft-YANOS refinery in Yaroslavl on the night of March 28, causing a massive fire at the facility roughly 800 km from Ukraine.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/03/28/8027538/",
+        "https://ru.themoscowtimes.com/2026/03/28/ukrainskie-droni-atakovali-odin-iz-krupneishih-npz-v-rossii-i-zavod-po-proizvodstvu-vzrivchatki-a191117"
+      ]
+    },
+    {
+      "id": "2026-03-29-ust-luga-crude-oil-terminal",
+      "infra_id": "ust-luga-crude-oil-terminal",
+      "occurred_on": "2026-03-29",
+      "weapon": "uav",
+      "summary": "SBU long-range drones struck the Ust-Luga oil and gas terminal on 29 March 2026 — the second hit within a week per the SBU — causing 'serious damage' and a fire, with preliminary reports of three storage tanks hit.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-governor-reports-fire-at-ust-luga-port-amid-ukrainian-drone-strike/",
+        "https://www.bloomberg.com/news/articles/2026-03-29/russia-s-ust-luga-port-takes-new-damage-in-ukraine-drone-attack",
+        "https://www.rferl.org/a/russia-ukraine-oil-drone-attack-fire-export/33719116.html"
+      ]
+    },
+    {
+      "id": "2026-03-31-ust-luga-crude-oil-terminal",
+      "infra_id": "ust-luga-crude-oil-terminal",
+      "occurred_on": "2026-03-31",
+      "weapon": "uav",
+      "summary": "A further drone strike on the morning of 31 March 2026 damaged oil infrastructure at Ust-Luga port — at least the fourth hit in a week — with the regional governor confirming damage without detailing its extent.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/03/31/ukrainian-drones-damage-ust-luga-port-again-a92383",
+        "https://www.bloomberg.com/news/articles/2026-03-31/russia-s-baltic-oil-port-ust-luga-damaged-in-new-drone-attack"
+      ]
+    },
+    {
+      "id": "2026-04-02-novoil-refinery",
+      "infra_id": "novoil-refinery",
+      "occurred_on": "2026-04-02",
+      "weapon": "uav",
+      "summary": "Drones again hit Bashneft-Novoil in Ufa, striking the AVT-5 (CDU-5) primary distillation unit (~28% of plant capacity) and sparking a large fire; Ukraine's General Staff confirmed the strike and the unit was forced to halt. One drone also damaged an apartment building in Ufa.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/04/03/8028576/",
+        "https://euromaidanpress.com/2026/04/02/ukraines-drones-return-to-bashneft-novoil-refinery-in-ufa-1300-km-from-the-front-the-primary-distillation-unit-is-burning-again/",
+        "https://nv.ua/world/countries/npz-bashneft-novoyl-porazili-drony-v-ufe-2-aprelya-foto-video-50596893.html"
+      ]
+    },
+    {
+      "id": "2026-04-05-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2026-04-05",
+      "weapon": "uav",
+      "summary": "Overnight drone attack set two facilities of the Kstovo NORSI refinery on fire around 2 a.m. (fire confirmed by NASA FIRMS); the governor said debris from some 30 downed drones also damaged homes and a thermal power plant, cutting power to two towns.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/04/05/ukrainian-strike-damages-central-russian-oil-refinery-baltic-port-oil-facility-a92424",
+        "https://www.aljazeera.com/news/2026/4/5/drone-attacks-hit-russian-oil-infrastructure-leak-and-fires-reported",
+        "https://militarnyi.com/en/news/drones-strike-lukoil-oil-refinery-in-nizhny-novgorod-region/"
+      ]
+    },
+    {
+      "id": "2026-04-06-cpc-marine-terminal",
+      "infra_id": "cpc-marine-terminal",
+      "occurred_on": "2026-04-06",
+      "weapon": "uav",
+      "summary": "Russia's Defense Ministry said fixed-wing attack drones struck the CPC marine transshipment complex near Novorossiysk early on April 6, damaging a single point mooring pipeline and a loading-and-unloading facility and setting four oil product tanks ablaze; Ukraine's military said its target was the adjacent Sheskharis terminal, and Kazakhstan protested the attack.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2026/4/6/ukraine-strikes-russian-black-sea-energy-hub-novorossiysk",
+        "https://www.themoscowtimes.com/2026/04/06/ukraine-hits-major-oil-terminal-in-southern-russia-moscow-a92430",
+        "https://www.marinelink.com/news/ukrainian-drones-attack-caspian-pipeline-537707"
+      ]
+    },
+    {
+      "id": "2026-04-06-cpc-pipeline",
+      "infra_id": "cpc-pipeline",
+      "occurred_on": "2026-04-06",
+      "weapon": "uav",
+      "summary": "Ukrainian drones attacked the CPC marine terminal at Novorossiysk, damaging a single-point mooring pipeline and loading infrastructure and setting four storage tanks ablaze, according to Russia's defense ministry. Loadings at the terminal, which handles about 1% of global oil supply, were disrupted.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/04/06/ukraine-hits-major-oil-terminal-in-southern-russia-moscow-a92430",
+        "https://www.aljazeera.com/news/2026/4/6/ukraine-strikes-russian-black-sea-energy-hub-novorossiysk"
+      ]
+    },
+    {
+      "id": "2026-04-06-port-kavkaz-oil-ferry-terminal",
+      "infra_id": "port-kavkaz-oil-ferry-terminal",
+      "occurred_on": "2026-04-06",
+      "weapon": "uav",
+      "summary": "In the early morning of 6 April 2026, Ukrainian HUR drones disabled the rail ferry Slavyanin at Port Kavkaz, putting out of action what Ukrainian intelligence called the last Russian railway ferry still afloat on the Kerch Strait crossing.",
+      "source_urls": [
+        "https://maritime-executive.com/article/ukraine-claims-to-have-finished-off-russia-s-last-kerch-strait-ferry",
+        "https://euromaidanpress.com/2026/04/08/ukrainian-intelligence-called-it-the-last-russian-railway-ferry-in-the-kerch-strait-still-afloat-now-its-out-of-action-too/"
+      ]
+    },
+    {
+      "id": "2026-04-06-sheskharis-oil-terminal",
+      "infra_id": "sheskharis-oil-terminal",
+      "occurred_on": "2026-04-06",
+      "weapon": "uav",
+      "summary": "Drones struck the Sheskharis oil terminal on the night of 5-6 April 2026, setting it on fire (confirmed by NASA satellite fire data) and forcing suspension of oil loadings (~700,000 b/d); the frigate Admiral Essen was reportedly hit in the same attack.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/04/06/ukraine-hits-major-oil-terminal-in-southern-russia-moscow-a92430",
+        "https://www.pravda.com.ua/eng/news/2026/04/06/8028982/",
+        "https://www.ukrinform.net/rubric-economy/4110194-russias-sheskharis-terminal-halts-oil-loading-after-drone-attack-reuters.html",
+        "https://www.aljazeera.com/news/2026/4/6/ukraine-strikes-russian-black-sea-energy-hub-novorossiysk"
+      ]
+    },
+    {
+      "id": "2026-04-08-feodosia-oil-terminal",
+      "infra_id": "feodosia-oil-terminal",
+      "occurred_on": "2026-04-08",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck fuel storage tanks at the Feodosia Marine Oil Terminal after 1 a.m. on April 8, with the blaze glow visible more than 20 km away and fires detected by NASA FIRMS satellites; Unmanned Systems Forces commander Robert Brovdi said fuel storage infrastructure was hit.",
+      "source_urls": [
+        "https://united24media.com/latest-news/ukrainian-drones-strike-key-fuel-terminal-in-occupied-crimea-fire-reported-in-feodosia-17720",
+        "https://www.kyivpost.com/post/73507",
+        "https://newsukraine.rbc.ua/news/satellite-images-reveal-fire-at-feodosia-1775678062.html"
+      ]
+    },
+    {
+      "id": "2026-04-10-yug-products-pipeline",
+      "infra_id": "yug-products-pipeline",
+      "occurred_on": "2026-04-10",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Tinguta pumping station in Volgograd Oblast's Svetloyarsky district, a key node of the Volgograd-Tikhoretsk ('Yug') products pipeline that moves diesel to southern Russia and export; a tank with petroleum products caught fire, with the blaze visible up to 25 km away per satellite data.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-hit-tinguta-pumping-station-in-volgograd-region-fire-ongoing/",
+        "https://english.nv.ua/nation/drone-strike-sparks-fire-at-volgograd-oil-station-50599370.html",
+        "https://unn.ua/en/news/uav-attack-on-the-volgograd-tikhoretsk-oil-pipeline-a-large-scale-fire-started"
+      ]
+    },
+    {
+      "id": "2026-04-16-tuapse-oil-terminal",
+      "infra_id": "tuapse-oil-terminal",
+      "occurred_on": "2026-04-16",
+      "weapon": "uav",
+      "summary": "Drones struck the Tuapse refinery and adjacent marine terminal/port infrastructure on 16 April 2026, starting a fire that burned for days across fuel storage and port facilities; two people were killed and product shipments halted, beginning the strike series behind the 2026 Tuapse environmental disaster.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Tuapse_environmental_disaster",
+        "https://www.themoscowtimes.com/2026/04/20/ukrainian-drone-attack-on-tuapse-port-kills-1-a92540",
+        "https://kyivindependent.com/russias-hard-hit-tuapse-oil-refinery-struck-by-ukrainian-drones-for-4th-time-as-fires-ravage-site/"
+      ]
+    },
+    {
+      "id": "2026-04-16-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2026-04-16",
+      "weapon": "uav",
+      "summary": "A major Ukrainian drone strike hit the Tuapse refinery and its oil terminal, damaging the AVT-12 primary unit and fuel storage tanks and igniting fires that burned for about three days; two people were killed and seven injured, and the refinery halted operations.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Tuapse_environmental_disaster",
+        "https://www.kommersant.ru/doc/8624710",
+        "https://www.aljazeera.com/news/2026/4/30/its-all-very-toxic"
+      ]
+    },
+    {
+      "id": "2026-04-18-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2026-04-18",
+      "weapon": "uav",
+      "summary": "Night drone strike set off an intense fire near the ELOU-AVT-6 (AVT-11) primary unit with thick black smoke visible for dozens of kilometres; both primary units (AVT-11, ~80% of capacity, and AVT-9) were halted.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/novokuybyshevsk-oil-refinery-fire-attack/",
+        "https://newsukraine.rbc.ua/news/drone-strike-targets-refinery-in-samara-region-1776486376.html",
+        "https://en.interfax.com.ua/news/general/1160335.html"
+      ]
+    },
+    {
+      "id": "2026-04-18-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2026-04-18",
+      "weapon": "uav",
+      "summary": "A drone attack set off a fire near the refinery's tank farm and stopped the CDU-6 (AVT-6) unit, which accounts for over 70% of capacity; the Syzran refinery halted oil processing after the strike.",
+      "source_urls": [
+        "https://www.hydrocarbonprocessing.com/news/2026/04/russias-syzran-oil-refinery-halts-operations-after-april-18-drone-attack/",
+        "https://www.pravda.com.ua/eng/news/2026/04/18/8030686/"
+      ]
+    },
+    {
+      "id": "2026-04-18-tikhoretsk-lpds",
+      "infra_id": "tikhoretsk-lpds",
+      "occurred_on": "2026-04-18",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone attack on the night of 17-18 April 2026 set the Tikhoretsk oil depot (Tikhoretsk-Nafta/Transneft) on fire again, with the blaze detected by NASA FIRMS shortly after 1 a.m. Around 224 personnel and 56 vehicles were deployed to extinguish it; no casualties were reported.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/fire-tikhoretsk-oil-depot-drone-attack/",
+        "https://www.ukrinform.net/rubric-ato/4113921-russia-reports-drone-attacks-oil-depot-refinery-on-fire.html"
+      ]
+    },
+    {
+      "id": "2026-04-18-vysotsk-lukoil-terminal",
+      "infra_id": "vysotsk-lukoil-terminal",
+      "occurred_on": "2026-04-18",
+      "weapon": "uav",
+      "summary": "Overnight Ukrainian drone attack on Leningrad Oblast caused a fire in the port of Vysotsk, site of Lukoil's RPK-Vysotsk-Lukoil-II oil products export terminal (~9 million tons of fuel oil, naphtha and diesel transshipped in 2025). Governor Drozdenko said 27 drones were downed over the region and reported the fire extinguished by morning.",
+      "source_urls": [
+        "https://www.fontanka.ru/2026/04/18/76373885/",
+        "https://www.forbes.ru/society/559423-v-portu-vysock-v-lenoblasti-voznik-pozhar-iz-za-ataki-dronov",
+        "https://www.mk.ru/incident/2026/04/18/posle-ataki-vsu-na-lenoblast-zagorelsya-port-vysock.html"
+      ]
+    },
+    {
+      "id": "2026-04-20-tuapse-oil-terminal",
+      "infra_id": "tuapse-oil-terminal",
+      "occurred_on": "2026-04-20",
+      "weapon": "uav",
+      "summary": "A second drone attack in under a week hit the Tuapse port export hub on 20 April 2026, killing one person, reigniting fires and causing further damage to the oil terminal and refinery complex.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/04/20/ukrainian-drone-attack-on-tuapse-port-kills-1-a92540",
+        "https://www.aljazeera.com/video/newsfeed/2026/4/20/ukrainian-drone-attack-hits-russias-tuapse-port"
+      ]
+    },
+    {
+      "id": "2026-04-20-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2026-04-20",
+      "weapon": "uav",
+      "summary": "A repeat overnight drone attack on April 20 hit the Tuapse refinery and port for the second time in less than a week, reigniting and intensifying fires from the April 16 strike; one man was killed and another injured, and a gas pipeline, a church and two schools were also damaged. Reuters reported the fire brought under control by about April 23, and the plant remained offline.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Tuapse_environmental_disaster",
+        "https://www.themoscowtimes.com/2026/04/20/ukrainian-drone-attack-on-tuapse-port-kills-1-a92540",
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816"
+      ]
+    },
+    {
+      "id": "2026-04-21-samara-lpds-hub",
+      "infra_id": "samara-lpds-hub",
+      "occurred_on": "2026-04-21",
+      "weapon": "uav",
+      "summary": "SBU Alpha special operations center drones struck the Samara LPDS near Prosvet on the night of 21 April 2026, causing a large-scale fire. Preliminary reports said five crude oil tanks of 20,000 cubic meters each were damaged at the hub that forms the Urals export blend.",
+      "source_urls": [
+        "https://zn.ua/war/drony-sbu-atakovali-neftestantsiju-samara-povrezhdeny-pjat-rezervuarov.html",
+        "https://uatv.ua/drony-sbu-udarili-po-stantsii-samara-v-rf-povrezhdeny-pyat-rezervuarov-s-neftyu/",
+        "https://news.zerkalo.io/world/125564.html"
+      ]
+    },
+    {
+      "id": "2026-04-23-feodosia-oil-terminal",
+      "infra_id": "feodosia-oil-terminal",
+      "occurred_on": "2026-04-23",
+      "weapon": "uav",
+      "summary": "Drones struck the Feodosia oil terminal on the night of April 22-23, causing a fire in what monitoring group Krymskyi Veter said was at least the fifth hit on the facility; Russian-installed authorities claimed over 20 drones were downed with no casualties.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/04/23/8031383/",
+        "https://english.nv.ua/nation/ukrainian-drone-strike-ignites-feodosia-oil-facility-50602398.html"
+      ]
+    },
+    {
+      "id": "2026-04-23-novokuibyshevsk-refinery",
+      "infra_id": "novokuibyshevsk-refinery",
+      "occurred_on": "2026-04-23",
+      "weapon": "uav",
+      "summary": "Drones again struck Rosneft's Novokuibyshevsk complex overnight (alongside the SBU strike on the Gorky oil pumping station in Nizhny Novgorod Oblast); residents reported explosions and fire, and one person was killed. Ukrainian officials said the refinery was targeted, while geolocated imagery placed the fire at the adjacent Novokuibyshevsk Petrochemical Company; Rosneft kept refining operations at the plant suspended after the 18 April strike.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/drones-attack-russia-s-novokuybyshevsk-oil-1776923712.html",
+        "https://www.themoscowtimes.com/2026/04/23/3-killed-in-ukrainian-drone-strikes-across-russia-a92578",
+        "https://militarnyi.com/en/news/russia-drone-strike-sparks-fire-at-novokuibyshevsk-petrochemical-plant/"
+      ]
+    },
+    {
+      "id": "2026-04-26-nikolskoye-lpds",
+      "infra_id": "nikolskoye-lpds",
+      "occurred_on": "2026-04-26",
+      "weapon": "uav",
+      "summary": "Drones struck the area of the Nikolskoye linear production dispatch station (Druzhba pipeline) near Michurinsk, Tambov Oblast, overnight on 25-26 April 2026, with a fire reported outside the city. Russian officials gave no damage assessment; identification of the LPDS as the target is based on local reports and OSINT analysis.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/drones-blast-druzhba-oil-hub-near-russia-1777152139.html",
+        "https://charter97.org/ru/news/2026/4/26/681845"
+      ]
+    },
+    {
+      "id": "2026-04-26-yaroslavl-yanos-refinery",
+      "infra_id": "yaroslavl-yanos-refinery",
+      "occurred_on": "2026-04-26",
+      "weapon": "uav",
+      "summary": "Long-range drones struck the Slavneft-YANOS refinery overnight on April 25-26, setting off a large fire at Russia's biggest northern refinery in the second strike on the plant in a month.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/russia-s-largest-northern-oil-refinery-erupts-1777162452.html",
+        "https://united24media.com/latest-news/one-of-russias-largest-oil-refineries-erupts-in-yaroslavl-after-deep-drone-strike-18226"
+      ]
+    },
+    {
+      "id": "2026-04-28-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2026-04-28",
+      "weapon": "uav",
+      "summary": "The third drone strike in the April 2026 series, on the morning of April 28, caused a new large fire at the Tuapse refinery (Russian officials attributed it to falling drone debris) and forced evacuations of nearby residents; regional authorities reported no casualties, and the fire was fully extinguished by April 30.",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Tuapse_environmental_disaster",
+        "https://www.1tv.ru/news/2026-04-28/540585-pozhar_na_npz_v_tuapse_proizoshel_iz_za_padeniya_oblomkov_bpla",
+        "https://www.kommersant.ru/doc/8625230",
+        "https://meduza.io/en/news/2026/04/29/russian-emergency-workers-in-tuapse-say-they-ve-extinguished-the-third-fire-at-an-oil-refinery-struck-by-ukrainian-drone-debris"
+      ]
+    },
+    {
+      "id": "2026-04-29-orsk-refinery",
+      "infra_id": "orsk-refinery",
+      "occurred_on": "2026-04-29",
+      "weapon": "uav",
+      "summary": "Drones attacked the Orsknefteorgsintez refinery on the morning of April 29; OSINT analysis confirmed at least two drone impacts on the plant's territory and a smoke column, while the Orenburg governor described an 'attempted attack' and local reports said no major fire broke out.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-oil-facilities-in-perm-and-orsk-struck-as-ukraines-drones-follow-up-tuapse-attacks/",
+        "https://www.pravda.com.ua/eng/news/2026/04/29/8032304/",
+        "https://nv.ua/world/countries/ataka-po-orsku-osint-analiz-podtverdil-udary-po-krupnomu-npz-opublikovano-video-50604156.html"
+      ]
+    },
+    {
+      "id": "2026-04-30-perm-refinery",
+      "infra_id": "perm-refinery",
+      "occurred_on": "2026-04-30",
+      "weapon": "uav",
+      "summary": "Liutyi drones hit the Lukoil-Permnefteorgsintez refinery (more than 1,500 km from Ukraine) on the morning of April 30, causing a fire and knocking the AVT-4 primary distillation unit offline; a chemical hazard alert was issued in Perm.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/04/30/chemical-emergency-alert-issued-in-perm-after-ukraine-strikes-industrial-sites-a92644",
+        "https://militarnyi.com/en/news/liutyi-drones-hit-russian-oil-refinery-in-perm/",
+        "https://www.pravda.com.ua/eng/news/2026/04/30/8032507/"
+      ]
+    },
+    {
+      "id": "2026-05-01-tuapse-oil-terminal",
+      "infra_id": "tuapse-oil-terminal",
+      "occurred_on": "2026-05-01",
+      "weapon": "uav",
+      "summary": "The fourth drone strike in a month hit Tuapse early on 1 May 2026, with officials reporting the marine oil terminal struck and on fire; more than 100 emergency personnel responded and a town-wide power outage was reported, with the fire extinguished by 2 May.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/05/01/ukrainian-drones-hit-tuapse-port-for-the-fourth-time-a92656",
+        "https://www.bloomberg.com/news/articles/2026-05-02/russian-tuapse-oil-terminal-fire-extinguished-after-attack",
+        "https://www.vedomosti.ru/politics/news/2026/05/01/1194559-tuapse-zagorelsya-terminal"
+      ]
+    },
+    {
+      "id": "2026-05-01-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2026-05-01",
+      "weapon": "uav",
+      "summary": "The fourth drone strike in recent weeks set the sea terminal of the Tuapse refinery/port complex on fire early on May 1; officials reported no injuries while the refinery remained shut and air pollution from the serial fires exceeded safe levels.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/05/01/ukrainian-drones-hit-tuapse-port-for-the-fourth-time-a92656",
+        "https://www.cbc.ca/news/world/tuapse-refinery-ukraine-drone-strike-fallout-9.7183235"
+      ]
+    },
+    {
+      "id": "2026-05-03-primorsk-oil-terminal",
+      "infra_id": "primorsk-oil-terminal",
+      "occurred_on": "2026-05-03",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone attack on 3 May 2026 hit Primorsk port, damaging oil-loading infrastructure and starting a fire; Zelensky said a Karakurt-class missile ship, a patrol boat and a tanker were also hit, in what was described as the first strike on Russia's Baltic Fleet.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2026/5/3/ukraine-drone-attack-hits-russian-baltic-port-governor-says",
+        "https://nv.ua/world/countries/ataka-dronov-na-bazu-vmf-rossii-i-neftyanoy-terminal-pervyy-udar-po-baltiyskomu-flotu-50613281.html"
+      ]
+    },
+    {
+      "id": "2026-05-05-kirishi-refinery",
+      "infra_id": "kirishi-refinery",
+      "occurred_on": "2026-05-05",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone strike damaged three of the four crude distillation units and several secondary units at the Kirishi refinery, forcing Russia's second-largest refinery (~350,000 bpd) to suspend all processing, Reuters reported; repair timelines were unclear.",
+      "source_urls": [
+        "https://meduza.io/en/news/2026/05/05/reuters-reports-ukraine-strikes-kinef-oil-refinery-in-russia-s-leningrad-region-forcing-shutdown",
+        "https://www.themoscowtimes.com/2026/05/06/leningrad-regions-kirishi-oil-refinery-halts-operations-after-drone-strike-reuters-a92696"
+      ]
+    },
+    {
+      "id": "2026-05-05-sever-products-pipeline",
+      "infra_id": "sever-products-pipeline",
+      "occurred_on": "2026-05-05",
+      "weapon": "uav",
+      "summary": "SBU drones struck the Kirishi oil pumping station in Leningrad Oblast on the night of 5 May -- a key node of the products route to the Baltic export port of Primorsk (the Sever diesel corridor, which also handles crude flows); a storage tank with petroleum products was hit and burned. The adjacent Kirishi refinery was struck the same night and halted processing.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-05-05/russia-s-kirishi-oil-refinery-on-fire-nasa-satellites-show",
+        "https://www.themoscowtimes.com/2026/05/06/leningrad-regions-kirishi-oil-refinery-halts-operations-after-drone-strike-reuters-a92696",
+        "https://ru.interfax.com.ua/news/general/1165031.html",
+        "https://www.pravda.com.ua/rus/news/2026/05/05/8033247/index.amp"
+      ]
+    },
+    {
+      "id": "2026-05-08-perm-refinery",
+      "infra_id": "perm-refinery",
+      "occurred_on": "2026-05-08",
+      "weapon": "uav",
+      "summary": "SBU Liutyi drones struck the Lukoil-Permnefteorgsintez refinery and the Perm LPDS overnight on 7-8 May — the third strike on the refinery in two weeks, after the April 29-30 and May 7 attacks — setting a crude oil processing (AVT) unit on fire. Per Reuters, the back-to-back May 7-8 strikes forced the refinery to fully halt processing, with AVT-1, AVT-2 and AVT-5 shut down on top of the AVT-4 damage from April 30.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraine-strikes-russian-oil-refinery-oil-pumping-station-in-perm-sbu-says/",
+        "https://www.pravda.com.ua/eng/news/2026/05/08/8033811/",
+        "https://www.ukrinform.net/rubric-ato/4122850-perm-oil-refinery-shuts-down-after-drone-attack-reuters.html",
+        "https://united24media.com/latest-news/russias-seventh-largest-refinery-fully-stops-output-after-ukrainian-drone-strike-18773"
+      ]
+    },
+    {
+      "id": "2026-05-08-yaroslavl-yanos-refinery",
+      "infra_id": "yaroslavl-yanos-refinery",
+      "occurred_on": "2026-05-08",
+      "weapon": "uav",
+      "summary": "Ukrainian drones hit the Slavneft-YANOS refinery overnight on May 8, with residents' videos showing a large fire erupting at the plant; by mid-May Reuters reported YANOS was running at roughly a quarter of nominal capacity after repeated strikes.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/05/08/ukraine-hits-one-of-russias-largest-oil-refineries-days-after-moscow-refused-zelenskyys-ceasefire-and-struck-kindergarten/",
+        "https://militarnyi.com/en/news/drones-strike-one-of-russia-s-largest-oil-refineries-in-yaroslavl-slavneft-yanos/",
+        "https://www.themoscowtimes.com/2026/05/20/drone-strikes-force-central-russian-refineries-to-halt-or-cut-output-reuters-a92805"
+      ]
+    },
+    {
+      "id": "2026-05-13-astrakhan-gas-processing-plant",
+      "infra_id": "astrakhan-gas-processing-plant",
+      "occurred_on": "2026-05-13",
+      "weapon": "uav",
+      "summary": "A drone attack caused a fire at the Astrakhan gas processing plant, again suspending automotive fuel production only weeks after a long-awaited restart; Reuters reported the hydrogen-sulfide removal and sulfur recovery equipment was affected, with recovery estimated at weeks to months.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/05/15/8034798/",
+        "https://www.ukrinform.net/rubric-ato/4123474-gazproms-astrakhan-plant-halts-fuel-output-after-drone-attack-reuters.html"
+      ]
+    },
+    {
+      "id": "2026-05-13-taman-oteko-terminal",
+      "infra_id": "taman-oteko-terminal",
+      "occurred_on": "2026-05-13",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed striking the Tamanneftegaz oil terminal on the night of 12-13 May 2026, with fires breaking out near fuel storage tanks at the Taman port site; drone debris fell on an enterprise in Volna and one person was injured.",
+      "source_urls": [
+        "https://www.unian.net/war/ataka-na-rf-genshtab-podtverdil-porazhenie-neftyanogo-terminala-i-gazopererabatyvayushchego-zavoda-v-rossii-13380702.html",
+        "https://24tv.ua/ru/ataka-po-rossii-13-maja-portu-taman-vspyhnul-masshtabnyj-pozhar_n3066821",
+        "https://militarnyi.com/en/news/drone-attack-fire-at-taman-port-tank-farm/"
+      ]
+    },
+    {
+      "id": "2026-05-15-ryazan-refinery",
+      "infra_id": "ryazan-refinery",
+      "occurred_on": "2026-05-15",
+      "weapon": "uav",
+      "summary": "A massive drone barrage ignited vacuum distillation units at the Ryazan refinery and damaged AVT-3, AVT-4 and AT-6 plus a diesel hydrotreater; at least four people were killed in Ryazan, the city was showered in 'oil rain', and the refinery halted output completely.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/05/15/ukrainian-drones-kill-4-and-set-ryazan-oil-refinery-ablaze-a92760",
+        "https://meduza.io/en/feature/2026/05/15/ukrainian-drone-attack-kills-four-in-ryazan-ignites-refinery-fire-and-showers-city-in-oil-rain",
+        "https://www.marketscreener.com/news/russia-s-ryazan-oil-refinery-halted-output-after-may-15-drone-attack-sources-say-ce7f5ad8d988f026"
+      ]
+    },
+    {
+      "id": "2026-05-17-moscow-refinery",
+      "infra_id": "moscow-refinery",
+      "occurred_on": "2026-05-17",
+      "weapon": "uav",
+      "summary": "During a record drone attack on the Moscow region, SBU drones scored a direct hit on the Kapotnya refinery, triggering an explosion and fires; Mayor Sobyanin said 12 workers were injured, and the plant reportedly stopped oil processing as a protective measure.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-05-17/record-drone-attack-on-moscow-kills-three-targets-refinery",
+        "https://www.kyivpost.com/post/76296",
+        "https://english.nv.ua/russian-war/historic-may-17-drone-strikes-shut-down-moscow-oil-refinery-50609407.html"
+      ]
+    },
+    {
+      "id": "2026-05-18-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2026-05-18",
+      "weapon": "uav",
+      "summary": "Drones struck the NORSI refinery at Kstovo, causing explosions and a fire — the first of two strikes on the plant within three days.",
+      "source_urls": [
+        "https://english.nv.ua/nation/explosions-rock-kstovo-amid-drone-attack-video-50608873.html",
+        "https://www.pravda.com.ua/eng/news/2026/05/19/8035389/",
+        "https://euromaidanpress.com/2026/05/20/drones-strike-lukoils-kstovo-refinery-hitting-primary-crude-unit/"
+      ]
+    },
+    {
+      "id": "2026-05-20-nizhny-novgorod-refinery",
+      "infra_id": "nizhny-novgorod-refinery",
+      "occurred_on": "2026-05-20",
+      "weapon": "uav",
+      "summary": "Second drone strike in three days hit NORSI's ELOU AVT-6 primary crude unit (about 190,000 bpd, 53% of capacity), causing a fire; Reuters reported the main crude unit was shut down, removing over half of the plant's processing capacity.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/05/22/ukrainian-drone-strike-halts-norsis-main-crude-unit-reuters-reports/",
+        "https://kyivindependent.com/ukraine-reportedly-strikes-russian-chemical-plant-for-second-time-in-a-week/",
+        "https://biz.liga.net/en/all/energy/novosti/reuters-one-of-russias-largest-refineries-shut-down-after-ukrainian-drone-attack"
+      ]
+    },
+    {
+      "id": "2026-05-21-syzran-refinery",
+      "infra_id": "syzran-refinery",
+      "occurred_on": "2026-05-21",
+      "weapon": "uav",
+      "summary": "Long-range drones of Ukraine's Unmanned Systems and Special Operations Forces hit the refinery overnight, causing a large fire and shutting down the CDU-6 crude unit (over 70% of capacity); two people were killed and the plant halted for over a month.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-oil-refinery-in-syzran-reportedly-struck-in-ukrainian-attack/",
+        "https://www.euronews.com/2026/05/21/ukraine-strikes-russian-oil-refinery-in-long-range-drone-attack-kyiv-says",
+        "https://www.usnews.com/news/world/articles/2026-05-21/ukrainian-drones-strike-russias-syzran-oil-refinery-kyiv-says",
+        "https://www.pravda.com.ua/eng/news/2026/05/25/8036362/"
+      ]
+    },
+    {
+      "id": "2026-05-22-yaroslavl-yanos-refinery",
+      "infra_id": "yaroslavl-yanos-refinery",
+      "occurred_on": "2026-05-22",
+      "weapon": "uav",
+      "summary": "President Zelenskyy confirmed a successful overnight drone strike on facilities of the Yaroslavl (Slavneft-YANOS) refinery about 700 km from Ukraine; OSINT analysts identified YANOS as the target from local videos, while Russian authorities issued no official confirmation.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/drones-hit-one-of-russia-s-biggest-oil-refineries-1779442427.html",
+        "https://militarnyi.com/en/news/drone-attack-refinery-in-yaroslavl-at-night/",
+        "https://www.kyivpost.com/post/76409"
+      ]
+    },
+    {
+      "id": "2026-05-23-grushovaya-oil-depot",
+      "infra_id": "grushovaya-oil-depot",
+      "occurred_on": "2026-05-23",
+      "weapon": "uav",
+      "summary": "Ukrainian strike drones attacked the Chernomortransneft Grushovaya tank farm (part of the Sheskharis export complex, ~1.2 million m3 capacity) overnight on May 23, setting a significant portion of the facility ablaze; two people were injured. Satellite imagery showed at least one reservoir destroyed, additional tanks and pipeline infrastructure damaged.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/05/23/ukrainian-drone-attack-sparks-fire-at-russian-oil-depot-a92826",
+        "https://www.pravda.com.ua/eng/news/2026/05/23/8036033/",
+        "https://united24media.com/war-in-ukraine/ukrainian-drones-hit-grushovaya-oil-depot-in-novorossiysk-satellite-images-reveal-19171"
+      ]
+    },
+    {
+      "id": "2026-05-23-sheskharis-oil-terminal",
+      "infra_id": "sheskharis-oil-terminal",
+      "occurred_on": "2026-05-23",
+      "weapon": "uav",
+      "summary": "An overnight drone attack on 22-23 May 2026 set fire to the Sheskharis complex and its Grushovaya oil depot, burning technical and administrative buildings and wounding two; Ukraine's General Staff confirmed strikes on both oil facilities.",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2026/05/23/ukrainian-drone-attack-sparks-fire-at-russian-oil-depot-a92826",
+        "https://www.pravda.com.ua/eng/news/2026/05/23/8036033/",
+        "https://kyivindependent.com/fire-at-novorossiysk-fuel-terminal-amid-ukrainian-drone-attack-russian-authorities-say/"
+      ]
+    },
+    {
+      "id": "2026-05-27-tuapse-oil-terminal",
+      "infra_id": "tuapse-oil-terminal",
+      "occurred_on": "2026-05-27",
+      "weapon": "uav",
+      "summary": "Another overnight drone attack on the night of 26-27 May 2026 started a fire at the Tuapse marine terminal after, per Russian officials, drone debris fell on the facility — at least the fifth strike on the Tuapse oil complex that spring; more than 80 firefighters and 25 units of equipment responded, several nearby homes were damaged, and no casualties were reported for this strike.",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2026-05-27/russian-black-sea-port-of-tuapse-tackles-fire-after-drone-strike",
+        "https://charter97.org/en/news/2026/5/27/685544",
+        "https://euromaidanpress.com/2026/05/27/russias-falling-debris-routine-continues-as-ukrainian-drone-hits-tuapse-oil-terminal-for-5th-time-this-spring/",
+        "https://tass.com/emergencies/2118223"
+      ]
+    },
+    {
+      "id": "2026-05-27-tuapse-refinery",
+      "infra_id": "tuapse-refinery",
+      "occurred_on": "2026-05-27",
+      "weapon": "uav",
+      "summary": "Another drone attack on May 27 caused a fire at the sea terminal of the Tuapse refinery complex, the latest in the 2026 series of strikes that had kept the plant and its export infrastructure out of operation.",
+      "source_urls": [
+        "https://ru.themoscowtimes.com/2026/06/01/factbox-avarii-na-npz-i-drugikh-obektakh-tek-rf-v-2025-2026gg-a196816",
+        "https://www.bloomberg.com/news/articles/2026-05-27/russian-black-sea-port-of-tuapse-tackles-fire-after-drone-strike"
+      ]
+    },
+    {
+      "id": "2026-05-29-volgograd-refinery",
+      "infra_id": "volgograd-refinery",
+      "occurred_on": "2026-05-29",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed an overnight drone strike that set the Volgograd refinery ablaze and halted processing, with primary crude distillation units AVT-1 (about 40% of capacity), AVT-3, AVT-5 and AVT-6 plus secondary units damaged - at least the tenth strike on the plant per Astra.",
+      "source_urls": [
+        "https://www.ukrinform.net/rubric-ato/4129436-volgograd-oil-refinery-halts-processing-after-drone-attack-reuters.html",
+        "https://unn.ua/en/news/general-staff-of-the-afu-confirmed-strikes-on-the-yaroslavl-3-oil-pumping-station-and-the-volgograd-oil-refinery",
+        "https://www.pravda.com.ua/rus/news/2026/05/29/8036853/"
+      ]
+    },
+    {
+      "id": "2026-05-31-lazarevo-lpds",
+      "infra_id": "lazarevo-lpds",
+      "occurred_on": "2026-05-31",
+      "weapon": "uav",
+      "summary": "Long-range drones of Ukraine's Special Operations Forces struck the Transneft Lazarevo oil pumping station in Urzhum district, Kirov Oblast (~1,200 km from Ukraine), a junction on the Surgut-Polotsk and Kholmogory-Klin trunk pipelines routing Siberian crude toward Baltic export ports; the governor confirmed a UAV strike and fire at the industrial site. Reports indicated hits on two large storage tanks and pumping station buildings.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/05/31/8037134/",
+        "https://militarnyi.com/en/news/drone-attack-on-the-lazarevo-oil-pumping-station-in-kirov-region/",
+        "https://euromaidanpress.com/2026/05/31/ukraine-hits-the-kirov-junction-that-routes-siberian-crude-to-the-baltic-plus-refinery-and-oil-depot-elsewhere-in-russia/"
+      ]
+    },
+    {
+      "id": "2026-05-31-novoshakhtinsk-refinery",
+      "infra_id": "novoshakhtinsk-refinery",
+      "occurred_on": "2026-05-31",
+      "weapon": "missile",
+      "summary": "Ukrainian Navy Neptune coastal-defense missiles struck the Novoshakhtinsk refinery overnight, disabling the AVT-1 and AVT-2 atmospheric-vacuum distillation units (each up to 2.5 million t/yr) and petroleum product storage, with a subsequent fire.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/06/03/ukraine-hit-novoshakhtinsk-oil-refinery-in-russia-with-same-weapon-that-sank-moskva-black-sea-fleet-flagship/",
+        "https://investigator.org.ua/en/war/284096/",
+        "https://www.ostro.org/ru/news/podtverzhdeno-porazhenye-beregovym-raketnym-kompleksom-neptun-novoshahtynskogo-i558080"
+      ]
+    },
+    {
+      "id": "2026-05-31-saratov-refinery",
+      "infra_id": "saratov-refinery",
+      "occurred_on": "2026-05-31",
+      "weapon": "uav",
+      "summary": "Ukraine's General Staff confirmed a strike on the Saratov refinery during a massive overnight drone barrage, with a large fire at the facility; Reuters later reported operations were halted.",
+      "source_urls": [
+        "https://kyivindependent.com/russias-saratov-oil-refinery-reportedly-struck-by-ukrainian-drones/",
+        "https://www.aljazeera.com/news/2026/5/31/ukrainian-drone-attacks-hit-multiple-russian-targets-including-refinery",
+        "https://gazeta.ua/ru/articles/world-life/_generalnyj-shtab-podtverdil-nanesenie-udarov-po-npz-saratovskij-i-punktam-upravleniya-31-maya/1251714"
+      ]
+    },
+    {
+      "id": "2026-06-02-ilsky-refinery",
+      "infra_id": "ilsky-refinery",
+      "occurred_on": "2026-06-02",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Ilsky refinery overnight in what Meduza counted as the 16th attack on the plant since the full-scale invasion; Ukraine's General Staff said the strike caused a massive blaze, with smoke visible from over 10 km away.",
+      "source_urls": [
+        "https://meduza.io/news/2026/06/02/v-krasnodarskom-krae-ukrainskie-bespilotniki-atakovali-ilskiy-neftepererabatyvayuschiy-zavod-eto-uzhe-16-ya-ataka-na-nego-s-nachala-voyny",
+        "https://ru.themoscowtimes.com/2026/06/02/ukraina-4-raz-s-nachala-goda-udarila-po-odnomu-iz-krupneishih-npz-na-yuge-rossii-a196939"
+      ]
+    },
+    {
+      "id": "2026-06-02-kuibyshev-tikhoretsk-pipeline",
+      "infra_id": "kuibyshev-tikhoretsk-pipeline",
+      "occurred_on": "2026-06-02",
+      "weapon": "uav",
+      "summary": "A Ukrainian drone strike hit the Zenzevatka pumping station of the Kuibyshev-Tikhoretsk pipeline in Volgograd Oblast, setting an administrative building and auxiliary facilities on fire; Ukraine's General Staff confirmed the hit and said oil pumping at the station was stopped.",
+      "source_urls": [
+        "https://report.az/ru/drugie-strany/vsu-zayavili-ob-ostanovke-perekachki-nefti-na-stancii-zenzevatka-v-rf-v-rezultate-udara-dronov",
+        "https://news.online.ua/en/defense-forces-stopped-the-zenzevatka-nps-in-the-volgograd-region-904613/",
+        "https://www.unian.net/war/pylayut-npz-i-stanciya-perekachki-nefti-genshtab-podtverdil-udary-po-zhirnym-celyam-rf-13398204.html"
+      ]
+    },
+    {
+      "id": "2026-06-03-petersburg-oil-terminal",
+      "infra_id": "petersburg-oil-terminal",
+      "occurred_on": "2026-06-03",
+      "weapon": "uav",
+      "summary": "Ukrainian drones flying over 1,000 km struck the Petersburg Oil Terminal and set it ablaze on 3 June 2026, with smoke over the city as it prepared to host the SPIEF economic forum; the same night drones set fire to the corvette Boikiy at Kronstadt.",
+      "source_urls": [
+        "https://www.npr.org/2026/06/03/nx-s1-5844793/ukrainian-drones-hit-st-petersburg",
+        "https://kyivindependent.com/st-petersburg-oil-terminal-hit-in-major-ukrainian-attack-day-after-russias-mass-strike-on-kyiv/",
+        "https://www.cbc.ca/news/world/ukraine-drones-st-petersburg-oil-terminal-9.7222060"
+      ]
+    },
+    {
+      "id": "2026-06-06-antipinsky-refinery",
+      "infra_id": "antipinsky-refinery",
+      "occurred_on": "2026-06-06",
+      "weapon": "uav",
+      "summary": "During one of Ukraine's largest overnight drone attacks of the war (400+ drones), the Antipinsky refinery in Tyumen caught fire in one of the deepest confirmed Ukrainian drone strikes into Russia; the plant is one of Russia's largest privately owned refineries (~9 million t/yr design capacity).",
+      "source_urls": [
+        "https://defence-blog.com/ukraine-sends-400-drones-into-russia-hitting-naval-base-and-refinery/",
+        "https://united24media.com/war-in-ukraine/major-fire-hits-one-of-russias-largest-private-oil-refineries-in-siberia-19567",
+        "https://www.kyivpost.com/post/77633"
+      ]
+    },
+    {
+      "id": "2026-06-07-feodosia-oil-terminal",
+      "infra_id": "feodosia-oil-terminal",
+      "occurred_on": "2026-06-07",
+      "weapon": "uav",
+      "summary": "Ukrainian drones struck the Feodosia Marine Oil Terminal overnight on June 7 together with the Semikolodyansk oil depot in eastern Crimea, with Ukraine's military releasing strike footage and fires reported at both fuel facilities.",
+      "source_urls": [
+        "https://kyivindependent.com/crimea-oil-depot-reportedly-damaged-in-ukrainian-attack/",
+        "https://english.nv.ua/nation/drones-attack-feodosia-and-semykolodezianska-oil-depots-in-crimea-50614263.html",
+        "https://charter97.org/en/news/2026/6/7/686830/"
+      ]
+    },
+    {
+      "id": "2026-06-08-grushovaya-oil-depot",
+      "infra_id": "grushovaya-oil-depot",
+      "occurred_on": "2026-06-08",
+      "weapon": "uav",
+      "summary": "On the night of June 7-8 drones again struck the Grushovaya tank farm near Novorossiysk; residents reported ~50 explosions and NASA FIRMS detected fires at the largest tank farm of the Sheskharis complex. Ukraine's General Staff confirmed the hit; OSINT assessments put 4-5 tanks destroyed or damaged in this strike (10-15 cumulatively with the May attack).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-novorossiysk-oil-depot-ablaze/",
+        "https://www.pravda.com.ua/eng/news/2026/06/08/8038257/",
+        "https://nv.ua/ukraine/events/genshtab-pidtverdiv-urazhennya-naftobazi-grushovaya-ta-stanciji-krasniy-yar-u-rosiji-50614223.html"
+      ]
+    },
+    {
+      "id": "2026-06-08-krasny-yar-lpds",
+      "infra_id": "krasny-yar-lpds",
+      "occurred_on": "2026-06-08",
+      "weapon": "uav",
+      "summary": "On the night of June 7-8 Ukrainian drones hit the Transneft-Privolga Krasny Yar LPDS in Zhirnovsky district, Volgograd Oblast, a key trunk-pipeline node (up to 62.6 million tons/year) feeding the Volgograd refinery and the Novorossiysk (Sheskharis) export route; the governor reported a fire on the station's territory that was extinguished without casualties. Ukraine's General Staff confirmed the strike.",
+      "source_urls": [
+        "https://nv.ua/ukraine/events/genshtab-pidtverdiv-urazhennya-naftobazi-grushovaya-ta-stanciji-krasniy-yar-u-rosiji-50614223.html",
+        "https://ru.themoscowtimes.com/2026/06/08/pozhar-proizoshel-na-territorii-lpds-v-zhirnovskom-rayone-volgogradskoy-obl-iz-za-ataki-bpla-a197542",
+        "https://v1.ru/text/gorod/2026/06/08/76466612/"
+      ]
+    },
+    {
+      "id": "2026-06-08-kuibyshev-tikhoretsk-pipeline",
+      "infra_id": "kuibyshev-tikhoretsk-pipeline",
+      "occurred_on": "2026-06-08",
+      "weapon": "uav",
+      "summary": "Ukrainian forces struck the Krasny Yar linear production-dispatch station on the night of 7-8 June, a nodal point routing crude to the Volgograd refinery and via the Kuibyshev-Tikhoretsk pipeline to the Sheskharis export terminal; Ukraine's General Staff confirmed a fire at the station, with damage assessment ongoing.",
+      "source_urls": [
+        "https://www.rbc.ua/ukr/news/sili-oboronili-pidpalili-strategichni-naftovi-1780909691.html",
+        "https://www.unian.net/war/voyna-v-ukraine-sily-oborony-nanesli-udar-po-neftebaze-neftetransportnomu-uzlu-i-rls-v-rossii-13405548.html",
+        "https://www.dialog.ua/war/genshtab-vsu-podtverdil-udar-po-neftebaze-grushovaya-lvds-krasnyy-yar.html"
+      ]
+    },
+    {
+      "id": "2026-06-08-sheskharis-oil-terminal",
+      "infra_id": "sheskharis-oil-terminal",
+      "occurred_on": "2026-06-08",
+      "weapon": "uav",
+      "summary": "Drones attacked the Sheskharis oil terminal in Novorossiysk on the night of 7-8 June 2026, with at least 50 explosions reported and a fire at the Grushovaya tank-farm site within the transshipment complex.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/06/08/8038213/",
+        "https://militarnyi.com/en/news/june-8-drone-strike-destroys-4-5-tanks-at-gryshovaya-oil-depot/",
+        "https://united24media.com/war-in-ukraine/drone-strike-ignites-major-oil-tank-farm-near-russias-novorossiysk-port-19588"
+      ]
+    },
+    {
+      "id": "2026-06-10-kuibyshev-refinery",
+      "infra_id": "kuibyshev-refinery",
+      "occurred_on": "2026-06-10",
+      "weapon": "uav",
+      "summary": "Drones struck the Kuibyshev refinery during a combined drone-and-Flamingo-missile barrage on Russia, sparking several fires across the facility; Russian OSINT channel Astra confirmed the refinery was burning, in the third reported strike on the plant since August 2025.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-oil-refinery-nearly-800-kilometers-from-border-reportedly-struck-by-ukrainian-drones/",
+        "https://www.aljazeera.com/news/2026/6/10/ukrainian-drones-strike-sevastopol-museum-and-key-russian-oil-refineries",
+        "https://euromaidanpress.com/2026/06/10/fire-reported-at-kuibyshev-oil-refinery-in-russias-samara-after-drone-strike/"
+      ]
+    }
+  ]
+}

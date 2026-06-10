@@ -151,3 +151,39 @@ Verified gap-fill merge closing the top items from §6. **4 records added, 0 dro
 **Skipped/dropped:** none — all 4 candidate records passed schema validation (field sets, enums, coordinate ranges, ≥2 source URLs, no duplicate ids, no vessel+date overlap with existing records).
 
 **Scope note (explicit):** the attacks dataset covers incidents that are attacks **on Russia-linked vessels**. No such incidents were documented in 2022 — the campaign effectively begins with the SIG strike, and the earliest documented incident in the file is `2023-08-05-sig`. The absence of 2022 records is therefore correct, not a gap; the design spec's "2022–2026" date range should be read as the monitoring window, not the incident range. Early-2022 Russian attacks on merchant shipping off Ukraine (Millennial Spirit, Helt, Banglar Samriddhi) remain out of scope as currently defined.
+
+
+## Infra-strikes addendum
+
+**Dataset:** `data/infra-strikes.json` — 256 verified strike events on 58 tracked oil-infrastructure facilities, 2022-06-22 to 2026-06-10.
+
+### Counts
+
+- Total strike events kept: **256**
+- Facilities hit: **58** distinct `infra_id`s (all matching `data/oil-infra.json`)
+- Weapon mix: 249 uav, 6 missile, 1 unknown
+- Top-5 most-struck facilities:
+  1. `ilsky-refinery` — 13 strikes
+  2. `tuapse-refinery` — 13 strikes
+  3. `saratov-refinery` — 13 strikes
+  4. `ryazan-refinery` — 12 strikes
+  5. `volgograd-refinery` — 11 strikes
+
+### Methodology
+
+- **Per-region sweep:** candidate events were collected facility-by-facility (refineries, export terminals, depots/LPDS, trunk pipelines) from international wires (Reuters, Bloomberg, AP/PBS), Ukrainian outlets (Ukrainska Pravda, Kyiv Independent, Militarnyi, RBC-Ukraine), independent Russian media (Moscow Times, Meduza, Astra) and OSINT trackers (NASA FIRMS, geolocation channels).
+- **Adversarial verification:** every candidate received a fact-check verdict — URL resolution and date checks (publication date vs strike date), cross-source corroboration, duplicate detection, and facility-attribution checks. Verdict fixes were applied as JSON patches: corrected summaries, replaced misattributed or dead source URLs, normalized one strike date (Antipinsky 2025-10-07 -> 2025-10-06), and reclassified one weapon (Tuapse 2025-03-14 uav -> missile).
+- **Conventions:** `occurred_on` is the overnight-attack date as reported the following morning; one record per facility per day; same-day strikes on co-located facilities (e.g., Tuapse refinery vs Tuapse oil terminal, Sheskharis vs Grushovaya) are tracked under their own `infra_id`s.
+
+### Dropped / unverified
+
+- Dropped after adversarial fact-check: **2**
+  - `2025-12-24-saratov-refinery` — duplicate of the 2025-11-03 event under a wrong date (sole date-specific source was a recycled social-media caption).
+  - `2026-06-10-novokuibyshevsk-refinery` — wrong facility: the burning refinery that night was geolocated to the Kuibyshev refinery in Samara city (kept as `2026-06-10-kuibyshev-refinery`).
+- Kept without a fact-check verdict (tagged `[unverified]` in summary): **0**
+
+### Caveats
+
+- The list captures **publicly reported strikes only**; unreported, denied or unattributed incidents are not included, so per-facility counts are lower bounds.
+- Damage, fire-size and production-impact claims are **as-reported** by the cited sources (Ukrainian/Russian officials, Reuters industry sources, OSINT) and are not independently confirmed.
+- The 2025-11-29 attack on the CPC marine terminal used naval drones (USVs); the schema's weapon enum lacks `usv`, so the `cpc-pipeline` record for that date carries weapon `unknown` with the USV detail kept in the summary.
