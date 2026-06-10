@@ -20,7 +20,8 @@ journalism and compliance research.
 - **Live map** of sanctioned tankers (Leaflet) — risk-coded markers, suspect-zone overlay,
   STS event markers, click-to-detail side panel.
 - **Oil-infrastructure layer** — Russian refineries, depots, export terminals and trunk
-  pipelines with capacity/owner cards and per-record source links (`/api/infra`).
+  pipelines with capacity/owner cards and per-record source links (`/api/infra`); struck
+  facilities carry a per-event strike history (`/api/infra-strikes`).
 - **Tanker-attacks layer** — Russia-linked attacks on tankers 2022–2026 (USV strikes,
   limpet mines, port strikes) with incident cards; linked to vessel panels by IMO
   (`/api/attacks`, CSV export).
@@ -166,6 +167,7 @@ bun run load-war-sanctions      # GUR Defence-Intelligence "War & Sanctions" —
                                 #   merged into the same ownership graph (dataset ua_war_sanctions)
 bun run load-infra              # oil-infrastructure reference layer (data/oil-infra.json)
 bun run load-attacks            # tanker-attack incidents (data/tanker-attacks.json)
+bun run load-infra-strikes      # strike events on infra objects (data/infra-strikes.json)
 ```
 
 Total downloads ≈ 350 MB. After this you have ~9k unique sanctioned IMOs in the DB,
@@ -277,6 +279,7 @@ These overwrite previous entries (ON CONFLICT UPDATE) so it's safe to run anytim
 ```bash
 bun run load-infra      # oil-infrastructure reference layer (data/oil-infra.json)
 bun run load-attacks    # tanker-attack incidents (data/tanker-attacks.json)
+bun run load-infra-strikes   # strike events on infra objects (data/infra-strikes.json)
 ```
 
 ---
@@ -343,6 +346,7 @@ bun run load-attacks    # tanker-attack incidents (data/tanker-attacks.json)
 | `bun run load-crea` | (Re-)load CREA shadow-fleet revenue + P&I-insurance signals |
 | `bun run load-infra` | (Re-)load oil-infrastructure reference layer (`data/oil-infra.json`) |
 | `bun run load-attacks` | (Re-)load tanker-attack incidents (`data/tanker-attacks.json`) |
+| `bun run load-infra-strikes` | (Re-)load strike events on infra objects (`data/infra-strikes.json`) |
 | `bun run test` | Run the risk-scoring unit tests (Node) |
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
 | `bun run db:psql` | Open a `psql` shell into the DB |

@@ -1036,7 +1036,7 @@
     // -------- Infra & attack icons
     const INFRA_COLORS = { refinery: "#b56cff", depot: "#2bcbba", terminal: "#54a0ff" };
     function infraIconSize() { return map.getZoom() >= 5 ? 18 : 12; }
-    function infraIcon(kind, size) {
+    function infraIcon(kind, size, struck = false) {
       const c = INFRA_COLORS[kind] || "#8a96aa";
       let shape;
       if (kind === "refinery") {
@@ -1048,6 +1048,10 @@
       } else {
         // terminal: diamond
         shape = `<path d="M6 1.5 L11 7 L6 12.5 L1 7 Z" fill="${c}" stroke="#fff" stroke-width="0.5"/>`;
+      }
+      if (struck) {
+        // red badge dot, top-right: facility has at least one recorded strike
+        shape += `<circle cx="10.5" cy="2.5" r="2.2" fill="#ff4757" stroke="#fff" stroke-width="0.5"/>`;
       }
       return L.divIcon({
         className: "infra-icon",
@@ -1252,8 +1256,20 @@
         <div class="row"><span class="label">Status</span><span class="value" style="color:${damaged ? "var(--c-red)" : "var(--text-1)"};font-weight:${damaged ? "700" : "400"};">${escapeHtml(o.status || "unknown")}</span></div>
         ${o.notes ? `<div style="font-size:11px;color:var(--text-1);line-height:1.45;margin-top:6px;">${escapeHtml(o.notes)}</div>` : ""}
         <div style="margin-top:8px;">${sourceLinks(o.source_urls)}</div>
-      </div>
-      <div class="section"><div style="font-size:10px;color:var(--c-muted);">Reference layer — public sources (GEM CC BY, Wikipedia, CREA, OSM). Capacities vary between sources and over time; see methodology.</div></div>`;
+      </div>`;
+      const strikes = strikesByInfra.get(o.id) || [];
+      if (strikes.length > 0) {
+        html += `<div class="section" style="background: linear-gradient(180deg, rgba(255,71,87,0.10), transparent); border-left: 3px solid var(--c-red);">
+          <h3>💥 Strike history · ${strikes.length}</h3>
+          ${strikes.map(s => `
+            <div style="margin-bottom: 8px; padding: 8px 10px; background: var(--bg-2); border-radius: 4px; border-left: 2px solid var(--c-red);">
+              <div style="font-weight: 600; font-size: 12px; color: var(--text-0);">${fmtDateUTC(s.occurred_on)}${s.weapon && s.weapon !== "unknown" ? ` · ${escapeHtml(s.weapon === "uav" ? "drone strike" : "missile strike")}` : ""}</div>
+              ${s.summary ? `<div style="font-size: 11px; color: var(--text-1); line-height: 1.45; margin-top: 2px;">${escapeHtml(String(s.summary).slice(0, 300))}</div>` : ""}
+              <div style="margin-top:4px;">${sourceLinks(s.source_urls)}</div>
+            </div>`).join("")}
+        </div>`;
+      }
+      html += `<div class="section"><div style="font-size:10px;color:var(--c-muted);">Reference layer — public sources (GEM CC BY, Wikipedia, CREA, OSM). Capacities vary between sources and over time; see methodology.</div></div>`;
       document.getElementById("p-body").innerHTML = html;
     }
 
@@ -1275,7 +1291,19 @@
       </div>`;
       document.getElementById("p-body").innerHTML = html;
     }
-    let infraMarkers = []; // { marker, kind } — re-iconed on zoom threshold crossings
+    let infraMarkers = []; // { marker, kind, struck } — re-iconed on zoom threshold crossings
+    let strikesByInfra = new Map(); // infra_id -> [{occurred_on, weapon, summary, source_urls}], newest first
+    async function loadInfraStrikes() {
+      try {
+        const res = await fetch("/api/infra-strikes");
+        const data = await res.json();
+        strikesByInfra = new Map();
+        for (const s of (data.results || [])) {
+          if (!strikesByInfra.has(s.infra_id)) strikesByInfra.set(s.infra_id, []);
+          strikesByInfra.get(s.infra_id).push(s);
+        }
+      } catch (err) { console.error("loadInfraStrikes failed", err); }
+    }
     async function loadInfra() {
       try {
         const res = await fetch("/api/infra");
@@ -1293,18 +1321,19 @@
             line.on("click", () => openInfraPanel(o));
             line.addTo(infraLayer);
           } else if (o.lat != null && o.lon != null) {
-            const marker = L.marker([o.lat, o.lon], { icon: infraIcon(o.kind, size) });
-            marker.bindTooltip(`${escapeHtml(o.name)}${o.capacity_mt_yr ? ` · ${fmtNum(o.capacity_mt_yr)} Mt/yr` : ""}`);
+            const strikes = strikesByInfra.get(o.id);
+            const marker = L.marker([o.lat, o.lon], { icon: infraIcon(o.kind, size, strikesByInfra.has(o.id)) });
+            marker.bindTooltip(`${escapeHtml(o.name)}${o.capacity_mt_yr ? ` · ${fmtNum(o.capacity_mt_yr)} Mt/yr` : ""}${strikes ? ` · 💥 ${strikes.length} strike${strikes.length > 1 ? "s" : ""}` : ""}`);
             marker.on("click", () => openInfraPanel(o));
             marker.addTo(infraLayer);
-            infraMarkers.push({ marker, kind: o.kind });
+            infraMarkers.push({ marker, kind: o.kind, struck: strikesByInfra.has(o.id) });
           }
         }
       } catch (err) { console.error("loadInfra failed", err); }
     }
     map.on("zoomend", () => {
       const size = infraIconSize();
-      for (const m of infraMarkers) m.marker.setIcon(infraIcon(m.kind, size));
+      for (const m of infraMarkers) m.marker.setIcon(infraIcon(m.kind, size, m.struck));
     });
 
     function fmtDateUTC(d) {
@@ -2244,7 +2273,7 @@
     loadStats();
     loadTimeline();
     loadSts();
-    loadInfra();
+    loadInfraStrikes().then(loadInfra); // strikes first — loadInfra joins them onto markers
     loadAttacks();
     setInterval(loadVessels, 15000);
     setInterval(loadStats, 30000);
