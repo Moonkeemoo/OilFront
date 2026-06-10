@@ -1,4 +1,4 @@
-![OilFront — live map: sanctioned tankers, Russian oil infrastructure, pipelines and strike data](docs/screenshots/oilfront-live-map.png)
+<img width="3817" height="1847" alt="OilFront — live map: sanctioned tankers, Russian oil infrastructure, pipelines and strike data" src="https://github.com/user-attachments/assets/14ac1781-6f16-44e3-81f7-c632ba91620e" />
 
 # OilFront
 
