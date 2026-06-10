@@ -67,8 +67,9 @@ Koala, Vilamoura, Black Sea USV strikes, strikes on tankers in Russian ports.
   Registered in root `package.json` as `load-infra` / `load-attacks`.
 - **Endpoints (in `packages/api/src/server.ts`):**
   - `GET /api/infra` — `?kind=` filter; cache 600 000 ms (same as `/api/zones`).
-  - `GET /api/attacks` — `?range=`, `?imo=`, `?format=csv`; cache 300 000 ms. CSV export
-    follows the researcher-endpoint convention (`maybeCsvOrJson`).
+  - `GET /api/attacks` — `?since=YYYY-MM-DD`, `?imo=`, `?format=csv`; cache 300 000 ms.
+    (`?since` instead of the usual `?range`: incidents span 2022–2026 while `parseRange`
+    caps at 90 days.) CSV export follows the researcher-endpoint convention.
   - Both degrade gracefully (empty result + flag) when tables are missing, via the
     existing `reconTables()` check pattern.
 - **Vessel detail enrichment:** `handleVesselDetail` additionally queries
