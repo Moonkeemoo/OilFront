@@ -1228,7 +1228,11 @@
         `<a href="${escapeHtml(u)}" target="_blank" rel="noopener" style="display:inline-block;margin-right:8px;font-size:10px;color:var(--c-blue);text-decoration:none;">↗ source ${i + 1}</a>`
       ).join("");
     }
+    function fmtNum(n) {
+      return Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    }
     function openInfraPanel(o) {
+      selectedImo = null;
       const panel = document.getElementById("panel");
       panel.classList.add("open");
       document.getElementById("p-name").textContent = o.name;
@@ -1240,9 +1244,9 @@
         ${o.name_local ? `<div class="row"><span class="label">Local name</span><span class="value">${escapeHtml(o.name_local)}</span></div>` : ""}
         ${o.owner ? `<div class="row"><span class="label">Owner</span><span class="value">${escapeHtml(o.owner)}</span></div>` : ""}
         ${o.operator ? `<div class="row"><span class="label">Operator</span><span class="value">${escapeHtml(o.operator)}</span></div>` : ""}
-        ${o.capacity_mt_yr != null ? `<div class="row"><span class="label">Capacity</span><span class="value">${o.capacity_mt_yr} Mt/yr${o.capacity_bbl_d ? ` · ${Number(o.capacity_bbl_d).toLocaleString()} bbl/d` : ""}</span></div>` : ""}
-        ${o.storage_m3 != null ? `<div class="row"><span class="label">Storage</span><span class="value">${Number(o.storage_m3).toLocaleString()} m³</span></div>` : ""}
-        ${o.throughput_mt_yr != null ? `<div class="row"><span class="label">Throughput</span><span class="value">${o.throughput_mt_yr} Mt/yr</span></div>` : ""}
+        ${o.capacity_mt_yr != null ? `<div class="row"><span class="label">Capacity</span><span class="value">${fmtNum(o.capacity_mt_yr)} Mt/yr${o.capacity_bbl_d ? ` · ${fmtNum(o.capacity_bbl_d)} bbl/d` : ""}</span></div>` : ""}
+        ${o.storage_m3 != null ? `<div class="row"><span class="label">Storage</span><span class="value">${fmtNum(o.storage_m3)} m³</span></div>` : ""}
+        ${o.throughput_mt_yr != null ? `<div class="row"><span class="label">Throughput</span><span class="value">${fmtNum(o.throughput_mt_yr)} Mt/yr</span></div>` : ""}
         ${o.commodity ? `<div class="row"><span class="label">Commodity</span><span class="value">${escapeHtml(o.commodity)}</span></div>` : ""}
         <div class="row"><span class="label">Status</span><span class="value" style="color:${damaged ? "var(--c-red)" : "var(--text-1)"};font-weight:${damaged ? "700" : "400"};">${escapeHtml(o.status || "unknown")}</span></div>
         ${o.notes ? `<div style="font-size:11px;color:var(--text-1);line-height:1.45;margin-top:6px;">${escapeHtml(o.notes)}</div>` : ""}
@@ -1254,6 +1258,7 @@
 
     // -------- Panel: attack incident card
     function openAttackPanel(a) {
+      selectedImo = null;
       const panel = document.getElementById("panel");
       panel.classList.add("open");
       document.getElementById("p-name").textContent = a.vessel_name || "Unknown vessel";
@@ -1288,7 +1293,7 @@
             line.addTo(infraLayer);
           } else if (o.lat != null && o.lon != null) {
             const marker = L.marker([o.lat, o.lon], { icon: infraIcon(o.kind, size) });
-            marker.bindTooltip(`${escapeHtml(o.name)}${o.capacity_mt_yr ? ` · ${o.capacity_mt_yr} Mt/yr` : ""}`);
+            marker.bindTooltip(`${escapeHtml(o.name)}${o.capacity_mt_yr ? ` · ${fmtNum(o.capacity_mt_yr)} Mt/yr` : ""}`);
             marker.on("click", () => openInfraPanel(o));
             marker.addTo(infraLayer);
             infraMarkers.push({ marker, kind: o.kind });
