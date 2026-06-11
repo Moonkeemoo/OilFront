@@ -1948,7 +1948,7 @@ async function handleStrikeImpact(): Promise<Response> {
 async function handleFires(): Promise<Response> {
   const key = process.env.FIRMS_MAP_KEY;
   if (!key) return jsonResponse({ available: false, points: [], facilities: {}, note: "FIRMS_MAP_KEY not set" });
-  const all = process.env.FIRMS_MAP_KEY ? await fetchFirmsPoints(process.env.FIRMS_MAP_KEY) : [];
+  const all = await fetchFirmsPoints(key);
   let facilities: Record<string, unknown> = {};
   let nearPoints: FirePoint[] = [];
   if (sql) {
