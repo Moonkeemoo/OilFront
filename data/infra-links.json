@@ -3,38 +3,56 @@
     {
       "pipeline_id": "baku-novorossiysk-pipeline",
       "terminal_id": "sheskharis-oil-terminal",
-      "refinery_ids": [],
+      "refinery_ids": [
+        "tuapse-refinery"
+      ],
       "commodity": "crude",
       "source_urls": [
         "https://en.wikipedia.org/wiki/Baku%E2%80%93Novorossiysk_pipeline",
         "https://www.gem.wiki/Baku-Novorossiysk_Oil_Pipeline",
-        "https://euromaidanpress.com/2026/05/23/ukraine-strikes-russias-sheskharis-terminal-with-75-million-tons-of-annual-oil-throughput-and-2-5-million-cubic-meters-of-tank-capacity/"
+        "https://euromaidanpress.com/2026/05/23/ukraine-strikes-russias-sheskharis-terminal-with-75-million-tons-of-annual-oil-throughput-and-2-5-million-cubic-meters-of-tank-capacity/",
+        "https://en.wikipedia.org/wiki/Tuapse_Refinery",
+        "https://investkuban.ru/en/region/branch/industry/"
       ]
     },
     {
       "pipeline_id": "bts-1-baltic-pipeline-system",
       "terminal_id": "primorsk-oil-terminal",
       "refinery_ids": [
+        "kirishi-refinery",
         "ukhta-refinery",
-        "yaroslavl-yanos-refinery",
-        "kirishi-refinery"
+        "usinsk-refinery",
+        "yaroslavl-yanos-refinery"
       ],
       "commodity": "crude",
       "source_urls": [
         "https://en.wikipedia.org/wiki/Baltic_Pipeline_System",
-        "https://www.gem.wiki/Baltic_Pipeline_System_1"
+        "https://www.gem.wiki/Baltic_Pipeline_System_1",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes"
       ]
     },
     {
       "pipeline_id": "bts-2-baltic-pipeline-system",
       "terminal_id": "ust-luga-crude-oil-terminal",
       "refinery_ids": [
-        "kirishi-refinery"
+        "kirishi-refinery",
+        "nizhnevartovsk-refinery",
+        "novoil-refinery",
+        "perm-refinery",
+        "taif-nk-refinery",
+        "taneco-nizhnekamsk-refinery",
+        "ufa-refinery-unpz",
+        "ufaneftekhim-refinery"
       ],
       "commodity": "crude",
       "source_urls": [
         "https://en.wikipedia.org/wiki/Baltic_Pipeline_System-II",
-        "https://www.gem.wiki/Baltic_Pipeline_System_2"
+        "https://www.gem.wiki/Baltic_Pipeline_System_2",
+        "https://en.wikipedia.org/wiki/Bashneft_%E2%80%93_Novoil",
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline",
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System",
+        "https://www.offshore-technology.com/projects/tanecorefinery/",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia-Pacific_Ocean_oil_pipeline"
       ]
     },
     {
@@ -51,12 +69,36 @@
       "pipeline_id": "druzhba-pipeline-north",
       "terminal_id": null,
       "refinery_ids": [
-        "nizhny-novgorod-refinery"
+        "kuibyshev-refinery",
+        "moscow-refinery",
+        "nizhny-novgorod-refinery",
+        "novoil-refinery",
+        "novokuibyshevsk-refinery",
+        "omsk-refinery",
+        "orsk-refinery",
+        "perm-refinery",
+        "ryazan-refinery",
+        "salavat-refinery",
+        "saratov-refinery",
+        "syzran-refinery",
+        "taif-nk-refinery",
+        "taneco-nizhnekamsk-refinery",
+        "ufa-refinery-unpz",
+        "ufaneftekhim-refinery",
+        "yaroslavl-yanos-refinery"
       ],
       "commodity": "crude",
       "source_urls": [
         "https://en.wikipedia.org/wiki/Druzhba_pipeline",
-        "https://www.gem.wiki/Druzhba_Oil_Pipeline"
+        "https://www.gem.wiki/Druzhba_Oil_Pipeline",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes",
+        "https://en.wikipedia.org/wiki/Bashneft_%E2%80%93_Novoil",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia-Pacific_Ocean_oil_pipeline",
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System",
+        "https://en.wikipedia.org/wiki/Gazprom_Neftekhim_Salavat",
+        "https://www.gem.wiki/Shkapovo-Salavat_Oil_Pipeline",
+        "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
+        "https://www.offshore-technology.com/projects/tanecorefinery/"
       ]
     },
     {
@@ -75,26 +117,41 @@
       "pipeline_id": "espo-1-taishet-skovorodino",
       "terminal_id": null,
       "refinery_ids": [
-        "angarsk-petrochemical-refinery"
+        "achinsk-refinery",
+        "angarsk-petrochemical-refinery",
+        "khabarovsk-refinery",
+        "komsomolsk-refinery",
+        "nizhnevartovsk-refinery",
+        "omsk-refinery"
       ],
       "commodity": "crude",
       "source_urls": [
         "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline",
-        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline"
+        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline",
+        "https://www.spglobal.com/commodity-insights/en/market-insights/latest-news/oil/092013-rosneft-faces-shortfall-on-eastbound-supply-obligations-by-2020-transneft",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia-Pacific_Ocean_oil_pipeline",
+        "https://www.ogj.com/refining-processing/refining/capacities/article/17273737/transneft-rosneft-to-build-espo-branch-supplying-komsomolsk-refinery",
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System"
       ]
     },
     {
       "pipeline_id": "espo-2-skovorodino-kozmino",
       "terminal_id": "kozmino-oil-terminal",
       "refinery_ids": [
+        "achinsk-refinery",
+        "angarsk-petrochemical-refinery",
         "khabarovsk-refinery",
-        "komsomolsk-refinery"
+        "komsomolsk-refinery",
+        "omsk-refinery"
       ],
       "commodity": "crude",
       "source_urls": [
         "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline",
         "https://en.transneft.ru/about/projects/realized/nefteprovod-otvod-ts-vsto-komsomolskii-npz/",
-        "https://www.akm.ru/eng/news/transneft-far-east-transported-more-than-40-million-tons-of-oil-to-the-khabarovsk-oil-refinery/"
+        "https://www.akm.ru/eng/news/transneft-far-east-transported-more-than-40-million-tons-of-oil-to-the-khabarovsk-oil-refinery/",
+        "https://www.spglobal.com/commodity-insights/en/market-insights/latest-news/oil/092013-rosneft-faces-shortfall-on-eastbound-supply-obligations-by-2020-transneft",
+        "https://en.wikipedia.org/wiki/Eastern_Siberia-Pacific_Ocean_oil_pipeline",
+        "https://www.ogj.com/refining-processing/refining/capacities/article/17273737/transneft-rosneft-to-build-espo-branch-supplying-komsomolsk-refinery"
       ]
     },
     {
@@ -111,41 +168,76 @@
       "pipeline_id": "kuibyshev-tikhoretsk-pipeline",
       "terminal_id": "sheskharis-oil-terminal",
       "refinery_ids": [
+        "afipsky-refinery",
+        "ilsky-refinery",
+        "krasnodar-refinery",
+        "kuibyshev-refinery",
+        "novokuibyshevsk-refinery",
+        "novoshakhtinsk-refinery",
+        "saratov-refinery",
+        "slavyansk-eco-refinery",
+        "syzran-refinery",
+        "tuapse-refinery",
         "volgograd-refinery"
       ],
       "commodity": "crude",
       "source_urls": [
         "https://www.gem.wiki/Kuibyshev-Tikhoretsk_Oil_Pipeline",
         "https://tass.com/economy/1570123",
-        "https://united24media.com/latest-news/drone-strike-in-chuvashia-shuts-down-key-russian-oil-pipeline-to-black-sea-12005"
+        "https://united24media.com/latest-news/drone-strike-in-chuvashia-shuts-down-key-russian-oil-pipeline-to-black-sea-12005",
+        "https://investkuban.ru/en/region/branch/industry/",
+        "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes",
+        "https://www.gem.wiki/Lysychansk-Tikhoretsk_Oil_Pipeline",
+        "https://en.wikipedia.org/wiki/Tuapse_Refinery",
+        "https://en.wikipedia.org/wiki/Volgograd_refinery"
       ]
     },
     {
       "pipeline_id": "sever-products-pipeline",
       "terminal_id": "primorsk-oil-terminal",
       "refinery_ids": [
-        "nizhny-novgorod-refinery",
-        "yaroslavl-yanos-refinery",
         "kirishi-refinery",
+        "kuibyshev-refinery",
+        "nizhny-novgorod-refinery",
+        "novokuibyshevsk-refinery",
+        "perm-refinery",
         "ryazan-refinery",
-        "perm-refinery"
+        "syzran-refinery",
+        "volgograd-refinery",
+        "yaroslavl-yanos-refinery"
       ],
       "commodity": "products",
       "source_urls": [
         "https://www.energyintel.com/0000017b-a7a4-de4c-a17b-e7e6d74b0002",
-        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes"
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes",
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System",
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline",
+        "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
+        "https://en.wikipedia.org/wiki/Volgograd_refinery"
       ]
     },
     {
       "pipeline_id": "yug-products-pipeline",
       "terminal_id": "sheskharis-oil-terminal",
       "refinery_ids": [
+        "afipsky-refinery",
+        "ilsky-refinery",
+        "krasnodar-refinery",
+        "novoshakhtinsk-refinery",
+        "saratov-refinery",
+        "slavyansk-eco-refinery",
         "volgograd-refinery"
       ],
       "commodity": "products",
       "source_urls": [
         "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
-        "https://interfax.com/newsroom/top-stories/96881/"
+        "https://interfax.com/newsroom/top-stories/96881/",
+        "https://investkuban.ru/en/region/branch/industry/",
+        "https://www.gem.wiki/Lysychansk-Tikhoretsk_Oil_Pipeline",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes",
+        "https://en.wikipedia.org/wiki/Volgograd_refinery"
       ]
     }
   ]
