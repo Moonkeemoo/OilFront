@@ -302,10 +302,11 @@ bun run load-infra      # oil-infrastructure reference layer (data/oil-infra.jso
 bun run load-attacks    # tanker-attack incidents (data/tanker-attacks.json)
 bun run load-infra-strikes   # strike events on infra objects (data/infra-strikes.json)
 bun run load-acled-strikes   # weekly: ACLED candidate strikes (requires ACLED_EMAIL/ACLED_PASSWORD)
+bun run load-gdelt-strikes   # weekly: GDELT news candidate strikes (no credentials needed)
 bun run verify-strike <id>   # curator confirms a candidate (--reject <id> deletes it)
 ```
 
-ACLED candidates land flagged `auto · unverified` and stay that way in the UI until a curator confirms them with `verify-strike`.
+ACLED and GDELT candidates land flagged `auto · unverified` and stay that way in the UI until a curator confirms them with `verify-strike`.
 
 ---
 
@@ -377,7 +378,8 @@ ACLED candidates land flagged `auto · unverified` and stay that way in the UI u
 | `bun run load-attacks` | (Re-)load tanker-attack incidents (`data/tanker-attacks.json`) |
 | `bun run load-infra-strikes` | (Re-)load strike events on infra objects (`data/infra-strikes.json`) |
 | `bun run load-acled-strikes` | Weekly auto-feed of candidate strikes from ACLED (inserted as `auto · unverified`) |
-| `bun run verify-strike <id>` / `bun run verify-strike --reject <id>` | Curator confirms (promotes to verified) or rejects (deletes) an ACLED candidate |
+| `bun run load-gdelt-strikes [days]` | Weekly auto-feed of candidate strikes from GDELT news search, default 7-day window (inserted as `auto · unverified`) |
+| `bun run verify-strike <id>` / `bun run verify-strike --reject <id>` | Curator confirms (promotes to verified) or rejects (deletes) an ACLED/GDELT candidate |
 | `bun run test` | Run unit tests — risk scoring + dataset normalization (Node) |
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
 | `bun run db:psql` | Open a `psql` shell into the DB |
@@ -399,6 +401,8 @@ ACLED candidates land flagged `auto · unverified` and stay that way in the UI u
 | `PORT` | `3000` | API + UI server port |
 | `ACLED_EMAIL` | optional | ACLED account email — enables the ACLED auto-feed (`bun run load-acled-strikes`). Register free at https://acleddata.com |
 | `ACLED_PASSWORD` | optional | ACLED account password (pairs with `ACLED_EMAIL`). Without both, the loader logs `acled_not_configured` and exits cleanly. |
+
+The GDELT strike auto-feed (`bun run load-gdelt-strikes`) needs no `.env` keys — the GDELT DOC 2.0 API is free and unauthenticated.
 
 The default tracks **all shadow-fleet operational regions** — every zone in
 `zones.ts` (NE Atlantic + North Sea + Baltic + Murmansk · Mediterranean + Black Sea ·
@@ -431,7 +435,7 @@ All free, license-compatible with non-commercial / journalistic use:
 | [OpenSanctions Maritime](https://www.opensanctions.org/datasets/maritime/) | Aggregated sanctions + detentions (50+ source lists) | [CC-BY-NC-4.0 + commercial tier](https://www.opensanctions.org/licensing/) |
 | [OpenSanctions FtM](https://www.opensanctions.org/datasets/sanctions/) | Follow-the-Money entity graph | Same |
 | [GUR War & Sanctions](https://war-sanctions.gur.gov.ua/en) (via [OpenSanctions `ua_war_sanctions`](https://www.opensanctions.org/datasets/ua_war_sanctions/)) | Ukrainian Defence-Intelligence shadow-fleet list: vessels, masters, owners/managers | CC-BY-NC-4.0 (mirror) |
-| [GDELT 2.0 Doc API](https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/) | News article search | Free |
+| [GDELT 2.0 Doc API](https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/) | News article search + facility-strike candidate detection (`load-gdelt-strikes`) | Free |
 | [Wikidata SPARQL](https://query.wikidata.org/) | Per-IMO entity / Wikipedia / image | CC0 |
 | [Copernicus Browser](https://browser.dataspace.copernicus.eu/) | Sentinel-1 SAR (deep-link only, no fetch) | ESA terms |
 | [Paris MoU](https://www.parismou.org/detentions-banning/current-detentions) / [Tokyo MoU](https://www.tokyo-mou.org) | Port State Control detentions (operator export → `load-psc`) | Public |

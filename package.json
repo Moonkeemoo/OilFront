@@ -18,6 +18,7 @@
     "load-attacks": "bun run packages/api/src/cli/load-attacks.ts",
     "load-infra-strikes": "bun run packages/api/src/cli/load-infra-strikes.ts",
     "load-acled-strikes": "bun run packages/api/src/cli/load-acled-strikes.ts",
+    "load-gdelt-strikes": "bun run packages/api/src/cli/load-gdelt-strikes.ts",
     "verify-strike": "bun run packages/api/src/cli/verify-strike.ts",
     "test": "node --test packages/api/src/*.test.ts",
     "serve": "bun run packages/api/src/server.ts",
