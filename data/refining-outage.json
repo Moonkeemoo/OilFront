@@ -1,0 +1,204 @@
+{
+  "estimates": [
+    {
+      "id": "2024-03-15-reuters-q1-tally",
+      "as_of": "2024-03-15",
+      "offline_kbd": 370.5,
+      "offline_pct": 7,
+      "metric": "kbd",
+      "source": "Reuters",
+      "source_url": "https://oilprice.com/Latest-Energy-News/World-News/Ukrainian-Drone-Attacks-Knock-Down-370500-Bpd-of-Russias-Refining-Capacity.html",
+      "note": "Reuters calculations: drone attacks knocked out as much as 370,500 bpd, or 7% of total, into Q1 2024."
+    },
+    {
+      "id": "2024-03-18-bloomberg-jpmorgan-10to15pct",
+      "as_of": "2024-03-18",
+      "offline_kbd": 900,
+      "offline_pct": 12.5,
+      "metric": "pct",
+      "source": "Bloomberg",
+      "source_url": "https://newsukraine.rbc.ua/news/drones-disable-10-15-of-russia-s-oil-refining-1710836978.html",
+      "note": "Bloomberg reported drones disabled 10-15% of daily refining; JPMorgan cited ~900,000 bpd lost by mid-March 2024."
+    },
+    {
+      "id": "2024-03-18-jpmorgan-900kbd",
+      "as_of": "2024-03-18",
+      "offline_kbd": 900,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "JPMorgan",
+      "source_url": "https://newsukraine.rbc.ua/news/drones-disable-10-15-of-russia-s-oil-refining-1710836978.html",
+      "note": "JPMorgan estimate (via Bloomberg) that Russian refining capacity lost about 900,000 bpd by mid-March 2024."
+    },
+    {
+      "id": "2024-03-18-gunvor-600kbd",
+      "as_of": "2024-03-18",
+      "offline_kbd": 600,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "Gunvor",
+      "source_url": "https://newsukraine.rbc.ua/news/drones-disable-10-15-of-russia-s-oil-refining-1710836978.html",
+      "note": "Gunvor CEO Torbjorn Tornqvist estimate (via Bloomberg) that ~600,000 bpd was disabled by mid-March 2024."
+    },
+    {
+      "id": "2024-03-21-woodmac-400kbd",
+      "as_of": "2024-03-21",
+      "offline_kbd": 400,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "Wood Mackenzie",
+      "source_url": "https://www.woodmac.com/news/opinion/ukrainian-drone-attacks-on-russian-refining-infrastructure-three-questions-answered/",
+      "note": "Wood Mackenzie: latest March wave took 400 kb/d of primary processing offline; 0.8-1.0 mb/d offline into April incl. maintenance."
+    },
+    {
+      "id": "2024-03-26-reuters-900kbd-14pct",
+      "as_of": "2024-03-26",
+      "offline_kbd": 900,
+      "offline_pct": 14,
+      "metric": "pct",
+      "source": "Reuters",
+      "source_url": "https://www.hydrocarbonprocessing.com/news/2024/03/russian-oil-refining-capacity-idled-by-drones-reaches-14-of-total/",
+      "note": "Reuters calculations: idled primary units reached 900,000 bpd, ~14% of total Russian capacity at end-March 2024."
+    },
+    {
+      "id": "2024-03-31-spglobal-march-outages-500kbd",
+      "as_of": "2024-03-31",
+      "offline_kbd": 500,
+      "offline_pct": 10,
+      "metric": "kbd",
+      "source": "S&P Global",
+      "source_url": "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/031824-factbox-russian-refining-outages-mount-under-surge-of-ukrainian-drone-attacks",
+      "note": "S&P Global Commodity Insights: unplanned Russian refinery outages totaled ~500,000 b/d (about 10% of capacity) in March 2024."
+    },
+    {
+      "id": "2024-04-12-iea-omr-600kbd",
+      "as_of": "2024-04-12",
+      "offline_kbd": 600,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "IEA",
+      "source_url": "https://gapp-oil.com.ar/2024/04/12/iea-drone-attacks-on-russian-refineries-could-upset-global-fuel-markets/",
+      "note": "IEA April 2024 Oil Market Report: up to 600,000 bpd of capacity could be offline in Q2 2024 on a gross basis."
+    },
+    {
+      "id": "2024-04-15-reuters-660kbd-10pct",
+      "as_of": "2024-04-15",
+      "offline_kbd": 660,
+      "offline_pct": 10,
+      "metric": "pct",
+      "source": "Reuters",
+      "source_url": "https://euromaidanpress.com/2024/04/15/reuters-russia-restoring-oil-refining-capacity-idled-by-ukrainian-drones/",
+      "note": "Reuters calculations: idled capacity reduced to ~660,000 bpd (~10%) from 907,000 bpd at end-March as Russia restored units."
+    },
+    {
+      "id": "2024-04-15-jpmorgan-670kbd",
+      "as_of": "2024-04-15",
+      "offline_kbd": 670,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "JPMorgan",
+      "source_url": "https://www.cnbc.com/2024/04/14/ukraines-ai-drone-attacks-on-oil-refineries-threaten-energy-markets.html",
+      "note": "JPMorgan (April 2024): drones hit 18 refineries totaling 3.9 mb/d; ~670,000 bpd of capacity currently offline."
+    },
+    {
+      "id": "2024-05-20-spglobal-1mb-may",
+      "as_of": "2024-05-20",
+      "offline_kbd": 1000,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "S&P Global",
+      "source_url": "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/052024-russian-refinery-damage-escalates-after-latest-ukrainian-drone-strike",
+      "note": "S&P Global Commodity Insights: gross capacity affected stood at almost 1 million b/d by late May 2024, up from ~680,000 b/d on May 10."
+    },
+    {
+      "id": "2025-02-10-reuters-10pct",
+      "as_of": "2025-02-10",
+      "offline_kbd": null,
+      "offline_pct": 10,
+      "metric": "pct",
+      "source": "Reuters",
+      "source_url": "https://www.atlanticcouncil.org/blogs/ukrainealert/ukrainian-drones-reportedly-knock-out-10-percent-of-russian-refining-capacity/",
+      "note": "Reuters analysts calculated ~10% of Russian refining capacity disabled covering Jan to early Feb 2025 (early strike wave)."
+    },
+    {
+      "id": "2025-05-31-reuters-jan-may-700kbd",
+      "as_of": "2025-05-31",
+      "offline_kbd": 700,
+      "offline_pct": 10,
+      "metric": "kbd",
+      "source": "Reuters",
+      "source_url": "https://newsukraine.rbc.ua/news/russia-loses-quarter-of-its-oil-refining-1779297371.html",
+      "note": "Reuters: Jan-May 2025 drones hit 16 refineries, taking ~700,000 bpd offline; affected primary capacity neared/exceeded 1 mb/d in March-April 2025."
+    },
+    {
+      "id": "2025-08-25-reuters-17pct-1100kbd",
+      "as_of": "2025-08-25",
+      "offline_kbd": 1100,
+      "offline_pct": 17,
+      "metric": "pct",
+      "source": "Reuters",
+      "source_url": "https://militarnyi.com/en/news/reuters-ukrainian-strikes-on-10-oil-refineries-knock-out-17-of-russia-s-refining-capacity/",
+      "note": "Reuters: strikes on ten refineries disabled at least 17% of capacity, ~1.1 million bpd, as of late August 2025."
+    },
+    {
+      "id": "2025-09-30-siala-38pct",
+      "as_of": "2025-09-30",
+      "offline_kbd": null,
+      "offline_pct": 38,
+      "metric": "pct",
+      "source": "Siala",
+      "source_url": "https://www.themoscowtimes.com/2025/10/08/have-ukrainian-drones-really-knocked-out-38-of-russias-oil-refining-capacity-a90756",
+      "note": "Agency Siala estimated ~38% of primary refining capacity offline late Sept 2025, characterized by analysts as an upper-bound."
+    },
+    {
+      "id": "2025-10-14-iea-500kbd",
+      "as_of": "2025-10-14",
+      "offline_kbd": 500,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "IEA",
+      "source_url": "https://www.rigzone.com/news/wire/iea_sees_drone_strikes_suppressing_russia_refinery_runs_to_mid2026-14-oct-2025-182074-article/",
+      "note": "IEA October 2025 Oil Market Report: drone campaign cut Russian crude processing by ~500,000 bpd; runs suppressed to mid-2026."
+    },
+    {
+      "id": "2025-11-13-reuters-20pct",
+      "as_of": "2025-11-13",
+      "offline_kbd": null,
+      "offline_pct": 20,
+      "metric": "pct",
+      "source": "Reuters",
+      "source_url": "https://meduza.io/en/feature/2025/11/14/russia-s-refineries-are-leveraging-spare-capacity-to-blunt-ukrainian-drone-damage-reuters",
+      "note": "Reuters/industry sources: at the Aug-Oct peak ~20% of refining capacity was offline, though output fell only ~6%."
+    },
+    {
+      "id": "2025-11-18-kpler-9pct-690kbd",
+      "as_of": "2025-11-18",
+      "offline_kbd": 690,
+      "offline_pct": 9,
+      "metric": "kbd",
+      "source": "Kpler",
+      "source_url": "https://www.kpler.com/blog/repeated-drone-attacks-keep-russian-refinery-runs-in-check",
+      "note": "Kpler: November-targeted refineries (Tuapse, Volgograd, Saratov) total ~690 kbd, ~9% of Russia's total refining capacity."
+    },
+    {
+      "id": "2026-05-15-reuters-700kbd",
+      "as_of": "2026-05-15",
+      "offline_kbd": 700,
+      "offline_pct": null,
+      "metric": "kbd",
+      "source": "Reuters",
+      "source_url": "https://www.ukrinform.net/rubric-economy/4123881-ukrainian-drone-attacks-paralyze-oil-refining-in-russia-reuters.html",
+      "note": "Reuters: 16 refineries struck Jan-May 2026 took ~700,000 bpd offline, with affected primary units peaking near 1M bpd."
+    },
+    {
+      "id": "2026-05-20-reuters-25pct",
+      "as_of": "2026-05-20",
+      "offline_kbd": null,
+      "offline_pct": 25,
+      "metric": "pct",
+      "source": "Reuters",
+      "source_url": "https://www.themoscowtimes.com/2026/05/20/drone-strikes-force-central-russian-refineries-to-halt-or-cut-output-reuters-a92805",
+      "note": "Reuters: central Russian refineries halted/cut output, nearly one-quarter of total capacity, after May 2026 strike wave."
+    }
+  ]
+}
