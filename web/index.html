@@ -963,6 +963,7 @@
         <div class="li"><span class="swatch" style="background: #54a0ff;"></span> terminal</div>
         <div class="li"><span class="swatch" style="background: #ff4757; border-radius: 0;"></span> tanker attack</div>
         <div class="li"><span class="swatch" style="background: #ff2d2d;"></span> recent strike (brighter = fresher)</div>
+        <div class="li"><span style="font-size:13px;">🔥</span> burning now (strike + live heat)</div>
         <div class="li"><span class="swatch" style="background: #ff6a00;"></span> thermal anomaly (incl. flaring)</div>
       </div>
     </div>
@@ -1062,13 +1063,14 @@
         if (badge.glow) shape += `<circle cx="10.5" cy="2.5" r="3.7" fill="none" stroke="${badge.color}" stroke-width="0.7" opacity="0.55"/>`;
         shape += `<circle cx="10.5" cy="2.5" r="2.2" fill="${badge.color}" stroke="#fff" stroke-width="0.5"/>`;
       }
-      if (burning) {
-        // orange "fire now" dot, top-left — strike + live satellite anomaly
-        shape += `<circle cx="2" cy="2.5" r="2" fill="#ff6a00" stroke="#fff" stroke-width="0.4"/>`;
-      }
+      // "Burning now" (strike + live satellite anomaly) → a 🔥 emoji overlay, clearer
+      // than a dot and visually distinct from the red strike-recency badge.
+      const fire = burning
+        ? `<span style="position:absolute;left:${-Math.round(size * 0.3)}px;top:${-Math.round(size * 0.55)}px;font-size:${Math.round(size * 0.85)}px;line-height:1;filter:drop-shadow(0 0 1px #000);">🔥</span>`
+        : "";
       return L.divIcon({
         className: "infra-icon",
-        html: `<svg viewBox="0 0 12 14" width="${size}" height="${size}">${shape}</svg>`,
+        html: `<div style="position:relative;width:${size}px;height:${size}px;">${fire}<svg viewBox="0 0 12 14" width="${size}" height="${size}">${shape}</svg></div>`,
         iconSize: [size, size],
         iconAnchor: [size / 2, size / 2],
       });
@@ -1297,10 +1299,11 @@
       let lastDate = verified[0].occurred_on;
       for (const s of verified) if (String(s.occurred_on) > String(lastDate)) lastDate = s.occurred_on;
       const age = daysSinceUTC(lastDate);
-      let color = "#9a4040", glow = false;            // >90d historical (dim)
+      // All-red ramp by recency (no orange — orange/🔥 is reserved for "burning now").
+      let color = "#6e2e2e", glow = false;            // >90d historical (dim, dark red)
       if (age != null && age <= 7) { color = "#ff2d2d"; glow = true; }   // hot
       else if (age != null && age <= 30) { color = "#ff4757"; }          // recent
-      else if (age != null && age <= 90) { color = "#e0743a"; }          // mid
+      else if (age != null && age <= 90) { color = "#b23a3a"; }          // mid (muted red)
       return { color, glow, lastDate, ageDays: age };
     }
     function relativeAge(d) {
