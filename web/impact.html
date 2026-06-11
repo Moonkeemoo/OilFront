@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OilFront — strike-campaign impact</title>
+  <style>
+    :root {
+      --bg-0: #0a0e1a;
+      --bg-1: #14192a;
+      --bg-2: #1a2138;
+      --bg-3: #232a44;
+      --border: #2a3147;
+      --text-0: #f0f4fa;
+      --text-1: #b6c0d0;
+      --text-2: #6b7891;
+      --accent: #ff4757;
+      --warn: #ffa502;
+      --high: #ff7f50;
+      --low: #8a96aa;
+      --bar: #ff7f50;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--bg-0);
+      color: var(--text-0);
+      line-height: 1.5;
+    }
+    header {
+      padding: 22px 32px;
+      background: var(--bg-1);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    header h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.3px; }
+    header .meta { color: var(--text-2); font-size: 12px; letter-spacing: 0.4px; }
+    header a { color: var(--text-1); text-decoration: none; border-bottom: 1px dashed var(--text-2); font-size: 13px; }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px; }
+    section { margin-bottom: 36px; }
+    section h2 {
+      margin: 0 0 14px;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--text-2);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    section .lede { color: var(--text-1); margin-bottom: 14px; font-size: 14px; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 900px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) {
+      main { padding: 14px; }
+      header { padding: 14px; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      table { font-size: 11px; }
+      td, th { padding: 6px 8px; }
+    }
+    .kpi {
+      padding: 14px 16px;
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .kpi .l { color: var(--text-2); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+    .kpi .v { font-size: 26px; font-weight: 700; color: var(--text-0); font-variant-numeric: tabular-nums; }
+    .kpi .sub { color: var(--text-2); font-size: 11px; margin-top: 4px; }
+    .kpi.accent .v { color: var(--accent); }
+    .kpi.high .v { color: var(--high); }
+    .caveat { color: var(--text-2); font-size: 12px; font-style: italic; margin: 6px 0 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th {
+      text-align: left; padding: 10px 12px; background: var(--bg-2); color: var(--text-2);
+      font-weight: 500; letter-spacing: 0.5px; font-size: 11px; text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .name-link { color: var(--text-0); font-weight: 600; text-decoration: none; }
+    .name-link:hover { color: var(--accent); }
+    .kind-chip {
+      display: inline-block; padding: 1px 7px; background: var(--bg-3);
+      border: 1px solid var(--border); border-radius: 8px; font-size: 10px; color: var(--text-1);
+      text-transform: capitalize; margin-left: 6px;
+    }
+    .empty { color: var(--text-2); font-style: italic; padding: 12px 0; }
+    /* time-series SVG */
+    #chart-wrap { position: relative; background: var(--bg-1); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+    #chart { display: block; width: 100%; height: auto; }
+    .bar { fill: var(--bar); }
+    .bar:hover { fill: var(--accent); }
+    .axis-label { fill: var(--text-2); font-size: 10px; }
+    .grid-line { stroke: var(--border); stroke-width: 1; }
+    #tooltip {
+      position: absolute; pointer-events: none; background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: 6px; padding: 6px 10px; font-size: 12px; color: var(--text-0); white-space: nowrap;
+      transform: translate(-50%, -110%); opacity: 0; transition: opacity 0.08s; z-index: 5;
+    }
+    #tooltip .t-month { color: var(--text-2); font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; }
+    /* breakdown bar lists */
+    .breakdowns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 700px) { .breakdowns { grid-template-columns: 1fr; } }
+    .barlist { display: flex; flex-direction: column; gap: 8px; }
+    .barrow { display: grid; grid-template-columns: 120px 1fr 44px; align-items: center; gap: 10px; font-size: 13px; }
+    .barrow .lbl { color: var(--text-1); text-transform: capitalize; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .barrow .track { background: var(--bg-2); border-radius: 4px; height: 14px; overflow: hidden; }
+    .barrow .fill { background: var(--bar); height: 100%; border-radius: 4px; }
+    .barrow .cnt { color: var(--text-0); text-align: right; font-variant-numeric: tabular-nums; }
+    footer { color: var(--text-2); font-size: 12px; border-top: 1px solid var(--border); padding-top: 18px; }
+    footer a { color: var(--text-1); }
+    .pct-strong { color: var(--high); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>💥 OilFront — strike-campaign impact</h1>
+      <div class="meta" id="generated-at">Refining-capacity exposure over time — real, source-cited strike records only.</div>
+    </div>
+    <div style="display: flex; gap: 18px; font-size: 13px;">
+      <a href="/">← live map</a>
+      <a href="/methodology.html">methodology</a>
+    </div>
+  </header>
+
+  <main>
+    <div id="error" class="empty" style="display:none;"></div>
+
+    <section id="headline-section">
+      <h2>Campaign toll</h2>
+      <div class="kpi-grid" id="kpi-grid"></div>
+      <p class="caveat" id="cap-caveat" style="display:none;">nameplate capacity at struck facilities — exposure, not measured outage.</p>
+    </section>
+
+    <section id="chart-section">
+      <h2>Strikes per month (2022 → now)</h2>
+      <div class="lede">Each bar is one calendar month of confirmed strikes on mapped oil facilities. Hover for the month's strike and facility counts.</div>
+      <div id="chart-wrap">
+        <svg id="chart" viewBox="0 0 1000 260" preserveAspectRatio="none" role="img" aria-label="Monthly strikes time series"></svg>
+        <div id="tooltip"></div>
+      </div>
+    </section>
+
+    <section id="top-section">
+      <h2>Most-struck facilities (top 15)</h2>
+      <div class="lede">Mapped oil facilities ranked by number of recorded strikes. Capacity is nameplate refining throughput where known.</div>
+      <div id="top-facilities"></div>
+    </section>
+
+    <section id="breakdown-section">
+      <h2>Breakdowns</h2>
+      <div class="breakdowns">
+        <div>
+          <h2 style="border:none; margin-bottom:10px;">By weapon</h2>
+          <div class="barlist" id="by-weapon"></div>
+        </div>
+        <div>
+          <h2 style="border:none; margin-bottom:10px;">By region (top 10)</h2>
+          <div class="barlist" id="by-region"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>All figures from curated, source-cited strike records ⋈ mapped refining capacity; exposure not outage; no revenue modelled.</p>
+      <p><a href="/">← back to live map</a> &nbsp;·&nbsp; <a href="/methodology.html">methodology</a></p>
+    </footer>
+  </main>
+
+  <script>
+    function escapeHtml(s) {
+      if (s == null) return "";
+      return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    }
+    function fmtNum(n) {
+      if (n == null) return "—";
+      return Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    }
+    // Whole days from a YYYY-MM-DD / ISO date to today (UTC); null if invalid.
+    function daysSince(d) {
+      if (!d) return null;
+      const t = Date.parse(String(d).slice(0, 10) + "T00:00:00Z");
+      if (!Number.isFinite(t)) return null;
+      const today = Date.parse(new Date().toISOString().slice(0, 10) + "T00:00:00Z");
+      return Math.floor((today - t) / 86400000);
+    }
+    // "today" / "Nd ago" / "Nmo ago" / "Ny ago" from a date.
+    function relAge(d) {
+      const days = daysSince(d);
+      if (days == null) return "—";
+      if (days <= 0) return "today";
+      if (days < 30) return days + "d ago";
+      if (days < 365) return Math.round(days / 30) + "mo ago";
+      const yrs = (days / 365);
+      return (yrs < 2 ? yrs.toFixed(1) : Math.round(yrs)) + "y ago";
+    }
+
+    function renderKpis(t) {
+      document.getElementById("kpi-grid").innerHTML = `
+        <div class="kpi accent">
+          <div class="l">Strikes — all-time</div>
+          <div class="v">${fmtNum(t.strikes_all)}</div>
+          <div class="sub">${fmtNum(t.strikes_30d)} in 30d · ${fmtNum(t.strikes_90d)} in 90d</div>
+        </div>
+        <div class="kpi">
+          <div class="l">Facilities struck</div>
+          <div class="v">${fmtNum(t.struck_all)}</div>
+          <div class="sub">${fmtNum(t.struck_90d)} in last 90 days</div>
+        </div>
+        <div class="kpi high">
+          <div class="l">Capacity struck (90d)</div>
+          <div class="v">${fmtNum(t.capacity_struck_90d_mt_yr)} <span style="font-size:13px;color:var(--text-2);">Mt/yr</span></div>
+          <div class="sub"><span class="pct-strong">${fmtNum(t.pct_capacity_struck_90d)}%</span> of ${fmtNum(t.total_refining_capacity_mt_yr)} Mt/yr mapped</div>
+        </div>
+        <div class="kpi">
+          <div class="l">Strikes — last 90d</div>
+          <div class="v">${fmtNum(t.strikes_90d)}</div>
+          <div class="sub">${fmtNum(t.strikes_30d)} in last 30 days</div>
+        </div>
+      `;
+      document.getElementById("cap-caveat").style.display = "block";
+    }
+
+    function renderChart(monthly) {
+      const svg = document.getElementById("chart");
+      const tip = document.getElementById("tooltip");
+      const wrap = document.getElementById("chart-wrap");
+      const W = 1000, H = 260, padL = 34, padR = 8, padT = 12, padB = 24;
+      const plotW = W - padL - padR, plotH = H - padT - padB;
+      const n = monthly.length || 1;
+      const maxStrikes = Math.max(1, ...monthly.map(m => m.strikes));
+      const slot = plotW / n;
+      const barW = Math.max(1, slot * 0.7);
+
+      // y grid: a couple of reference lines
+      const ticks = 4;
+      let parts = [];
+      for (let i = 0; i <= ticks; i++) {
+        const val = Math.round((maxStrikes / ticks) * i);
+        const y = padT + plotH - (val / maxStrikes) * plotH;
+        parts.push(`<line class="grid-line" x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" />`);
+        parts.push(`<text class="axis-label" x="${padL - 4}" y="${(y + 3).toFixed(1)}" text-anchor="end">${val}</text>`);
+      }
+
+      // bars
+      monthly.forEach((m, i) => {
+        const x = padL + i * slot + (slot - barW) / 2;
+        const h = (m.strikes / maxStrikes) * plotH;
+        const y = padT + plotH - h;
+        parts.push(`<rect class="bar" x="${x.toFixed(2)}" y="${y.toFixed(2)}" width="${barW.toFixed(2)}" height="${Math.max(0, h).toFixed(2)}" data-i="${i}" />`);
+      });
+
+      // x-axis year labels (first occurrence of each year)
+      const seenYear = new Set();
+      monthly.forEach((m, i) => {
+        const yr = m.month.slice(0, 4);
+        if (!seenYear.has(yr) && ["2022", "2023", "2024", "2025", "2026"].includes(yr)) {
+          seenYear.add(yr);
+          const x = padL + i * slot + slot / 2;
+          parts.push(`<text class="axis-label" x="${x.toFixed(1)}" y="${(H - 6)}" text-anchor="middle">${yr}</text>`);
+        }
+      });
+
+      svg.innerHTML = parts.join("");
+
+      // hover tooltip (event delegation on bars)
+      svg.querySelectorAll(".bar").forEach(rect => {
+        rect.addEventListener("mousemove", () => {
+          const m = monthly[Number(rect.getAttribute("data-i"))];
+          const r = rect.getBoundingClientRect();
+          const wr = wrap.getBoundingClientRect();
+          tip.innerHTML = `<div class="t-month">${escapeHtml(m.month)}</div>${m.strikes} strike${m.strikes === 1 ? "" : "s"} · ${m.facilities} facilit${m.facilities === 1 ? "y" : "ies"}`;
+          tip.style.left = (r.left - wr.left + r.width / 2) + "px";
+          tip.style.top = (r.top - wr.top) + "px";
+          tip.style.opacity = "1";
+        });
+        rect.addEventListener("mouseleave", () => { tip.style.opacity = "0"; });
+      });
+    }
+
+    function renderTopFacilities(rows) {
+      const target = document.getElementById("top-facilities");
+      if (!rows || rows.length === 0) { target.innerHTML = '<div class="empty">No struck facilities recorded.</div>'; return; }
+      target.innerHTML = `<table>
+        <thead><tr>
+          <th>Facility</th><th>Region</th><th class="num">Strikes</th><th class="num">Capacity (Mt/yr)</th><th>Last hit</th>
+        </tr></thead>
+        <tbody>
+          ${rows.map(f => `
+            <tr>
+              <td><a class="name-link" href="/" title="open on map">${escapeHtml(f.name || f.id)}</a><span class="kind-chip">${escapeHtml(f.kind || "")}</span></td>
+              <td>${escapeHtml(f.region || "—")}</td>
+              <td class="num">${fmtNum(f.strikes)}</td>
+              <td class="num">${f.capacity_mt_yr == null ? "—" : fmtNum(f.capacity_mt_yr)}</td>
+              <td>${escapeHtml(relAge(f.last_on))}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+    }
+
+    function renderBarList(targetId, rows, labelKey) {
+      const target = document.getElementById(targetId);
+      if (!rows || rows.length === 0) { target.innerHTML = '<div class="empty">No data.</div>'; return; }
+      const max = Math.max(1, ...rows.map(r => r.strikes));
+      target.innerHTML = rows.map(r => {
+        const pct = (r.strikes / max) * 100;
+        return `<div class="barrow">
+          <span class="lbl" title="${escapeHtml(r[labelKey])}">${escapeHtml(r[labelKey] || "—")}</span>
+          <span class="track"><span class="fill" style="width:${pct.toFixed(1)}%"></span></span>
+          <span class="cnt">${fmtNum(r.strikes)}</span>
+        </div>`;
+      }).join("");
+    }
+
+    function showError(msg) {
+      const e = document.getElementById("error");
+      e.textContent = msg;
+      e.style.display = "block";
+      ["chart-section", "top-section", "breakdown-section"].forEach(id => {
+        const el = document.getElementById(id); if (el) el.style.display = "none";
+      });
+      document.getElementById("kpi-grid").innerHTML = "";
+    }
+
+    async function load() {
+      try {
+        const res = await fetch("/api/impact");
+        const d = await res.json();
+        if (!d || !d.available) {
+          showError("Impact data is not available yet — the infra / strikes tables are absent on this database.");
+          return;
+        }
+        renderKpis(d.totals);
+        renderChart(d.monthly || []);
+        renderTopFacilities(d.top_facilities || []);
+        renderBarList("by-weapon", d.by_weapon || [], "weapon");
+        renderBarList("by-region", d.by_region || [], "region");
+      } catch (err) {
+        console.error("impact load failed", err);
+        showError("Failed to load impact data.");
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>
