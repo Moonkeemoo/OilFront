@@ -7,6 +7,7 @@ import { computeRisk, isFlagOfConvenience, flagHopCount, vesselAgeYears, detectS
 import { parseDestination, inferLoadStatus, inferCargoType, externalLinks, sentinelVerifyUrl, findNearestPort } from "./ports.ts";
 import { matchFiresToFacilities, filterNearFacilities, type FirePoint, type FacilityPoint } from "./fires-match.ts";
 import { fetchFirmsPoints } from "./firms-fetch.ts";
+import { fillMonthlySeries } from "./impact-series.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = join(__filename, "..");
@@ -1971,6 +1972,136 @@ async function handleStrikeImpact(): Promise<Response> {
   });
 }
 
+// Richer superset of /api/strike-impact for the Impact page (web/impact.html):
+// the campaign's toll over time, sourced ONLY from infra_strikes ⋈ oil_infra.
+// Honest framing throughout — capacity figures are NAMEPLATE exposure at struck
+// facilities, not measured outage; no revenue is modelled (the CREA seed is
+// illustrative). Graceful available:false when the recon tables are absent.
+async function handleImpact(): Promise<Response> {
+  if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
+  const recon = await reconTables();
+  if (!recon.infra || !recon.strikes) {
+    return jsonResponse({
+      available: false,
+      totals: {
+        strikes_all: 0, strikes_30d: 0, strikes_90d: 0,
+        struck_all: 0, struck_90d: 0,
+        capacity_struck_90d_mt_yr: 0, total_refining_capacity_mt_yr: 0,
+        pct_capacity_struck_90d: 0, corroborated: 0,
+      },
+      monthly: [], top_facilities: [], by_weapon: [], by_region: [],
+    });
+  }
+
+  const totalsRows = await sql`
+    WITH refinery_total AS (
+      SELECT COALESCE(SUM(capacity_mt_yr), 0) AS total
+      FROM oil_infra WHERE kind = 'refinery' AND capacity_mt_yr IS NOT NULL
+    ),
+    struck90 AS (
+      SELECT DISTINCT infra_id FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90
+    ),
+    cap90 AS (
+      SELECT COALESCE(SUM(o.capacity_mt_yr), 0) AS cap
+      FROM oil_infra o JOIN struck90 k ON o.id = k.infra_id
+      WHERE o.kind = 'refinery' AND o.capacity_mt_yr IS NOT NULL
+    )
+    SELECT
+      (SELECT COUNT(*) FROM infra_strikes) AS strikes_all,
+      (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 30) AS strikes_30d,
+      (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90) AS strikes_90d,
+      (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes) AS struck_all,
+      (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90) AS struck_90d,
+      (SELECT cap FROM cap90) AS capacity_struck_90d_mt_yr,
+      (SELECT total FROM refinery_total) AS total_refining_capacity_mt_yr
+  `;
+  const t = totalsRows[0] ?? {};
+  const cap90 = Number(t.capacity_struck_90d_mt_yr ?? 0);
+  const totalCap = Number(t.total_refining_capacity_mt_yr ?? 0);
+  const pct = totalCap > 0 ? Math.round((cap90 / totalCap) * 1000) / 10 : 0;
+
+  const monthlyRows = await sql`
+    SELECT to_char(occurred_on, 'YYYY-MM') AS month,
+           COUNT(*) AS strikes,
+           COUNT(DISTINCT infra_id) AS facilities
+    FROM infra_strikes
+    GROUP BY 1
+    ORDER BY 1
+  `;
+  const monthly = fillMonthlySeries(
+    (monthlyRows as unknown as Array<{ month: string; strikes: unknown; facilities: unknown }>).map((r) => ({
+      month: r.month,
+      strikes: Number(r.strikes ?? 0),
+      facilities: Number(r.facilities ?? 0),
+    })),
+    "2022-01",
+  );
+
+  const topRows = await sql`
+    SELECT o.id, o.name, o.region, o.kind,
+           COUNT(*) AS strikes,
+           o.capacity_mt_yr,
+           MAX(s.occurred_on) AS last_on
+    FROM infra_strikes s
+    JOIN oil_infra o ON o.id = s.infra_id
+    GROUP BY o.id, o.name, o.region, o.kind, o.capacity_mt_yr
+    ORDER BY strikes DESC, last_on DESC
+    LIMIT 15
+  `;
+  const top_facilities = (topRows as Array<Record<string, unknown>>).map((r) => ({
+    id: r.id,
+    name: r.name,
+    region: r.region,
+    kind: r.kind,
+    strikes: Number(r.strikes ?? 0),
+    capacity_mt_yr: r.capacity_mt_yr == null ? null : Number(r.capacity_mt_yr),
+    last_on: r.last_on,
+  }));
+
+  const weaponRows = await sql`
+    SELECT COALESCE(NULLIF(weapon, ''), 'unknown') AS weapon, COUNT(*) AS strikes
+    FROM infra_strikes
+    GROUP BY 1
+    ORDER BY strikes DESC
+  `;
+  const by_weapon = (weaponRows as unknown as Array<{ weapon: string; strikes: unknown }>).map((r) => ({
+    weapon: r.weapon,
+    strikes: Number(r.strikes ?? 0),
+  }));
+
+  const regionRows = await sql`
+    SELECT COALESCE(NULLIF(o.region, ''), '—') AS region, COUNT(*) AS strikes
+    FROM infra_strikes s
+    JOIN oil_infra o ON o.id = s.infra_id
+    GROUP BY 1
+    ORDER BY strikes DESC
+    LIMIT 10
+  `;
+  const by_region = (regionRows as unknown as Array<{ region: string; strikes: unknown }>).map((r) => ({
+    region: r.region,
+    strikes: Number(r.strikes ?? 0),
+  }));
+
+  return jsonResponse({
+    available: true,
+    totals: {
+      strikes_all: Number(t.strikes_all ?? 0),
+      strikes_30d: Number(t.strikes_30d ?? 0),
+      strikes_90d: Number(t.strikes_90d ?? 0),
+      struck_all: Number(t.struck_all ?? 0),
+      struck_90d: Number(t.struck_90d ?? 0),
+      capacity_struck_90d_mt_yr: Math.round(cap90 * 10) / 10,
+      total_refining_capacity_mt_yr: Math.round(totalCap * 10) / 10,
+      pct_capacity_struck_90d: pct,
+      corroborated: 0, // FIRMS join skipped for now — kept simple per spec
+    },
+    monthly,
+    top_facilities,
+    by_weapon,
+    by_region,
+  });
+}
+
 // One node in a supply chain — minimal infra detail for the panel chips.
 interface ChainNode { id: string; kind: string; name: string; lat: number | null; lon: number | null; }
 interface SupplyChain {
@@ -2214,6 +2345,7 @@ const server = Bun.serve({
       if (url.pathname === "/api/attacks")           return await withCache(req, 300_000, () => handleAttacks(req));
       if (url.pathname === "/api/infra-strikes")     return await withCache(req, 300_000, () => handleInfraStrikes(req));
       if (url.pathname === "/api/strike-impact")     return await withCache(req, 300_000, () => handleStrikeImpact());
+      if (url.pathname === "/api/impact")            return await withCache(req, 300_000, () => handleImpact());
       if (url.pathname === "/api/fires")             return await withCache(req, 3_600_000, () => handleFires());
       if (url.pathname === "/api/cases")             return await withCache(req, 300_000, () => handleCases(req));
       if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());
