@@ -999,6 +999,21 @@
     const stsLayer  = L.layerGroup().addTo(map);
     const vesselsLayer = L.layerGroup().addTo(map);
     const trackLayer = L.layerGroup().addTo(map);
+    const chainLayer = L.layerGroup().addTo(map);
+    // Draw a highlighted poly-connection through chain nodes (terminal→pipeline-ish→refineries).
+    // nodes: array of {lat,lon,name} with coords; draws dashed cyan links from the hub.
+    function drawChain(nodes) {
+      chainLayer.clearLayers();
+      const pts = (nodes || []).filter(n => n && n.lat != null && n.lon != null);
+      if (pts.length < 2) return;
+      // hub = first node (the clicked/terminal anchor); spoke lines to the rest
+      const hub = pts[0];
+      for (let i = 1; i < pts.length; i++) {
+        L.polyline([[hub.lat, hub.lon], [pts[i].lat, pts[i].lon]], { color: "#22d3ee", weight: 2, opacity: 0.7, dashArray: "5 5", interactive: false }).addTo(chainLayer);
+      }
+      const all = pts.map(p => [p.lat, p.lon]);
+      try { map.fitBounds(all, { padding: [60, 60], maxZoom: 7 }); } catch (e) {}
+    }
 
     const vesselMarkers = new Map(); // imo -> marker
     let selectedImo = null;
@@ -1316,6 +1331,43 @@
       if (n < 365) return "~" + Math.round(n / 30) + " months ago";
       return "~" + (Math.round(n / 36.5) / 10) + " years ago";
     }
+    function chainNodeChip(node) {
+      if (!node) return "";
+      const open = node.kind === "pipeline" || node.kind === "terminal" || node.kind === "refinery"
+        ? `onclick="openInfraById('${node.id}')"` : "";
+      return `<span ${open} style="cursor:pointer;display:inline-block;padding:2px 8px;margin:2px;background:var(--bg-3);border:1px solid var(--border);border-radius:10px;font-size:11px;color:var(--c-blue);">${escapeHtml(node.name)}</span>`;
+    }
+    // Open an infra object's panel by id (used by chain chips). Looks it up in the
+    // last-loaded infra set; falls back to fetching the chain only.
+    function openInfraById(id) {
+      const o = (window.__infraById && window.__infraById[id]);
+      if (o) { openInfraPanel(o); }
+    }
+    function renderChainSection(chains) {
+      if (!chains || chains.length === 0) return "";
+      let html = `<div class="section" style="border-left:3px solid #22d3ee;"><h3>🛢️ Supply chain</h3>`;
+      for (const c of chains) {
+        const ref = (c.refineries || []);
+        html += `<div style="margin-bottom:8px;font-size:11px;color:var(--text-1);line-height:1.7;">`;
+        if (ref.length) html += `${ref.map(chainNodeChip).join("")} <span style="color:var(--c-muted);">→</span> `;
+        if (c.pipeline) html += `${chainNodeChip(c.pipeline)}${c.commodity ? ` <span style="color:var(--c-muted);font-size:10px;">(${escapeHtml(c.commodity)})</span>` : ""}`;
+        if (c.terminal) html += ` <span style="color:var(--c-muted);">→</span> ${chainNodeChip(c.terminal)}`;
+        html += `</div>`;
+        if (c.source_urls && c.source_urls.length) html += `<div style="margin-bottom:6px;">${c.source_urls.map((u,i)=>`<a href="${escapeHtml(u)}" target="_blank" rel="noopener" style="font-size:10px;color:var(--c-blue);margin-right:8px;">↗ source ${i+1}</a>`).join("")}</div>`;
+      }
+      html += `<div style="font-size:10px;color:var(--c-muted);">Crude flows refineries → pipeline → export terminal. Curated links (GEM / Transneft / press).</div></div>`;
+      return html;
+    }
+    // Collect chain nodes (with coords) for the map highlight.
+    function chainNodes(chains) {
+      const out = [];
+      for (const c of (chains || [])) {
+        if (c.terminal) out.push(c.terminal);
+        if (c.pipeline && c.pipeline.lat != null) out.push(c.pipeline);
+        for (const r of (c.refineries || [])) out.push(r);
+      }
+      return out;
+    }
     function openInfraPanel(o) {
       selectedImo = null;
       const panel = document.getElementById("panel");
@@ -1388,6 +1440,15 @@
         <div style="margin-top:8px;font-size:10px;color:var(--c-muted);">Reference layer — public sources (GEM CC BY, Wikipedia, CREA, OSM). Capacities vary between sources and over time; see methodology.</div>
       </div>`;
       document.getElementById("p-body").innerHTML = html;
+
+      // Supply-chain section (fetched async; appended + drawn on the map)
+      fetch(`/api/infra/${encodeURIComponent(o.id)}/chain`).then(r => r.json()).then(d => {
+        if (!d || !d.available || !d.chains || !d.chains.length) return;
+        const body = document.getElementById("p-body");
+        if (!body) return;
+        body.insertAdjacentHTML("beforeend", renderChainSection(d.chains));
+        drawChain([{ lat: o.lat, lon: o.lon, name: o.name }, ...chainNodes(d.chains)].filter(n => n.lat != null));
+      }).catch(() => {});
     }
 
     // -------- Panel: attack incident card
@@ -1427,8 +1488,10 @@
         const data = await res.json();
         infraLayer.clearLayers();
         infraMarkers = [];
+        window.__infraById = {};
         const size = infraIconSize();
         for (const o of (data.objects || [])) {
+          window.__infraById[o.id] = o;
           if (o.kind === "pipeline" && o.geometry) {
             const style = o.commodity === "products"
               ? { color: "#7bd5f5", weight: 1.5, opacity: 0.5, dashArray: "6 4" }
@@ -1690,6 +1753,11 @@
         const ownership = ownershipRes && ownershipRes.ok ? await ownershipRes.json() : null;
         const portCalls = portCallsRes && portCallsRes.ok ? await portCallsRes.json() : null;
         renderVesselPanel(detail, ownership, portCalls);
+        if (detail.supply_chain && detail.supply_chain.length) {
+          drawChain(chainNodes(detail.supply_chain));
+        } else {
+          chainLayer.clearLayers();
+        }
         renderTrack(detail.track);
         await loadVessels();
         // News + Wikidata both async (GDELT slow, Wikidata fine)
@@ -1992,6 +2060,9 @@
         </div>`;
       }
 
+      // Supply chain (when the destination LOCODE matches a tracked export terminal)
+      html += renderChainSection(data.supply_chain);
+
       // EXTERNAL LINKS — photos + registry
       const links = data.external_links || [];
       if (links.length > 0) {
@@ -2281,6 +2352,7 @@
       selectedImo = null;
       document.getElementById("panel").classList.remove("open");
       trackLayer.clearLayers();
+      chainLayer.clearLayers();
       loadVessels();
     }
 
