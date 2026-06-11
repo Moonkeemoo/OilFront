@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { matchFiresToFacilities, type FirePoint, type FacilityPoint } from "./fires-match.ts";
+import { matchFiresToFacilities, filterNearFacilities, type FirePoint, type FacilityPoint } from "./fires-match.ts";
 
 const FAC: FacilityPoint[] = [
   { id: "ryazan-refinery", lat: 54.56, lon: 39.79 },
@@ -10,6 +10,11 @@ function fp(lat: number, lon: number, conf: string, frp: number, date = "2026-06
   return { lat, lon, confidence: conf, frp, acq_date: date, daynight: "D" };
 }
 
+test("filterNearFacilities keeps only points within radius of a facility", () => {
+  const near = filterNearFacilities([fp(54.56, 39.79, "h", 10), fp(20, 20, "h", 10)], FAC, 5);
+  assert.equal(near.length, 1);
+  assert.equal(near[0]!.lat, 54.56);
+});
 test("point within radius attaches to nearest facility", () => {
   const m = matchFiresToFacilities([fp(54.561, 39.791, "h", 12)], FAC, 3);
   assert.equal(m["ryazan-refinery"]!.count, 1);

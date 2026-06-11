@@ -5,7 +5,7 @@ import { logger } from "./log.ts";
 import { SUSPECT_ZONES, findZone } from "./zones.ts";
 import { computeRisk, isFlagOfConvenience, flagHopCount, vesselAgeYears, detectSpoofJumps, type RiskInputs, type TrackPoint } from "./risk.ts";
 import { parseDestination, inferLoadStatus, inferCargoType, externalLinks, sentinelVerifyUrl, findNearestPort } from "./ports.ts";
-import { matchFiresToFacilities, type FirePoint, type FacilityPoint } from "./fires-match.ts";
+import { matchFiresToFacilities, filterNearFacilities, type FirePoint, type FacilityPoint } from "./fires-match.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = join(__filename, "..");
@@ -1978,15 +1978,19 @@ async function handleFires(): Promise<Response> {
     }
   }
   let facilities: Record<string, unknown> = {};
+  let nearPoints: FirePoint[] = [];
   if (sql) {
     const recon = await reconTables();
     if (recon.infra) {
       const fac = await sql`SELECT id, lat, lon FROM oil_infra WHERE lat IS NOT NULL` as unknown as FacilityPoint[];
       facilities = matchFiresToFacilities(all, fac, 3);
+      // Map layer shows only anomalies inside infrastructure zones (≤5 km),
+      // not the global agricultural/flare firehose.
+      nearPoints = filterNearFacilities(all, fac, 5);
     }
   }
   const burning = Object.values(facilities).filter((a) => (a as { active: boolean }).active).length;
-  return jsonResponse({ available: true, count: all.length, burning, points: all, facilities });
+  return jsonResponse({ available: true, count: nearPoints.length, scanned: all.length, burning, points: nearPoints, facilities });
 }
 
 async function handleDigest(): Promise<Response> {

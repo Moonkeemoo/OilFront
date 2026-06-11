@@ -11,6 +11,15 @@ const NM_TO_KM = 1.852;
 const CONF_RANK: Record<string, number> = { l: 0, n: 1, h: 2 };
 const ACTIVE_FRP_THRESHOLD = 20;
 
+// Subset of points within radiusKm of ANY facility — so the map draws thermal
+// anomalies only inside oil-infrastructure zones, not the global agricultural /
+// flare firehose (most FIRMS points over Russia are unrelated field fires).
+export function filterNearFacilities(points: FirePoint[], facilities: FacilityPoint[], radiusKm = 5): FirePoint[] {
+  return points.filter((p) =>
+    facilities.some((f) => haversineNm(p.lat, p.lon, f.lat, f.lon) * NM_TO_KM <= radiusKm),
+  );
+}
+
 export function matchFiresToFacilities(points: FirePoint[], facilities: FacilityPoint[], radiusKm = 3): Record<string, FireAggregate> {
   const out: Record<string, FireAggregate> = {};
   for (const p of points) {
