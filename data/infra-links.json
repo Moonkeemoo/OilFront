@@ -1,0 +1,152 @@
+{
+  "links": [
+    {
+      "pipeline_id": "baku-novorossiysk-pipeline",
+      "terminal_id": "sheskharis-oil-terminal",
+      "refinery_ids": [],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Baku%E2%80%93Novorossiysk_pipeline",
+        "https://www.gem.wiki/Baku-Novorossiysk_Oil_Pipeline",
+        "https://euromaidanpress.com/2026/05/23/ukraine-strikes-russias-sheskharis-terminal-with-75-million-tons-of-annual-oil-throughput-and-2-5-million-cubic-meters-of-tank-capacity/"
+      ]
+    },
+    {
+      "pipeline_id": "bts-1-baltic-pipeline-system",
+      "terminal_id": "primorsk-oil-terminal",
+      "refinery_ids": [
+        "ukhta-refinery",
+        "yaroslavl-yanos-refinery",
+        "kirishi-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System",
+        "https://www.gem.wiki/Baltic_Pipeline_System_1"
+      ]
+    },
+    {
+      "pipeline_id": "bts-2-baltic-pipeline-system",
+      "terminal_id": "ust-luga-crude-oil-terminal",
+      "refinery_ids": [
+        "kirishi-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Baltic_Pipeline_System-II",
+        "https://www.gem.wiki/Baltic_Pipeline_System_2"
+      ]
+    },
+    {
+      "pipeline_id": "cpc-pipeline",
+      "terminal_id": "cpc-marine-terminal",
+      "refinery_ids": [],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Caspian_Pipeline_Consortium",
+        "https://www.gem.wiki/Caspian_Pipeline"
+      ]
+    },
+    {
+      "pipeline_id": "druzhba-pipeline-north",
+      "terminal_id": null,
+      "refinery_ids": [
+        "nizhny-novgorod-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline",
+        "https://www.gem.wiki/Druzhba_Oil_Pipeline"
+      ]
+    },
+    {
+      "pipeline_id": "druzhba-pipeline-south",
+      "terminal_id": null,
+      "refinery_ids": [
+        "nizhny-novgorod-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Druzhba_pipeline",
+        "https://www.gem.wiki/Druzhba_Oil_Pipeline"
+      ]
+    },
+    {
+      "pipeline_id": "espo-1-taishet-skovorodino",
+      "terminal_id": null,
+      "refinery_ids": [
+        "angarsk-petrochemical-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline",
+        "https://www.gem.wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_Oil_Pipeline"
+      ]
+    },
+    {
+      "pipeline_id": "espo-2-skovorodino-kozmino",
+      "terminal_id": "kozmino-oil-terminal",
+      "refinery_ids": [
+        "khabarovsk-refinery",
+        "komsomolsk-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline",
+        "https://en.transneft.ru/about/projects/realized/nefteprovod-otvod-ts-vsto-komsomolskii-npz/",
+        "https://www.akm.ru/eng/news/transneft-far-east-transported-more-than-40-million-tons-of-oil-to-the-khabarovsk-oil-refinery/"
+      ]
+    },
+    {
+      "pipeline_id": "espo-daqing-spur",
+      "terminal_id": null,
+      "refinery_ids": [],
+      "commodity": "crude",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Eastern_Siberia%E2%80%93Pacific_Ocean_oil_pipeline",
+        "https://www.spglobal.com/energy/en/research-analytics/espo-crude-oil-pipeline"
+      ]
+    },
+    {
+      "pipeline_id": "kuibyshev-tikhoretsk-pipeline",
+      "terminal_id": "sheskharis-oil-terminal",
+      "refinery_ids": [
+        "volgograd-refinery"
+      ],
+      "commodity": "crude",
+      "source_urls": [
+        "https://www.gem.wiki/Kuibyshev-Tikhoretsk_Oil_Pipeline",
+        "https://tass.com/economy/1570123",
+        "https://united24media.com/latest-news/drone-strike-in-chuvashia-shuts-down-key-russian-oil-pipeline-to-black-sea-12005"
+      ]
+    },
+    {
+      "pipeline_id": "sever-products-pipeline",
+      "terminal_id": "primorsk-oil-terminal",
+      "refinery_ids": [
+        "nizhny-novgorod-refinery",
+        "yaroslavl-yanos-refinery",
+        "kirishi-refinery",
+        "ryazan-refinery",
+        "perm-refinery"
+      ],
+      "commodity": "products",
+      "source_urls": [
+        "https://www.energyintel.com/0000017b-a7a4-de4c-a17b-e7e6d74b0002",
+        "https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/oil/053014-russias-lukoil-transneft-agree-cooperation-on-oil-product-routes"
+      ]
+    },
+    {
+      "pipeline_id": "yug-products-pipeline",
+      "terminal_id": "sheskharis-oil-terminal",
+      "refinery_ids": [
+        "volgograd-refinery"
+      ],
+      "commodity": "products",
+      "source_urls": [
+        "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
+        "https://interfax.com/newsroom/top-stories/96881/"
+      ]
+    }
+  ]
+}

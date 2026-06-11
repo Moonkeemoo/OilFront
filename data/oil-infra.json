@@ -1032,6 +1032,7 @@
     },
     {
       "id": "arctic-gate-terminal",
+      "locode": "RUNVP",
       "kind": "terminal",
       "name": "Arctic Gate Terminal (Novy Port)",
       "name_local": "Терминал «Ворота Арктики» (Мыс Каменный)",
@@ -1055,6 +1056,7 @@
     },
     {
       "id": "cpc-marine-terminal",
+      "locode": "RUNVS",
       "kind": "terminal",
       "name": "CPC Marine Terminal (Yuzhnaya Ozereyevka)",
       "name_local": "Морской терминал КТК (Южная Озереевка)",
@@ -1078,6 +1080,7 @@
     },
     {
       "id": "de-kastri-oil-terminal",
+      "locode": "RUDKA",
       "kind": "terminal",
       "name": "De-Kastri Oil Terminal",
       "name_local": "Нефтеотгрузочный терминал Де-Кастри",
@@ -1101,6 +1104,7 @@
     },
     {
       "id": "feodosia-oil-terminal",
+      "locode": "UAFEO",
       "kind": "terminal",
       "name": "Feodosia Marine Oil Terminal",
       "name_local": "Феодосийский морской нефтяной терминал",
@@ -1125,6 +1129,7 @@
     },
     {
       "id": "kozmino-oil-terminal",
+      "locode": "RUKZM",
       "kind": "terminal",
       "name": "Kozmino Oil Terminal",
       "name_local": "Спецморнефтепорт Козьмино",
@@ -1148,6 +1153,7 @@
     },
     {
       "id": "murmansk-kola-bay-sts-hub",
+      "locode": "RUMMK",
       "kind": "terminal",
       "name": "Murmansk / Kola Bay STS Transshipment Hub",
       "name_local": "Рейдовый перегрузочный комплекс в Кольском заливе (Мурманск)",
@@ -1173,6 +1179,7 @@
     },
     {
       "id": "petersburg-oil-terminal",
+      "locode": "RULED",
       "kind": "terminal",
       "name": "Petersburg Oil Terminal (St. Petersburg)",
       "name_local": "Петербургский нефтяной терминал",
@@ -1198,6 +1205,7 @@
     },
     {
       "id": "port-kavkaz-oil-ferry-terminal",
+      "locode": "RUKZP",
       "kind": "terminal",
       "name": "Port Kavkaz Oil and Rail Ferry Terminal",
       "name_local": "Порт Кавказ",
@@ -1224,6 +1232,7 @@
     },
     {
       "id": "prigorodnoye-oil-export-terminal",
+      "locode": "RUPGN",
       "kind": "terminal",
       "name": "Prigorodnoye Oil Export Terminal (Sakhalin-2)",
       "name_local": "Нефтеэкспортный терминал Пригородное",
@@ -1247,6 +1256,7 @@
     },
     {
       "id": "primorsk-oil-terminal",
+      "locode": "RUPRI",
       "kind": "terminal",
       "name": "Primorsk Oil Terminal",
       "name_local": "Порт Приморск (Транснефть)",
@@ -1271,6 +1281,7 @@
     },
     {
       "id": "sheskharis-oil-terminal",
+      "locode": "RUNVS",
       "kind": "terminal",
       "name": "Sheskharis Oil Terminal (Novorossiysk)",
       "name_local": "Перевалочный комплекс «Шесхарис»",
@@ -1297,6 +1308,7 @@
     },
     {
       "id": "taman-oteko-terminal",
+      "locode": "RUTAM",
       "kind": "terminal",
       "name": "Taman Bulk Cargo / Oil Products Terminal (OTEKO)",
       "name_local": "Таманский перегрузочный комплекс ОТЭКО (Тамань)",
@@ -1321,6 +1333,7 @@
     },
     {
       "id": "tuapse-oil-terminal",
+      "locode": "RUTUA",
       "kind": "terminal",
       "name": "Tuapse Oil Terminal",
       "name_local": "Туапсинский нефтяной терминал (РН-Морской терминал Туапсе)",
@@ -1345,6 +1358,7 @@
     },
     {
       "id": "ust-luga-crude-oil-terminal",
+      "locode": "RUULU",
       "kind": "terminal",
       "name": "Ust-Luga Crude Oil Terminal",
       "name_local": "Нефтеналивной терминал Усть-Луга",
@@ -1369,6 +1383,7 @@
     },
     {
       "id": "varandey-oil-terminal",
+      "locode": "RUVAR",
       "kind": "terminal",
       "name": "Varandey Oil Terminal",
       "name_local": "Варандейский отгрузочный терминал",
@@ -1393,6 +1408,7 @@
     },
     {
       "id": "vysotsk-lukoil-terminal",
+      "locode": "RUVYS",
       "kind": "terminal",
       "name": "Vysotsk Oil Products Terminal (Lukoil)",
       "name_local": "РПК «Высоцк-Лукойл-II»",
