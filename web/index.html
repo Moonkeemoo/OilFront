@@ -1200,7 +1200,8 @@
           `• last 30 days: ${d.struck_30d} facilities (${d.strikes_30d} strikes)\n` +
           `• last 90 days: ${d.struck_90d} facilities (${d.strikes_90d} strikes)\n` +
           `Refining capacity at facilities struck in 90d: ${d.capacity_struck_90d_mt_yr} of ${d.total_refining_capacity_mt_yr} Mt/yr mapped.\n` +
-          `Caveat: struck ≠ fully offline; capacities are nameplate, not live throughput.`;
+          `Caveat: struck ≠ fully offline; capacities are nameplate, not live throughput.\n` +
+          `→ click to open the full Impact page.`;
       } catch (err) { console.error("loadImpact failed", err); }
     }
     async function loadSts() {
