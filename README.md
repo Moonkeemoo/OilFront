@@ -47,6 +47,7 @@ research. (Formerly “Shadow Fleet Tracker”.)
   `POST /api/batch-screen` for bulk IMO compliance screening.
 - **Reverse-graph search** — `Sovcomflot` / `NITC` / etc. → list of vessels they own
   with live AIS positions where available.
+- **Satellite corroboration (FIRMS)** — NASA near-real-time thermal anomalies as a toggle layer; strikes that coincide with a thermal anomaly at the facility (±1 day) are flagged satellite-corroborated (`/api/fires`).
 
 See [`/methodology.html`](web/methodology.html) for the full algorithm + data-source
 documentation.
@@ -401,6 +402,7 @@ ACLED and GDELT candidates land flagged `auto · unverified` and stay that way i
 | `PORT` | `3000` | API + UI server port |
 | `ACLED_EMAIL` | optional | ACLED account email — enables the ACLED auto-feed (`bun run load-acled-strikes`). Register free at https://acleddata.com |
 | `ACLED_PASSWORD` | optional | ACLED account password (pairs with `ACLED_EMAIL`). Without both, the loader logs `acled_not_configured` and exits cleanly. |
+| `FIRMS_MAP_KEY` | optional | NASA FIRMS thermal-anomaly key — free/instant at https://firms.modaps.eosdis.nasa.gov/api/map_key; enables the Fires layer + strike corroboration. Degrades to empty layer without it. |
 
 The GDELT strike auto-feed (`bun run load-gdelt-strikes`) needs no `.env` keys — the GDELT DOC 2.0 API is free and unauthenticated.
 
@@ -444,6 +446,7 @@ All free, license-compatible with non-commercial / journalistic use:
 | Wikipedia / Wikidata · [OpenStreetMap](https://www.openstreetmap.org/) | Infra cross-checks, local names, route geometry | CC BY-SA / CC0 · ODbL |
 | Press reports (Reuters / AP / BBC / FT / Kyiv Independent / Naval News …) | Strike events (`data/infra-strikes.json`) + tanker attacks (`data/tanker-attacks.json`) — every record carries its own source URLs | Public articles, linked per record |
 | [ACLED](https://acleddata.com/) (Armed Conflict Location & Event Data) | Auto-detected candidate strikes on mapped facilities (`load-acled-strikes`), flagged `auto · unverified` until curator confirmation | Free registered access; attribution required; raw data not republished |
+| [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/) | Near-real-time VIIRS thermal anomalies, matched to facilities to corroborate strikes | Free (registered MAP_KEY); NASA open data |
 
 Provenance & QA for the curated datasets (verification methodology, dropped records,
 known gaps): [`docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md`](docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md).
