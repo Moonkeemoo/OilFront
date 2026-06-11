@@ -1562,7 +1562,7 @@
       document.getElementById("p-name").textContent = s.name;
       document.getElementById("p-sub").textContent = `${MIL_CATEGORY_LABELS[s.category] || s.category}${s.region ? " · " + s.region : ""}`;
       const c = MIL_COLORS[s.category] || "#8a96aa";
-      const strikes = (Array.isArray(s.strikes) ? s.strikes.slice() : []).sort((a, b) => String(b.occurred_on).localeCompare(String(a.occurred_on)));
+      const strikes = (Array.isArray(s.strikes) ? s.strikes.slice() : []).sort((a, b) => (String(b.occurred_on) > String(a.occurred_on) ? 1 : String(b.occurred_on) < String(a.occurred_on) ? -1 : 0));
       const struck = strikes.length > 0;
 
       // Profile
@@ -1729,7 +1729,9 @@
           const strikes = Array.isArray(s.strikes) ? s.strikes : [];
           const badge = s.struck ? freshnessBadge(strikes) : null;
           const marker = L.marker([s.lat, s.lon], { icon: militaryIcon(s.category, badge) });
-          marker.bindTooltip(`${escapeHtml(s.name)}${s.produces ? ` · ${escapeHtml(s.produces)}` : ""} · ${strikes.length > 0 ? `💥 ${strikes.length} strike${strikes.length > 1 ? "s" : ""}` : "not struck"}`);
+          // produces can run to ~230 chars; Leaflet tooltips don't wrap — keep it short, full text lives in the panel
+          const producesShort = s.produces ? String(s.produces).slice(0, 60) + (String(s.produces).length > 60 ? "…" : "") : "";
+          marker.bindTooltip(`${escapeHtml(s.name)}${producesShort ? ` · ${escapeHtml(producesShort)}` : ""} · ${strikes.length > 0 ? `💥 ${strikes.length} strike${strikes.length > 1 ? "s" : ""}` : "not struck"}`);
           marker.on("click", () => openMilitaryPanel(s));
           marker.addTo(militaryLayer);
         }
