@@ -48,6 +48,7 @@ research. (Formerly “Shadow Fleet Tracker”.)
 - **Reverse-graph search** — `Sovcomflot` / `NITC` / etc. → list of vessels they own
   with live AIS positions where available.
 - **Satellite corroboration (FIRMS)** — NASA near-real-time thermal anomalies as a toggle layer; strikes that coincide with a thermal anomaly at the facility (±1 day) are flagged satellite-corroborated (`/api/fires`).
+- **Oil-flow supply chain** — click any facility or a tanker bound for a Russian export terminal to trace refineries → trunk pipeline → export terminal, a curated source-cited link graph highlighted on the map (`/api/infra/:id/chain`).
 
 See [`/methodology.html`](web/methodology.html) for the full algorithm + data-source
 documentation.
@@ -306,6 +307,7 @@ bun run load-acled-strikes   # weekly: ACLED candidate strikes (requires ACLED_E
 bun run load-gdelt-strikes   # weekly: GDELT news candidate strikes (no credentials needed)
 bun run load-firms-triggered # daily: satellite heat → targeted GDELT lookup per hot facility (needs FIRMS_MAP_KEY)
 bun run verify-strike <id>   # curator confirms a candidate (--reject <id> deletes it)
+bun run load-infra-links     # oil-flow pipeline↔terminal↔refinery links (data/infra-links.json)
 ```
 
 ACLED, GDELT and FIRMS-triggered candidates land flagged `auto · unverified` and stay that way in the UI until a curator confirms them with `verify-strike`. The FIRMS-triggered feed inverts the polling problem: instead of querying all ~69 facilities through GDELT (rate-bans, noise), one cheap NASA FIRMS call surfaces the handful of facilities with a fresh thermal anomaly, and only those get a targeted news query — a satellite-heat + news-hit candidate, shown with a `🔥🛰 heat-triggered` chip.
@@ -379,6 +381,7 @@ ACLED, GDELT and FIRMS-triggered candidates land flagged `auto · unverified` an
 | `bun run load-infra` | (Re-)load oil-infrastructure reference layer (`data/oil-infra.json`) |
 | `bun run load-attacks` | (Re-)load tanker-attack incidents (`data/tanker-attacks.json`) |
 | `bun run load-infra-strikes` | (Re-)load strike events on infra objects (`data/infra-strikes.json`) |
+| `bun run load-infra-links` | (Re-)load oil-flow pipeline↔terminal↔refinery supply-chain links (`data/infra-links.json`) |
 | `bun run load-acled-strikes` | Weekly auto-feed of candidate strikes from ACLED (inserted as `auto · unverified`) |
 | `bun run load-gdelt-strikes [days]` | Weekly auto-feed of candidate strikes from GDELT news search, default 7-day window (inserted as `auto · unverified`) |
 | `bun run load-firms-triggered [days]` | FIRMS-triggered auto-feed: hot facilities (NASA thermal anomaly) get a targeted GDELT lookup, default 3-day window (inserted as `auto · unverified`, `🔥🛰 heat-triggered`) |
@@ -449,6 +452,7 @@ All free, license-compatible with non-commercial / journalistic use:
 | Press reports (Reuters / AP / BBC / FT / Kyiv Independent / Naval News …) | Strike events (`data/infra-strikes.json`) + tanker attacks (`data/tanker-attacks.json`) — every record carries its own source URLs | Public articles, linked per record |
 | [ACLED](https://acleddata.com/) (Armed Conflict Location & Event Data) | Auto-detected candidate strikes on mapped facilities (`load-acled-strikes`), flagged `auto · unverified` until curator confirmation | Free registered access; attribution required; raw data not republished |
 | [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/) | Near-real-time VIIRS thermal anomalies, matched to facilities to corroborate strikes | Free (registered MAP_KEY); NASA open data |
+| Oil-flow links (curated) | Pipeline/terminal/refinery supply-chain links + terminal UN/LOCODEs, compiled from GEM / Transneft / press, cited per link (`data/infra-links.json`) | Curated from public sources (CC-BY-NC research use) |
 
 Provenance & QA for the curated datasets (verification methodology, dropped records,
 known gaps): [`docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md`](docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md).
@@ -481,6 +485,7 @@ data/                   curated datasets (real, cited) + optional seed examples
   oil-infra.json          81 facilities + pipeline geometries
   infra-strikes.json      256 verified strike events on facilities
   tanker-attacks.json     38 verified tanker-attack incidents
+  infra-links.json        12 pipeline→terminal→refinery links (oil-flow supply chain)
   *.seed.json             synthetic examples for optional recon loaders
 db/                     SQL migrations
 docs/                   research artifacts, specs/plans, data QA reports, screenshots

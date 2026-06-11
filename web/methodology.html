@@ -385,6 +385,12 @@
             <td>Free (registered MAP_KEY); NASA open data.</td>
             <td>Hourly (live proxy, cached 1h)</td>
           </tr>
+          <tr>
+            <td><strong>Oil-flow links (curated)</strong></td>
+            <td>pipeline&rarr;export-terminal&rarr;refinery supply-chain links + terminal UN/LOCODEs, compiled from GEM / Transneft / press, every link source-cited (<code>data/infra-links.json</code>).</td>
+            <td>Curated from public sources (CC-BY-NC research use)</td>
+            <td>Manual, as needed</td>
+          </tr>
         </tbody>
       </table>
       <div class="callout info">
@@ -742,6 +748,7 @@
         Datasets ship as <code>data/oil-infra.json</code> and <code>data/tanker-attacks.json</code> (real, cited records).
         Bulk access: <code>/api/infra</code>, <code>/api/attacks?format=csv</code>.
         Provenance &amp; QA detail: <code>docs/superpowers/specs/2026-06-10-infra-attacks-data-report.md</code>.
+        Click any refinery, pipeline, terminal — or a tanker bound for a Russian export terminal — to trace the oil-flow supply chain (refineries &rarr; trunk pipeline &rarr; export terminal), drawn as a curated, source-cited link graph.
       </p>
     </section>
 
