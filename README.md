@@ -28,6 +28,9 @@ research. (Formerly “Shadow Fleet Tracker”.)
   facilities (2022–2026): struck facilities get a red marker badge, a strike counter
   in the tooltip, and a numbered per-event history (date, weapon, damage, sources)
   in the profile card (`/api/infra-strikes`, CSV export).
+- **Impact page** — campaign toll over time: strikes/facilities/refining-capacity exposure
+  by month, top-hit facilities, weapon & region breakdowns (`/impact.html`, `/api/impact`);
+  exposure, not outage; no revenue modelled.
 - **Tanker-attacks layer** — 38 Russia-linked attacks on tankers 2022–2026 (naval- and
   aerial-drone strikes, limpet mines, port strikes, unexplained explosions) with
   incident cards; linked to vessel panels by IMO (`/api/attacks`, CSV export).
@@ -498,9 +501,11 @@ packages/api/
     server.ts                              HTTP API + static serve
     risk.ts zones.ts ports.ts              domain logic
     infra-normalize.ts                     dataset validation/normalization (unit-tested)
+    impact-series.ts                       monthly time-series gap-filler (unit-tested)
 web/
   index.html            live-map dashboard
   digest.html           daily aggregate page
+  impact.html           strike-campaign impact (capacity exposure over time)
   methodology.html      sources + scoring + limitations (full docs)
 docker-compose.yml      Postgres + TimescaleDB (project name pinned)
 ```
