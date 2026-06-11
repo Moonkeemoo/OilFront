@@ -1,6 +1,25 @@
 {
   "sites": [
     {
+      "id": "barnaul-cartridge-plant",
+      "name": "Barnaul Cartridge Plant",
+      "name_local": "Барнаульский патронный завод",
+      "lat": 53.361,
+      "lon": 83.764,
+      "category": "ammunition",
+      "produces": "Pistol cartridges (9x19 mm, 9x18 mm Makarov, .45 ACP), rifle cartridges (5.45x39, 7.62x39, 7.62x54R), 12-gauge shotgun shells; Bear, Centaur and Barnaul brands",
+      "operator": "BSZ Holding",
+      "region": "Altai Krai",
+      "status": "operational",
+      "strikes": [],
+      "notes": "Founded during WWII evacuation 1941; address: 28 Kulagina St., Barnaul 656002; coordinates approximate (city-level); Poly Technologies identified supplying gunpowder to plant June 2023; no reported Ukrainian strikes",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant",
+        "https://grokipedia.com/page/Barnaul_Cartridge_Plant",
+        "https://ammoterra.com/company/barnaul-cartridge-plant"
+      ]
+    },
+    {
       "id": "klimovsk-specialized-ammunition-plant",
       "name": "Klimovsk Specialized Ammunition Plant",
       "name_local": "Климовский специализированный патронный завод (КСПЗ)",
@@ -57,25 +76,6 @@
         "https://www.globalsecurity.org/military/world/russia/murom.htm",
         "https://www.opensanctions.org/entities/NK-Dezzr2ADf4wgT46Vy7j4sV/",
         "https://war-sanctions.gur.gov.ua/en/components/companies/8118"
-      ]
-    },
-    {
-      "id": "barnaul-cartridge-plant",
-      "name": "Barnaul Cartridge Plant",
-      "name_local": "Барнаульский патронный завод",
-      "lat": 53.361,
-      "lon": 83.764,
-      "category": "ammunition",
-      "produces": "Pistol cartridges (9x19 mm, 9x18 mm Makarov, .45 ACP), rifle cartridges (5.45x39, 7.62x39, 7.62x54R), 12-gauge shotgun shells; Bear, Centaur and Barnaul brands",
-      "operator": "BSZ Holding",
-      "region": "Altai Krai",
-      "status": "operational",
-      "strikes": [],
-      "notes": "Founded during WWII evacuation 1941; address: 28 Kulagina St., Barnaul 656002; coordinates approximate (city-level); Poly Technologies identified supplying gunpowder to plant June 2023; no reported Ukrainian strikes",
-      "source_urls": [
-        "https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant",
-        "https://grokipedia.com/page/Barnaul_Cartridge_Plant",
-        "https://ammoterra.com/company/barnaul-cartridge-plant"
       ]
     },
     {
@@ -659,6 +659,24 @@
       ]
     },
     {
+      "id": "krasnogorsky-zavod",
+      "name": "Krasnogorsky Zavod (KMZ / Zenit)",
+      "name_local": "ПАО «КМЗ»",
+      "lat": 55.83,
+      "lon": 37.35,
+      "category": "electronics",
+      "produces": "Military optical sights, fire-control systems for tanks and armoured vehicles, laser designators, aircraft surveillance systems (OPS-28M for Mi-28NM)",
+      "operator": "Rostec (Shvabe)",
+      "region": "Moscow Oblast",
+      "status": "operational",
+      "strikes": [],
+      "notes": "30 km from Moscow Red Square; founded 1941 as defence optics factory. Coordinates approximate (city-level).",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Krasnogorsky_Zavod",
+        "https://informnapalm.org/en/in-the-shadow-of-sanctions/"
+      ]
+    },
+    {
       "id": "kremniy-el-bryansk",
       "name": "Kremniy El Microelectronics Plant",
       "name_local": "Завод «Кремний Эл»",
@@ -715,24 +733,6 @@
       "source_urls": [
         "https://en.defence-ua.com/industries/how_important_for_the_russian_defense_industry_is_the_kremniy_el_plant_locating_just_in_110_km_to_ukraines_border-7791.html",
         "https://www.opensanctions.org/entities/NK-mZimbPviBCZ8d7BeGeK5nQ/"
-      ]
-    },
-    {
-      "id": "krasnogorsky-zavod",
-      "name": "Krasnogorsky Zavod (KMZ / Zenit)",
-      "name_local": "ПАО «КМЗ»",
-      "lat": 55.83,
-      "lon": 37.35,
-      "category": "electronics",
-      "produces": "Military optical sights, fire-control systems for tanks and armoured vehicles, laser designators, aircraft surveillance systems (OPS-28M for Mi-28NM)",
-      "operator": "Rostec (Shvabe)",
-      "region": "Moscow Oblast",
-      "status": "operational",
-      "strikes": [],
-      "notes": "30 km from Moscow Red Square; founded 1941 as defence optics factory. Coordinates approximate (city-level).",
-      "source_urls": [
-        "https://en.wikipedia.org/wiki/Krasnogorsky_Zavod",
-        "https://informnapalm.org/en/in-the-shadow-of-sanctions/"
       ]
     },
     {
