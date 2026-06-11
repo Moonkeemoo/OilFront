@@ -894,6 +894,10 @@
           <div class="label">Last refresh</div>
           <div class="value" id="stat-refresh">—</div>
         </div>
+        <div class="stat">
+          <div class="label">Refining hit</div>
+          <div class="value" id="stat-impact">—</div>
+        </div>
       </div>
     </div>
     <div id="controls">
@@ -1153,6 +1157,20 @@
         const s = await res.json();
         document.getElementById("stat-ofac").textContent = s.list_unique_imos ?? "—";
       } catch (err) { console.error("loadStats failed", err); }
+    }
+    async function loadImpact() {
+      try {
+        const res = await fetch("/api/strike-impact");
+        const d = await res.json();
+        const el = document.getElementById("stat-impact");
+        if (!el) return;
+        if (!d.available) { el.textContent = "—"; return; }
+        let txt = `${d.struck_90d} hit / 90d · ${d.pct_capacity_struck_90d}%`;
+        if (typeof window.__burningNow === "number" && window.__burningNow > 0) txt += ` · ${window.__burningNow}🔥`;
+        el.textContent = txt;
+        const tile = el.closest(".stat") || el.parentElement;
+        if (tile) tile.title = `${d.struck_90d} mapped facilities struck in 90 days (${d.capacity_struck_90d_mt_yr} Mt/yr = ${d.pct_capacity_struck_90d}% of mapped refining capacity). Struck ≠ fully offline; capacities are nameplate, not live throughput.`;
+      } catch (err) { console.error("loadImpact failed", err); }
     }
     async function loadSts() {
       try {
@@ -2318,11 +2336,13 @@
     loadSts();
     loadInfraStrikes().then(loadInfra); // strikes first — loadInfra joins them onto markers
     loadAttacks();
+    loadImpact();
     setInterval(loadVessels, 15000);
     setInterval(loadStats, 30000);
     setInterval(loadTimeline, 60000);
     setInterval(loadSts, 30000);
     setInterval(loadAttacks, 600000); // attacks are curated — 10 min is plenty; infra is static, no refresh
+    setInterval(loadImpact, 300000);
   </script>
 </body>
 </html>
