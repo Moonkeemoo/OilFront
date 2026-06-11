@@ -3,6 +3,10 @@ import { z } from "zod";
 const schema = z.object({
   AISSTREAM_KEY: z.string().min(10, "AISSTREAM_KEY missing or too short"),
   DATABASE_URL: z.string().optional(),
+  // ACLED API credentials (load-acled-strikes.ts) — optional, the loader
+  // degrades gracefully (logs acled_not_configured, exit 0) when absent.
+  ACLED_EMAIL: z.string().optional(),
+  ACLED_PASSWORD: z.string().optional(),
   LOG_LEVEL: z.enum(["debug", "info", "warn", "error"]).default("info"),
   AIS_BBOXES: z
     .string()

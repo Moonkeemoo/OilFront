@@ -29,8 +29,14 @@ async function ensureTable(): Promise<void> {
       summary     TEXT,
       source_urls TEXT[],
       raw         JSONB,
-      first_seen  TIMESTAMPTZ DEFAULT NOW()
+      first_seen  TIMESTAMPTZ DEFAULT NOW(),
+      origin      TEXT NOT NULL DEFAULT 'curated',
+      verified    BOOLEAN NOT NULL DEFAULT TRUE
     )`;
+  // Pre-origin installs: bring the table up to date (idempotent, matches
+  // db/migrate-add-strike-origin.sql).
+  await sql!`ALTER TABLE infra_strikes ADD COLUMN IF NOT EXISTS origin TEXT NOT NULL DEFAULT 'curated'`;
+  await sql!`ALTER TABLE infra_strikes ADD COLUMN IF NOT EXISTS verified BOOLEAN NOT NULL DEFAULT TRUE`;
   await sql!`CREATE INDEX IF NOT EXISTS infra_strikes_infra_idx ON infra_strikes (infra_id)`;
   await sql!`CREATE INDEX IF NOT EXISTS infra_strikes_occurred_on_idx ON infra_strikes (occurred_on DESC)`;
 }
@@ -57,15 +63,17 @@ async function main(): Promise<void> {
     try {
       await sql`
         INSERT INTO infra_strikes (
-          id, infra_id, occurred_on, weapon, summary, source_urls, raw
+          id, infra_id, occurred_on, weapon, summary, source_urls, raw, origin, verified
         ) VALUES (
           ${r.id}, ${r.infra_id}, ${r.occurred_on}, ${r.weapon}, ${r.summary},
-          ${r.source_urls}::text[], ${sql.json(r.raw as Parameters<typeof sql.json>[0])}
+          ${r.source_urls}::text[], ${sql.json(r.raw as Parameters<typeof sql.json>[0])},
+          'curated', TRUE
         )
         ON CONFLICT (id) DO UPDATE SET
           infra_id = EXCLUDED.infra_id, occurred_on = EXCLUDED.occurred_on,
           weapon = EXCLUDED.weapon, summary = EXCLUDED.summary,
-          source_urls = EXCLUDED.source_urls, raw = EXCLUDED.raw
+          source_urls = EXCLUDED.source_urls, raw = EXCLUDED.raw,
+          origin = EXCLUDED.origin, verified = EXCLUDED.verified
       `;
       inserted++;
     } catch (err) {
