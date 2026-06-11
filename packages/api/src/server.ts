@@ -1902,7 +1902,7 @@ async function handleStrikeImpact(): Promise<Response> {
   if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
   const recon = await reconTables();
   if (!recon.infra || !recon.strikes) {
-    return jsonResponse({ available: false, struck_30d: 0, struck_90d: 0, strikes_30d: 0, strikes_90d: 0, capacity_struck_90d_mt_yr: 0, total_refining_capacity_mt_yr: 0, pct_capacity_struck_90d: 0 });
+    return jsonResponse({ available: false, struck_7d: 0, struck_30d: 0, struck_90d: 0, strikes_7d: 0, strikes_30d: 0, strikes_90d: 0, capacity_struck_90d_mt_yr: 0, total_refining_capacity_mt_yr: 0 });
   }
   const rows = await sql`
     WITH refinery_total AS (
@@ -1919,8 +1919,10 @@ async function handleStrikeImpact(): Promise<Response> {
       WHERE o.kind = 'refinery' AND o.capacity_mt_yr IS NOT NULL
     )
     SELECT
+      (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 7) AS struck_7d,
       (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 30) AS struck_30d,
       (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90) AS struck_90d,
+      (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 7) AS strikes_7d,
       (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 30) AS strikes_30d,
       (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90) AS strikes_90d,
       (SELECT cap FROM cap90) AS capacity_struck_90d_mt_yr,
@@ -1931,13 +1933,14 @@ async function handleStrikeImpact(): Promise<Response> {
   const total = Number(r.total_refining_capacity_mt_yr ?? 0);
   return jsonResponse({
     available: true,
+    struck_7d: Number(r.struck_7d ?? 0),
     struck_30d: Number(r.struck_30d ?? 0),
     struck_90d: Number(r.struck_90d ?? 0),
+    strikes_7d: Number(r.strikes_7d ?? 0),
     strikes_30d: Number(r.strikes_30d ?? 0),
     strikes_90d: Number(r.strikes_90d ?? 0),
     capacity_struck_90d_mt_yr: Math.round(cap * 10) / 10,
     total_refining_capacity_mt_yr: Math.round(total * 10) / 10,
-    pct_capacity_struck_90d: total > 0 ? Math.round((cap / total) * 1000) / 10 : 0,
   });
 }
 

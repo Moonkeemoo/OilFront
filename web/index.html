@@ -1169,11 +1169,16 @@
         const el = document.getElementById("stat-impact");
         if (!el) return;
         if (!d.available) { el.textContent = "—"; return; }
-        let txt = `${d.struck_90d} hit / 90d · ${d.pct_capacity_struck_90d}%`;
-        if (typeof window.__burningNow === "number" && window.__burningNow > 0) txt += ` · ${window.__burningNow}🔥`;
-        el.textContent = txt;
+        // Base = last 7 days ("what's happening now"); the 30/90-day breakdown lives in the tooltip.
+        el.textContent = `${d.struck_7d} hit · 7d`;
         const tile = el.closest(".stat") || el.parentElement;
-        if (tile) tile.title = `${d.struck_90d} mapped facilities struck in 90 days (${d.capacity_struck_90d_mt_yr} Mt/yr = ${d.pct_capacity_struck_90d}% of mapped refining capacity). Struck ≠ fully offline; capacities are nameplate, not live throughput.`;
+        if (tile) tile.title =
+          `Mapped oil facilities struck by Ukrainian strikes:\n` +
+          `• last 7 days: ${d.struck_7d} facilities (${d.strikes_7d} strikes)\n` +
+          `• last 30 days: ${d.struck_30d} facilities (${d.strikes_30d} strikes)\n` +
+          `• last 90 days: ${d.struck_90d} facilities (${d.strikes_90d} strikes)\n` +
+          `Refining capacity at facilities struck in 90d: ${d.capacity_struck_90d_mt_yr} of ${d.total_refining_capacity_mt_yr} Mt/yr mapped.\n` +
+          `Caveat: struck ≠ fully offline; capacities are nameplate, not live throughput.`;
       } catch (err) { console.error("loadImpact failed", err); }
     }
     async function loadSts() {
