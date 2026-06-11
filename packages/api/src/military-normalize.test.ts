@@ -36,6 +36,7 @@ test("valid site normalizes correctly", () => {
   assert.equal(s.status, "operational");
   assert.deepEqual(s.strikes, []);
   assert.deepEqual(s.source_urls, ["https://www.reuters.com/alabuga-example"]);
+  assert.strictEqual(s.raw, SITE);
 });
 
 // --- Missing id/name rejected ---
@@ -125,7 +126,7 @@ test("strike with invalid date is dropped", () => {
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
   assert.equal(s.strikes.length, 1);
-  assert.equal(s.strikes[0].occurred_on, "2024-03-13");
+  assert.equal(s.strikes[0]!.occurred_on, "2024-03-13");
 });
 
 test("strike with impossible calendar date is dropped", () => {
@@ -164,7 +165,7 @@ test("strike without valid source_urls is dropped", () => {
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
   assert.equal(s.strikes.length, 1);
-  assert.equal(s.strikes[0].occurred_on, "2024-03-14");
+  assert.equal(s.strikes[0]!.occurred_on, "2024-03-14");
 });
 
 test("strike with non-http source_url is dropped", () => {
@@ -189,7 +190,7 @@ test("unknown weapon falls back to 'unknown'", () => {
   };
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
-  assert.equal(s.strikes[0].weapon, "unknown");
+  assert.equal(s.strikes[0]!.weapon, "unknown");
 });
 
 test("absent weapon falls back to 'unknown'", () => {
@@ -201,7 +202,7 @@ test("absent weapon falls back to 'unknown'", () => {
   };
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
-  assert.equal(s.strikes[0].weapon, "unknown");
+  assert.equal(s.strikes[0]!.weapon, "unknown");
 });
 
 // --- Strike: severity fallback ---
@@ -214,7 +215,7 @@ test("unknown severity falls back to 'unknown'", () => {
   };
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
-  assert.equal(s.strikes[0].severity, "unknown");
+  assert.equal(s.strikes[0]!.severity, "unknown");
 });
 
 test("absent severity falls back to 'unknown'", () => {
@@ -226,22 +227,10 @@ test("absent severity falls back to 'unknown'", () => {
   };
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
-  assert.equal(s.strikes[0].severity, "unknown");
+  assert.equal(s.strikes[0]!.severity, "unknown");
 });
 
-// --- "sabotage" weapon accepted (military-specific, unlike infra) ---
-test("'sabotage' weapon is accepted", () => {
-  const raw = {
-    ...SITE,
-    strikes: [
-      { occurred_on: "2024-03-13", weapon: "sabotage", severity: "major", source_urls: ["https://example.com/s1"] },
-    ],
-  };
-  const s = normalizeMilitarySite(raw);
-  assert.ok(s);
-  assert.equal(s.strikes[0].weapon, "sabotage");
-});
-
+// --- All valid strike weapons pass through (military-specific, unlike infra) ---
 test("all valid strike weapons pass through", () => {
   for (const weapon of ["uav", "missile", "sabotage", "unknown"]) {
     const raw = {
@@ -252,7 +241,7 @@ test("all valid strike weapons pass through", () => {
     };
     const s = normalizeMilitarySite(raw);
     assert.ok(s, `weapon ${weapon} should be accepted`);
-    assert.equal(s.strikes[0].weapon, weapon);
+    assert.equal(s.strikes[0]!.weapon, weapon);
   }
 });
 
@@ -309,6 +298,13 @@ test("absent strikes field normalizes to empty array", () => {
   assert.deepEqual(s.strikes, []);
 });
 
+test("non-object strike entries (null, string, number) are dropped", () => {
+  const raw = { ...SITE, strikes: [null, "x", 42] };
+  const s = normalizeMilitarySite(raw as Record<string, unknown>);
+  assert.ok(s);
+  assert.deepEqual(s.strikes, []);
+});
+
 // --- strike with summary passes through ---
 test("strike summary is preserved", () => {
   const raw = {
@@ -319,5 +315,5 @@ test("strike summary is preserved", () => {
   };
   const s = normalizeMilitarySite(raw);
   assert.ok(s);
-  assert.equal(s.strikes[0].summary, "Drone struck the facility.");
+  assert.equal(s.strikes[0]!.summary, "Drone struck the facility.");
 });

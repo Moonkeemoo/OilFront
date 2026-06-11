@@ -28,6 +28,7 @@ export interface MilitarySite {
   strikes: MilitaryStrike[];
   notes: string | null;
   source_urls: string[];
+  raw: Record<string, unknown>;
 }
 
 const CATEGORIES = new Set([
@@ -39,7 +40,7 @@ const STATUSES = new Set(["operational", "damaged", "destroyed", "unknown"]);
 const STRIKE_WEAPONS = new Set(["uav", "missile", "sabotage", "unknown"]);
 const STRIKE_SEVERITIES = new Set(["major", "moderate", "minor", "unknown"]);
 
-function normalizeStrike(raw: unknown): MilitaryStrike | null {
+function normalizeMilitaryStrike(raw: unknown): MilitaryStrike | null {
   if (!raw || typeof raw !== "object") return null;
   const r = raw as Record<string, unknown>;
 
@@ -83,7 +84,7 @@ export function normalizeMilitarySite(raw: Record<string, unknown>): MilitarySit
   const status = statusRaw && STATUSES.has(statusRaw) ? statusRaw : "unknown";
 
   const rawStrikes = Array.isArray(raw.strikes) ? raw.strikes : [];
-  const strikes = rawStrikes.map(normalizeStrike).filter((s): s is MilitaryStrike => s !== null);
+  const strikes = rawStrikes.map(normalizeMilitaryStrike).filter((s): s is MilitaryStrike => s !== null);
 
   return {
     id,
@@ -99,6 +100,7 @@ export function normalizeMilitarySite(raw: Record<string, unknown>): MilitarySit
     strikes,
     notes: toStr(raw.notes),
     source_urls,
+    raw,
   };
 }
 

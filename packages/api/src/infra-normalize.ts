@@ -59,7 +59,7 @@ const PRECISIONS = new Set(["exact", "approx", "port"]);
 const WEAPONS = new Set(["uav", "missile", "unknown"]);
 const SEVERITIES = new Set(["major", "moderate", "minor", "unknown"]);
 
-// Shared scalar coercers — also imported by military-normalize.ts so the
+// Shared scalar coercers — shared with military-normalize.ts so the
 // validation rules (esp. the date round-trip) live in exactly one place.
 export function toStr(v: unknown): string | null {
   if (v === null || v === undefined) return null;
