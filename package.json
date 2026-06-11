@@ -17,6 +17,7 @@
     "load-infra": "bun run packages/api/src/cli/load-infra.ts",
     "load-attacks": "bun run packages/api/src/cli/load-attacks.ts",
     "load-infra-strikes": "bun run packages/api/src/cli/load-infra-strikes.ts",
+    "load-refining-outage": "bun run packages/api/src/cli/load-refining-outage.ts",
     "load-infra-links": "bun run packages/api/src/cli/load-infra-links.ts",
     "load-acled-strikes": "bun run packages/api/src/cli/load-acled-strikes.ts",
     "load-gdelt-strikes": "bun run packages/api/src/cli/load-gdelt-strikes.ts",
