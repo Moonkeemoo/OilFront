@@ -2062,9 +2062,9 @@ async function handleInfraTankers(id: string): Promise<Response> {
   if (!recon.infra) return jsonResponse({ available: true, tankers: [] });
 
   const termRows = await sql`
-    SELECT raw->>'locode' AS locode, lat, lon
+    SELECT raw->>'locode' AS locode
     FROM oil_infra WHERE id = ${id} AND kind = 'terminal'
-  ` as unknown as Array<{ locode: string | null; lat: number | null; lon: number | null }>;
+  ` as unknown as Array<{ locode: string | null }>;
   const term = termRows[0];
   const locode = term?.locode ? String(term.locode).trim().toUpperCase() : "";
   if (!term || !locode) return jsonResponse({ available: true, tankers: [] });
