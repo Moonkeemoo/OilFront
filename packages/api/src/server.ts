@@ -1894,6 +1894,55 @@ async function handleInfraStrikes(req: Request): Promise<Response> {
     ["occurred_on", "infra_id", "weapon", "summary", "source_urls", "origin", "verified"]);
 }
 
+// Aggregate strike impact on mapped refining capacity. Honest framing: this is
+// the share of MAPPED refining capacity struck in a window, NOT % of Russian
+// refining offline (struck ≠ fully offline).
+async function handleStrikeImpact(): Promise<Response> {
+  if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
+  const recon = await reconTables();
+  if (!recon.infra || !recon.strikes) {
+    return jsonResponse({ available: false, struck_30d: 0, struck_90d: 0, strikes_30d: 0, strikes_90d: 0, capacity_struck_90d_mt_yr: 0, total_refining_capacity_mt_yr: 0, pct_capacity_struck_90d: 0 });
+  }
+  const rows = await sql`
+    WITH struck AS (
+      SELECT DISTINCT infra_id, occurred_on FROM infra_strikes
+    ),
+    refinery_total AS (
+      SELECT COALESCE(SUM(capacity_mt_yr), 0) AS total
+      FROM oil_infra WHERE kind = 'refinery' AND capacity_mt_yr IS NOT NULL
+    ),
+    struck90 AS (
+      SELECT DISTINCT s.infra_id FROM infra_strikes s
+      WHERE s.occurred_on >= CURRENT_DATE - 90
+    ),
+    cap90 AS (
+      SELECT COALESCE(SUM(o.capacity_mt_yr), 0) AS cap
+      FROM oil_infra o JOIN struck90 k ON o.id = k.infra_id
+      WHERE o.kind = 'refinery' AND o.capacity_mt_yr IS NOT NULL
+    )
+    SELECT
+      (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 30) AS struck_30d,
+      (SELECT COUNT(DISTINCT infra_id) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90) AS struck_90d,
+      (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 30) AS strikes_30d,
+      (SELECT COUNT(*) FROM infra_strikes WHERE occurred_on >= CURRENT_DATE - 90) AS strikes_90d,
+      (SELECT cap FROM cap90) AS capacity_struck_90d_mt_yr,
+      (SELECT total FROM refinery_total) AS total_refining_capacity_mt_yr
+  `;
+  const r = rows[0] ?? {};
+  const cap = Number(r.capacity_struck_90d_mt_yr ?? 0);
+  const total = Number(r.total_refining_capacity_mt_yr ?? 0);
+  return jsonResponse({
+    available: true,
+    struck_30d: Number(r.struck_30d ?? 0),
+    struck_90d: Number(r.struck_90d ?? 0),
+    strikes_30d: Number(r.strikes_30d ?? 0),
+    strikes_90d: Number(r.strikes_90d ?? 0),
+    capacity_struck_90d_mt_yr: Math.round(cap * 10) / 10,
+    total_refining_capacity_mt_yr: Math.round(total * 10) / 10,
+    pct_capacity_struck_90d: total > 0 ? Math.round((cap / total) * 1000) / 10 : 0,
+  });
+}
+
 async function handleDigest(): Promise<Response> {
   if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
 
@@ -1966,6 +2015,7 @@ const server = Bun.serve({
       if (url.pathname === "/api/infra")             return await withCache(req, 600_000, () => handleInfra(req));
       if (url.pathname === "/api/attacks")           return await withCache(req, 300_000, () => handleAttacks(req));
       if (url.pathname === "/api/infra-strikes")     return await withCache(req, 300_000, () => handleInfraStrikes(req));
+      if (url.pathname === "/api/strike-impact")     return await withCache(req, 300_000, () => handleStrikeImpact());
       if (url.pathname === "/api/cases")             return await withCache(req, 300_000, () => handleCases(req));
       if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());
       if (url.pathname === "/api/timeline")          return await withCache(req, 30_000, () => handleTimeline(req));
