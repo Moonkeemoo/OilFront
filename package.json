@@ -7,6 +7,7 @@
   "scripts": {
     "smoke": "bun run packages/api/src/cli/smoke.ts",
     "ingest": "bun run packages/api/src/cli/ingest.ts",
+    "scheduler": "bun run packages/api/src/cli/scheduler.ts",
     "load-sanctions": "bun run packages/api/src/cli/load-sanctions.ts",
     "load-opensanctions": "bun run packages/api/src/cli/load-opensanctions.ts",
     "load-ownership": "bun run packages/api/src/cli/load-ownership.ts",

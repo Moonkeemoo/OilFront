@@ -279,8 +279,25 @@ After first-time setup, the recurring routine is:
 bun run db:up                    # Postgres container (idempotent — no-op if running)
 bun run ingest    &              # Ingestor in background
 bun run serve     &              # API + UI in background
+bun run scheduler &              # Auto-feed scheduler in background (see below)
 open http://localhost:3000
 ```
+
+**`bun run scheduler`** is the hands-off alternative to invoking `load-rss-strikes`,
+`load-firms-triggered`, and `load-gdelt-strikes` manually. It is a long-lived process
+that keeps those three feeds running on staggered independent intervals:
+
+| Feed | Default interval | Notes |
+|---|---|---|
+| RSS + Google News (`load-rss-strikes`) | every **20 min** | Immediate first run; no credentials needed |
+| FIRMS-triggered (`load-firms-triggered`) | every **60 min** | First run 5 s after boot; requires `FIRMS_MAP_KEY` in `.env`; skipped (logged once) if the key is absent |
+| GDELT (`load-gdelt-strikes`) | every **3 h** | First run 3 min after boot; no credentials needed |
+
+FIRMS-trigger and GDELT both call the GDELT API, so the scheduler prevents them from
+running simultaneously (mutex). RSS is independent and can overlap freely.
+Each loader runs in its own child process so its `process.exit()` never kills the
+scheduler. Intervals can be overridden via env vars:
+`SCHEDULER_RSS_INTERVAL_MS`, `SCHEDULER_FIRMS_INTERVAL_MS`, `SCHEDULER_GDELT_INTERVAL_MS`.
 
 ### Stop everything
 ```bash
@@ -375,6 +392,7 @@ ACLED, GDELT and FIRMS-triggered candidates land flagged `auto · unverified` an
 |---|---|
 | `bun run smoke` | Connect to AISStream, log samples, no DB writes |
 | `bun run ingest` | Production ingestor, writes positions to DB (run continuously) |
+| `bun run scheduler` | Auto-feed scheduler — runs RSS (20 min), FIRMS-trigger (60 min), GDELT (3 h) as child processes on staggered intervals; hands-off alternative to manual `load-*` invocations |
 | `bun run serve` | API server + static UI on `:3000` |
 | `bun run load-sanctions` | (Re-)load OFAC SDN |
 | `bun run load-opensanctions` | (Re-)load OpenSanctions Maritime |
