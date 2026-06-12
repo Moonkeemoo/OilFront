@@ -157,8 +157,10 @@ export function buildEvidence(
     attribution: { official: who !== null, who },
     contradiction: { found: kind !== null, kind },
     trusted_manual,
-    origins: cluster.origins,
-    member_ids: cluster.member_ids,
+    // Defensive copies: the returned evidence must not alias the cluster's
+    // arrays (a downstream mutation of either must not bleed into the other).
+    origins: [...cluster.origins],
+    member_ids: [...cluster.member_ids],
   };
 }
 

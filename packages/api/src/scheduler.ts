@@ -1,14 +1,17 @@
 // Auto-feed scheduler engine for OilFront.
-// Runs three loaders as isolated child processes on staggered intervals:
-//   - RSS (load-rss-strikes)          every RSS_INTERVAL_MS   (default 20 min)
+// Runs four jobs as isolated child processes on staggered intervals:
+//   - RSS (load-rss-strikes)          every RSS_INTERVAL_MS     (default 20 min)
 //   - FIRMS-triggered (load-firms-triggered) every FIRMS_INTERVAL_MS (default 60 min)
-//   - GDELT (load-gdelt-strikes)      every GDELT_INTERVAL_MS (default 180 min)
+//   - GDELT (load-gdelt-strikes)      every GDELT_INTERVAL_MS   (default 180 min)
+//   - rescore (cli/rescore)           every RESCORE_INTERVAL_MS (default 15 min)
 //
 // Both FIRMS-trigger and GDELT hit the GDELT API, so they share a mutex:
 // only one of the two runs at a time. RSS hits public RSS feeds only — it
-// can overlap freely.
+// can overlap freely. rescore is a pure DB step (clusters + scores existing
+// strikes); it touches no external API and needs no mutex, so it can overlap
+// any feed freely and just re-scores whatever the feeds have written so far.
 //
-// Each loader runs as a Bun child process (Bun.spawn). Because the loaders
+// Each job runs as a Bun child process (Bun.spawn). Because the loaders/rescore
 // call sql.end() and process.exit() internally, spawning them in isolation
 // is the only safe way to avoid killing the scheduler process.
 
@@ -18,15 +21,19 @@ import { logger } from "./log.ts";
 // Intervals (ms). Override via env vars for testing.
 // ---------------------------------------------------------------------------
 
-const RSS_INTERVAL_MS   = Number(process.env.SCHEDULER_RSS_INTERVAL_MS   ?? 20 * 60 * 1000);   // 20 min
-const FIRMS_INTERVAL_MS = Number(process.env.SCHEDULER_FIRMS_INTERVAL_MS ?? 60 * 60 * 1000);   // 60 min
-const GDELT_INTERVAL_MS = Number(process.env.SCHEDULER_GDELT_INTERVAL_MS ?? 180 * 60 * 1000);  // 3 h
+const RSS_INTERVAL_MS     = Number(process.env.SCHEDULER_RSS_INTERVAL_MS     ?? 20 * 60 * 1000);   // 20 min
+const FIRMS_INTERVAL_MS   = Number(process.env.SCHEDULER_FIRMS_INTERVAL_MS   ?? 60 * 60 * 1000);   // 60 min
+const GDELT_INTERVAL_MS   = Number(process.env.SCHEDULER_GDELT_INTERVAL_MS   ?? 180 * 60 * 1000);  // 3 h
+const RESCORE_INTERVAL_MS = Number(process.env.SCHEDULER_RESCORE_INTERVAL_MS ?? 15 * 60 * 1000);   // 15 min
 
 // Stagger: delay GDELT's first run so it doesn't collide with FIRMS-trigger at boot.
 // FIRMS-trigger first fires at boot+5 s (enough for the process to settle).
 // GDELT first fires at boot+3 min (well after FIRMS-trigger could have started).
+// rescore first fires at boot+30 s — after the immediate RSS feed has populated,
+// so the first scoring pass sees fresh candidates.
 const FIRMS_BOOT_DELAY_MS = 5_000;   // 5 s after boot
 const GDELT_BOOT_DELAY_MS = 3 * 60 * 1000; // 3 min after boot
+const RESCORE_BOOT_DELAY_MS = 30_000; // 30 s after boot
 
 // ---------------------------------------------------------------------------
 // Script paths (absolute via import.meta.dirname so this file can live anywhere)
@@ -37,9 +44,10 @@ const DIR = new URL(".", import.meta.url).pathname
   .replace(/^\/([A-Za-z]:)/, "$1");
 
 const SCRIPTS = {
-  rss:   `${DIR}cli/load-rss-strikes.ts`,
-  firms: `${DIR}cli/load-firms-triggered.ts`,
-  gdelt: `${DIR}cli/load-gdelt-strikes.ts`,
+  rss:     `${DIR}cli/load-rss-strikes.ts`,
+  firms:   `${DIR}cli/load-firms-triggered.ts`,
+  gdelt:   `${DIR}cli/load-gdelt-strikes.ts`,
+  rescore: `${DIR}cli/rescore.ts`,
 } as const;
 
 type FeedName = keyof typeof SCRIPTS;
@@ -135,6 +143,11 @@ async function runGdelt(): Promise<void> {
   }
 }
 
+async function runRescore(): Promise<void> {
+  // Pure DB step — no GDELT API, no mutex. Safe to overlap any feed.
+  await runLoader("rescore");
+}
+
 // ---------------------------------------------------------------------------
 // Active timer handles (kept for graceful shutdown)
 // ---------------------------------------------------------------------------
@@ -155,6 +168,7 @@ export function startScheduler(opts: SchedulerOpts): void {
   const schedule: Record<string, string> = {
     rss: `every ${RSS_INTERVAL_MS / 60000} min (immediate first run)`,
     gdelt: `every ${GDELT_INTERVAL_MS / 60000} min (first run after ${GDELT_BOOT_DELAY_MS / 60000} min)`,
+    rescore: `every ${RESCORE_INTERVAL_MS / 60000} min (first run after ${RESCORE_BOOT_DELAY_MS / 1000}s)`,
   };
   if (opts.firmsEnabled) {
     schedule.firms = `every ${FIRMS_INTERVAL_MS / 60000} min (first run after ${FIRMS_BOOT_DELAY_MS / 1000}s)`;
@@ -199,6 +213,19 @@ export function startScheduler(opts: SchedulerOpts): void {
         }, GDELT_INTERVAL_MS),
       );
     }, GDELT_BOOT_DELAY_MS),
+  );
+
+  // ── rescore: first run after RESCORE_BOOT_DELAY_MS (after the immediate RSS
+  // feed populates), then every RESCORE_INTERVAL_MS. No mutex — pure DB step. ─
+  bootTimers.push(
+    setTimeout(() => {
+      void runRescore();
+      timers.push(
+        setInterval(() => {
+          void runRescore();
+        }, RESCORE_INTERVAL_MS),
+      );
+    }, RESCORE_BOOT_DELAY_MS),
   );
 }
 

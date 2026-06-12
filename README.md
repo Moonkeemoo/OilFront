@@ -292,12 +292,15 @@ that keeps those three feeds running on staggered independent intervals:
 | RSS + Google News (`load-rss-strikes`) | every **20 min** | Immediate first run; no credentials needed |
 | FIRMS-triggered (`load-firms-triggered`) | every **60 min** | First run 5 s after boot; requires `FIRMS_MAP_KEY` in `.env`; skipped (logged once) if the key is absent |
 | GDELT (`load-gdelt-strikes`) | every **3 h** | First run 3 min after boot; no credentials needed |
+| Rescore (`rescore`) | every **15 min** | First run 30 s after boot (after the immediate RSS feed populates); clusters + scores every strike into a confidence tier and maintains `verified` as a derived flag; pure DB step, no API, no mutex |
 
 FIRMS-trigger and GDELT both call the GDELT API, so the scheduler prevents them from
-running simultaneously (mutex). RSS is independent and can overlap freely.
+running simultaneously (mutex). RSS is independent and can overlap freely. Rescore
+is a pure DB step (no external API), so it needs no mutex and overlaps the feeds.
 Each loader runs in its own child process so its `process.exit()` never kills the
 scheduler. Intervals can be overridden via env vars:
-`SCHEDULER_RSS_INTERVAL_MS`, `SCHEDULER_FIRMS_INTERVAL_MS`, `SCHEDULER_GDELT_INTERVAL_MS`.
+`SCHEDULER_RSS_INTERVAL_MS`, `SCHEDULER_FIRMS_INTERVAL_MS`, `SCHEDULER_GDELT_INTERVAL_MS`,
+`SCHEDULER_RESCORE_INTERVAL_MS`.
 
 ### Stop everything
 ```bash
@@ -392,7 +395,8 @@ ACLED, GDELT and FIRMS-triggered candidates land flagged `auto · unverified` an
 |---|---|
 | `bun run smoke` | Connect to AISStream, log samples, no DB writes |
 | `bun run ingest` | Production ingestor, writes positions to DB (run continuously) |
-| `bun run scheduler` | Auto-feed scheduler — runs RSS (20 min), FIRMS-trigger (60 min), GDELT (3 h) as child processes on staggered intervals; hands-off alternative to manual `load-*` invocations |
+| `bun run scheduler` | Auto-feed scheduler — runs RSS (20 min), FIRMS-trigger (60 min), GDELT (3 h), rescore (15 min) as child processes on staggered intervals; hands-off alternative to manual `load-*` invocations |
+| `bun run rescore [days]` | Confidence engine — clusters + scores recent strikes (lookback default 180 d) into tiers (confirmed/reported/single/stale/retracted), writes tier/score/breakdown/evidence + derived `verified`; idempotent |
 | `bun run serve` | API server + static UI on `:3000` |
 | `bun run load-sanctions` | (Re-)load OFAC SDN |
 | `bun run load-opensanctions` | (Re-)load OpenSanctions Maritime |
