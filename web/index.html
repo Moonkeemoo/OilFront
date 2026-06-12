@@ -170,56 +170,8 @@
       margin-left: 6px;
     }
 
-    #map { position: absolute; top: 110px; left: 0; right: 0; bottom: 116px; }
+    #map { position: absolute; top: 110px; left: 0; right: 0; bottom: 0; }
 
-    /* Activity timeline strip */
-    #timeline {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 116px;
-      background: var(--bg-1);
-      border-top: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      padding: 6px 22px 8px;
-      z-index: 800;
-    }
-    #timeline .tl-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-2);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    #timeline .tl-header strong { color: var(--text-0); font-weight: 600; }
-    #timeline .tl-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; }
-    #timeline .tl-legend .li {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px;
-    }
-    #timeline .tl-legend .swatch {
-      display: inline-block; width: 9px; height: 9px; border-radius: 2px;
-    }
-    /* legend shape glyphs (neutral, shape carries type) */
-    #timeline .tl-legend .glyph { display: inline-flex; width: 16px; height: 16px; }
-    #timeline .tl-legend .glyph svg { width: 16px; height: 16px; }
-    /* legend status rings — small circle outlines in the 3 recency steps */
-    #timeline .tl-legend .ring {
-      display: inline-block; width: 10px; height: 10px; border-radius: 50%;
-      box-sizing: border-box; border: 2px solid #7d2a25;
-    }
-    #timeline .tl-legend .ring.r7 { border-color: #ff3b30; box-shadow: 0 0 4px rgba(255,59,48,0.8); }
-    #timeline .tl-legend .ring.r30 { border-color: #c0392b; }
-    #timeline .tl-legend .ring.r90 { border-color: #7d2a25; }
-    #timeline .tl-legend .ring-row { display: inline-flex; gap: 3px; align-items: center; }
-    #timeline .tl-legend .bubble {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 16px; height: 16px; border-radius: 50%; font-size: 8px; font-weight: 700;
-      color: #cfd6e4; background: rgba(122,134,150,0.35); border: 1.5px solid #7a8696;
-    }
     /* Burning marker — animated amber pulsing ring (on burningPane) */
     @keyframes oilfront-burn-pulse {
       0%   { box-shadow: 0 0 0 0 rgba(255,149,0,0.85), 0 0 6px 2px rgba(255,149,0,0.7); }
@@ -255,37 +207,98 @@
       background: rgba(11,16,32,0.85);
       text-shadow: 0 1px 2px rgba(0,0,0,0.85);
     }
-    #timeline-svg-wrap {
-      flex: 1;
-      position: relative;
-    }
-    #timeline-svg {
-      width: 100%; height: 100%;
-      cursor: crosshair;
-      display: block;
-    }
-    #timeline-tooltip {
-      position: absolute;
-      background: var(--bg-3);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 5px 9px;
-      font-size: 11px;
-      pointer-events: none;
-      display: none;
-      white-space: nowrap;
-      z-index: 1;
-      color: var(--text-0);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
     .leaflet-container { background: var(--bg-1) !important; }
+
+    /* ============================================================
+       FLOATING LEGEND PANEL — bottom-right, collapsible
+       ============================================================ */
+    #legend {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 850;
+      width: 232px;
+      max-height: calc(100% - 130px);
+      overflow: auto;
+      background: rgba(19, 27, 46, 0.92);
+      border: 1px solid var(--c-border, #29304a);
+      border-radius: 10px;
+      box-shadow: var(--shadow-md, 0 8px 24px rgba(0,0,0,0.45));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 12px 14px 13px;
+      font-size: 12px;
+      color: var(--c-text, #f4f6fb);
+      scrollbar-width: thin;
+      scrollbar-color: var(--c-border-2, #3a4366) transparent;
+    }
+    #legend.hidden { display: none; }
+    #legend::-webkit-scrollbar { width: 8px; }
+    #legend::-webkit-scrollbar-track { background: transparent; }
+    #legend::-webkit-scrollbar-thumb { background: var(--c-border-2, #3a4366); border-radius: 4px; }
+    #legend::-webkit-scrollbar-thumb:hover { background: var(--c-muted, #c2cbe0); }
+    #legend .lg-head {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; user-select: none;
+      padding-bottom: 9px; margin-bottom: 10px;
+      border-bottom: 1px solid var(--c-border, #29304a);
+    }
+    #legend .lg-title {
+      font-size: 13px; font-weight: 700; letter-spacing: 1.2px;
+      color: var(--c-text, #f4f6fb); text-transform: uppercase;
+    }
+    #legend .lg-chevron {
+      font-size: 11px; color: var(--c-subtle, #7a8499);
+      transition: transform 0.18s ease;
+    }
+    #legend.collapsed .lg-chevron { transform: rotate(-90deg); }
+    #legend.collapsed .lg-body { display: none; }
+    #legend .lg-sec {
+      font-size: 9.5px; font-weight: 600; letter-spacing: 0.9px;
+      text-transform: uppercase; color: var(--c-subtle, #7a8499);
+      margin: 13px 0 7px;
+    }
+    #legend .lg-sec:first-child { margin-top: 0; }
+    #legend .lg-row {
+      display: flex; align-items: center; gap: 9px;
+      padding: 3px 0; line-height: 1.2;
+      color: var(--c-muted, #c2cbe0);
+    }
+    #legend .lg-ic {
+      flex: 0 0 22px; width: 22px; height: 18px;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    #legend .lg-ic svg { width: 16px; height: 16px; display: block; }
+    /* status recency rings (3 steps) + grey not-struck dot */
+    #legend .lg-ring {
+      width: 13px; height: 13px; border-radius: 50%;
+      box-sizing: border-box; border: 2.5px solid #7d2a25;
+    }
+    #legend .lg-ring.r7  { border-color: #ff3b30; box-shadow: 0 0 5px rgba(255,59,48,0.85); }
+    #legend .lg-ring.r30 { border-color: #c0392b; }
+    #legend .lg-ring.r90 { border-color: #7d2a25; }
+    #legend .lg-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: #7a8696;
+    }
+    /* pulse — amber burning ring (static glow in legend; clean, no animation noise) */
+    #legend .lg-burn {
+      width: 13px; height: 13px; border-radius: 50%;
+      box-sizing: border-box; border: 2.5px solid #ff9500;
+      box-shadow: 0 0 6px rgba(255,149,0,0.8);
+    }
+    /* cluster bubbles — reuse the map .oilfront-cluster look at small size */
+    #legend .lg-bubble {
+      width: 22px; height: 22px; line-height: 22px;
+      font-size: 11px; border-width: 2px;
+    }
 
     /* Live strike feed (left drawer) */
     #feed {
       position: absolute;
       top: 110px;
       left: 0;
-      bottom: 116px;
+      bottom: 0;
       width: 320px;
       background: var(--bg-1);
       border-right: 1px solid var(--border);
@@ -365,7 +378,7 @@
       position: absolute;
       top: 110px;
       right: 0;
-      bottom: 116px;
+      bottom: 0;
       width: 460px;
       background: var(--bg-1);
       border-left: 1px solid var(--border);
@@ -529,17 +542,15 @@
       #entity-search-box { width: 100%; margin-top: 6px; margin-left: 0; }
       #entity-search-input { width: 100%; }
       #entity-search-results { width: 100%; }
-      #map { top: 200px; bottom: 70px; }
-      #timeline { height: 70px; padding: 4px 12px 6px; }
+      #map { top: 200px; bottom: 0; }
       #panel {
-        width: 100%; top: 200px; bottom: 70px; max-width: 100%;
+        width: 100%; top: 200px; bottom: 0; max-width: 100%;
         z-index: 1500;
       }
       #panel.open { box-shadow: 0 -4px 20px rgba(0,0,0,0.5); }
     }
     @media (max-width: 600px) {
       #stats .stat:nth-child(n+4) { display: none; }
-      #timeline .tl-legend .li:nth-child(n+2) { display: none; }
     }
 
     /* Graph container */
@@ -825,32 +836,16 @@
     #entity-search-results .res .sub { color: var(--c-subtle); font-size: 10px; }
     #entity-search-results .res .badge { background: var(--c-surface-3); }
 
-    /* MAP / TIMELINE / PANEL geometry — fits 13" MBA */
-    #map { top: 96px !important; bottom: 116px !important; }
+    /* MAP / PANEL geometry — fits 13" MBA */
+    #map { top: 96px !important; bottom: 0 !important; }
     .leaflet-container { background: var(--c-bg) !important; }
-    #feed { bottom: 116px !important; }
-
-    #timeline {
-      height: 116px !important;
-      padding: 4px 22px 6px !important;
-      background: var(--c-surface-1) !important;
-      border-top: 1px solid var(--c-border) !important;
-    }
-    #timeline .tl-header {
-      font-size: 10px !important;
-      color: var(--c-subtle) !important;
-      letter-spacing: 0.5px !important;
-      margin-bottom: 2px !important;
-    }
-    #timeline .tl-header strong { color: var(--c-text) !important; font-weight: 600 !important; }
-    #timeline .tl-legend { flex-wrap: wrap !important; gap: 8px 12px !important; }
-    #timeline .tl-legend .li { font-size: 9px !important; letter-spacing: 0.4px !important; color: var(--c-subtle); }
+    #feed { bottom: 0 !important; }
 
     /* SIDE PANEL — 380px, compact sections, refined cards */
     #panel {
       width: 380px !important;
       top: 96px !important;
-      bottom: 116px !important;
+      bottom: 0 !important;
       background: var(--c-surface-1) !important;
       border-left: 1px solid var(--c-border) !important;
       box-shadow: var(--shadow-lg);
@@ -1067,6 +1062,7 @@
         <span class="chip layer-chip active" data-layer="fires">🔥 Fires</span>
         <span class="chip layer-chip active" data-layer="military">🎯 Military</span>
         <span class="chip active" id="feed-toggle" title="Show / hide the live strike feed">📰 Feed</span>
+        <span class="chip active" id="legend-toggle" title="Show / hide the map legend">🗺 Legend</span>
       </div>
       <span class="filter-label">Risk ≥</span>
       <div class="chip-group">
@@ -1090,32 +1086,35 @@
     <p>The ingestor listens to AIS in shadow-fleet hot-zones (Baltic, Black Sea, Persian Gulf, Singapore Strait). Wait a few minutes — refresh runs every 15s.</p>
   </div>
 
-  <div id="timeline">
-    <div class="tl-header">
-      <div><strong id="tl-range-label">last 24h</strong> · <span id="tl-summary">—</span></div>
-      <div class="tl-legend">
-        <!-- Vessels & sea incidents (colors unchanged — they encode risk/status, not type) -->
-        <div class="li"><span class="swatch" style="background: #ffb84a;"></span> sanctioned visible</div>
-        <div class="li"><span class="swatch" style="background: #ff4d6a;"></span> RU / UA subset</div>
-        <div class="li"><span class="swatch" style="background: rgba(194,203,224,0.5); border: 1px dashed #c2cbe0;"></span> all tankers (trace)</div>
-        <div class="li"><span class="swatch" style="background: #ff4757; border-radius: 0;"></span> tanker attack</div>
-        <!-- Facility TYPE now carried by SHAPE only (neutral slate fill) -->
-        <div class="li"><span class="glyph"><svg viewBox="0 0 12 14"><path d="M2 13 L2 6 L4 6 L4 9 L7 7 L7 9 L10 7 L10 13 Z" fill="#7a8696" stroke="#fff" stroke-width="0.5"/></svg></span> refinery</div>
-        <div class="li"><span class="glyph"><svg viewBox="0 0 12 14"><rect x="2.5" y="5" width="7" height="7" rx="1.2" fill="#7a8696" stroke="#fff" stroke-width="0.5"/><ellipse cx="6" cy="5" rx="3.5" ry="1.4" fill="#7a8696" stroke="#fff" stroke-width="0.5"/></svg></span> depot</div>
-        <div class="li"><span class="glyph"><svg viewBox="0 0 12 14"><path d="M6 1.5 L11 7 L6 12.5 L1 7 Z" fill="#7a8696" stroke="#fff" stroke-width="0.5"/></svg></span> terminal</div>
-        <div class="li"><span class="glyph"><svg viewBox="0 0 12 14"><path d="M6 1 L10 3.5 L10 8.5 L6 11 L2 8.5 L2 3.5 Z" fill="#7a8696" stroke="#fff" stroke-width="0.5"/></svg></span> petrochemical</div>
-        <div class="li"><span class="glyph"><svg viewBox="0 0 12 14"><path d="M6 1 L11 3.2 L11 7 C11 10.4 9 12.6 6 13.5 C3 12.6 1 10.4 1 7 L1 3.2 Z" fill="#7a8696" stroke="#fff" stroke-width="0.5"/></svg></span> military</div>
-        <!-- STATUS now carried by COLOR (the loud channel) -->
-        <div class="li"><span class="ring r90" style="border-color:#7a8696;box-shadow:none;"></span> no recorded strike</div>
-        <div class="li"><span class="ring-row"><span class="ring r7"></span><span class="ring r30"></span><span class="ring r90"></span></span> struck — brighter = fresher</div>
-        <div class="li"><span class="ring r7" style="border-color:#ff9500;box-shadow:0 0 5px #ff9500;"></span> 🔥 burning now</div>
-        <div class="li"><span class="bubble">▣</span> grouped — facilities &amp; vessels (zoom in)</div>
-        <div class="li"><span class="swatch" style="background: #ff6a00;"></span> thermal anomaly (incl. flaring)</div>
-      </div>
+  <!-- Floating legend — bottom-right, collapsible. Glyphs reuse the exact infraIcon /
+       militaryIcon SVG shapes, tinted with the same OIL_TINT / MIL_TINT as the map so
+       legend ≡ map. Rings/pulse/bubbles mirror the on-map status channels. -->
+  <div id="legend">
+    <div class="lg-head" id="legend-head">
+      <span class="lg-title">Legend</span>
+      <span class="lg-chevron">▾</span>
     </div>
-    <div id="timeline-svg-wrap">
-      <svg id="timeline-svg" preserveAspectRatio="none"></svg>
-      <div id="timeline-tooltip"></div>
+    <div class="lg-body">
+      <div class="lg-sec">Core — type family</div>
+      <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M2 13 L2 6 L4 6 L4 9 L7 7 L7 9 L10 7 L10 13 Z" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Refinery</div>
+      <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><rect x="2.5" y="5" width="7" height="7" rx="1.2" fill="#b9925b" stroke="#fff" stroke-width="0.5"/><ellipse cx="6" cy="5" rx="3.5" ry="1.4" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Depot</div>
+      <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M6 1.5 L11 7 L6 12.5 L1 7 Z" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Terminal</div>
+      <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M6 1 L10 3.5 L10 8.5 L6 11 L2 8.5 L2 3.5 Z" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Petrochemical</div>
+      <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M6 1 L11 3.2 L11 7 C11 10.4 9 12.6 6 13.5 C3 12.6 1 10.4 1 7 L1 3.2 Z" fill="#8295b5" stroke="#fff" stroke-width="0.5"/></svg></span> Military (all subtypes)</div>
+
+      <div class="lg-sec">Ring — strike recency</div>
+      <div class="lg-row"><span class="lg-ic"><span class="lg-ring r7"></span></span> Struck ≤ 7 d (bright)</div>
+      <div class="lg-row"><span class="lg-ic"><span class="lg-ring r30"></span></span> Struck ≤ 30 d (mid)</div>
+      <div class="lg-row"><span class="lg-ic"><span class="lg-ring r90"></span></span> Struck &gt; 30 d (dim)</div>
+      <div class="lg-row"><span class="lg-ic"><span class="lg-dot"></span></span> Not struck (no ring)</div>
+
+      <div class="lg-sec">Pulse — burning</div>
+      <div class="lg-row"><span class="lg-ic"><span class="lg-burn"></span></span> Active fire (animated)</div>
+
+      <div class="lg-sec">Cluster bubbles</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster burning lg-bubble">3</span></span> Any burning inside</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster struck lg-bubble">7</span></span> Struck (no burning)</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster neutral lg-bubble">12</span></span> All clear</div>
     </div>
   </div>
 
@@ -1282,8 +1281,11 @@
     // carries type, status carries color). They survive only as a single accent on
     // the detail panels' left border (openInfraPanel / openMilitaryPanel).
     const INFRA_COLORS = { refinery: "#b56cff", depot: "#2bcbba", terminal: "#54a0ff", petrochemical: "#06b6d4" };
-    // One muted slate for every not-struck glyph — recedes so STATUS reads loud.
-    const MARKER_NEUTRAL = "#7a8696";
+    // Two calm marker FAMILIES (shape still carries the exact type; status stays the loud
+    // channel on top). Oil infra → warm bronze; military → muted steel-blue. The floating
+    // legend's CORE glyphs use these SAME hex values so legend ≡ map.
+    const OIL_TINT = "#b9925b"; // warm bronze/tan — refinery / depot / terminal / petrochemical
+    const MIL_TINT = "#8295b5"; // muted steel-blue — military-industrial sites
     // 3 discrete recency steps (no blended gradient) for the red STATUS RING.
     function recencyStepColor(ageDays) {
       if (ageDays != null && ageDays <= 7) return "#ff3b30";   // fresh — brightest
@@ -1302,7 +1304,7 @@
     }
     function infraIconSize() { return map.getZoom() >= 5 ? 18 : 12; }
     function infraIcon(kind, size, badge, burning) {
-      const c = MARKER_NEUTRAL;
+      const c = OIL_TINT; // warm bronze family — shape carries the exact type
       const op = badge ? 1 : 0.8; // not-struck glyphs recede at ~0.8 opacity
       let shape;
       if (kind === "refinery") {
@@ -1351,7 +1353,7 @@
       electronics: "#22d3ee", shipyard: "#7c8cf8", other: "#8a96aa",
     };
     function militaryIcon(category, badge, burning) {
-      const c = MARKER_NEUTRAL;
+      const c = MIL_TINT; // muted steel-blue family — shield carries "military" type
       const size = 16;
       const op = badge ? 1 : 0.8; // not-struck glyphs recede
       // shield (shape carries "military" type; color no longer encodes category)
@@ -2200,6 +2202,17 @@
       document.body.classList.toggle("feed-collapsed", hidden); // slide Leaflet controls back to the edge when feed is hidden
     });
 
+    // Legend show/hide toggle (chip in the layer bar) — mirrors the feed-toggle pattern.
+    document.getElementById("legend-toggle").addEventListener("click", () => {
+      const el = document.getElementById("legend");
+      const hidden = el.classList.toggle("hidden");
+      document.getElementById("legend-toggle").classList.toggle("active", !hidden);
+    });
+    // Legend collapse — clicking the panel header folds the body (chevron rotates).
+    document.getElementById("legend-head").addEventListener("click", () => {
+      document.getElementById("legend").classList.toggle("collapsed");
+    });
+
     // -------- Filter chips
     document.querySelectorAll(".chip[data-list]").forEach(el => {
       el.addEventListener("click", () => {
@@ -2207,7 +2220,6 @@
         el.classList.add("active");
         activeFilter = el.dataset.list;
         loadVessels();
-        loadTimeline();
       });
     });
 
@@ -2218,7 +2230,6 @@
         el.classList.add("active");
         activeRange = el.dataset.range;
         loadVessels();
-        loadTimeline();
         if (selectedImo) openVessel(selectedImo);
       });
     });
@@ -2982,145 +2993,10 @@
       loadVessels();
     }
 
-    // -------- Activity timeline strip
-    async function loadTimeline() {
-      try {
-        const params = new URLSearchParams();
-        params.set("range", activeRange);
-        if (activeFilter === "ru" || activeFilter === "ua") params.set("lists", "ru");
-        const res = await fetch(`/api/timeline?${params.toString()}`);
-        const data = await res.json();
-        renderTimeline(data);
-      } catch (err) { console.error("loadTimeline failed", err); }
-    }
-
-    function renderTimeline(data) {
-      const svg = document.getElementById("timeline-svg");
-      const wrap = document.getElementById("timeline-svg-wrap");
-      const tooltip = document.getElementById("timeline-tooltip");
-      const W = wrap.clientWidth, H = wrap.clientHeight;
-      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-      svg.innerHTML = "";
-
-      const buckets = data.buckets || [];
-      if (buckets.length === 0) {
-        svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#6b7891" font-size="11" font-family="system-ui">No activity in selected range yet</text>`;
-        document.getElementById("tl-summary").textContent = "no data";
-        return;
-      }
-
-      // PRIMARY metric is `sanctioned`. All-tankers shown as a faint line trace
-      // for context, NOT as the dominant visual.
-      const maxSanc = Math.max(...buckets.map(b => b.sanctioned || 0), 1);
-      const maxTotal = Math.max(...buckets.map(b => b.total_tankers || 0), 1);
-      const padL = 4, padR = 4, padT = 4, padB = 16;
-      const innerW = W - padL - padR;
-      const innerH = H - padT - padB;
-      const barW = innerW / buckets.length;
-      const baseY = padT + innerH;
-
-      // Background grid line (subtle) at half-height
-      svg.insertAdjacentHTML("beforeend",
-        `<line x1="${padL}" y1="${padT + innerH * 0.5}" x2="${padL + innerW}" y2="${padT + innerH * 0.5}" stroke="rgba(122,132,153,0.12)" stroke-dasharray="2 4"/>`);
-
-      // BARS: sanctioned (orange) primary, ru_ua (red) overlaid on bottom portion
-      buckets.forEach((b, i) => {
-        const x = padL + i * barW + 1;
-        const w = Math.max(2, barW - 2);
-        const sanH = (b.sanctioned / maxSanc) * innerH;
-        const ruH  = (b.ru_ua      / maxSanc) * innerH;
-
-        // Sanctioned (full bar — primary metric)
-        if (b.sanctioned > 0) {
-          svg.insertAdjacentHTML("beforeend",
-            `<rect x="${x}" y="${baseY - sanH}" width="${w}" height="${sanH}" fill="#ffb84a" rx="1.5"/>`);
-        }
-        // RU/UA overlay (drawn from base, will be visually inside the sanctioned bar)
-        if (b.ru_ua > 0) {
-          svg.insertAdjacentHTML("beforeend",
-            `<rect x="${x}" y="${baseY - ruH}" width="${w}" height="${ruH}" fill="#ff4d6a" rx="1.5"/>`);
-        }
-        // Numeric label above bar (sanctioned count) — helps when only a few buckets
-        if (buckets.length <= 12 && b.sanctioned > 0) {
-          svg.insertAdjacentHTML("beforeend",
-            `<text x="${x + w/2}" y="${baseY - sanH - 3}" text-anchor="middle" fill="#c2cbe0" font-size="9" font-family="system-ui" font-weight="600">${b.sanctioned}</text>`);
-        }
-
-        // Hover capture rect
-        svg.insertAdjacentHTML("beforeend",
-          `<rect x="${x - 1}" y="${padT}" width="${w + 2}" height="${innerH}" fill="transparent" data-i="${i}" style="cursor: crosshair;"/>`);
-      });
-
-      // ALL-TANKERS context line (faint trace above bars)
-      const points = buckets.map((b, i) => {
-        const x = padL + i * barW + barW/2;
-        const y = baseY - (b.total_tankers / maxTotal) * innerH;
-        return `${x},${y}`;
-      }).join(" ");
-      if (points) svg.insertAdjacentHTML("beforeend",
-        `<polyline points="${points}" fill="none" stroke="rgba(194,203,224,0.35)" stroke-width="1" stroke-dasharray="3 3"/>`);
-      // Total-tanker dots on the polyline
-      buckets.forEach((b, i) => {
-        const x = padL + i * barW + barW/2;
-        const y = baseY - (b.total_tankers / maxTotal) * innerH;
-        svg.insertAdjacentHTML("beforeend",
-          `<circle cx="${x}" cy="${y}" r="2" fill="rgba(194,203,224,0.7)"/>`);
-      });
-
-      // x-axis labels at start, middle, end
-      function fmtBucket(ts) {
-        const d = new Date(ts);
-        if (data.bucket_seconds < 3600) return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-        if (data.bucket_seconds < 86400) return d.toLocaleString([], { month: "short", day: "numeric", hour: "2-digit" });
-        return d.toLocaleDateString([], { month: "short", day: "numeric" });
-      }
-      const labelIdx = buckets.length === 1 ? [0] : [0, Math.floor(buckets.length / 2), buckets.length - 1];
-      labelIdx.forEach(i => {
-        const x = padL + i * barW + barW / 2;
-        svg.insertAdjacentHTML("beforeend",
-          `<text x="${x}" y="${H - 3}" text-anchor="middle" fill="#6b7891" font-size="9" font-family="system-ui">${fmtBucket(buckets[i].ts)}</text>`);
-      });
-
-      // Hover events
-      svg.querySelectorAll("rect[data-i]").forEach(rect => {
-        rect.addEventListener("mouseenter", (ev) => {
-          const i = Number(ev.target.dataset.i);
-          const b = buckets[i];
-          tooltip.innerHTML = `
-            <div style="margin-bottom: 3px; color: var(--text-2); font-size: 10px;">${fmtBucket(b.ts)}</div>
-            <div><span style="color: #ffa502;">●</span> Sanctioned: <strong>${b.sanctioned}</strong></div>
-            <div><span style="color: #ff4757;">●</span> RU / UA: <strong>${b.ru_ua}</strong></div>
-            <div><span style="color: #6b7891;">●</span> All tankers: <strong>${b.total_tankers}</strong></div>
-          `;
-          tooltip.style.display = "block";
-        });
-        rect.addEventListener("mousemove", (ev) => {
-          const wrapRect = wrap.getBoundingClientRect();
-          const x = ev.clientX - wrapRect.left;
-          const y = ev.clientY - wrapRect.top;
-          tooltip.style.left = `${Math.min(x + 12, W - 180)}px`;
-          tooltip.style.top = `${Math.max(2, y - 60)}px`;
-        });
-        rect.addEventListener("mouseleave", () => {
-          tooltip.style.display = "none";
-        });
-      });
-
-      // Header summary
-      const peak = Math.max(...buckets.map(b => b.sanctioned));
-      const totalSanctioned = buckets.reduce((s, b) => s + b.sanctioned, 0);
-      document.getElementById("tl-range-label").textContent = `last ${data.range}`;
-      document.getElementById("tl-summary").textContent = `peak ${peak} sanctioned · ${buckets.length} buckets · ${data.bucket_seconds < 3600 ? Math.round(data.bucket_seconds / 60) + "m" : (data.bucket_seconds < 86400 ? Math.round(data.bucket_seconds / 3600) + "h" : Math.round(data.bucket_seconds / 86400) + "d")} each`;
-    }
-
-    // Re-render timeline on window resize
-    window.addEventListener("resize", () => loadTimeline());
-
     // -------- Boot
     loadZones();
     loadVessels();
     loadStats();
-    loadTimeline();
     loadSts();
     loadInfraStrikes().then(loadInfra); // strikes first — loadInfra joins them onto markers
     loadAttacks();
@@ -3130,7 +3006,6 @@
     loadFeed();     // live strike feed (left drawer) — auto-refreshes every 60 s
     setInterval(loadVessels, 15000);
     setInterval(loadStats, 30000);
-    setInterval(loadTimeline, 60000);
     setInterval(loadSts, 30000);
     setInterval(loadAttacks, 600000); // attacks are curated — 10 min is plenty; infra is static, no refresh
     setInterval(loadImpact, 300000);
