@@ -1651,7 +1651,7 @@
             const badge = freshnessBadge(strikes);
             const verifiedCount = strikes ? strikes.filter(s => s.verified !== false).length : 0;
             const fa = fireFacilities[o.id];
-            const burning = !!(badge && fa && fa.active && datesWithinOneDay(fa.last_date, badge.lastDate));
+            const burning = !!(badge && fa && fa.active_now && datesWithinOneDay(fa.last_date, badge.lastDate));
             const marker = L.marker([o.lat, o.lon], { icon: infraIcon(o.kind, size, badge, burning) });
             marker.bindTooltip(`${escapeHtml(o.name)}${o.capacity_mt_yr ? ` · ${fmtNum(o.capacity_mt_yr)} Mt/yr` : ""}${verifiedCount > 0 ? ` · 💥 ${verifiedCount} strike${verifiedCount > 1 ? "s" : ""}` : ""}${badge ? ` · last hit ${relativeAge(badge.lastDate)}` : ""}${burning ? " · 🔥 burning now" : ""}`);
             marker.on("click", () => openInfraPanel(o));
@@ -1665,7 +1665,7 @@
       const size = infraIconSize();
       for (const m of infraMarkers) {
         const fa = fireFacilities[m.id];
-        const burning = !!(m.badge && fa && fa.active && datesWithinOneDay(fa.last_date, m.lastStrikeOn));
+        const burning = !!(m.badge && fa && fa.active_now && datesWithinOneDay(fa.last_date, m.lastStrikeOn));
         m.marker.setIcon(infraIcon(m.kind, size, m.badge, burning));
       }
     }
@@ -2675,7 +2675,7 @@
     setInterval(loadSts, 30000);
     setInterval(loadAttacks, 600000); // attacks are curated — 10 min is plenty; infra is static, no refresh
     setInterval(loadImpact, 300000);
-    setInterval(loadFires, 3600000);
+    setInterval(loadFires, 900000);
 </script>
 </body>
 </html>

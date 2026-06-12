@@ -2372,7 +2372,7 @@ async function handleFires(): Promise<Response> {
     const recon = await reconTables();
     if (recon.infra) {
       const fac = await sql`SELECT id, lat, lon FROM oil_infra WHERE lat IS NOT NULL` as unknown as FacilityPoint[];
-      facilities = matchFiresToFacilities(all, fac, 3);
+      facilities = matchFiresToFacilities(all, fac, 3, new Date().toISOString().slice(0, 10));
       // Map layer shows only anomalies inside infrastructure zones (≤5 km),
       // not the global agricultural/flare firehose.
       nearPoints = filterNearFacilities(all, fac, 5);
@@ -2457,7 +2457,7 @@ const server = Bun.serve({
       if (url.pathname === "/api/infra-strikes")     return await withCache(req, 300_000, () => handleInfraStrikes(req));
       if (url.pathname === "/api/strike-impact")     return await withCache(req, 300_000, () => handleStrikeImpact());
       if (url.pathname === "/api/impact")            return await withCache(req, 300_000, () => handleImpact());
-      if (url.pathname === "/api/fires")             return await withCache(req, 3_600_000, () => handleFires());
+      if (url.pathname === "/api/fires")             return await withCache(req, 900_000, () => handleFires());
       if (url.pathname === "/api/cases")             return await withCache(req, 300_000, () => handleCases(req));
       if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());
       if (url.pathname === "/api/timeline")          return await withCache(req, 30_000, () => handleTimeline(req));
