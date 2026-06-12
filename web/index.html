@@ -302,6 +302,14 @@
       width: 22px; height: 22px; line-height: 22px;
       font-size: 11px; border-width: 2px;
     }
+    /* lone-object DOT preview — mirrors the map .oilfront-dot singleton at small size */
+    #legend .lg-objdot {
+      width: 11px; height: 11px; border-radius: 50%;
+      border: 1.5px solid rgba(0,0,0,0.55);
+      box-shadow: 0 0 4px rgba(0,0,0,0.55);
+    }
+    /* vessel risk swatch — the tankerIcon arrow at legend size, filled with bucketColor */
+    #legend .lg-ic svg.lg-vessel { width: 15px; height: 15px; }
 
     /* Live strike feed (left drawer) */
     #feed {
@@ -1096,35 +1104,52 @@
     <p>The ingestor listens to AIS in shadow-fleet hot-zones (Baltic, Black Sea, Persian Gulf, Singapore Strait). Wait a few minutes — refresh runs every 15s.</p>
   </div>
 
-  <!-- Floating legend — bottom-right, collapsible. Glyphs reuse the exact infraIcon /
-       militaryIcon SVG shapes, tinted with the same OIL_TINT / MIL_TINT as the map so
-       legend ≡ map. Rings/pulse/bubbles mirror the on-map status channels. -->
+  <!-- Floating legend — bottom-right, collapsible. One unified system for LAND + SEA:
+       land glyphs reuse the exact infraIcon / militaryIcon SVG shapes (OIL_TINT / MIL_TINT);
+       sea glyphs reuse the exact tankerIcon arrow + bucketColor risk fills, the cleanTankerDot
+       trace, and the attackIcon star; thermal = the FIRMS #ff6a00 dot. Rings/pulse mirror the
+       facility status channels, and the shared GROUPING section shows the cluster bubbles +
+       lone dots that BOTH facilities and vessels use. So legend ≡ map. -->
   <div id="legend">
     <div class="lg-head" id="legend-head">
       <span class="lg-title">Legend</span>
       <span class="lg-chevron">▾</span>
     </div>
     <div class="lg-body">
-      <div class="lg-sec">Core — type family</div>
+      <div class="lg-sec">Land — facilities (type)</div>
       <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M2 13 L2 6 L4 6 L4 9 L7 7 L7 9 L10 7 L10 13 Z" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Refinery</div>
       <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><rect x="2.5" y="5" width="7" height="7" rx="1.2" fill="#b9925b" stroke="#fff" stroke-width="0.5"/><ellipse cx="6" cy="5" rx="3.5" ry="1.4" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Depot</div>
       <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M6 1.5 L11 7 L6 12.5 L1 7 Z" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Terminal</div>
       <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M6 1 L10 3.5 L10 8.5 L6 11 L2 8.5 L2 3.5 Z" fill="#b9925b" stroke="#fff" stroke-width="0.5"/></svg></span> Petrochemical</div>
       <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 12 14"><path d="M6 1 L11 3.2 L11 7 C11 10.4 9 12.6 6 13.5 C3 12.6 1 10.4 1 7 L1 3.2 Z" fill="#8295b5" stroke="#fff" stroke-width="0.5"/></svg></span> Military (all subtypes)</div>
 
-      <div class="lg-sec">Ring — strike recency</div>
+      <div class="lg-sec">Strike status (facility ring)</div>
       <div class="lg-row"><span class="lg-ic"><span class="lg-ring r7"></span></span> Struck ≤ 7 d (bright)</div>
       <div class="lg-row"><span class="lg-ic"><span class="lg-ring r30"></span></span> Struck ≤ 30 d (mid)</div>
       <div class="lg-row"><span class="lg-ic"><span class="lg-ring r90"></span></span> Struck &gt; 30 d (dim)</div>
       <div class="lg-row"><span class="lg-ic"><span class="lg-dot"></span></span> Not struck (no ring)</div>
 
-      <div class="lg-sec">Pulse — burning</div>
-      <div class="lg-row"><span class="lg-ic"><span class="lg-burn"></span></span> Active fire (animated)</div>
+      <div class="lg-sec">Burning</div>
+      <div class="lg-row"><span class="lg-ic"><span class="lg-burn"></span></span> Active fire (animated pulse)</div>
 
-      <div class="lg-sec">Cluster bubbles</div>
-      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster burning lg-bubble">3</span></span> Any burning inside</div>
-      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster struck lg-bubble">7</span></span> Struck (no burning)</div>
-      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster neutral lg-bubble">12</span></span> All clear</div>
+      <div class="lg-sec">Sea — vessels (risk)</div>
+      <div class="lg-row"><span class="lg-ic"><svg class="lg-vessel" viewBox="0 0 20 20"><path d="M 10 1 L 16 17 L 10 13 L 4 17 Z" fill="#ff4757" stroke="#fff" stroke-width="0.6"/></svg></span> Sanctioned · critical risk</div>
+      <div class="lg-row"><span class="lg-ic"><svg class="lg-vessel" viewBox="0 0 20 20"><path d="M 10 1 L 16 17 L 10 13 L 4 17 Z" fill="#ff7f50" stroke="#fff" stroke-width="0.6"/></svg></span> Sanctioned · high risk</div>
+      <div class="lg-row"><span class="lg-ic"><svg class="lg-vessel" viewBox="0 0 20 20"><path d="M 10 1 L 16 17 L 10 13 L 4 17 Z" fill="#ffa502" stroke="#fff" stroke-width="0.6"/></svg></span> Sanctioned · elevated risk</div>
+      <div class="lg-row"><span class="lg-ic"><svg class="lg-vessel" viewBox="0 0 20 20"><path d="M 10 1 L 16 17 L 10 13 L 4 17 Z" fill="#8a96aa" stroke="#fff" stroke-width="0.6"/></svg></span> Sanctioned · low risk</div>
+      <div class="lg-row"><span class="lg-ic"><svg class="lg-vessel" viewBox="0 0 12 12"><path d="M 6 1 L 10 11 L 6 8 L 2 11 Z" fill="#6b7891" opacity="0.45"/></svg></span> Other tanker (trace)</div>
+      <div class="lg-row"><span class="lg-ic"><svg viewBox="0 0 14 14"><path d="M7 0 L8.6 4.4 L13 3 L9.8 7 L13 11 L8.6 9.6 L7 14 L5.4 9.6 L1 11 L4.2 7 L1 3 L5.4 4.4 Z" fill="#ff4757" stroke="#fff" stroke-width="0.5"/></svg></span> Tanker attack / incident</div>
+
+      <div class="lg-sec">Satellite</div>
+      <div class="lg-row"><span class="lg-ic"><span style="width:11px;height:11px;border-radius:50%;background:#ff6a00;opacity:0.85;"></span></span> Thermal anomaly (incl. flaring)</div>
+
+      <div class="lg-sec">Grouping — applies to all</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster burning lg-bubble">3</span></span> Cluster · any burning inside</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster struck lg-bubble">7</span></span> Cluster · struck (no burning)</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster neutral lg-bubble">12</span></span> Cluster · all clear</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-cluster struck lg-objdot" style="background:#c0392b;"></span></span> Lone facility (status dot)</div>
+      <div class="lg-row"><span class="lg-ic"><span class="oilfront-vessel-cluster lg-objdot" style="background:#ff4757;box-shadow:0 0 6px #ff475766,0 0 4px rgba(0,0,0,0.55);"></span></span> Lone vessel (risk dot)</div>
+      <div class="lg-row" style="color:var(--c-subtle);font-size:11px;line-height:1.35;padding-top:5px;"><span class="lg-ic"></span> Facilities &amp; vessels group at low zoom; zoom in for icons.</div>
     </div>
   </div>
 
