@@ -15,7 +15,11 @@ const WEB_DIR = join(__dirname, "..", "..", "..", "web");
 
 const corsHeaders: Record<string, string> = {
   "access-control-allow-origin": "*",
-  "access-control-allow-methods": "GET, OPTIONS",
+  // POST is needed for /api/batch-screen and /api/strikes/manual. The custom
+  // x-manual-token header (manual-add abuse guard) must be allow-listed too, or
+  // browsers strip it on cross-origin preflight.
+  "access-control-allow-methods": "GET, POST, OPTIONS",
+  "access-control-allow-headers": "content-type, x-manual-token",
 };
 
 function jsonReplacer(_key: string, val: unknown): unknown {
@@ -1062,6 +1066,136 @@ async function handleBatchScreen(req: Request): Promise<Response> {
     visible_24h_count: rows.filter((r) => r.visible_24h).length,
     results: rows,
   });
+}
+
+// --- Manual-add channel ------------------------------------------------------
+// The ONE human workflow in the auto-verification system: inject a strike the
+// user knows about that the feeds missed (recall). The engine still owns
+// precision — this row enters as a TRUSTED source (origin='manual'), so the
+// confidence engine scores it 'confirmed' and never auto-retracts it (a human
+// already adjudicated it). Spec Phase 1: docs/.../2026-06-12-auto-verification-design.md
+//
+// These two consts are the single source of truth for the allowed enum values;
+// the add-strike CLI mirrors the same validation rules inline.
+const MANUAL_WEAPONS = new Set(["uav", "missile", "sabotage", "unknown"]);
+const MANUAL_SEVERITIES = new Set(["major", "moderate", "minor", "unknown"]);
+
+/**
+ * Is `s` a YYYY-MM-DD date that is real (round-trips) and not in the future?
+ * `today` is the as-of UTC date (YYYY-MM-DD), passed in so the check is testable
+ * and matches the rest of the engine's single-clock discipline.
+ */
+function isValidPastDate(s: string, today: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  // Round-trip through Date to reject impossible dates (e.g. 2026-02-31).
+  const d = new Date(`${s}T00:00:00Z`);
+  if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== s) return false;
+  return s <= today; // string compare is valid for ISO dates; no future strikes
+}
+
+/** Keep only well-formed http(s) URLs. [] is allowed — a manual add is itself the trusted source. */
+function cleanSourceUrls(input: unknown): string[] {
+  if (!Array.isArray(input)) return [];
+  const out: string[] = [];
+  for (const u of input) {
+    if (typeof u !== "string") continue;
+    const s = u.trim();
+    if (/^https?:\/\/\S+$/i.test(s) && !out.includes(s)) out.push(s);
+  }
+  return out;
+}
+
+async function handleManualAdd(req: Request): Promise<Response> {
+  if (!sql) return jsonResponse({ ok: false, error: "no_db" }, { status: 500 });
+  if (req.method !== "POST") {
+    return jsonResponse({ ok: false, error: "use POST with a JSON body" }, { status: 405 });
+  }
+
+  // Minimal abuse guard: if MANUAL_ADD_TOKEN is set in the environment, the
+  // request MUST carry a matching x-manual-token header. If the env var is
+  // UNSET (local-dev default), the endpoint is open. This is intentionally
+  // light — see the prod security note in the build report.
+  const token = process.env.MANUAL_ADD_TOKEN;
+  if (token && req.headers.get("x-manual-token") !== token) {
+    return jsonResponse({ ok: false, error: "unauthorized" }, { status: 401 });
+  }
+
+  let body: Record<string, unknown>;
+  try {
+    body = (await req.json()) as Record<string, unknown>;
+  } catch {
+    return jsonResponse({ ok: false, error: "invalid_json" }, { status: 400 });
+  }
+
+  const infra_id = typeof body.infra_id === "string" ? body.infra_id.trim() : "";
+  const occurred_on = typeof body.occurred_on === "string" ? body.occurred_on.trim() : "";
+  const summary = typeof body.summary === "string" ? body.summary.trim() : "";
+  const weaponRaw = typeof body.weapon === "string" ? body.weapon.trim().toLowerCase() : "unknown";
+  const severityRaw = typeof body.severity === "string" ? body.severity.trim().toLowerCase() : "unknown";
+
+  if (!infra_id) return jsonResponse({ ok: false, error: "infra_id required" }, { status: 400 });
+  const today = new Date().toISOString().slice(0, 10);
+  if (!isValidPastDate(occurred_on, today)) {
+    return jsonResponse({ ok: false, error: "occurred_on must be a real YYYY-MM-DD date not in the future" }, { status: 400 });
+  }
+  if (!summary) return jsonResponse({ ok: false, error: "summary required (non-empty)" }, { status: 400 });
+
+  const weapon = MANUAL_WEAPONS.has(weaponRaw) ? weaponRaw : "unknown";
+  const severity = MANUAL_SEVERITIES.has(severityRaw) ? severityRaw : "unknown";
+  const source_urls = cleanSourceUrls(body.source_urls);
+
+  // Facility must exist — a manual add references a known facility in oil_infra.
+  const exists = await sql`SELECT 1 FROM oil_infra WHERE id = ${infra_id} LIMIT 1`;
+  if (exists.length === 0) {
+    return jsonResponse({ ok: false, error: `unknown infra_id '${infra_id}' (no such facility in oil_infra)` }, { status: 400 });
+  }
+
+  const id = `manual-${infra_id}-${occurred_on.replaceAll("-", "")}`;
+
+  // Provisional trusted-confirmed fields so the row shows correctly IMMEDIATELY
+  // (no waiting for the next scheduled rescore). The scheduled rescore reconciles
+  // idempotently: a trusted_manual row stays 'confirmed' — it is immune to the
+  // Phase-1 keyword retraction — and merges with any matching feed evidence.
+  const breakdown = { trusted_manual: true, manual_entry: true, reputable_count: source_urls.length };
+  const evidence = {
+    infra_id,
+    occurred_on,
+    sources: source_urls.map((url) => ({ url })),
+    trusted_manual: true,
+    origins: ["manual"],
+  };
+
+  try {
+    await sql`
+      INSERT INTO infra_strikes (
+        id, infra_id, occurred_on, weapon, severity, summary, source_urls,
+        origin, verified, confidence_tier, confidence_score, score_breakdown, evidence
+      ) VALUES (
+        ${id}, ${infra_id}, ${occurred_on}, ${weapon}, ${severity}, ${summary}, ${source_urls}::text[],
+        'manual', TRUE, 'confirmed', 50,
+        ${sql.json(breakdown as Parameters<typeof sql.json>[0])},
+        ${sql.json(evidence as Parameters<typeof sql.json>[0])}
+      )
+      ON CONFLICT (id) DO UPDATE SET
+        occurred_on      = EXCLUDED.occurred_on,
+        weapon           = EXCLUDED.weapon,
+        severity         = EXCLUDED.severity,
+        summary          = EXCLUDED.summary,
+        source_urls      = EXCLUDED.source_urls,
+        origin           = 'manual',
+        verified         = TRUE,
+        confidence_tier  = 'confirmed',
+        confidence_score = EXCLUDED.confidence_score,
+        score_breakdown  = EXCLUDED.score_breakdown,
+        evidence         = EXCLUDED.evidence
+    `;
+  } catch (err) {
+    logger.error({ event: "manual_add_error", id, err: String(err) }, "manual strike insert failed");
+    return jsonResponse({ ok: false, error: "insert_failed" }, { status: 500 });
+  }
+
+  logger.info({ event: "manual_add", id, infra_id, occurred_on, sources: source_urls.length }, "manual strike added");
+  return jsonResponse({ ok: true, id, infra_id, occurred_on, confidence_tier: "confirmed" });
 }
 
 // Owner-fleet activity timeline: for a given owner entity, return time-series of
@@ -2556,6 +2690,13 @@ const server = Bun.serve({
   async fetch(req) {
     const url = new URL(req.url);
     try {
+      // CORS preflight — answer every OPTIONS with the allow-list (covers the
+      // POST endpoints + the x-manual-token header).
+      if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders });
+
+      // Mutating endpoint (POST) — manual-add trusted strike channel.
+      if (url.pathname === "/api/strikes/manual")    return await handleManualAdd(req);
+
       // Hot GET endpoints — 20 s in-memory cache
       if (url.pathname === "/api/sanctioned-active") return await withCache(req, 20_000, () => handleSanctionedActive(req));
       if (url.pathname === "/api/tankers-active")    return await withCache(req, 20_000, () => handleTankersActive());

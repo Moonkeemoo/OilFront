@@ -26,6 +26,7 @@
     "load-firms-triggered": "bun run packages/api/src/cli/load-firms-triggered.ts",
     "load-rss-strikes": "bun run packages/api/src/cli/load-rss-strikes.ts",
     "verify-strike": "bun run packages/api/src/cli/verify-strike.ts",
+    "add-strike": "bun run packages/api/src/cli/add-strike.ts",
     "rescore": "bun run packages/api/src/cli/rescore.ts",
     "test": "node --test packages/api/src/*.test.ts",
     "serve": "bun run packages/api/src/server.ts",
