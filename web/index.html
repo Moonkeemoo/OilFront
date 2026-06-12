@@ -240,6 +240,10 @@
       flex-direction: column;
     }
     #feed.hidden { transform: translateX(-100%); }
+    /* Keep Leaflet's top-left zoom/controls clear of the left feed panel; slide back when it's collapsed */
+    .leaflet-top.leaflet-left { left: 328px; transition: left 0.2s ease; }
+    body.feed-collapsed .leaflet-top.leaflet-left { left: 0; }
+    @media (max-width: 700px) { .leaflet-top.leaflet-left { left: 0; } }
     #feed .feed-header {
       padding: 12px 16px 10px;
       border-bottom: 1px solid var(--border);
@@ -257,7 +261,12 @@
       text-transform: uppercase;
     }
     #feed .feed-meta { font-size: 10px; color: var(--c-muted); }
-    #feed-list { overflow-y: auto; flex: 1; padding: 6px 0; }
+    #feed-list { overflow-y: auto; flex: 1; padding: 6px 0; scrollbar-width: thin; scrollbar-color: var(--c-border-2) transparent; }
+    #feed-list::-webkit-scrollbar, #panel::-webkit-scrollbar { width: 8px; }
+    #feed-list::-webkit-scrollbar-track, #panel::-webkit-scrollbar-track { background: transparent; }
+    #feed-list::-webkit-scrollbar-thumb, #panel::-webkit-scrollbar-thumb { background: var(--c-border-2); border-radius: 4px; }
+    #feed-list::-webkit-scrollbar-thumb:hover, #panel::-webkit-scrollbar-thumb:hover { background: var(--c-muted); }
+    #panel { scrollbar-width: thin; scrollbar-color: var(--c-border-2) transparent; }
     #feed .feed-empty { padding: 16px; font-size: 11px; color: var(--c-muted); }
     #feed .feed-row {
       padding: 9px 14px;
@@ -2012,6 +2021,7 @@
       const el = document.getElementById("feed");
       const hidden = el.classList.toggle("hidden");
       document.getElementById("feed-toggle").classList.toggle("active", !hidden);
+      document.body.classList.toggle("feed-collapsed", hidden); // slide Leaflet controls back to the edge when feed is hidden
     });
 
     // -------- Filter chips
