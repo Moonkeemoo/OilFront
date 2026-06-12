@@ -419,6 +419,31 @@
       ]
     },
     {
+      "id": "nknk-nizhnekamskneftekhim",
+      "kind": "petrochemical",
+      "name": "Nizhnekamskneftekhim (NKNK)",
+      "name_local": "Нижнекамскнефтехим",
+      "lat": 55.574,
+      "lon": 51.915,
+      "geometry": null,
+      "commodity": "synthetic rubber, ethylene, propylene, benzene",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "SIBUR",
+      "operator": "PJSC Nizhnekamskneftekhim",
+      "region": "Republic of Tatarstan",
+      "status": "damaged",
+      "notes": "Largest synthetic rubber and plastics producer in Russia and one of the largest in Eastern Europe; ~20,000 employees. March 31 2026 industrial explosion (equipment malfunction, 3 dead, 60+ injured) is NOT an attack. Struck by Ukrainian drones in May 2026 (exact date unconfirmed beyond 'as recently as May') and again overnight June 12 2026 with large fire and thick black smoke visible across Nizhnekamsk, 1,200+ km from front line.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-chemical-plant-reportedly-struck-by-ukrainian-drones/",
+        "https://newsukraine.rbc.ua/news/explosion-and-fire-reported-at-one-of-russia-1774965349.html",
+        "https://kyivindependent.com/explosion-hits-major-russian-petrochemical-plant-in-tatarstan-russia-says/",
+        "https://en.wikipedia.org/wiki/Nizhnekamskneftekhim"
+      ]
+    },
+    {
       "id": "novoil-refinery",
       "kind": "refinery",
       "name": "Novoil Refinery (Novo-Ufimsky)",
@@ -524,6 +549,29 @@
         "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
         "https://en.wikipedia.org/wiki/List_of_oil_refineries",
         "https://www.wikidata.org/wiki/Q4334732"
+      ]
+    },
+    {
+      "id": "omsky-kauchuk-omsk",
+      "kind": "petrochemical",
+      "name": "Omsky Kauchuk",
+      "name_local": "Омский каучук",
+      "lat": 54.96,
+      "lon": 73.31,
+      "geometry": null,
+      "commodity": "synthetic rubber, MTBE, isopropanol",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Titan Group",
+      "operator": "LLC Omsky Kauchuk",
+      "region": "Omsk Oblast",
+      "status": "operational",
+      "notes": "Largest petrochemical plant in Omsk Oblast; produces synthetic rubbers, MTBE (high-octane fuel additive), isopropanol; part of Titan Group. New polyisobutylene plant under construction 2024-2025. No confirmed drone strikes in open sources - location ~2,200 km from Ukraine border makes strikes extremely unlikely within current campaign parameters. Coords approximate (city-level).",
+      "source_urls": [
+        "https://titan-group.ru/en/factory/omsky-kauchuk",
+        "https://interfax.com/newsroom/top-stories/92016/"
       ]
     },
     {
@@ -870,6 +918,31 @@
       ]
     },
     {
+      "id": "ufaorgsintez-ufa",
+      "kind": "petrochemical",
+      "name": "Ufaorgsintez",
+      "name_local": "Уфаоргсинтез",
+      "lat": 54.85,
+      "lon": 56.02,
+      "geometry": null,
+      "commodity": "EPDM rubber, phenol, acetone, HDPE",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Bashneft (Rosneft)",
+      "operator": "PJSC Ufaorgsintez",
+      "region": "Republic of Bashkortostan",
+      "status": "damaged",
+      "notes": "Russia's only producer of EPDM rubber; produces ~1/3 of Russia's phenol and acetone, 15% of HDPE; key raw material supplier to three major Russian explosives plants (Sverdlov, Biysk, Cheboksary) with >94 billion rubles in state defense contracts. Struck March 3 2025 (large-scale fire, two explosions, ~1,400 km from Ukraine, SBU-attributed by Ukrainian officials) and October 15 2025 (smoke reported, second strike). Coords approximate (city-level north Ufa industrial zone).",
+      "source_urls": [
+        "https://en.defence-ua.com/news/ukraines_drones_travel_1300_km_to_hinder_russian_explosives_manufacturing_in_ufa-13711.html",
+        "https://militarnyi.com/en/news/1400-km-from-ukraine-drones-attack-oil-refinery-in-ufa/",
+        "https://charter97.org/en/news/2025/3/3/631814/",
+        "https://kyivindependent.com/drones-reportedly-target-russian-oil-refinery-in-ufa-1-400-kilometers-from-front-line/"
+      ]
+    },
+    {
       "id": "ukhta-refinery",
       "kind": "refinery",
       "name": "Ukhta Refinery",
@@ -974,6 +1047,29 @@
         "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
         "https://en.wikipedia.org/wiki/List_of_oil_refineries",
         "https://www.wikidata.org/wiki/Q108817949"
+      ]
+    },
+    {
+      "id": "voronezhsintezkauchuk-voronezh",
+      "kind": "petrochemical",
+      "name": "Voronezhsintezkauchuk",
+      "name_local": "Воронежсинтезкаучук",
+      "lat": 51.629,
+      "lon": 39.232,
+      "geometry": null,
+      "commodity": "synthetic rubber (SBR, neodymium-BR, TPE)",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "SIBUR",
+      "operator": "JSC Voronezhsintezkauchuk",
+      "region": "Voronezh Oblast",
+      "status": "operational",
+      "notes": "SIBUR 100%-owned synthetic rubber plant; capacity ~381 kt/yr; produces SBR, Nd-BR (neodymium butadiene rubber), thermoplastic elastomers - critical for Russian tire industry. New n-butyllithium catalyst plant completed early 2026. No confirmed direct drone strike on the plant itself found in open sources; Voronezh TPP-1 (which supplies plant's heat) was struck November 2025 causing city-wide power disruptions.",
+      "source_urls": [
+        "https://www.sibur.ru/en/press-center/news-and-press/voronezhsintezkauchuk_started_production_of_a_new_grade_of_rubber/",
+        "https://usa.news-pravda.com/russia/2025/11/12/549780.html"
       ]
     },
     {
@@ -1307,6 +1403,31 @@
       ]
     },
     {
+      "id": "sibur-kstovo",
+      "kind": "petrochemical",
+      "name": "SIBUR-Kstovo",
+      "name_local": "СИБУР-Кстово",
+      "lat": 56.133,
+      "lon": 44.18,
+      "geometry": null,
+      "commodity": "ethylene, propylene, benzene, hydrocarbon fractions",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "SIBUR",
+      "operator": "SIBUR Neftekhim (Kstovo branch)",
+      "region": "Nizhny Novgorod Oblast",
+      "status": "damaged",
+      "notes": "Produces ethylene, propylene, benzene and hydrocarbon fractions; Ukrainian reporting indicates it also manufactures components used in explosives. SIBUR confirmed temporary operations suspension after drone strike. Located adjacent to Lukoil-Nizhegorodnefteorgsintez refinery in Kstovo industrial zone, ~800 km from Ukraine. Struck November 4 2025 (major fire) and November 24 2025 (10+ explosions reported in industrial zone).",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/11/24/explosions-rock-russias-kstovo-as-drone-strikes-target-the-oil-industry-hub-overnight-map/",
+        "https://en.defence-ua.com/news/ukrainian_drones_attack_key_targets_in_russia_including_oil_refinery_and_chemical_plant-16371.html",
+        "https://www.pravda.com.ua/eng/news/2025/11/04/8005693/",
+        "https://www.uawire.org/ukrainian-drones-hit-russian-refineries-in-bashkortostan-and-kstovo-sparking-fires"
+      ]
+    },
+    {
       "id": "taman-oteko-terminal",
       "locode": "RUTAM",
       "kind": "terminal",
@@ -1534,6 +1655,31 @@
       ]
     },
     {
+      "id": "kazanorgsintez-kazan",
+      "kind": "petrochemical",
+      "name": "Kazanorgsintez",
+      "name_local": "Казаньоргсинтез",
+      "lat": 55.868,
+      "lon": 49.001,
+      "geometry": null,
+      "commodity": "polyethylene, ethylene, polycarbonate, glycols",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "SIBUR",
+      "operator": "PJSC Kazanorgsintez",
+      "region": "Republic of Tatarstan",
+      "status": "damaged",
+      "notes": "Russia's largest polyethylene producer; produces over 170 chemical products including 70%+ from ethylene polymers used in defense applications. Struck January 14 2025: drone wreckage ignited liquefied gas storage tanks on plant premises; multiple tanks caught fire. Authorities claimed minimal damage but three regional airports temporarily closed.",
+      "source_urls": [
+        "https://kyivindependent.com/drones-reportedly-attack-russian-chemical-plant-in-tatarstan/",
+        "https://newsukraine.rbc.ua/news/drones-attacked-orgsintez-factory-in-russian-1736832066.html",
+        "https://militarnyi.com/en/news/drones-over-tatarstan-kazanorgsintez-in-the-limelight/",
+        "https://en.wikipedia.org/wiki/Kazanorgsintez"
+      ]
+    },
+    {
       "id": "klintsy-oil-depot",
       "kind": "depot",
       "name": "Klintsy Oil Depot (Bryansk Oblast)",
@@ -1735,6 +1881,56 @@
       ]
     },
     {
+      "id": "stavrolen-budyonnovsk",
+      "kind": "petrochemical",
+      "name": "Stavrolen",
+      "name_local": "Ставролен",
+      "lat": 44.821,
+      "lon": 44.125,
+      "geometry": null,
+      "commodity": "polyethylene, polypropylene, benzene",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Lukoil",
+      "operator": "LLC Stavrolen",
+      "region": "Stavropol Krai",
+      "status": "damaged",
+      "notes": "Major Lukoil petrochemical subsidiary; produces polyethylene, polypropylene, benzene, butylene-butadiene fraction. Ukraine's General Staff states plant manufactures drone components, composite materials, seals and insulation for Russian military equipment. Struck October 29 2025, November 12 2025 (SSO confirmed 'successful fire attack'), and December 22-23 2025 (large fire, second strike in six weeks).",
+      "source_urls": [
+        "https://kyivindependent.com/explosion-in-russian-lukoil-amid-reported-drone-attack/",
+        "https://euromaidanpress.com/2025/12/23/lukoil-petrochemical-plant-in-flames-after-ukrainian-drone-strike/",
+        "https://militarnyi.com/en/news/drones-hit-petrochemical-plant-in-stavropol-krai/",
+        "https://www.kyivpost.com/post/64077"
+      ]
+    },
+    {
+      "id": "sterlitamak-petrochemical-plant",
+      "kind": "petrochemical",
+      "name": "Sterlitamak Petrochemical Plant (SNKhZ)",
+      "name_local": "Стерлитамакский нефтехимический завод",
+      "lat": 53.68,
+      "lon": 55.97,
+      "geometry": null,
+      "commodity": "synthetic rubber (isoprene, SBR), aviation fuel additives, antioxidants",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Roskhim",
+      "operator": "JSC Sterlitamak Petrochemical Plant",
+      "region": "Republic of Bashkortostan",
+      "status": "damaged",
+      "notes": "Only Russian manufacturer of neodymium synthetic rubbers; produces isoprene and butadiene-styrene rubbers for tires, agidol/ionol aviation fuel additives, and synthetic polymers for defense industrial base. Struck November 4 2025 (water-treatment workshop partial collapse, three separate fire spots, DIU); November 6 2025 (agidol workshop fire, DIU confirmed); April 15 2026 (Liutyi drones, fire, one worker killed, 1,200+ km range).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/liutyi-drones-strike-russian-petrochemical-plant-in-sterlitamak/",
+        "https://euromaidanpress.com/2026/04/15/ukraines-liutyi-hit-russias-tire-rubber-supply-chain-1300-km-away/",
+        "https://militarnyi.com/en/news/diu-strike-damaged-workshop-for-production-of-aviation-fuel-additives-at-plant-in-sterlitamak/",
+        "https://euromaidanpress.com/2025/11/04/ukraines-drones-strike-russian-petrochemical-hub-as-kyiv-escalates-anti-oil-war-on-russian-soil/"
+      ]
+    },
+    {
       "id": "tikhoretsk-lpds",
       "kind": "depot",
       "name": "Tikhoretsk Oil Hub / LPDS (Tikhoretskaya)",
@@ -1756,6 +1952,31 @@
         "https://charter97.org/ru/news/2026/4/18/681016/",
         "https://www.dialog.ua/russia/bpla-razbombili-odin-iz-krupneyshikh-neftyanykh-uzlov-na-yuge-rossii.html",
         "https://neftegaz.ru/news/transport-and-storage/640406-chernomortransneft-vvela-v-ekspluatatsiyu-rezervuar-na-lpds-tikhoretskaya/"
+      ]
+    },
+    {
+      "id": "tolyattikauchuk-togliatti",
+      "kind": "petrochemical",
+      "name": "Tolyattikauchuk",
+      "name_local": "Тольяттикаучук",
+      "lat": 53.534,
+      "lon": 49.448,
+      "geometry": null,
+      "commodity": "synthetic rubber (butyl, isoprene)",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Tatneft",
+      "operator": "LLC Tolyattikauchuk",
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "notes": "Supplies ~25% of Russia's synthetic rubber market; butyl rubber critical for tire and military equipment seals. Struck multiple times: April 4 2026 (BK-4 workshop hit, isobutane-isobutylene production disrupted, likely production halt); June 12 2026 (fire reported overnight, confirmed alongside NKNK strikes in same wave, 1,200+ km from front).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attacked-tolyattikauchuk-plant-fire/",
+        "https://militarnyi.com/en/news/ukrainian-drones-workshop-togliattikauchuk/",
+        "https://kyivindependent.com/russian-chemical-plant-reportedly-struck-by-ukrainian-drones/",
+        "https://www.pravda.com.ua/eng/news/2026/04/04/8028705/"
       ]
     },
     {
@@ -3002,6 +3223,29 @@
         "http://russianamericanbusiness.org/home/content/transneft%E2%80%99s-commissions-yug-petroleum-pipelines/",
         "https://interfax.com/newsroom/top-stories/96881/",
         "https://en.wikipedia.org/wiki/Oil_industry_in_Russia"
+      ]
+    },
+    {
+      "id": "zapsibneftekhim-tobolsk",
+      "kind": "petrochemical",
+      "name": "ZapSibNeftekhim",
+      "name_local": "ЗапСибНефтехим",
+      "lat": 58.241,
+      "lon": 68.445,
+      "geometry": null,
+      "commodity": "polyethylene (HDPE, LLDPE), polypropylene",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "SIBUR",
+      "operator": "LLC ZapSibNeftekhim",
+      "region": "Tyumen Oblast",
+      "status": "operational",
+      "notes": "World-class $9.5 billion integrated ethylene/polyethylene/polypropylene complex; 1.5 Mt/yr PE capacity, four polymerisation units. No confirmed drone strikes found in open sources - facility is ~2,000+ km from Ukraine border and has not been targeted in the verified strike window.",
+      "source_urls": [
+        "https://www.gem.wiki/Zapsibneftekhim_Chemical_Plant",
+        "https://www.ogj.com/refining-processing/petrochemicals/article/14208097/siburs-zapsibneftekhim-upgrading-unit-at-tobolsk-petrochemical-complex"
       ]
     }
   ]

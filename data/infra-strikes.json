@@ -710,6 +710,18 @@
       ]
     },
     {
+      "id": "2025-01-14-kazanorgsintez-kazan",
+      "infra_id": "kazanorgsintez-kazan",
+      "occurred_on": "2025-01-14",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Ukrainian drones struck the Kazanorgsintez plant in Kazan on the night of January 13-14, 2025, with wreckage igniting liquefied gas storage tanks on plant premises; multiple tankers caught fire. Regional authorities acknowledged the fire but claimed no casualties or serious damage; three regional airports temporarily suspended operations.",
+      "source_urls": [
+        "https://kyivindependent.com/drones-reportedly-attack-russian-chemical-plant-in-tatarstan/",
+        "https://newsukraine.rbc.ua/news/drones-attacked-orgsintez-factory-in-russian-1736832066.html"
+      ]
+    },
+    {
       "id": "2025-01-24-ryazan-refinery",
       "infra_id": "ryazan-refinery",
       "occurred_on": "2025-01-24",
@@ -920,6 +932,18 @@
       "source_urls": [
         "https://militarnyi.com/en/news/drones-attack-pipeline-and-oil-refinery-in-tuapse/",
         "https://www.bloomberg.com/news/articles/2025-02-26/ukraine-drones-attacked-russia-s-tuapse-refinery-major-port"
+      ]
+    },
+    {
+      "id": "2025-03-03-ufaorgsintez-ufa",
+      "infra_id": "ufaorgsintez-ufa",
+      "occurred_on": "2025-03-03",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian drones struck Ufaorgsintez in Ufa's north industrial zone at 02:35 local time on March 3 2025, triggering two explosions and a large-scale fire visible across much of the city; the plant is Russia's primary supplier of phenol and acetone to at least three explosives manufacturers. Ukrainian officials (Center for Countering Disinformation) attributed the strike; Russia claimed it was a drone but denied attack attribution.",
+      "source_urls": [
+        "https://en.defence-ua.com/news/ukraines_drones_travel_1300_km_to_hinder_russian_explosives_manufacturing_in_ufa-13711.html",
+        "https://militarnyi.com/en/news/1400-km-from-ukraine-drones-attack-oil-refinery-in-ufa/"
       ]
     },
     {
@@ -1708,6 +1732,18 @@
       ]
     },
     {
+      "id": "2025-10-15-ufaorgsintez-ufa",
+      "infra_id": "ufaorgsintez-ufa",
+      "occurred_on": "2025-10-15",
+      "weapon": "uav",
+      "severity": "minor",
+      "summary": "A drone struck the Ufaorgsintez industrial zone in Ufa on October 15 2025, with residents reporting smoke near Birsky Tract road through the industrial zone; the facility is more than 1,000 km from Ukraine. No confirmed casualties; extent of damage unclear.",
+      "source_urls": [
+        "https://charter97.org/en/news/2025/10/15/659354/",
+        "https://kyivindependent.com/drones-reportedly-target-russian-oil-refinery-in-ufa-1-400-kilometers-from-front-line/"
+      ]
+    },
+    {
       "id": "2025-10-15-ufaneftekhim-refinery",
       "infra_id": "ufaneftekhim-refinery",
       "occurred_on": "2025-10-15",
@@ -1785,6 +1821,18 @@
       ]
     },
     {
+      "id": "2025-10-29-stavrolen-budyonnovsk",
+      "infra_id": "stavrolen-budyonnovsk",
+      "occurred_on": "2025-10-29",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Ukrainian drones struck the Stavrolen petrochemical plant in Budyonnovsk on October 29 2025, sparking a fire; local governor confirmed the strike but claimed no significant damage. Ukraine's Special Operations Forces stated the strike was part of coordinated deep strikes on three major energy targets including the Budyonnovsk facility.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-hit-petrochemical-plant-in-stavropol-krai/",
+        "https://charter97.org/en/news/2025/10/29/660971/"
+      ]
+    },
+    {
       "id": "2025-10-29-mari-refinery",
       "infra_id": "mari-refinery",
       "occurred_on": "2025-10-29",
@@ -1835,6 +1883,30 @@
       ]
     },
     {
+      "id": "2025-11-04-sterlitamak-petrochemical-plant",
+      "infra_id": "sterlitamak-petrochemical-plant",
+      "occurred_on": "2025-11-04",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Ukrainian drones struck the Sterlitamak Petrochemical Plant (SNKhZ) on November 4 2025 early morning, triggering explosions at 6:22 and 7:09 local time with three distinct smoke sources and partial structural collapse of a water-treatment workshop. Russian officials claimed the enterprise continued operating normally; Ukrainian sources reported significant fires.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/11/04/ukraines-drones-strike-russian-petrochemical-hub-as-kyiv-escalates-anti-oil-war-on-russian-soil/",
+        "https://www.themoscowtimes.com/2025/11/04/ukrainian-drones-strike-industrial-facility-in-russias-bashkortostan-a91029"
+      ]
+    },
+    {
+      "id": "2025-11-04-sibur-kstovo",
+      "infra_id": "sibur-kstovo",
+      "occurred_on": "2025-11-04",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian drones struck the SIBUR-Kstovo petrochemical plant in Kstovo, Nizhny Novgorod Oblast on the night of November 3-4 2025, sparking a major fire in the southeastern industrial zone; SIBUR confirmed temporary suspension of plant operations after the strike. The attack also targeted the adjacent Lukoil-Nizhegorodnefteorgsintez refinery.",
+      "source_urls": [
+        "https://en.defence-ua.com/news/ukrainian_drones_attack_key_targets_in_russia_including_oil_refinery_and_chemical_plant-16371.html",
+        "https://www.pravda.com.ua/eng/news/2025/11/04/8005693/"
+      ]
+    },
+    {
       "id": "2025-11-04-nizhny-novgorod-refinery",
       "infra_id": "nizhny-novgorod-refinery",
       "occurred_on": "2025-11-04",
@@ -1845,6 +1917,18 @@
         "https://www.pravda.com.ua/eng/news/2025/11/04/8005693/",
         "https://www.rbc.ua/ukr/news/zsu-pidtverdili-urazhennya-npz-kstovo-ta-1762284867.html",
         "https://24tv.ua/ru/drony-atakovali-npz-v-kstovo-4112025-kakie-posledstvija-ataki-24-kanal_n2946578"
+      ]
+    },
+    {
+      "id": "2025-11-06-sterlitamak-petrochemical-plant",
+      "infra_id": "sterlitamak-petrochemical-plant",
+      "occurred_on": "2025-11-06",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Ukraine's Defense Intelligence (DIU) long-range drones struck the Sterlitamak Petrochemical Plant on November 6 2025 — the second attack in three days — igniting a fire in the workshop producing agidol, an aviation fuel additive (butylated hydroxytoluene). DIU officially confirmed the strike.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/diu-strike-damaged-workshop-for-production-of-aviation-fuel-additives-at-plant-in-sterlitamak/",
+        "https://www.pravda.com.ua/eng/news/2025/11/07/8006314/"
       ]
     },
     {
@@ -1883,6 +1967,18 @@
       "source_urls": [
         "https://www.pravda.com.ua/eng/news/2025/11/14/8007367/",
         "https://zn.ua/war/saratov-v-ohne-bespilotniki-atakovali-npz-rosnefti.html"
+      ]
+    },
+    {
+      "id": "2025-11-12-stavrolen-budyonnovsk",
+      "infra_id": "stavrolen-budyonnovsk",
+      "occurred_on": "2025-11-12",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukraine's Special Operations Forces Deep Strike units carried out a confirmed 'successful fire attack' on Stavrolen in Budyonnovsk on November 12 2025, with video showing at least three direct hits on facility structures and multiple fires. Ukraine's General Staff stated the plant manufactures drone components, composite materials, seals and insulation for Russian military equipment; 22 Russian drones were intercepted overnight across the region.",
+      "source_urls": [
+        "https://kyivindependent.com/explosion-in-russian-lukoil-amid-reported-drone-attack/",
+        "https://mezha.net/eng/bukvy/drone-attack-hits-stavrolen-petrochemical-plant-in-russia/"
       ]
     },
     {
@@ -1959,6 +2055,18 @@
       "source_urls": [
         "https://www.kyivpost.com/post/64575",
         "https://militarnyi.com/en/news/drones-attack-one-of-russia-s-largest-oil-refineries-in-ryazan/"
+      ]
+    },
+    {
+      "id": "2025-11-24-sibur-kstovo",
+      "infra_id": "sibur-kstovo",
+      "occurred_on": "2025-11-24",
+      "weapon": "uav",
+      "severity": "unknown",
+      "summary": "At least 10 loud explosions were reported by residents in Kstovo's industrial zone on the night of November 23-24 2025, targeting the co-located SIBUR-Kstovo and Lukoil-Nizhegorodnefteorgsintez facilities; Nizhny Novgorod airport was closed and emergency Plan Kovyor protocols activated, though no specific structural damage was officially confirmed.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/11/24/explosions-rock-russias-kstovo-as-drone-strikes-target-the-oil-industry-hub-overnight-map/",
+        "https://www.uawire.org/ukrainian-drones-hit-russian-refineries-in-bashkortostan-and-kstovo-sparking-fires"
       ]
     },
     {
@@ -2111,6 +2219,18 @@
         "https://kyivindependent.com/ukrainian-drones-reportedly-strike-oil-refinery-in-russias-krasnodar-krai-2/",
         "https://united24media.com/latest-news/nighttime-drone-attack-targets-major-russian-oil-refinery-near-black-sea-video-14338",
         "https://www.moscowtimes.ru/2025/12/17/v-slavyanske-na-kubani-pri-atake-na-npz-droni-povredili-zhilie-doma-dva-cheloveka-postradali-a182959"
+      ]
+    },
+    {
+      "id": "2025-12-22-stavrolen-budyonnovsk",
+      "infra_id": "stavrolen-budyonnovsk",
+      "occurred_on": "2025-12-22",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian long-range drones struck Stavrolen in Budyonnovsk overnight December 22-23 2025 — the second attack in six weeks — sparking a large confirmed fire in the industrial zone with flames visible in multiple videos posted by local residents. No casualties reported; this was the third documented strike on Stavrolen within two months.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/12/23/lukoil-petrochemical-plant-in-flames-after-ukrainian-drone-strike/",
+        "https://www.pravda.com.ua/eng/news/2025/12/23/8013049/"
       ]
     },
     {
@@ -2532,6 +2652,19 @@
       ]
     },
     {
+      "id": "2026-04-04-tolyattikauchuk-togliatti",
+      "infra_id": "tolyattikauchuk-togliatti",
+      "occurred_on": "2026-04-04",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Approximately ten An-196 Liutyi strike drones attacked Tolyattikauchuk in the early hours of April 4 2026, hitting Workshop D-12 (2,300 m3 liquefied products storage), the BK-4 isobutane-isobutylene production facility, and Workshop D-1; OSINT analysts assessed the strikes would likely halt or severely reduce the entire butyl rubber production cycle. One person suffered shrapnel injuries; fires broke out at multiple locations across the plant grounds.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-attacked-tolyattikauchuk-plant-fire/",
+        "https://militarnyi.com/en/news/ukrainian-drones-workshop-togliattikauchuk/",
+        "https://www.pravda.com.ua/eng/news/2026/04/04/8028705/"
+      ]
+    },
+    {
       "id": "2026-04-05-nizhny-novgorod-refinery",
       "infra_id": "nizhny-novgorod-refinery",
       "occurred_on": "2026-04-05",
@@ -2619,6 +2752,19 @@
         "https://militarnyi.com/en/news/drones-hit-tinguta-pumping-station-in-volgograd-region-fire-ongoing/",
         "https://english.nv.ua/nation/drone-strike-sparks-fire-at-volgograd-oil-station-50599370.html",
         "https://unn.ua/en/news/uav-attack-on-the-volgograd-tikhoretsk-oil-pipeline-a-large-scale-fire-started"
+      ]
+    },
+    {
+      "id": "2026-04-15-sterlitamak-petrochemical-plant",
+      "infra_id": "sterlitamak-petrochemical-plant",
+      "occurred_on": "2026-04-15",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian Liutyi long-range drones struck the Sterlitamak Petrochemical Plant on April 15 2026 at approximately 1,200-1,300 km from Ukraine, sparking a fire with thick black smoke rising over the city; one fire department driver was killed. The plant is Russia's only manufacturer of neodymium synthetic rubbers and a key supplier of rubber for tires and military equipment. USF Commander Magyar Brovdi confirmed the strike.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/04/15/ukraines-liutyi-hit-russias-tire-rubber-supply-chain-1300-km-away/",
+        "https://militarnyi.com/en/news/liutyi-drones-strike-russian-petrochemical-plant-in-sterlitamak/",
+        "https://kyivindependent.com/ukrainian-drones-strike-major-russian-petrochemical-plant-in-bashkortostan-media-reports/"
       ]
     },
     {
@@ -3249,6 +3395,30 @@
         "https://kyivindependent.com/russian-oil-refinery-nearly-800-kilometers-from-border-reportedly-struck-by-ukrainian-drones/",
         "https://www.aljazeera.com/news/2026/6/10/ukrainian-drones-strike-sevastopol-museum-and-key-russian-oil-refineries",
         "https://euromaidanpress.com/2026/06/10/fire-reported-at-kuibyshev-oil-refinery-in-russias-samara-after-drone-strike/"
+      ]
+    },
+    {
+      "id": "2026-06-12-nknk-nizhnekamskneftekhim",
+      "infra_id": "nknk-nizhnekamskneftekhim",
+      "occurred_on": "2026-06-12",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian long-range drones struck the Nizhnekamskneftekhim (NKNK) synthetic rubber plant in Nizhnekamsk overnight June 12 2026, igniting a large fire with thick black smoke billowing over the city — one of the deepest recorded strikes at over 1,200 km from Ukraine. The attack was part of a coordinated wave also hitting Tolyattikauchuk the same night; Ukraine's military had not officially commented by time of first reporting.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-chemical-plant-reportedly-struck-by-ukrainian-drones/",
+        "https://english.nv.ua/russian-war/fire-erupts-at-chemical-plants-in-tolyatti-after-drone-attack-in-russia-50597627.html"
+      ]
+    },
+    {
+      "id": "2026-06-12-tolyattikauchuk-togliatti",
+      "infra_id": "tolyattikauchuk-togliatti",
+      "occurred_on": "2026-06-12",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian drones struck Tolyattikauchuk in Togliatti overnight June 12 2026, sparking a fire at the plant — part of the same coordinated long-range wave that hit NKNK in Tatarstan the same night. Fire was confirmed in social media footage; Ukraine's military had not officially commented at time of initial reporting.",
+      "source_urls": [
+        "https://kyivindependent.com/russian-chemical-plant-reportedly-struck-by-ukrainian-drones/",
+        "https://www.ukrinform.net/amp/rubric-ato/4109032-drone-attack-sparks-fires-at-chemical-plants-in-russias-tolyatti.html"
       ]
     }
   ]
