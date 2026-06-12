@@ -1947,6 +1947,109 @@ async function handleInfraStrikes(req: Request): Promise<Response> {
     ["occurred_on", "infra_id", "weapon", "summary", "source_urls", "origin", "verified"]);
 }
 
+// LIVE strike feed: a single chronological stream (newest-first) of the most
+// recent strike EVENTS across both strike layers — infra (oil_infra) and
+// military (military_sites). Powers the auto-refreshing feed panel in the UI;
+// each event carries enough geo/identity to fly the map and open the existing
+// detail panel. Surfaces curated+verified AND unverified auto-feed candidates
+// (verified flag is honest — unverified rows render as such).
+//
+// One UNION ALL over two sources, cast to matching column types:
+//   - infra:    infra_strikes ⋈ oil_infra (source_urls already text[])
+//   - military: military_sites, unnested via jsonb_array_elements(strikes);
+//               the element's source_urls jsonb array → text[] via a correlated
+//               jsonb_array_elements_text subquery so the JSON carries a clean
+//               array of strings (NOT a stringified blob).
+async function handleFeed(): Promise<Response> {
+  if (!sql) return jsonResponse({ error: "no_db" }, { status: 500 });
+  const recon = await reconTables();
+  const hasInfra = recon.infra && recon.strikes;
+  const hasMilitary = recon.military;
+  if (!hasInfra && !hasMilitary) {
+    return jsonResponse({ available: false, count: 0, events: [] });
+  }
+
+  // Each branch yields the same column set/types so UNION ALL lines up. When a
+  // source's tables are absent we substitute an empty branch (WHERE FALSE) so
+  // the UNION stays valid without that source contributing rows.
+  const infraBranch = hasInfra
+    ? sql`
+        SELECT
+          s.id::text                              AS event_id,
+          'infra'::text                           AS layer,
+          s.infra_id::text                        AS facility_id,
+          o.name::text                            AS facility_name,
+          o.kind::text                            AS kind,
+          o.lat::double precision                 AS lat,
+          o.lon::double precision                 AS lon,
+          s.occurred_on                           AS occurred_on,
+          s.weapon::text                          AS weapon,
+          COALESCE(s.severity, 'unknown')::text   AS severity,
+          s.summary::text                         AS summary,
+          s.source_urls                           AS source_urls,
+          s.origin::text                          AS origin,
+          s.verified                              AS verified
+        FROM infra_strikes s
+        JOIN oil_infra o ON o.id = s.infra_id
+      `
+    : sql`
+        SELECT
+          NULL::text AS event_id, 'infra'::text AS layer, NULL::text AS facility_id,
+          NULL::text AS facility_name, NULL::text AS kind,
+          NULL::double precision AS lat, NULL::double precision AS lon,
+          NULL::date AS occurred_on, NULL::text AS weapon, NULL::text AS severity,
+          NULL::text AS summary, NULL::text[] AS source_urls,
+          NULL::text AS origin, NULL::boolean AS verified
+        WHERE FALSE
+      `;
+
+  const militaryBranch = hasMilitary
+    ? sql`
+        SELECT
+          (m.id || '-' || (e->>'occurred_on'))::text AS event_id,
+          'military'::text                           AS layer,
+          m.id::text                                 AS facility_id,
+          m.name::text                               AS facility_name,
+          m.category::text                           AS kind,
+          m.lat::double precision                    AS lat,
+          m.lon::double precision                    AS lon,
+          (e->>'occurred_on')::date                  AS occurred_on,
+          (e->>'weapon')::text                       AS weapon,
+          COALESCE(e->>'severity', 'unknown')::text  AS severity,
+          (e->>'summary')::text                      AS summary,
+          ARRAY(
+            SELECT jsonb_array_elements_text(COALESCE(e->'source_urls', '[]'::jsonb))
+          )::text[]                                  AS source_urls,
+          'curated'::text                            AS origin,
+          TRUE                                       AS verified
+        FROM military_sites m
+        CROSS JOIN LATERAL jsonb_array_elements(COALESCE(m.strikes, '[]'::jsonb)) AS e
+        WHERE (e->>'occurred_on') IS NOT NULL
+      `
+    : sql`
+        SELECT
+          NULL::text AS event_id, 'military'::text AS layer, NULL::text AS facility_id,
+          NULL::text AS facility_name, NULL::text AS kind,
+          NULL::double precision AS lat, NULL::double precision AS lon,
+          NULL::date AS occurred_on, NULL::text AS weapon, NULL::text AS severity,
+          NULL::text AS summary, NULL::text[] AS source_urls,
+          NULL::text AS origin, NULL::boolean AS verified
+        WHERE FALSE
+      `;
+
+  const events = await sql`
+    SELECT * FROM (
+      ${infraBranch}
+      UNION ALL
+      ${militaryBranch}
+    ) feed
+    ORDER BY occurred_on DESC, event_id DESC
+    LIMIT 60
+  `;
+
+  return jsonResponse({ available: true, count: events.length, events });
+}
+
 // Aggregate strike impact on mapped refining capacity. Honest framing: this is
 // the share of MAPPED refining capacity struck in a window, NOT % of Russian
 // refining offline (struck ≠ fully offline).
@@ -2457,6 +2560,7 @@ const server = Bun.serve({
       if (url.pathname === "/api/infra-strikes")     return await withCache(req, 300_000, () => handleInfraStrikes(req));
       if (url.pathname === "/api/strike-impact")     return await withCache(req, 300_000, () => handleStrikeImpact());
       if (url.pathname === "/api/impact")            return await withCache(req, 300_000, () => handleImpact());
+      if (url.pathname === "/api/feed")              return await withCache(req, 60_000, () => handleFeed());
       if (url.pathname === "/api/fires")             return await withCache(req, 900_000, () => handleFires());
       if (url.pathname === "/api/cases")             return await withCache(req, 300_000, () => handleCases(req));
       if (url.pathname === "/api/digest")            return await withCache(req, 60_000, () => handleDigest());

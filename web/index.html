@@ -225,6 +225,75 @@
     }
     .leaflet-container { background: var(--bg-1) !important; }
 
+    /* Live strike feed (left drawer) */
+    #feed {
+      position: absolute;
+      top: 110px;
+      left: 0;
+      bottom: 92px;
+      width: 320px;
+      background: var(--bg-1);
+      border-right: 1px solid var(--border);
+      transition: transform 0.2s ease;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+    }
+    #feed.hidden { transform: translateX(-100%); }
+    #feed .feed-header {
+      padding: 12px 16px 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      background: var(--bg-1);
+    }
+    #feed .feed-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-0);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    #feed .feed-meta { font-size: 10px; color: var(--c-muted); }
+    #feed-list { overflow-y: auto; flex: 1; padding: 6px 0; }
+    #feed .feed-empty { padding: 16px; font-size: 11px; color: var(--c-muted); }
+    #feed .feed-row {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    #feed .feed-row:hover { background: var(--bg-2); }
+    #feed .feed-row .fr-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 10px;
+      color: var(--c-muted);
+    }
+    #feed .feed-row .fr-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-0);
+      margin: 3px 0 5px;
+      line-height: 1.3;
+    }
+    #feed .feed-row .fr-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+    #feed .feed-row .fr-src {
+      font-size: 10px;
+      color: var(--c-blue);
+      text-decoration: none;
+      margin-left: 4px;
+    }
+    #feed .feed-row .fr-src:hover { text-decoration: underline; }
+
     /* Side panel */
     #panel {
       position: absolute;
@@ -930,6 +999,7 @@
         <span class="chip layer-chip active" data-layer="attacks">Attacks</span>
         <span class="chip layer-chip active" data-layer="fires">🔥 Fires</span>
         <span class="chip layer-chip active" data-layer="military">🎯 Military</span>
+        <span class="chip active" id="feed-toggle" title="Show / hide the live strike feed">📰 Feed</span>
       </div>
       <span class="filter-label">Risk ≥</span>
       <div class="chip-group">
@@ -984,6 +1054,15 @@
       <button class="close-btn" onclick="closePanel()">×</button>
     </div>
     <div id="p-body"></div>
+  </aside>
+
+  <!-- Live strike feed — left drawer, auto-refreshing chronological stream across both strike layers -->
+  <aside id="feed">
+    <div class="feed-header">
+      <span class="feed-title">📰 Recent strikes</span>
+      <span class="feed-meta" id="feed-meta"></span>
+    </div>
+    <div id="feed-list"><div class="feed-empty">Loading…</div></div>
   </aside>
 
   <script>
@@ -1728,7 +1807,9 @@
         const data = await res.json();
         if (!data || !data.available) return; // military_sites table absent — skip, like other recon layers
         militaryLayer.clearLayers();
+        window.__militaryById = {};
         for (const s of (data.results || [])) {
+          window.__militaryById[s.id] = s; // keep full object so the feed panel can reopen it
           if (s.lat == null || s.lon == null) continue;
           const strikes = Array.isArray(s.strikes) ? s.strikes : [];
           const badge = s.struck ? freshnessBadge(strikes) : null;
@@ -1741,6 +1822,92 @@
         }
       } catch (err) { console.error("loadMilitary failed", err); }
     }
+
+    // -------- Live strike feed (left drawer)
+    // Chronological stream (newest-first) across BOTH strike layers from /api/feed.
+    // Each row is clickable → flies the map to the facility and opens its existing
+    // detail panel (infra/military), reusing the in-memory layer objects so no
+    // panel-rendering logic is duplicated. Unverified auto-feed candidates are
+    // badged amber, mirroring the map's existing "auto · unverified" wording.
+    let feedEvents = [];
+    async function loadFeed() {
+      try {
+        const res = await fetch("/api/feed");
+        const data = await res.json();
+        if (!data || data.available === false) {
+          document.getElementById("feed-list").innerHTML = `<div class="feed-empty">No strike feed available.</div>`;
+          document.getElementById("feed-meta").textContent = "";
+          return;
+        }
+        feedEvents = data.events || [];
+        renderFeed();
+      } catch (err) { console.error("loadFeed failed", err); }
+    }
+    function renderFeed() {
+      const list = document.getElementById("feed-list");
+      document.getElementById("feed-meta").textContent = `${feedEvents.length} latest`;
+      if (!feedEvents.length) {
+        list.innerHTML = `<div class="feed-empty">No recent strikes.</div>`;
+        return;
+      }
+      list.innerHTML = feedEvents.map((e, i) => {
+        const kindLabel = e.layer === "military"
+          ? (MIL_CATEGORY_LABELS[e.kind] || e.kind || "military")
+          : (INFRA_KIND_LABELS[e.kind] || e.kind || "infra");
+        const layerColor = e.layer === "military" ? "#8a96aa" : "#e0a458";
+        const kindChip = strikeChip(kindLabel, layerColor);
+        const weaponLabel = WEAPON_LABELS[e.weapon];
+        const weaponColor = e.weapon === "missile" ? "#ff4757" : e.weapon === "sabotage" ? "#b56cff" : "#ffa502";
+        const weaponChip = weaponLabel ? strikeChip(weaponLabel, weaponColor) : "";
+        const sevChip = (e.severity && e.severity !== "unknown")
+          ? strikeChip(e.severity, e.severity === "major" ? "#ff2d2d" : e.severity === "moderate" ? "#ffa502" : "#8a96aa")
+          : "";
+        const verChip = e.verified === false
+          ? strikeChip("auto · unverified", "#ffa502")
+          : strikeChip("✓ verified", "#3aa0ff");
+        const fa = fireFacilities[e.facility_id];
+        const fireFlag = fa && fa.active_now ? `<span title="thermal anomaly active near this facility">🔥</span>` : "";
+        const firstSrc = Array.isArray(e.source_urls) && e.source_urls.length ? e.source_urls[0] : null;
+        const srcLink = firstSrc
+          ? `<a class="fr-src" href="${escapeHtml(firstSrc)}" target="_blank" rel="noopener" data-feed-src="1">↗ source</a>`
+          : "";
+        return `<div class="feed-row" data-feed-idx="${i}">
+          <div class="fr-top"><span>${escapeHtml(relativeAge(e.occurred_on))} · ${escapeHtml(fmtDateUTC(e.occurred_on))}</span><span>${fireFlag}</span></div>
+          <div class="fr-name">${escapeHtml(e.facility_name || "Unknown facility")}</div>
+          <div class="fr-chips">${kindChip}${weaponChip}${sevChip}${verChip}${srcLink}</div>
+        </div>`;
+      }).join("");
+      list.querySelectorAll(".feed-row").forEach(row => {
+        row.addEventListener("click", (ev) => {
+          // Let the source link do its own thing (open in new tab) without flying.
+          if (ev.target.closest("[data-feed-src]")) return;
+          openFeedEvent(feedEvents[Number(row.dataset.feedIdx)]);
+        });
+      });
+    }
+    // Fly to the event's facility and open its existing detail panel by reusing the
+    // in-memory layer object (window.__infraById / window.__militaryById). Falls back
+    // to flying only if the object isn't loaded yet.
+    function openFeedEvent(e) {
+      if (!e) return;
+      const lat = Number(e.lat), lon = Number(e.lon);
+      if (Number.isFinite(lat) && Number.isFinite(lon)) {
+        map.flyTo([lat, lon], Math.max(map.getZoom(), 8), { duration: 0.6 });
+      }
+      if (e.layer === "infra") {
+        const o = window.__infraById && window.__infraById[e.facility_id];
+        if (o) openInfraPanel(o);
+      } else if (e.layer === "military") {
+        const s = window.__militaryById && window.__militaryById[e.facility_id];
+        if (s) openMilitaryPanel(s);
+      }
+    }
+    // Feed show/hide toggle (chip in the layer bar).
+    document.getElementById("feed-toggle").addEventListener("click", () => {
+      const el = document.getElementById("feed");
+      const hidden = el.classList.toggle("hidden");
+      document.getElementById("feed-toggle").classList.toggle("active", !hidden);
+    });
 
     // -------- Filter chips
     document.querySelectorAll(".chip[data-list]").forEach(el => {
@@ -2669,6 +2836,7 @@
     loadImpact();
     loadFires();
     loadMilitary(); // curated military-industrial sites — static, no refresh
+    loadFeed();     // live strike feed (left drawer) — auto-refreshes every 60 s
     setInterval(loadVessels, 15000);
     setInterval(loadStats, 30000);
     setInterval(loadTimeline, 60000);
@@ -2676,6 +2844,7 @@
     setInterval(loadAttacks, 600000); // attacks are curated — 10 min is plenty; infra is static, no refresh
     setInterval(loadImpact, 300000);
     setInterval(loadFires, 900000);
+    setInterval(loadFeed, 60000); // "live" strike feed — 60 s cadence (matches /api/feed cache TTL)
 </script>
 </body>
 </html>
