@@ -23,6 +23,7 @@
     "load-acled-strikes": "bun run packages/api/src/cli/load-acled-strikes.ts",
     "load-gdelt-strikes": "bun run packages/api/src/cli/load-gdelt-strikes.ts",
     "load-firms-triggered": "bun run packages/api/src/cli/load-firms-triggered.ts",
+    "load-rss-strikes": "bun run packages/api/src/cli/load-rss-strikes.ts",
     "verify-strike": "bun run packages/api/src/cli/verify-strike.ts",
     "test": "node --test packages/api/src/*.test.ts",
     "serve": "bun run packages/api/src/server.ts",

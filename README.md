@@ -310,6 +310,7 @@ bun run load-infra-strikes   # strike events on infra objects (data/infra-strike
 bun run load-acled-strikes   # weekly: ACLED candidate strikes (requires ACLED_EMAIL/ACLED_PASSWORD)
 bun run load-gdelt-strikes   # weekly: GDELT news candidate strikes (no credentials needed)
 bun run load-firms-triggered # daily: satellite heat → targeted GDELT lookup per hot facility (needs FIRMS_MAP_KEY)
+bun run load-rss-strikes     # daily: curated OSINT RSS + Google News candidate strikes (no credentials needed)
 bun run verify-strike <id>   # curator confirms a candidate (--reject <id> deletes it)
 bun run load-infra-links     # oil-flow pipeline↔terminal↔refinery links (data/infra-links.json)
 ```
@@ -390,6 +391,7 @@ ACLED, GDELT and FIRMS-triggered candidates land flagged `auto · unverified` an
 | `bun run load-acled-strikes` | Weekly auto-feed of candidate strikes from ACLED (inserted as `auto · unverified`) |
 | `bun run load-gdelt-strikes [days]` | Weekly auto-feed of candidate strikes from GDELT news search, default 7-day window (inserted as `auto · unverified`) |
 | `bun run load-firms-triggered [days]` | FIRMS-triggered auto-feed: hot facilities (NASA thermal anomaly) get a targeted GDELT lookup, default 3-day window (inserted as `auto · unverified`, `🔥🛰 heat-triggered`) |
+| `bun run load-rss-strikes [days]` | RSS auto-feed: fetches curated OSINT RSS feeds (Militarnyi EN, Kyiv Independent, Euromaidan Press, Ukrainska Pravda EN) plus Google News RSS per unmatched facility; no credentials needed; default 7-day window (inserted as `auto · unverified`) |
 | `bun run verify-strike <id>` / `bun run verify-strike --reject <id>` | Curator confirms (promotes to verified) or rejects (deletes) an ACLED/GDELT/FIRMS-triggered candidate |
 | `bun run test` | Run unit tests — risk scoring + dataset normalization (Node) |
 | `bun run db:up` / `bun run db:down` | Postgres container lifecycle |
