@@ -4,7 +4,7 @@
 
 **Russia's oil war, mapped** — shadow fleet at sea, oil infrastructure on land, and the
 strikes hitting both. A read-only OSINT aggregator: live AIS feed × public sanctions
-lists × ownership graph × refineries/pipelines/terminals × verified strike and
+lists × ownership graph × refineries/pipelines/terminals/petrochemical plants × verified strike and
 tanker-attack datasets × news → transparent risk score per vessel, STS rendezvous
 detection, port-call inference, and CSV / JSON exports for journalism and compliance
 research. (Formerly “Shadow Fleet Tracker”.)
@@ -21,8 +21,8 @@ research. (Formerly “Shadow Fleet Tracker”.)
 
 - **Live map** of sanctioned tankers (Leaflet) — risk-coded markers, suspect-zone overlay,
   STS event markers, click-to-detail side panel.
-- **Oil-infrastructure layer** — 81 objects: Russian refineries, depots, export terminals
-  and trunk pipelines (Druzhba, BTS, ESPO, CPC…) with structured profile cards
+- **Oil-infrastructure layer** — 81+ objects: Russian refineries, depots, export terminals,
+  trunk pipelines (Druzhba, BTS, ESPO, CPC…), and petrochemical plants with structured profile cards
   (capacity / ownership / sources) and per-record source links (`/api/infra`).
 - **Strike history** — 256 research-verified Ukrainian strike events on 58 of those
   facilities (2022–2026): struck facilities get a red marker badge, a strike counter

@@ -963,6 +963,7 @@
         <div class="li"><span class="swatch" style="background: #b56cff;"></span> refinery</div>
         <div class="li"><span class="swatch" style="background: #2bcbba;"></span> depot</div>
         <div class="li"><span class="swatch" style="background: #54a0ff;"></span> terminal</div>
+        <div class="li"><span class="swatch" style="background: #06b6d4;"></span> petrochemical</div>
         <div class="li"><span class="swatch" style="background: #ff4757; border-radius: 0;"></span> tanker attack</div>
         <div class="li"><span style="font-size:13px;">🎯</span> military site</div>
         <div class="li"><span class="swatch" style="background: #ff2d2d;"></span> recent strike (brighter = fresher)</div>
@@ -1063,7 +1064,7 @@
       });
     }
     // -------- Infra & attack icons
-    const INFRA_COLORS = { refinery: "#b56cff", depot: "#2bcbba", terminal: "#54a0ff" };
+    const INFRA_COLORS = { refinery: "#b56cff", depot: "#2bcbba", terminal: "#54a0ff", petrochemical: "#06b6d4" };
     function infraIconSize() { return map.getZoom() >= 5 ? 18 : 12; }
     function infraIcon(kind, size, badge, burning) {
       const c = INFRA_COLORS[kind] || "#8a96aa";
@@ -1074,6 +1075,9 @@
       } else if (kind === "depot") {
         // storage tank: cylinder
         shape = `<rect x="2.5" y="5" width="7" height="7" rx="1.2" fill="${c}" stroke="#fff" stroke-width="0.5"/><ellipse cx="6" cy="5" rx="3.5" ry="1.4" fill="${c}" stroke="#fff" stroke-width="0.5"/>`;
+      } else if (kind === "petrochemical") {
+        // flask / retort: hexagon silhouette
+        shape = `<path d="M6 1 L10 3.5 L10 8.5 L6 11 L2 8.5 L2 3.5 Z" fill="${c}" stroke="#fff" stroke-width="0.5"/>`;
       } else {
         // terminal: diamond
         shape = `<path d="M6 1.5 L11 7 L6 12.5 L1 7 Z" fill="${c}" stroke="#fff" stroke-width="0.5"/>`;
@@ -1319,7 +1323,7 @@
       port_strike: "Strike in port",
       explosion_unexplained: "Unexplained explosion",
     };
-    const INFRA_KIND_LABELS = { refinery: "Refinery", depot: "Oil depot / tank farm", terminal: "Export terminal", pipeline: "Trunk pipeline" };
+    const INFRA_KIND_LABELS = { refinery: "Refinery", depot: "Oil depot / tank farm", terminal: "Export terminal", pipeline: "Trunk pipeline", petrochemical: "Petrochemical plant" };
     const MIL_CATEGORY_LABELS = {
       drone: "Drone (UAV) production", missile: "Missile production", ammunition: "Ammunition plant",
       explosives: "Explosives / propellants", armor: "Armor / vehicle plant", aviation: "Aviation plant",
@@ -1381,7 +1385,7 @@
     }
     function chainNodeChip(node) {
       if (!node) return "";
-      const open = node.kind === "pipeline" || node.kind === "terminal" || node.kind === "refinery" || node.kind === "depot"
+      const open = node.kind === "pipeline" || node.kind === "terminal" || node.kind === "refinery" || node.kind === "depot" || node.kind === "petrochemical"
         ? `onclick="openInfraById('${node.id}')"` : "";
       return `<span ${open} style="cursor:pointer;display:inline-block;padding:2px 8px;margin:2px;background:var(--bg-3);border:1px solid var(--border);border-radius:10px;font-size:11px;color:var(--c-blue);">${escapeHtml(node.name)}</span>`;
     }

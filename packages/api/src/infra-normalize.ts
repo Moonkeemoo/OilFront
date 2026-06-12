@@ -5,7 +5,7 @@
 
 export interface InfraRow {
   id: string;
-  kind: "refinery" | "depot" | "terminal" | "pipeline";
+  kind: "refinery" | "depot" | "terminal" | "pipeline" | "petrochemical";
   name: string;
   name_local: string | null;
   lat: number | null;
@@ -52,7 +52,7 @@ export interface AttackRow {
   raw: Record<string, unknown>;
 }
 
-const INFRA_KINDS = new Set(["refinery", "depot", "terminal", "pipeline"]);
+const INFRA_KINDS = new Set(["refinery", "depot", "terminal", "pipeline", "petrochemical"]);
 const STATUSES = new Set(["operational", "damaged", "unknown"]);
 const ATTACK_TYPES = new Set(["usv_strike", "uav_strike", "limpet_mine", "port_strike", "explosion_unexplained"]);
 const PRECISIONS = new Set(["exact", "approx", "port"]);

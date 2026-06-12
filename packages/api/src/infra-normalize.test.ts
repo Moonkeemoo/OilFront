@@ -42,6 +42,13 @@ test("unknown kind is rejected", () => {
   assert.equal(normalizeInfra({ ...REFINERY, kind: "powerplant" }), null);
 });
 
+test("petrochemical kind is accepted", () => {
+  const r = normalizeInfra({ ...REFINERY, id: "nknk-nizhnekamsk", kind: "petrochemical", capacity_mt_yr: null });
+  assert.ok(r);
+  assert.equal(r.kind, "petrochemical");
+  assert.equal(r.capacity_mt_yr, null);
+});
+
 test("bogus status falls back to unknown", () => {
   const r = normalizeInfra({ ...REFINERY, status: "thriving" });
   assert.ok(r);
