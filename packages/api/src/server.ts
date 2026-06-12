@@ -1932,7 +1932,8 @@ async function handleInfraStrikes(req: Request): Promise<Response> {
   const vf = verifiedParam === "true" ? true : verifiedParam === "false" ? false : null;
 
   const rows = await sql`
-    SELECT id, infra_id, occurred_on, weapon, COALESCE(severity, 'unknown') AS severity, summary, source_urls, origin, verified
+    SELECT id, infra_id, occurred_on, weapon, COALESCE(severity, 'unknown') AS severity, summary, source_urls, origin, verified,
+           confidence_tier, confidence_score, score_breakdown, evidence
     FROM infra_strikes
     WHERE TRUE
       ${infraId ? sql`AND infra_id = ${infraId}` : sql``}
@@ -1944,7 +1945,7 @@ async function handleInfraStrikes(req: Request): Promise<Response> {
 
   return maybeCsvOrJson(req, rows as unknown as Array<Record<string, unknown>>,
     `infra-strikes-${new Date().toISOString().slice(0, 10)}.csv`,
-    ["occurred_on", "infra_id", "weapon", "summary", "source_urls", "origin", "verified"]);
+    ["occurred_on", "infra_id", "weapon", "summary", "source_urls", "origin", "verified", "confidence_tier", "confidence_score"]);
 }
 
 // LIVE strike feed: a single chronological stream (newest-first) of the most
@@ -1988,7 +1989,9 @@ async function handleFeed(): Promise<Response> {
           s.summary::text                         AS summary,
           s.source_urls                           AS source_urls,
           s.origin::text                          AS origin,
-          s.verified                              AS verified
+          s.verified                              AS verified,
+          s.confidence_tier::text                 AS confidence_tier,
+          s.score_breakdown                       AS score_breakdown
         FROM infra_strikes s
         JOIN oil_infra o ON o.id = s.infra_id
       `
@@ -1999,7 +2002,8 @@ async function handleFeed(): Promise<Response> {
           NULL::double precision AS lat, NULL::double precision AS lon,
           NULL::date AS occurred_on, NULL::text AS weapon, NULL::text AS severity,
           NULL::text AS summary, NULL::text[] AS source_urls,
-          NULL::text AS origin, NULL::boolean AS verified
+          NULL::text AS origin, NULL::boolean AS verified,
+          NULL::text AS confidence_tier, NULL::jsonb AS score_breakdown
         WHERE FALSE
       `;
 
@@ -2021,7 +2025,9 @@ async function handleFeed(): Promise<Response> {
             SELECT jsonb_array_elements_text(COALESCE(e->'source_urls', '[]'::jsonb))
           )::text[]                                  AS source_urls,
           'curated'::text                            AS origin,
-          TRUE                                       AS verified
+          TRUE                                       AS verified,
+          'confirmed'::text                          AS confidence_tier,
+          jsonb_build_object('trusted_manual', true, 'note', 'curated military record') AS score_breakdown
         FROM military_sites m
         CROSS JOIN LATERAL jsonb_array_elements(COALESCE(m.strikes, '[]'::jsonb)) AS e
         WHERE (e->>'occurred_on') IS NOT NULL
@@ -2033,7 +2039,8 @@ async function handleFeed(): Promise<Response> {
           NULL::double precision AS lat, NULL::double precision AS lon,
           NULL::date AS occurred_on, NULL::text AS weapon, NULL::text AS severity,
           NULL::text AS summary, NULL::text[] AS source_urls,
-          NULL::text AS origin, NULL::boolean AS verified
+          NULL::text AS origin, NULL::boolean AS verified,
+          NULL::text AS confidence_tier, NULL::jsonb AS score_breakdown
         WHERE FALSE
       `;
 
