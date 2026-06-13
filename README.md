@@ -337,6 +337,8 @@ bun run load-infra-links     # oil-flow pipeline↔terminal↔refinery links (da
 
 ACLED, GDELT and FIRMS-triggered candidates land flagged `auto · unverified` and stay that way in the UI until a curator confirms them with `verify-strike`. The FIRMS-triggered feed inverts the polling problem: instead of querying all ~69 facilities through GDELT (rate-bans, noise), one cheap NASA FIRMS call surfaces the handful of facilities with a fresh thermal anomaly, and only those get a targeted news query — a satellite-heat + news-hit candidate, shown with a `🔥🛰 heat-triggered` chip.
 
+The news feeds' strike-keyword gate (GDELT/RSS) matches the drone/fire/attack core (EN+UA) plus energy-infrastructure phrasing — oil/fuel depots, tank farms, pipeline pumping stations (LPDS/NPS, нефтеперекачивающая), seaports/marine terminals, and gas processing plants (GPP/ГПЗ) in English and Russian — so depot/port/LPDS/GPP reporting clears the gate too.
+
 ---
 
 ## Troubleshooting

@@ -41,6 +41,16 @@ const CURATED_FEEDS: string[] = [
 
 /** Strike/fire/attack vocabulary — mirrors gdelt-match.ts STRIKE_KEYWORDS. */
 const STRIKE_KEYWORDS = /\b(strike|drone|uav|attack|explosion|fire|hit|blaze|damaged|udar)\b|удар|атак|пожеж|пожар|бпла|дрон|вибух/i;
+// Energy-infra + RU facility-class terms (added 2026-06-13) — mirrors
+// gdelt-match.ts INFRA_KEYWORDS. Widens recall for the facility classes curated
+// digging kept catching by hand: small oil depots, pipeline pumping stations
+// (LPDS/NPS), seaports / marine terminals, gas processing plants (GPP). These
+// ADD to the strike-signal vocabulary; an item still needs a strike OR infra
+// phrase to pass the gate (isStrikeItem), so it does not match everything. Bare
+// "refinery" is deliberately omitted (non-strike business news) — a real
+// refinery strike already carries a strike-core word.
+const INFRA_KEYWORDS =
+  /\b(oil depot|fuel depot|tank farm|oil terminal|fuel terminal|sea ?port|pumping station|gas processing|fuel storage)\b|нефтебаз|нефтеперекачивающа|нефтеперекачивающе|лпдс|нпс|насосная станция|газоперерабатывающи|гпз|нефтеналивн|нефтетерминал|нефтепровод|топлив|резервуар|порт/i;
 
 /** UAV vocabulary for weapon classification. */
 const UAV_KEYWORDS = /drone|uav|бпла|дрон/i;
@@ -92,9 +102,10 @@ function normalizeName(s: string): string {
   return s.toLowerCase().replace(/\s+/g, " ").trim();
 }
 
-/** Does this RSS item text contain a strike keyword? */
+/** Does this RSS item text contain a strike keyword or an energy-infra phrase? */
 function isStrikeItem(item: RssItem): boolean {
-  return STRIKE_KEYWORDS.test(item.title) || STRIKE_KEYWORDS.test(item.summary);
+  const text = `${item.title} ${item.summary}`;
+  return STRIKE_KEYWORDS.test(text) || INFRA_KEYWORDS.test(text);
 }
 
 /**

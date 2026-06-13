@@ -6,7 +6,26 @@
 //
 // No Bun/Postgres deps — unit-testable with node --test.
 
-const STRIKE_KEYWORDS = /\b(strike|drone|uav|attack|explosion|fire|hit|blaze|damaged|udar)\b|удар|атак|пожеж|пожар|бпла|дрон/i;
+// Strike-signal vocabulary. An article still needs ONE of these to count as a
+// strike/attack — this gate is intentionally not "match everything". The first
+// group is the original drone/fire/attack core (EN+UA). The second group
+// (added 2026-06-13) widens recall for energy-infra phrasing that curated
+// digging kept catching by hand — small oil depots, pipeline pumping stations
+// (LPDS/NPS), seaports/marine terminals, gas processing plants (GPP) — plus the
+// Russian-language terms those articles use. These ADD to the signal; they do
+// not replace the strike-indicator requirement.
+const STRIKE_KEYWORDS =
+  /\b(strike|drone|uav|attack|explosion|fire|hit|blaze|damaged|udar)\b|удар|атак|пожеж|пожар|бпла|дрон|вибух/i;
+// Energy-infra + RU facility-class terms (recall widening — see note above).
+// These are facility-class nouns that strike reports about depots / LPDS-NPS /
+// seaports / GPP tend to use. isStrikeArticle ORs them onto the strike core; in
+// the GDELT/FIRMS paths the article was already fetched via a strike-AND-ed
+// query (buildGdeltQuery), so this is a recall-widening title filter, not a
+// standalone strike oracle. Bare "refinery" is deliberately omitted — it appears
+// in non-strike business news ("Refinery posts record output"); a genuine
+// refinery-strike headline already carries a strike-core word.
+const INFRA_KEYWORDS =
+  /\b(oil depot|fuel depot|tank farm|oil terminal|fuel terminal|sea ?port|pumping station|gas processing|fuel storage)\b|нефтебаз|нефтеперекачивающа|нефтеперекачивающе|лпдс|нпс|насосная станция|газоперерабатывающи|гпз|нефтеналивн|нефтетерминал|нефтепровод|топлив|резервуар|порт/i;
 const UAV_KEYWORDS = /drone|uav|бпла|дрон/i;
 const SUMMARY_MAX = 280;
 
@@ -37,9 +56,17 @@ export function buildGdeltQuery(name: string, nameLocal: string | null): string 
   return `${namePart} (strike OR drone OR attack OR fire OR explosion)`;
 }
 
-/** Title-level filter: does this headline look like a strike/fire/attack report? */
+/**
+ * Title-level filter: does this headline look like a strike/fire/attack report?
+ * Passes on the strike/fire/attack core (STRIKE_KEYWORDS) OR an energy-infra /
+ * port / LPDS-NPS / GPP facility-class phrase (INFRA_KEYWORDS). In the GDELT and
+ * FIRMS paths buildGdeltQuery already AND-s the facility name with strike
+ * vocabulary, so this is a recall-widening title filter, not a standalone "is it
+ * a strike" oracle. Bare ambiguous nouns (e.g. "refinery") are intentionally not
+ * in INFRA_KEYWORDS so non-strike business news is still rejected.
+ */
 export function isStrikeArticle(title: string): boolean {
-  return STRIKE_KEYWORDS.test(title);
+  return STRIKE_KEYWORDS.test(title) || INFRA_KEYWORDS.test(title);
 }
 
 /**
