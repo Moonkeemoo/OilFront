@@ -158,6 +158,29 @@
       ]
     },
     {
+      "id": "grushovaya-sheskharis-novorossiysk",
+      "kind": "terminal",
+      "name": "Grushovaya / Sheskharis Oil Terminal (Novorossiysk)",
+      "name_local": "Нефтебаза «Грушовая» / терминал «Шесхарис»",
+      "lat": 44.7511,
+      "lon": 37.873,
+      "geometry": null,
+      "commodity": "crude / petroleum products export",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft (Chernomortransneft)",
+      "operator": null,
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Export/transshipment arm of Port Novorossiysk, ~1.2–1.4 Mm³ across 40–47 tanks; terminus of Tikhoretsk–Novorossiysk pipeline.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/june-8-drone-strike-destroys-4-5-tanks-at-gryshovaya-oil-depot/",
+        "https://defencematters.eu/ukraine-strikes-major-russian-oil-storage-hub-in-novorossiysk/"
+      ]
+    },
+    {
       "id": "ilsky-refinery",
       "kind": "refinery",
       "name": "Ilsky Refinery",
@@ -261,6 +284,29 @@
       ]
     },
     {
+      "id": "krasnoarmeysk-lpds-saratov",
+      "kind": "depot",
+      "name": "Krasnoarmeysk Oil Pumping Station (LPDS)",
+      "name_local": "НПС «Красноармейск»",
+      "lat": 51.024,
+      "lon": 45.696,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": null,
+      "region": "Saratov Oblast",
+      "status": "damaged",
+      "notes": "Transneft trunk-pipeline pumping station with storage. coords approximate (city/district-level).",
+      "source_urls": [
+        "https://en.interfax.com.ua/news/general/1175377.html",
+        "https://kyivindependent.com/oil-depots-substations-reportedly-set-ablaze-in-western-russia-occupied-crimea-mariupol-following-ukrainian-drone-strikes/"
+      ]
+    },
+    {
       "id": "krasnodar-refinery",
       "kind": "refinery",
       "name": "Krasnodar Refinery (Krasnodareconeft)",
@@ -314,6 +360,29 @@
       ]
     },
     {
+      "id": "lobkovo-lpds-alexandrov",
+      "kind": "depot",
+      "name": "Lobkovo Oil Pumping Station (LPDS)",
+      "name_local": "ЛПДС «Лобково»",
+      "lat": 56.469,
+      "lon": 38.3523,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft-Verkhnyaya Volga",
+      "operator": null,
+      "region": "Vladimir Oblast",
+      "status": "damaged",
+      "notes": "Transneft LPDS pumping station, Moscow-ring oil-products pipeline (same operation/system as Vtorovo). Coords approximate (facility-level).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/oil-infrastructure-hit-vtorovo-and-lobkovo-pumping-stations-burning-after-drone-strike/",
+        "https://english.nv.ua/nation/two-oil-pumping-stations-burn-in-central-russia-50615007.html"
+      ]
+    },
+    {
       "id": "mari-refinery",
       "kind": "refinery",
       "name": "Mari Refinery (Tabashino)",
@@ -336,6 +405,29 @@
         "https://ru.wikipedia.org/wiki/Нефтеперерабатывающая_промышленность_России",
         "https://www.wikidata.org/wiki/Q4281447",
         "https://www.rusprofile.ru/id/7626290"
+      ]
+    },
+    {
+      "id": "mariupol-port-fuel-terminal",
+      "kind": "terminal",
+      "name": "Mariupol Seaport (fuel storage)",
+      "name_local": "Мариупольский морской порт (резервуары ГСМ)",
+      "lat": 47.09,
+      "lon": 37.55,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": null,
+      "operator": null,
+      "region": "Donetsk Oblast (occupied)",
+      "status": "damaged",
+      "notes": "Occupied military-logistics seaport; fuel/lubricant storage section. coords approximate (city/district-level). Same op damaged the sanctioned shadow-fleet vessel Lady Augusta.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraine-confirms-destruction-of-fuel-tanks-near-mariupol-as-strikes-target-russian-military-sites-across-multiple-regions/",
+        "https://united24media.com/war-in-ukraine/ukraine-strikes-russian-supply-port-in-occupied-mariupol-used-to-feed-southern-front-19570"
       ]
     },
     {
@@ -1501,6 +1593,29 @@
       ]
     },
     {
+      "id": "ust-labinsk-poltavskaya-depot",
+      "kind": "depot",
+      "name": "Ust-Labinsk Oil Depot (Poltavskaya Neftebaza)",
+      "name_local": "Полтавская нефтебаза (Усть-Лабинск)",
+      "lat": 45.2217,
+      "lon": 39.6843,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "OAO Poltavskaya Neftebaza",
+      "operator": null,
+      "region": "Krasnodar Krai",
+      "status": "damaged",
+      "notes": "Fuel storage/distribution (28 tanks, ~14,950 m³); SBU-assessed rear fuel hub for Russian forces.",
+      "source_urls": [
+        "https://www.ukrinform.net/rubric-ato/4131600-ukrainian-defense-forces-strike-oil-facilities-in-krasnodar-and-volgograd-regions.html",
+        "https://militarnyi.com/en/news/fire-5000-meters-drones-oil-depot-krasnodar/"
+      ]
+    },
+    {
       "id": "ust-luga-crude-oil-terminal",
       "locode": "RUULU",
       "kind": "terminal",
@@ -1548,6 +1663,29 @@
         "https://www.lukoil.com/PressCenter/Pressreleases/Pressrelease/lukoils-varandey-terminal-one-year-of",
         "https://tankterminals.com/news/lukoil-varandey-terminal-registered-in-the-guinness-book-of-records/",
         "https://www.offshore-mag.com/production/article/16772030/lukoil-marks-five-years-of-service-for-offshore-russia-oil-terminal"
+      ]
+    },
+    {
+      "id": "vtorovo-lpds-kameshkovo",
+      "kind": "depot",
+      "name": "Vtorovo Oil Pumping Station (LPDS)",
+      "name_local": "ЛПДС «Второво»",
+      "lat": 56.1752,
+      "lon": 40.9647,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft-Verkhnyaya Volga",
+      "operator": null,
+      "region": "Vladimir Oblast",
+      "status": "damaged",
+      "notes": "Transneft pipeline pumping station (LPDS) on the Moscow-ring oil-products pipeline; pumps diesel toward Moscow / Baltic export.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/oil-infrastructure-hit-vtorovo-and-lobkovo-pumping-stations-burning-after-drone-strike/",
+        "https://newsukraine.rbc.ua/news/vtorovo-and-lobkovo-oil-pumping-stations-1781085750.html"
       ]
     },
     {
@@ -1625,6 +1763,29 @@
         "https://kyivindependent.com/ukrainian-drones-hit-russian-oil-depot-in-rostov-oblast-source-confirms/",
         "https://checko.ru/company/fgku-kombinat-atlas-rosrezerva-1026101084900",
         "https://www.svoboda.org/a/v-rostovskoy-oblasti-posle-udarov-dronov-zagorelasj-neftebaza/33096279.html"
+      ]
+    },
+    {
+      "id": "feodosia-oil-terminal-crimea",
+      "kind": "terminal",
+      "name": "Feodosia Oil Terminal (Crimea)",
+      "name_local": "Феодосийский нефтяной терминал",
+      "lat": 45.05,
+      "lon": 35.43,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": null,
+      "operator": null,
+      "region": "Crimea (occupied)",
+      "status": "damaged",
+      "notes": "Marine oil transshipment terminal supplying occupied Crimea (rail + sea). coords approximate (city/district-level).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukraine-strike-oil-depot-in-occupied-crimea/",
+        "https://united24media.com/war-in-ukraine/ukrainian-drones-hit-two-key-fuel-hubs-supplying-russian-forces-in-crimea-video-19583"
       ]
     },
     {
@@ -1751,6 +1912,29 @@
       ]
     },
     {
+      "id": "krasny-yar-lpds-volgograd",
+      "kind": "depot",
+      "name": "Krasny Yar Oil Pumping Station (LPDS)",
+      "name_local": "ЛПДС «Красный Яр»",
+      "lat": 50.78,
+      "lon": 44.78,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Transneft",
+      "operator": null,
+      "region": "Volgograd Oblast",
+      "status": "damaged",
+      "notes": "Transneft LPDS on the Kuibyshev–Tikhoretsk pipeline (feeds Volgograd refinery + Novorossiysk export). coords approximate (city/district-level).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-krasny-yar-oil-station-in-volgograd/",
+        "https://www.pravda.com.ua/eng/news/2026/06/08/8038286/"
+      ]
+    },
+    {
       "id": "kristall-engels-fuel-depot",
       "kind": "depot",
       "name": "Kristall Fuel Depot (Engels)",
@@ -1774,6 +1958,29 @@
         "https://kyivindependent.com/ukraine-strikes-oil-depot-in-russias-saratov-oblast-military-confirms/",
         "https://militarnyi.com/en/news/defense-forces-strike-rosrezerv-s-oil-storage-facility-in-engels/",
         "https://united24media.com/latest-news/satellite-imagery-reveals-damage-to-key-russian-bomber-fuel-depot-in-engels-8948"
+      ]
+    },
+    {
+      "id": "kuibyshevsky-refinery-samara",
+      "kind": "refinery",
+      "name": "Kuibyshev Oil Refinery (Samara)",
+      "name_local": "Куйбышевский НПЗ",
+      "lat": 53.102,
+      "lon": 50.054,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": 7,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosneft",
+      "operator": null,
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "notes": "Rosneft Samara-city refinery (DISTINCT from Novokuibyshevsk NPZ ~20 km south); ~7 Mt/yr.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-halts-operations-at-kuibyshev-oil-refinery-in-samara-russia/",
+        "https://ru.wikipedia.org/wiki/Куйбышевский_нефтеперерабатывающий_завод"
       ]
     },
     {
@@ -3091,6 +3298,29 @@
         "https://www.pravda.com.ua/eng/news/2025/09/20/7531728/",
         "https://news.liga.net/en/politics/news/ukrainian-uavs-shut-down-a-number-of-oil-pumping-stations-in-russia---source",
         "https://tass.com/economy/1570123"
+      ]
+    },
+    {
+      "id": "semikolodezyanska-depot-crimea",
+      "kind": "depot",
+      "name": "Semikolodezyanska Oil Depot (Crimea)",
+      "name_local": "Нефтебаза «Семиколодезянская» (Еди-Куя)",
+      "lat": 45.28,
+      "lon": 35.78,
+      "geometry": null,
+      "commodity": null,
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": null,
+      "operator": null,
+      "region": "Crimea (occupied)",
+      "status": "damaged",
+      "notes": "Fuel transshipment hub supplying Russian occupation forces (diesel/fuel-oil/bitumen). coords approximate (city/district-level).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukraine-strike-oil-depot-in-occupied-crimea/",
+        "https://united24media.com/war-in-ukraine/ukrainian-drones-hit-two-key-fuel-hubs-supplying-russian-forces-in-crimea-video-19583"
       ]
     },
     {
