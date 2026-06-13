@@ -3460,30 +3460,6 @@
       ]
     },
     {
-      "id": "2026-06-08-grushovaya-sheskharis-novorossiysk",
-      "infra_id": "grushovaya-sheskharis-novorossiysk",
-      "occurred_on": "2026-06-08",
-      "weapon": "uav",
-      "severity": "major",
-      "summary": "Drone strike on the Grushovaya tank farm (Tank Farm No.4); 4–5 storage tanks destroyed at Russia's largest Black Sea oil-export terminal; ~50 explosions, large fire; satellite/NASA-FIRMS confirmed. Unmanned Systems Forces + SOF.",
-      "source_urls": [
-        "https://militarnyi.com/en/news/june-8-drone-strike-destroys-4-5-tanks-at-gryshovaya-oil-depot/",
-        "https://www.pravda.com.ua/eng/news/2026/06/08/8038213/"
-      ]
-    },
-    {
-      "id": "2026-06-10-kuibyshevsky-refinery-samara",
-      "infra_id": "kuibyshevsky-refinery-samara",
-      "occurred_on": "2026-06-10",
-      "weapon": "uav",
-      "severity": "major",
-      "summary": "Long-range drone strike halted all processing; primary distillation units AVT-4 and AVT-5 damaged/offline. Third strike on this plant; Rosneft's whole Samara cluster offline/reduced. SOF claimed.",
-      "source_urls": [
-        "https://en.interfax.com.ua/news/general/1175398.html",
-        "https://euromaidanpress.com/2026/06/11/all-three-rosneft-samara-refineries-now-offline-or-reduced-as-drones-halt-kuibyshevsky-operations-yesterday/"
-      ]
-    },
-    {
       "id": "2026-06-10-vtorovo-lpds-kameshkovo",
       "infra_id": "vtorovo-lpds-kameshkovo",
       "occurred_on": "2026-06-10",
@@ -3532,18 +3508,6 @@
       ]
     },
     {
-      "id": "2026-06-08-krasny-yar-lpds-volgograd",
-      "infra_id": "krasny-yar-lpds-volgograd",
-      "occurred_on": "2026-06-08",
-      "weapon": "uav",
-      "severity": "moderate",
-      "summary": "General Staff-confirmed drone strike; one 50,000 m³ reservoir burning; Volgograd governor admitted fire. Pipeline throughput to Novorossiysk export at risk.",
-      "source_urls": [
-        "https://militarnyi.com/en/news/drones-krasny-yar-oil-station-in-volgograd/",
-        "https://www.pravda.com.ua/eng/news/2026/06/08/8038286/"
-      ]
-    },
-    {
       "id": "2026-06-07-semikolodezyanska-depot-crimea",
       "infra_id": "semikolodezyanska-depot-crimea",
       "occurred_on": "2026-06-07",
@@ -3553,18 +3517,6 @@
       "source_urls": [
         "https://militarnyi.com/en/news/ukraine-strike-oil-depot-in-occupied-crimea/",
         "https://newsukraine.rbc.ua/news/ukrainian-drones-hit-two-large-fuel-storage-1780834131.html"
-      ]
-    },
-    {
-      "id": "2026-06-07-feodosia-oil-terminal-crimea",
-      "infra_id": "feodosia-oil-terminal-crimea",
-      "occurred_on": "2026-06-07",
-      "weapon": "uav",
-      "severity": "major",
-      "summary": "SOF drones struck 7 fuel tanks (10,000–20,000 m³); large fire; General Staff confirmed.",
-      "source_urls": [
-        "https://militarnyi.com/en/news/ukraine-strike-oil-depot-in-occupied-crimea/",
-        "https://www.euronews.com/my-europe/2026/06/09/ukrainian-strikes-start-fires-at-oil-facilities-in-russia-and-crimea-officials-say"
       ]
     },
     {

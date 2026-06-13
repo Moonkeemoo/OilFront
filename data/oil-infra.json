@@ -158,29 +158,6 @@
       ]
     },
     {
-      "id": "grushovaya-sheskharis-novorossiysk",
-      "kind": "terminal",
-      "name": "Grushovaya / Sheskharis Oil Terminal (Novorossiysk)",
-      "name_local": "Нефтебаза «Грушовая» / терминал «Шесхарис»",
-      "lat": 44.7511,
-      "lon": 37.873,
-      "geometry": null,
-      "commodity": "crude / petroleum products export",
-      "capacity_mt_yr": null,
-      "capacity_bbl_d": null,
-      "storage_m3": null,
-      "throughput_mt_yr": null,
-      "owner": "Transneft (Chernomortransneft)",
-      "operator": null,
-      "region": "Krasnodar Krai",
-      "status": "damaged",
-      "notes": "Export/transshipment arm of Port Novorossiysk, ~1.2–1.4 Mm³ across 40–47 tanks; terminus of Tikhoretsk–Novorossiysk pipeline.",
-      "source_urls": [
-        "https://militarnyi.com/en/news/june-8-drone-strike-destroys-4-5-tanks-at-gryshovaya-oil-depot/",
-        "https://defencematters.eu/ukraine-strikes-major-russian-oil-storage-hub-in-novorossiysk/"
-      ]
-    },
-    {
       "id": "ilsky-refinery",
       "kind": "refinery",
       "name": "Ilsky Refinery",
@@ -1766,29 +1743,6 @@
       ]
     },
     {
-      "id": "feodosia-oil-terminal-crimea",
-      "kind": "terminal",
-      "name": "Feodosia Oil Terminal (Crimea)",
-      "name_local": "Феодосийский нефтяной терминал",
-      "lat": 45.05,
-      "lon": 35.43,
-      "geometry": null,
-      "commodity": null,
-      "capacity_mt_yr": null,
-      "capacity_bbl_d": null,
-      "storage_m3": null,
-      "throughput_mt_yr": null,
-      "owner": null,
-      "operator": null,
-      "region": "Crimea (occupied)",
-      "status": "damaged",
-      "notes": "Marine oil transshipment terminal supplying occupied Crimea (rail + sea). coords approximate (city/district-level).",
-      "source_urls": [
-        "https://militarnyi.com/en/news/ukraine-strike-oil-depot-in-occupied-crimea/",
-        "https://united24media.com/war-in-ukraine/ukrainian-drones-hit-two-key-fuel-hubs-supplying-russian-forces-in-crimea-video-19583"
-      ]
-    },
-    {
       "id": "grushovaya-oil-depot",
       "kind": "depot",
       "name": "Grushovaya Tank Farm (Novorossiysk)",
@@ -1912,29 +1866,6 @@
       ]
     },
     {
-      "id": "krasny-yar-lpds-volgograd",
-      "kind": "depot",
-      "name": "Krasny Yar Oil Pumping Station (LPDS)",
-      "name_local": "ЛПДС «Красный Яр»",
-      "lat": 50.78,
-      "lon": 44.78,
-      "geometry": null,
-      "commodity": null,
-      "capacity_mt_yr": null,
-      "capacity_bbl_d": null,
-      "storage_m3": null,
-      "throughput_mt_yr": null,
-      "owner": "Transneft",
-      "operator": null,
-      "region": "Volgograd Oblast",
-      "status": "damaged",
-      "notes": "Transneft LPDS on the Kuibyshev–Tikhoretsk pipeline (feeds Volgograd refinery + Novorossiysk export). coords approximate (city/district-level).",
-      "source_urls": [
-        "https://militarnyi.com/en/news/drones-krasny-yar-oil-station-in-volgograd/",
-        "https://www.pravda.com.ua/eng/news/2026/06/08/8038286/"
-      ]
-    },
-    {
       "id": "kristall-engels-fuel-depot",
       "kind": "depot",
       "name": "Kristall Fuel Depot (Engels)",
@@ -1958,29 +1889,6 @@
         "https://kyivindependent.com/ukraine-strikes-oil-depot-in-russias-saratov-oblast-military-confirms/",
         "https://militarnyi.com/en/news/defense-forces-strike-rosrezerv-s-oil-storage-facility-in-engels/",
         "https://united24media.com/latest-news/satellite-imagery-reveals-damage-to-key-russian-bomber-fuel-depot-in-engels-8948"
-      ]
-    },
-    {
-      "id": "kuibyshevsky-refinery-samara",
-      "kind": "refinery",
-      "name": "Kuibyshev Oil Refinery (Samara)",
-      "name_local": "Куйбышевский НПЗ",
-      "lat": 53.102,
-      "lon": 50.054,
-      "geometry": null,
-      "commodity": null,
-      "capacity_mt_yr": 7,
-      "capacity_bbl_d": null,
-      "storage_m3": null,
-      "throughput_mt_yr": null,
-      "owner": "Rosneft",
-      "operator": null,
-      "region": "Samara Oblast",
-      "status": "damaged",
-      "notes": "Rosneft Samara-city refinery (DISTINCT from Novokuibyshevsk NPZ ~20 km south); ~7 Mt/yr.",
-      "source_urls": [
-        "https://militarnyi.com/en/news/drone-strike-halts-operations-at-kuibyshev-oil-refinery-in-samara-russia/",
-        "https://ru.wikipedia.org/wiki/Куйбышевский_нефтеперерабатывающий_завод"
       ]
     },
     {
