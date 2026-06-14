@@ -950,6 +950,55 @@
       ]
     },
     {
+      "id": "novomoskovsk-azot",
+      "name": "Novomoskovsk Azot (EuroChem)",
+      "name_local": "Новомосковский «Азот» (ЕвроХим)",
+      "lat": 54.0877,
+      "lon": 38.2194,
+      "category": "explosives",
+      "produces": "Ammonia, ammonium nitrate, nitric acid (explosives precursors), urea/fertilizers",
+      "operator": "EuroChem (A. Melnichenko)",
+      "region": "Tula Oblast",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2025-05-24",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Drone strike hit a gas pipeline in Workshop No.4 and two 750-t nitric-acid tanks (one leaked); fire forced a full plant shutdown; 3 injured, nearby village evacuated.",
+          "source_urls": [
+            "https://kyivindependent.com/chemical-plant-in-russias-tula-oblast-reportedly-hit-2nd-time-in-drone-attack/",
+            "https://newsukraine.rbc.ua/news/center-for-countering-disinformation-confirms-1748079382.html"
+          ]
+        },
+        {
+          "occurred_on": "2025-06-08",
+          "weapon": "uav",
+          "severity": "moderate",
+          "summary": "Second drone strike overnight; 5–8 explosions and a fire at the plant (already shut from the May 24 strike); 2 injured.",
+          "source_urls": [
+            "https://kyivindependent.com/chemical-plant-in-russias-tula-oblast-reportedly-hit-2nd-time-in-drone-attack/",
+            "https://euromaidanpress.com/2025/06/08/ukraine-targets-russian-explosives-making-azot-plant-fuel-site-strikes-continue-with-fire-at-bitumen-plant/"
+          ]
+        },
+        {
+          "occurred_on": "2026-06-14",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Overnight drone strike caused a massive fire with heavy smoke; gas pipeline and acid tanks reportedly damaged, nearby Hrytsovo village evacuated again (governor acknowledged drone-debris fire).",
+          "source_urls": [
+            "https://kyivindependent.com/ukraine-strikes-chemical-plant-in-russias-tula-oblast/",
+            "https://liveuamap.com/en/2026/14-june-00-drones-have-attacked-azot-chemical-plant-in-novomoskovsk"
+          ]
+        }
+      ],
+      "notes": "EuroChem flagship chemical plant; supplies ammonium nitrate / nitrogen compounds to the Sverdlov plant (Dzerzhinsk) for RDX/HMX. NOT the Nevinnomyssk Azot (also EuroChem). Coords facility-level. ~370 km from Ukraine.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-target-azot-chemical-plant-involved-in-explosives-production/",
+        "https://united24media.com/latest-news/drone-strike-ignites-russian-chemical-plant-supplying-explosives-for-army-artillery-shells-8959"
+      ]
+    },
+    {
       "id": "perm-powder-plant",
       "name": "Perm Powder Plant",
       "name_local": "Пермский пороховой завод",
@@ -1466,6 +1515,35 @@
       "source_urls": [
         "https://en.wikipedia.org/wiki/Votkinsk_Machine_Building_Plant",
         "https://kyivindependent.com/investigation-russia-expands-strategic-plant-producing-icbms-with-chinas-help/"
+      ]
+    },
+    {
+      "id": "crimean-titan-armyansk",
+      "name": "Crimean Titan (Armyansk)",
+      "name_local": "Крымский Титан (Армянск)",
+      "lat": 46.10,
+      "lon": 33.70,
+      "category": "other",
+      "produces": "Titanium dioxide, sulfuric acid (dual-use; sulfuric acid feeds explosives/rocket-fuel chemistry)",
+      "operator": "Russian Titan (occupied; ex-Group DF/Firtash)",
+      "region": "Crimea (occupied)",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2026-06-13",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Ukraine's Unmanned Systems Forces (cmdr 'Madyar' Brovdi) struck Crimean Titan with FP-2 drones (~23 reported hits, first-person video); fire across workshops, production suspended.",
+          "source_urls": [
+            "https://en.defence-ua.com/news/ukrainian_drones_halt_operations_at_crimea_titan_plant_key_supplier_for_russian_explosives_rocket_fuel-18806.html",
+            "https://united24media.com/war-in-ukraine/ukraine-hits-eastern-europes-largest-titanium-plant-supplying-russias-war-industry-in-crimea-19798"
+          ]
+        }
+      ],
+      "notes": "Largest TiO2 plant in Eastern Europe; dual-use chemical complex (sulfuric acid feedstock for gunpowder/rocket propellant/explosives). Coords city-level (Armyansk).",
+      "source_urls": [
+        "https://en.defence-ua.com/news/ukrainian_drones_halt_operations_at_crimea_titan_plant_key_supplier_for_russian_explosives_rocket_fuel-18806.html",
+        "https://www.ukrinform.net/rubric-ato/4133514-unmanned-aerial-vehicles-strike-crimean-titan-in-armiansk.html"
       ]
     },
     {

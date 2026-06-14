@@ -4109,6 +4109,19 @@
         "https://militarnyi.com/en/news/drones-neftegorsk-gas-plant-samara-region/",
         "https://militarnyi.com/en/news/ukrainian-drones-destroyed-central-elements-of-russian-neftegorsk-gas-processing-plant/"
       ]
+    },
+    {
+      "id": "2026-06-13-yefimovka-lpds",
+      "infra_id": "yefimovka-lpds",
+      "occurred_on": "2026-06-13",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Second strike on the Yefimovka oil treatment & pumping station (night 12→13 June); fire on facility grounds (NASA FIRMS 03:41). Ukrainian General Staff confirmed; Volgograd governor Bocharov acknowledged fires in Kotovsky district.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-yefimovka-oil-station-volgograd/",
+        "https://www.ukrinform.net/rubric-ato/4133465-drones-attack-oil-pump-station-in-volgograd-region.html",
+        "https://en.interfax.com.ua/news/general/1176239.html"
+      ]
     }
   ]
 }
