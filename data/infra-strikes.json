@@ -2298,6 +2298,18 @@
       ]
     },
     {
+      "id": "2025-12-31-rybinsk-temp-fuel-reserve",
+      "infra_id": "rybinsk-temp-fuel-reserve",
+      "occurred_on": "2025-12-31",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU 'Alpha' Special Operations Center long-range drones struck the Rosrezerv 'Temp' fuel reserve depot; satellite imagery (Militarnyi, Jan 5) confirmed one large tank fully destroyed and adjacent tanks damaged. Ukrainian General Staff confirmed; Yaroslavl governor Evrayev acknowledged drone impact on fuel storage.",
+      "source_urls": [
+        "https://www.ukrinform.net/rubric-ato/4075471-sbu-hits-major-oil-depot-in-russias-yaroslavl-region-sbu.html",
+        "https://militarnyi.com/en/news/satellite-images-show-damage-from-strike-on-oil-depot-in-yaroslavl-region-on-december-31/"
+      ]
+    },
+    {
       "id": "2025-12-31-tuapse-refinery",
       "infra_id": "tuapse-refinery",
       "occurred_on": "2025-12-31",
@@ -3615,6 +3627,19 @@
       "source_urls": [
         "https://www.pravda.com.ua/eng/news/2026/05/24/8036183/",
         "https://euromaidanpress.com/2026/05/24/ukraine-strikes-vtorovo-fuel-pumping-station/"
+      ]
+    },
+    {
+      "id": "2026-06-14-rybinsk-temp-fuel-reserve",
+      "infra_id": "rybinsk-temp-fuel-reserve",
+      "occurred_on": "2026-06-14",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU 'Alpha' drones struck the 'Temp' strategic fuel reserve overnight (13→14 June); 3+ simultaneous fires across the tank park, black smoke over Rybinsk, the Moscow-bound highway closed; ~700 km from the front. SBU claimed the operation; President Zelensky referenced it; governor Evrayev acknowledged drone debris hit fuel-storage facilities.",
+      "source_urls": [
+        "https://united24media.com/war-in-ukraine/drones-hit-russias-strategic-fuel-reserve-depot-in-rybinsk-700-km-from-ukraine-19800",
+        "https://war.obozrevatel.com/porazhena-neftebaza-temp-v-ryibinske-v-sbu-ozvuchili-detali-uspeshnoj-spetsoperatsii.htm",
+        "https://theins.ru/news/293687"
       ]
     }
   ]

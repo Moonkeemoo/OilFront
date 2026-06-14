@@ -771,6 +771,29 @@
       ]
     },
     {
+      "id": "rybinsk-temp-fuel-reserve",
+      "kind": "depot",
+      "name": "Rybinsk Strategic Fuel Reserve Depot (Kombinat \"Temp\", Rosrezerv)",
+      "name_local": "ФГКУ «Комбинат „Темп\"» Росрезерва (Рыбинск)",
+      "lat": 58.00,
+      "lon": 38.95,
+      "geometry": null,
+      "commodity": "strategic fuel reserve (petroleum products)",
+      "capacity_mt_yr": null,
+      "capacity_bbl_d": null,
+      "storage_m3": null,
+      "throughput_mt_yr": null,
+      "owner": "Rosrezerv (Federal Agency for State Reserves)",
+      "operator": "Rosrezerv",
+      "region": "Yaroslavl Oblast",
+      "status": "damaged",
+      "notes": "State strategic fuel reserve tank farm (Rosrezerv \"Temp\" kombinat) in Kopayevo district, Rybinsk; 60+ above-ground tanks (2,000–5,000 m³), Volga + rail access; military/emergency fuel hub ~700 km from the front. Coords approximate (Kopayevo, SE Rybinsk). NOT the NPO/UEC-Saturn engine plant.",
+      "source_urls": [
+        "https://united24media.com/war-in-ukraine/drones-hit-russias-strategic-fuel-reserve-depot-in-rybinsk-700-km-from-ukraine-19800",
+        "https://www.ukrinform.net/rubric-ato/4075471-sbu-hits-major-oil-depot-in-russias-yaroslavl-region-sbu.html"
+      ]
+    },
+    {
       "id": "salavat-refinery",
       "kind": "refinery",
       "name": "Gazprom Neftekhim Salavat Refinery",
