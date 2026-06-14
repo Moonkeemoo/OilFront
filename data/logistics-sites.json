@@ -1,0 +1,276 @@
+{
+  "sites": [
+    {
+      "id": "vyazma-railway-depot",
+      "name": "Vyazma Railway Depot",
+      "name_local": "Вяземское локомотивное депо",
+      "lat": 55.21,
+      "lon": 34.33,
+      "category": "rail-depot",
+      "role": "Locomotive servicing and traction depot on the Moscow–Minsk mainline; key node for westward military rail traffic",
+      "operator": "RZD",
+      "region": "Smolensk Oblast",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2026-06-14",
+          "weapon": "uav",
+          "severity": "moderate",
+          "summary": "Ukrainian long-range drones ignited fires inside the Vyazma railway depot; OSINT channels Exilenova+ and ASTRA geolocated fires at the depot northeast of the central station and reported hits on the traction power substation supplying rail lines.",
+          "source_urls": ["https://liveuamap.com/en/2026/14-june-00-drones-attack-reported-in-vyazma-smolensk-region"]
+        }
+      ],
+      "notes": "Coords city-level; ASTRA geolocation places fire at the rail depot NE of Vyazma central station; traction substation also reportedly struck.",
+      "source_urls": ["https://liveuamap.com/en/2026/14-june-00-drones-attack-reported-in-vyazma-smolensk-region"]
+    },
+    {
+      "id": "toropets-107th-grau-arsenal",
+      "name": "Toropets 107th GRAU Arsenal",
+      "name_local": "107-й арсенал ГРАУ МО РФ, Торопец",
+      "lat": 56.5,
+      "lon": 31.72,
+      "category": "arsenal",
+      "role": "Strategic MoD missile/artillery storage; held Iskander-M, Tochka-U, S-300 missiles, guided bombs and North Korean KN-23 ballistic missiles; ~30,000 t munitions",
+      "operator": "MoD/GRAU",
+      "region": "Tver Oblast",
+      "status": "destroyed",
+      "strikes": [
+        {
+          "occurred_on": "2024-09-18",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Massive Ukrainian drone strike destroyed the 107th GRAU arsenal; 82-metre crater, fires across ~13 km² (NASA satellite), a magnitude-2.8 seismic event, blast felt up to 300 km. ~30,000 t of munitions destroyed; SBU confirmed responsibility.",
+          "source_urls": ["https://en.wikipedia.org/wiki/Toropets_depot_explosions", "https://en.defence-ua.com/events/earthquakes_recorded_after_ukraines_massive_strike_on_ammo_dump_in_toropets-11896.html", "https://www.aljazeera.com/news/2024/9/18/ukrainian-drone-attack-sparks-massive-blast-at-arsenal-in-russia"]
+        }
+      ],
+      "notes": "Facility ~13 km N of Toropets; coords from Wikipedia infobox (56°30′N 31°43′E). One of the largest single-strike munitions destructions of the war.",
+      "source_urls": ["https://en.wikipedia.org/wiki/Toropets_depot_explosions", "https://en.defence-ua.com/events/earthquakes_recorded_after_ukraines_massive_strike_on_ammo_dump_in_toropets-11896.html"]
+    },
+    {
+      "id": "oktyabrsky-23rd-grau-arsenal",
+      "name": "Oktyabrsky 23rd GRAU Arsenal",
+      "name_local": "23-й арсенал ГРАУ, с. Октябрьский, Тверская область",
+      "lat": 56.36,
+      "lon": 31.65,
+      "category": "arsenal",
+      "role": "GRAU strategic arsenal; stored Iskander and Tochka-U ballistic missiles and S-300 SAM munitions; 2.6 km² facility",
+      "operator": "MoD/GRAU",
+      "region": "Tver Oblast",
+      "status": "destroyed",
+      "strikes": [
+        {
+          "occurred_on": "2024-09-21",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Ukrainian fixed-wing drone strike set the northern storage area ablaze; NASA satellites confirmed fires across most of the 2.6 km² facility. Coordinated with the simultaneous Tikhoretsk strike; General Staff confirmed.",
+          "source_urls": ["https://euromaidanpress.com/2024/09/21/massive-drone-assault-targets-russian-ammo-depot-and-arsenal-across-multiple-regions/", "https://militarnyi.com/en/news/satellite-imagery-shows-that-russian-depots-near-tikhoretsk-and-oktyabrske-have-been-almost-completely-destroyed/", "https://en.defence-ua.com/news/ukraines_general_staff_confirms_successful_strikes_on_two_key_russian_military_arsenals-11932.html"]
+        }
+      ],
+      "notes": "Facility-level coords from Militarnyi satellite analysis (56.3592°N 31.6499°E); distinct facility ~50 km S of Toropets.",
+      "source_urls": ["https://euromaidanpress.com/2024/09/21/massive-drone-assault-targets-russian-ammo-depot-and-arsenal-across-multiple-regions/", "https://militarnyi.com/en/news/satellite-imagery-shows-that-russian-depots-near-tikhoretsk-and-oktyabrske-have-been-almost-completely-destroyed/"]
+    },
+    {
+      "id": "tikhoretsk-719th-ammo-depot",
+      "name": "Tikhoretsk Ammunition Depot (719th Artillery Ammunition Base)",
+      "name_local": "Тихорецкий склад боеприпасов в/ч 57229-41",
+      "lat": 45.89,
+      "lon": 40.04,
+      "category": "arsenal",
+      "role": "One of Russia's three largest ammunition depots; southern logistics hub for Iskander missiles, North Korean KN-23 shells, Smerch rockets and artillery ammunition",
+      "operator": "MoD",
+      "region": "Krasnodar Krai",
+      "status": "destroyed",
+      "strikes": [
+        {
+          "occurred_on": "2024-09-21",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Ukrainian drone strike destroyed ~90% of storage capacity; ≥2,000 t of ammunition (incl. North Korean supply) destroyed; a Podlet radar was also hit; 1,200+ residents evacuated. Satellite imagery confirmed near-total destruction.",
+          "source_urls": ["https://kyivindependent.com/drone-strike-causes-explosions-at-facility-in-krasnodar-krai-russian-officials-say/", "https://militarnyi.com/en/news/satellite-imagery-shows-that-russian-depots-near-tikhoretsk-and-oktyabrske-have-been-almost-completely-destroyed/", "https://www.pravda.com.ua/eng/news/2024/09/21/7476177/"]
+        }
+      ],
+      "notes": "Facility-level coords from Militarnyi satellite imagery (45.8871°N 40.0422°E, Kamenniy village). Military unit 57229-41.",
+      "source_urls": ["https://kyivindependent.com/drone-strike-causes-explosions-at-facility-in-krasnodar-krai-russian-officials-say/", "https://militarnyi.com/en/news/satellite-imagery-shows-that-russian-depots-near-tikhoretsk-and-oktyabrske-have-been-almost-completely-destroyed/"]
+    },
+    {
+      "id": "karachev-67th-grau-arsenal",
+      "name": "Karachev 67th GRAU Arsenal",
+      "name_local": "67-й арсенал ГРАУ, Карачев, Брянская область",
+      "lat": 53.12,
+      "lon": 34.98,
+      "category": "arsenal",
+      "role": "GRAU strategic arsenal; stored missile/artillery ammunition incl. North Korean KN-23 shells and glide bombs, much in open-air storage; ~114 km from the border",
+      "operator": "MoD/GRAU",
+      "region": "Bryansk Oblast",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2024-10-09",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Overnight Ukrainian drone strike on the 67th GRAU arsenal near Karachev; large fires with secondary detonations confirmed on video. Reported as the second strike on the facility within two weeks; open-air storage amplified the damage.",
+          "source_urls": ["https://euromaidanpress.com/2024/10/09/russian-weapons-depot-with-north-korean-ammunition-and-bombs-in-bryansk-oblast-reportedly-struck/", "https://www.themoscowtimes.com/2024/10/09/ukraine-claims-strike-on-depot-storing-north-korean-ammo-a86619"]
+        }
+      ],
+      "notes": "Coords city-level (Karachev, Bryansk Oblast).",
+      "source_urls": ["https://euromaidanpress.com/2024/10/09/russian-weapons-depot-with-north-korean-ammunition-and-bombs-in-bryansk-oblast-reportedly-struck/", "https://www.themoscowtimes.com/2024/10/09/ukraine-claims-strike-on-depot-storing-north-korean-ammo-a86619"]
+    },
+    {
+      "id": "kerch-bridge",
+      "name": "Kerch (Crimean) Bridge",
+      "name_local": "Крымский мост / Керченский мост",
+      "lat": 45.3011,
+      "lon": 36.5125,
+      "category": "bridge",
+      "role": "19 km road-rail bridge linking Krasnodar Krai to Crimea; Russia's primary overland supply route for forces in occupied southern Ukraine",
+      "operator": "Russian state",
+      "region": "Kerch Strait / occupied Crimea",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2022-10-08",
+          "weapon": "sabotage",
+          "severity": "major",
+          "summary": "Truck bomb (~22,770 kg explosives) detonated at 06:07; two road spans collapsed into the water, seven rail fuel-tanker wagons set ablaze, five killed; road and rail traffic suspended.",
+          "source_urls": ["https://en.wikipedia.org/wiki/2022_Crimean_Bridge_explosion", "https://www.rferl.org/a/ukraine-attack-key-bridge-russia-crimea-kerch/33432943.html"]
+        },
+        {
+          "occurred_on": "2023-07-17",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "SBU 'Sea Baby' unmanned surface vehicles struck both road and rail sections; two civilians killed, traffic temporarily halted. Ukraine publicly claimed responsibility and released video.",
+          "source_urls": ["https://www.navalnews.com/naval-news/2023/07/ukraine-attacks-sevastopol-naval-base-and-kerch-bridge-with-drones/", "https://kyivindependent.com/breaking-ukraines-sbu-strikes-crimean-bridge-in-underwater-attack/"]
+        },
+        {
+          "occurred_on": "2025-06-03",
+          "weapon": "sabotage",
+          "severity": "moderate",
+          "summary": "SBU claimed a months-long covert underwater mining operation; 1,100 kg of explosives detonated against underwater bridge pillars at 04:44, which the SBU said 'severely damaged' the supports.",
+          "source_urls": ["https://www.euronews.com/2025/06/03/ukraine-strikes-kerch-bridge-in-crimea-with-underwater-explosives", "https://abcnews.com/International/russian-strikes-kill-7-ukraine-hours-after-latest/story?id=122439031"]
+        }
+      ],
+      "notes": "Coords from Wikipedia infobox (45.3011°N 36.5125°E). Three confirmed Ukrainian strikes 2022–2025; bridge remains partially operational.",
+      "source_urls": ["https://en.wikipedia.org/wiki/2022_Crimean_Bridge_explosion", "https://www.rferl.org/a/ukraine-attack-key-bridge-russia-crimea-kerch/33432943.html"]
+    },
+    {
+      "id": "chonhar-bridge",
+      "name": "Chonhar Bridge",
+      "name_local": "Чонгарський міст / Чонгарский мост",
+      "lat": 46.0,
+      "lon": 34.45,
+      "category": "bridge",
+      "role": "Road bridge on the R-280 highway crossing the Syvash lagoon; primary land supply route linking occupied Crimea to occupied Kherson/Zaporizhzhia",
+      "operator": "Russian-occupied administration",
+      "region": "Occupied Kherson Oblast",
+      "status": "destroyed",
+      "strikes": [
+        {
+          "occurred_on": "2023-07-29",
+          "weapon": "missile",
+          "severity": "moderate",
+          "summary": "Ukraine confirmed a Storm Shadow cruise-missile strike on the Chonhar Bridge; Russia claimed 12 fired/7 downed, proxy Saldo acknowledged infrastructure damage. Follows a June 22 2023 strike.",
+          "source_urls": ["https://kyivindependent.com/ukrainian-military-confirms-striking-chonhar-bridge-connecting-kherson-oblast-and-occupied-crimea/", "https://www.newsweek.com/ukraine-missile-strike-hole-bridge-crimea-kherson-chongar-storm-shadow-1808337"]
+        },
+        {
+          "occurred_on": "2026-06-07",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Ukraine's Code 9.2 unit and 1st Separate Assault Battalion struck the bridge deck with FP-2 Fire Point and long-range Behemoth drones; Planet Labs/RFE-RL Schemes imagery confirmed burn marks. A pontoon bridge was installed as a replacement.",
+          "source_urls": ["https://kyivindependent.com/drone-strike-damages-bridge-linking-occupied-crimea-to-southern-ukraine/", "https://www.themoscowtimes.com/2026/06/11/ukrainian-strikes-damage-several-bridges-linking-occupied-kherson-with-annexed-crimea-a92979"]
+        },
+        {
+          "occurred_on": "2026-06-09",
+          "weapon": "uav",
+          "severity": "major",
+          "summary": "Second drone strike within 48 hours rendered the bridge completely impassable; Ukraine's CCD declared it 'destroyed'. Russian-installed Saldo claimed 25 drones intercepted but acknowledged traffic suspended.",
+          "source_urls": ["https://kyivindependent.com/chonhar-bridge-struck-again-in-occupied-kherson-oblast-as-ukraine-steps-up-pressure-on-russian-logistics-routes-in-south/", "https://newsukraine.rbc.ua/news/why-strikes-on-chonhar-bridge-matter-logic-1781101650.html"]
+        }
+      ],
+      "notes": "Coords settlement-level (Chonhar ~46.0°N 34.45°E); bridge spans the Syvash lagoon. Declared destroyed June 2026 with a pontoon replacement.",
+      "source_urls": ["https://kyivindependent.com/chonhar-bridge-struck-again-in-occupied-kherson-oblast-as-ukraine-steps-up-pressure-on-russian-logistics-routes-in-south/", "https://www.themoscowtimes.com/2026/06/11/ukrainian-strikes-damage-several-bridges-linking-occupied-kherson-with-annexed-crimea-a92979"]
+    },
+    {
+      "id": "dzhankoi-rail-junction",
+      "name": "Dzhankoi Rail Junction & Depot (Crimea Gateway)",
+      "name_local": "Джанкойський залізничний вузол",
+      "lat": 45.71,
+      "lon": 34.39,
+      "category": "rail-junction",
+      "role": "Primary railway gateway into occupied Crimea; hub for ammunition, fuel and troop transfers from the Russian mainland to the southern front",
+      "operator": "RZD / Russian-occupied administration",
+      "region": "Occupied Crimea",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2022-08-16",
+          "weapon": "sabotage",
+          "severity": "major",
+          "summary": "Explosions at an ammunition depot near Maiske (~10 km from Dzhankoi) damaged ~10 km of railway between Azovske and Rozizd; seven passenger trains failed to reach destinations, ~2,000 residents evacuated. Russian MoD blamed 'sabotage'.",
+          "source_urls": ["https://kyivindependent.com/explosions-at-ammunition-depot-damage-railway-in-occupied-crimea/", "https://united24media.com/war-in-ukraine/ukraine-expands-operation-against-russian-logistics-in-crimea-with-strike-on-dzhankoi-gateway-19793"]
+        },
+        {
+          "occurred_on": "2026-06-13",
+          "weapon": "uav",
+          "severity": "moderate",
+          "summary": "Ukrainian drones struck the Dzhankoi checkpoint and a railway bridge in the June 2026 Crimea logistics-interdiction campaign; traffic toward the checkpoint halted and two Russian locomotives on the Crimean line were also struck (Defence Express video).",
+          "source_urls": ["https://euromaidanpress.com/2026/06/13/ukrainian-drones-hit-dzhankoi-as-strike-unit-declares-hunt-on-russian-crimea-logistics/", "https://en.defence-ua.com/news/ukrainian_drones_strike_two_russian_locomotives_on_key_crimean_rail_line_video-18712.html"]
+        }
+      ],
+      "notes": "Coords city-level (Dzhankoi). A March 2023 strike that destroyed Kalibr missiles in rail transit is also attributed to this node.",
+      "source_urls": ["https://kyivindependent.com/explosions-at-ammunition-depot-damage-railway-in-occupied-crimea/", "https://euromaidanpress.com/2026/06/13/ukrainian-drones-hit-dzhankoi-as-strike-unit-declares-hunt-on-russian-crimea-logistics/"]
+    },
+    {
+      "id": "chapayevka-rail-bridge-samara",
+      "name": "Chapayevka River Railway Bridge",
+      "name_local": "Железнодорожный мост через р. Чапаевка, Самарская область",
+      "lat": 52.98,
+      "lon": 49.71,
+      "category": "bridge",
+      "role": "Railway bridge on the line serving the Polimer explosives plant in Chapayevsk; carries military ammunition from factory to front; ~1,000 km from the frontline",
+      "operator": "RZD",
+      "region": "Samara Oblast",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2024-03-04",
+          "weapon": "sabotage",
+          "severity": "major",
+          "summary": "Support structures of the railway bridge over the Chapayevka River were blown up ~06:00; HUR (Defense Intelligence) confirmed the operation and said the bridge would be impassable 'for weeks'. ~1,000 km from the frontline.",
+          "source_urls": ["https://kyivindependent.com/military-intelligence-railway-bridge-blown-up-in-russias-samara-oblast/", "https://www.ukrinform.net/rubric-ato/3835301-intelligence-confirms-disabling-railway-bridge-in-russias-samara-region.html"]
+        }
+      ],
+      "notes": "Coords city-level (Chapayevsk ~52.98°N 49.71°E). HUR cited the Polimer JSC explosives plant as the strategic target served by this line.",
+      "source_urls": ["https://kyivindependent.com/military-intelligence-railway-bridge-blown-up-in-russias-samara-oblast/", "https://www.ukrinform.net/rubric-ato/3835301-intelligence-confirms-disabling-railway-bridge-in-russias-samara-region.html"]
+    },
+    {
+      "id": "melitopol-locomotive-depot",
+      "name": "Melitopol Locomotive Depot",
+      "name_local": "Мелітопольське локомотивне депо",
+      "lat": 46.85,
+      "lon": 35.37,
+      "category": "rail-depot",
+      "role": "Locomotive servicing depot in occupied Melitopol; central shop holds locomotives moving ammunition and equipment; key southern-front rail logistics hub",
+      "operator": "RZD / Russian-occupied administration",
+      "region": "Occupied Zaporizhzhia Oblast",
+      "status": "damaged",
+      "strikes": [
+        {
+          "occurred_on": "2023-03-29",
+          "weapon": "missile",
+          "severity": "moderate",
+          "summary": "Ukraine struck the Melitopol locomotive depot; explosions, fires and power outages across the city. Mayor Ivan Fedorov said it was the third strike on a railway depot that week.",
+          "source_urls": ["https://www.kyivpost.com/post/15092", "https://www.easternherald.com/2023/03/29/ukraine-strikes-at-melitopol-railway-depot/"]
+        },
+        {
+          "occurred_on": "2023-04-02",
+          "weapon": "missile",
+          "severity": "moderate",
+          "summary": "A HIMARS strike hit the depot's central shop and the electrical substation powering the rail line; six wounded, power outages across parts of Melitopol.",
+          "source_urls": ["https://meduza.io/en/news/2023/04/02/armed-forces-of-ukraine-shell-a-locomotive-depot-in-occupied-melitopol", "https://www.kyivpost.com/post/15092"]
+        }
+      ],
+      "notes": "Coords city-level (Melitopol). HIMARS/GMLRS confirmed for the April 2 strike.",
+      "source_urls": ["https://meduza.io/en/news/2023/04/02/armed-forces-of-ukraine-shell-a-locomotive-depot-in-occupied-melitopol", "https://www.easternherald.com/2023/03/29/ukraine-strikes-at-melitopol-railway-depot/"]
+    }
+  ]
+}
