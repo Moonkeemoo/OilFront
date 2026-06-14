@@ -3641,6 +3641,474 @@
         "https://war.obozrevatel.com/porazhena-neftebaza-temp-v-ryibinske-v-sbu-ozvuchili-detali-uspeshnoj-spetsoperatsii.htm",
         "https://theins.ru/news/293687"
       ]
+    },
+    {
+      "id": "2024-05-10-rovenky-oil-depot",
+      "infra_id": "rovenky-oil-depot",
+      "occurred_on": "2024-05-10",
+      "weapon": "missile",
+      "severity": "major",
+      "summary": "ATACMS strike (M74 cluster) destroyed Rovenky oil depot fuel reserves; 1 killed, 6 wounded (Planet satellite confirmed).",
+      "source_urls": [
+        "https://euromaidanpress.com/2024/05/11/key-oil-depot-hit-in-occupied-luhansks-rovenky/",
+        "https://militarnyi.com/en/news/after-the-drone-attack-most-oil-depot-reservoirs-in-rovenky-destroyed/"
+      ]
+    },
+    {
+      "id": "2025-12-31-rovenky-oil-depot",
+      "infra_id": "rovenky-oil-depot",
+      "occurred_on": "2025-12-31",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Unmanned Systems Forces drones struck the Rovenky depot on New Year's Eve; post-strike video showed tanks burned down (cmdr Brovdi confirmed).",
+      "source_urls": [
+        "https://kyivindependent.com/ukraines-military-reportedly-strikes-russian-occupied-oil-depot-in-luhansk-oblast/",
+        "https://euromaidanpress.com/2026/02/27/ukraine-hits-luhansk-oil-depot-for-the-second-time-in-five-days-sparking-massive-fire/"
+      ]
+    },
+    {
+      "id": "2025-10-27-luhansk-city-oil-depot",
+      "infra_id": "luhansk-city-oil-depot",
+      "occurred_on": "2025-10-27",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SOF drones struck the Luhansk fuel depot (tanks fully loaded); multiple explosions and large fires disrupting fuel distribution.",
+      "source_urls": [
+        "https://united24media.com/latest-news/ukraine-obliterate-russian-fuel-hub-with-precision-drone-strike-in-occupied-luhansk-video-12852",
+        "https://militarnyi.com/en/news/drones-strike-oil-depot-in-occupied-luhansk/"
+      ]
+    },
+    {
+      "id": "2026-06-05-luhansk-city-oil-depot",
+      "infra_id": "luhansk-city-oil-depot",
+      "occurred_on": "2026-06-05",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Overnight drone strike ignited a massive fire at the Luhansk depot, black smoke visible across the city (OSINT-confirmed).",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/06/05/drone-strike-ignites-fire-at-oil-depot-in-occupied-luhansk/",
+        "https://militarnyi.com/en/news/drones-strike-oil-depot-in-occupied-luhansk/"
+      ]
+    },
+    {
+      "id": "2026-03-01-makiivka-oil-depot",
+      "infra_id": "makiivka-oil-depot",
+      "occurred_on": "2026-03-01",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Overnight drone strike (1st Separate Centre, USF) set the Makiivka depot ablaze; large flames and black smoke column visible across the city.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/oil-depot-catch-fire-makiivka-drone-strike/",
+        "https://newsukraine.rbc.ua/news/ukrainian-military-strikes-oil-depot-and-1772192421.html"
+      ]
+    },
+    {
+      "id": "2025-01-18-uzlovaya-8marta-rosrezerv",
+      "infra_id": "uzlovaya-8marta-rosrezerv",
+      "occurred_on": "2025-01-18",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "HUR drones hit the Rosrezerv '8 Marta' depot with 10+ strikes; large-scale fire, fuel/lubricant tanks damaged (Tula governor confirmed).",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/01/18/ukraine-strikes-strategic-russian-oil-depot-in-tula-with-domestic-drones-intelligence-source/",
+        "https://united24media.com/latest-news/drones-targeted-oil-depot-in-russias-tula-region-5196"
+      ]
+    },
+    {
+      "id": "2024-04-24-yartsevo-rosneft-depot",
+      "infra_id": "yartsevo-rosneft-depot",
+      "occurred_on": "2024-04-24",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU drones struck two Rosneft fuel bases at Yartsevo simultaneously (~26,000 m³); massive fire, satellite-confirmed.",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/oil-depots-in-smolensk-region-of-russia-attacked-1713950014.html",
+        "https://www.kyivpost.com/post/31580"
+      ]
+    },
+    {
+      "id": "2024-12-31-yartsevo-rosneft-depot",
+      "infra_id": "yartsevo-rosneft-depot",
+      "occurred_on": "2024-12-31",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Second drone strike on the Yartsevo Rosneft depot; powerful explosions and fire (Smolensk governor confirmed).",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2024/12/31/ukrainian-drone-attack-sparks-oil-depot-fire-in-smolensk-region-governor-says-a87491",
+        "https://kyivindependent.com/ukraine-strikes-oil-depot-in-russias-smolensk-oblast-general-staff-confirms/"
+      ]
+    },
+    {
+      "id": "2025-01-16-liskinskaya-depot",
+      "infra_id": "liskinskaya-depot",
+      "occurred_on": "2025-01-16",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Ukrainian SOF drones hit the Liskinskaya depot; 4 tanks (~30,000 m³ diesel/gasoline) burning, multi-day fire, protective nets breached (Voronezh governor confirmed).",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/01/16/russian-rosneft-oil-depot-near-voronezh-still-on-fire-following-ukraines-special-forces-strike/",
+        "https://newsukraine.rbc.ua/news/ukrainian-military-strikes-rosneft-oil-depot-1737032105.html"
+      ]
+    },
+    {
+      "id": "2024-10-04-annanefteprodukt-depot",
+      "infra_id": "annanefteprodukt-depot",
+      "occurred_on": "2024-10-04",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU/AFU drones scored 5 hits on the 20-tank Annanefteprodukt depot; massive fire, military fuel logistics disrupted.",
+      "source_urls": [
+        "https://en.defence-ua.com/news/ukrainian_drones_strike_oil_depot_in_russias_voronezh_region_disrupting_russian_military_logistics-12074.html",
+        "https://kyivindependent.com/ukraine-targets-oil-depot-in-russias-voronezh-oblast-strikes-several-military-facilities-in-occupied-territories-general-staff-says/"
+      ]
+    },
+    {
+      "id": "2024-11-25-kaluganefteprodukt-lyudinovo",
+      "infra_id": "kaluganefteprodukt-lyudinovo",
+      "occurred_on": "2024-11-25",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "HUR drones struck the Lyudinovo (Kaluganefteprodukt) depot overnight; series of blasts and fire.",
+      "source_urls": [
+        "https://kyivindependent.com/kaluga-oil-depot/",
+        "https://www.france24.com/en/live-news/20241125-ukraine-drones-hit-russian-oil-energy-facility-kyiv-source"
+      ]
+    },
+    {
+      "id": "2026-01-01-kaluganefteprodukt-lyudinovo",
+      "infra_id": "kaluganefteprodukt-lyudinovo",
+      "occurred_on": "2026-01-01",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Third strike on the Lyudinovo depot, overnight New Year; large-scale fire.",
+      "source_urls": [
+        "https://united24media.com/latest-news/oil-depot-in-russias-kaluga-region-on-fire-after-drone-strikes-5192",
+        "https://kyivindependent.com/kaluga-oil-depot/"
+      ]
+    },
+    {
+      "id": "2026-02-19-velikolukskaya-depot",
+      "infra_id": "velikolukskaya-depot",
+      "occurred_on": "2026-02-19",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU 'Alpha' drones breached the depot's anti-drone netting (~500 km from Ukraine); 4+ explosions, large-scale fire.",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/02/19/russia-built-anti-drone-nets-over-this-oil-depot-500-km-from-ukraine-drones-burned-it-anyway/",
+        "https://www.ukrinform.net/rubric-ato/4093110-velikie-luki-oil-depot-in-pskov-region-attacked-by-ssu-drones.html"
+      ]
+    },
+    {
+      "id": "2024-07-28-polevaya-depot-kursk",
+      "infra_id": "polevaya-depot-kursk",
+      "occurred_on": "2024-07-28",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Drones set 3 of 11 tanks ablaze at the Polevaya depot; 82 firefighters deployed (Kursk governor confirmed).",
+      "source_urls": [
+        "https://euromaidanpress.com/2024/07/28/ukrainian-drones-strike-russias-polevaya-oil-depot-in-kursk-oblast/",
+        "https://kyivindependent.com/ukraine-hit-oil-depot-in-russias-kursk-oblast-general-staff-reports/"
+      ]
+    },
+    {
+      "id": "2024-11-13-utyos-rosrezerv-penza",
+      "infra_id": "utyos-rosrezerv-penza",
+      "occurred_on": "2024-11-13",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "3 drones targeted the Rosrezerv 'Utyos' reserve; one storage tank damaged (Penza governor + Gen Staff).",
+      "source_urls": [
+        "https://ukranews.com/en/news/1046994-drones-attack-oil-storage-facility-of-rosrezerv-in-russia-s-penza-oblast",
+        "https://english.nv.ua/russian-war/drones-strike-russian-oil-depot-in-penza-damaging-storage-tank-50466123.html"
+      ]
+    },
+    {
+      "id": "2024-06-20-platonovskoye-depot-tambov",
+      "infra_id": "platonovskoye-depot-tambov",
+      "occurred_on": "2024-06-20",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "SBU drones struck the Platonovskoye fuel/lubricants warehouse; fire confirmed by Planet satellite.",
+      "source_urls": [
+        "https://english.nv.ua/nation/satellite-image-of-fire-at-platonovskoye-oil-depot-in-tambov-oblast-of-russia-after-drone-attack-50428836.html",
+        "https://charter97.org/en/news/2024/6/20/599711/"
+      ]
+    },
+    {
+      "id": "2026-01-28-khokholskaya-depot-voronezh",
+      "infra_id": "khokholskaya-depot-voronezh",
+      "occurred_on": "2026-01-28",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Drone strike ignited petroleum products at the Khokholskaya depot; thick smoke (Gen Staff + Voronezh governor confirmed).",
+      "source_urls": [
+        "https://www.ukrinform.net/rubric-ato/4085189-ukrainian-forces-hit-khokholskaya-oil-depot-in-russias-voronezh-region.html",
+        "https://newsukraine.rbc.ua/news/ukrainian-forces-strike-russian-drone-control-1769596449.html"
+      ]
+    },
+    {
+      "id": "2026-01-10-zhutovskaya-depot-volgograd",
+      "infra_id": "zhutovskaya-depot-volgograd",
+      "occurred_on": "2026-01-10",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Drones hit the 9-tank Zhutovskaya LUKOIL depot; fire detected (Volgograd governor confirmed).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukrainian-defense-forces-strike-russian-oil-depot-in-volgograd/",
+        "https://newsukraine.rbc.ua/news/drones-strike-russia-s-volgograd-region-oil-1768023921.html"
+      ]
+    },
+    {
+      "id": "2025-08-03-sochi-adler-depot",
+      "infra_id": "sochi-adler-depot",
+      "occurred_on": "2025-08-03",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Drone struck a 2,000 m³ fuel tank at the Adler/Sochi depot; 120+ firefighters; Sochi airport diverted flights for refueling.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraines-drone-strike-reportedly-sparks-fire-at-oil-depot-in-russias-sochi/",
+        "https://www.aljazeera.com/news/2025/8/3/ukrainian-drone-attack-sparks-fire-at-oil-depot-in-sochi-southwest-russia"
+      ]
+    },
+    {
+      "id": "2025-03-11-serpukhov-oka-center-depot",
+      "infra_id": "serpukhov-oka-center-depot",
+      "occurred_on": "2025-03-11",
+      "weapon": "uav",
+      "severity": "minor",
+      "summary": "Drone hit the Oka-Center depot in Serpukhov; tank staircase damaged, unexploded warhead recovered, no major fire.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-strike-oil-depots-in-moscow-and-orel-regions/",
+        "https://www.pravda.com.ua/eng/news/2025/03/11/7502297/"
+      ]
+    },
+    {
+      "id": "2025-03-09-cheboksary-burevestnik-rosrezerv",
+      "infra_id": "cheboksary-burevestnik-rosrezerv",
+      "occurred_on": "2025-03-09",
+      "weapon": "uav",
+      "severity": "minor",
+      "summary": "First-ever drone strike on Chuvashia (~970 km) hit the FGKU 'Burevestnik' state fuel reserve compound; no major fire.",
+      "source_urls": [
+        "https://euromaidanpress.com/2025/03/09/first-ever-ukrainian-drone-reaches-russias-chuvashia-hits-oil-depot-970km-from-border/",
+        "https://kyivindependent.com/ukrainian-drone-reportedly-attacks-oil-depot-in-russias-chuvashia-for-first-time/"
+      ]
+    },
+    {
+      "id": "2024-11-12-oskolneftesnab-stary-oskol-depot",
+      "infra_id": "oskolneftesnab-stary-oskol-depot",
+      "occurred_on": "2024-11-12",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "USF/SOF drones struck the Oskolneftesnab depot; one silo ignited, 10 fire crews (Lyutyi drone wreckage photographed; Gen Staff confirmed).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/ukrainian-drone-attacks-oil-depot-near-stary-oskol-belgorod-region/",
+        "https://www.ukrinform.net/rubric-ato/4077530-russia-confirms-strike-on-oil-depot-in-stary-oskol.html"
+      ]
+    },
+    {
+      "id": "2026-01-06-oskolneftesnab-stary-oskol-depot",
+      "infra_id": "oskolneftesnab-stary-oskol-depot",
+      "occurred_on": "2026-01-06",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Overnight drone strike scored direct hits on fuel tanks; large fire (Belgorod governor Gladkov confirmed via ASTRA).",
+      "source_urls": [
+        "https://kyivindependent.com/russian-oil-refinery-in-belgorod-oblast-on-fire-after-ukrainian-drone-attack-official-claims/",
+        "https://www.ukrinform.net/rubric-ato/4077530-russia-confirms-strike-on-oil-depot-in-stary-oskol.html"
+      ]
+    },
+    {
+      "id": "2024-03-05-belgorodnefteprodukt-dolgoye-depot",
+      "infra_id": "belgorodnefteprodukt-dolgoye-depot",
+      "occurred_on": "2024-03-05",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "GUR drone struck the Belgorodnefteprodukt depot at Dolgoye; one fuel tank exploded.",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-strike-russian-oil-depot-in-the-belgorod-region/",
+        "https://www.themoscowtimes.com/2024/03/05/ukraine-attacks-oil-depot-in-russian-border-region-a84341"
+      ]
+    },
+    {
+      "id": "2026-02-23-kaleykino-nps-tatarstan",
+      "infra_id": "kaleykino-nps-tatarstan",
+      "occurred_on": "2026-02-23",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Drones struck the Kaleykino Druzhba hub; six explosions, two 50,000 m³ crude tanks ablaze, substations damaged — Transneft cut intake ~250k bbl/day, Druzhba exports to Hungary/Slovakia disrupted (SBU).",
+      "source_urls": [
+        "https://kyivindependent.com/russias-transneft-cuts-oil-intake-after-ukrainian-drone-strike-on-druzhba-pipeline-hub-in-tatarstan-reuters-reports/",
+        "https://www.themoscowtimes.com/2026/02/23/ukraine-drones-spark-fire-at-key-transneft-oil-hub-in-tatarstan-a92021"
+      ]
+    },
+    {
+      "id": "2025-02-17-kropotkinskaya-nps6-cpc",
+      "infra_id": "kropotkinskaya-nps6-cpc",
+      "occurred_on": "2025-02-17",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "7 explosive UAVs struck NPS-6 Kropotkinskaya (CPC); station decommissioned, Tengiz–Novorossiysk throughput cut ~30% for weeks (CPC press release).",
+      "source_urls": [
+        "https://www.themoscowtimes.com/2025/02/17/ukrainian-drones-hit-major-pipeline-in-southern-russia-disrupting-oil-supplies-a88043",
+        "https://militarnyi.com/en/news/drone-strikes-shut-down-oil-pumping-station-in-russia/"
+      ]
+    },
+    {
+      "id": "2026-04-29-perm-lpds-bashkultaevo",
+      "infra_id": "perm-lpds-bashkultaevo",
+      "occurred_on": "2026-04-29",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU 'Alpha' drones set the Perm Transneft pumping station ablaze; ≥4 tanks burning, 'oil rain' over Perm city, environmental emergency declared (governor acknowledged).",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/04/29/oil-rain-reported-in-perm-after-ukrainian-drones-set-transneft-pumping-station-ablaze-1500-km-from-the-war-zone/",
+        "https://militarnyi.com/en/news/drones-hit-oil-pumping-station-near-perm/"
+      ]
+    },
+    {
+      "id": "2026-04-09-krymskaya-lpds",
+      "infra_id": "krymskaya-lpds",
+      "occurred_on": "2026-04-09",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU 'Alpha' drones struck the Krymskaya LPDS 110 kV substation; 20+ explosions, oil-tank fire, pipeline section disrupted (Interfax-Ukraine confirmed).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drone-strike-hits-substation-at-krymskaya-oil-pumping-station-in-krasnodar-krai/",
+        "https://ru.interfax.com.ua/news/general/1158580.html"
+      ]
+    },
+    {
+      "id": "2026-04-23-gorky-nps-kstovo",
+      "infra_id": "gorky-nps-kstovo",
+      "occurred_on": "2026-04-23",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU 'Alpha' drones struck the Gorky pumping station; 3 tanks damaged, fire across ~20,000 m², two 50,000 m³ tanks destroyed — main trunk + Lukoil Kstovo feed disrupted.",
+      "source_urls": [
+        "https://www.pravda.com.ua/eng/news/2026/04/23/8031446/",
+        "https://militarnyi.com/en/news/ukraine-drones-gorky-oil-pumping-station/"
+      ]
+    },
+    {
+      "id": "2026-05-18-yaroslavl-3-nps",
+      "infra_id": "yaroslavl-3-nps",
+      "occurred_on": "2026-05-18",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "USF drones struck the Yaroslavl-3 pumping station; storage-tank fires, Surgut–Polotsk node disrupted (Gen Staff confirmed).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/uav-oil-pumping-station-tanks-yaroslavl/",
+        "https://unn.ua/en/news/general-staff-of-the-afu-confirmed-strikes-on-the-yaroslavl-3-oil-pumping-station-and-the-volgograd-oil-refinery"
+      ]
+    },
+    {
+      "id": "2026-05-29-yaroslavl-3-nps",
+      "infra_id": "yaroslavl-3-nps",
+      "occurred_on": "2026-05-29",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Second strike on Yaroslavl-3; two tanks burning (50,000 + 20,000 m³), Primorsk export throughput impacted (Gen Staff + governor confirmed).",
+      "source_urls": [
+        "https://euromaidanpress.com/2026/05/29/volgograd-refinery-and-a-key-yaroslavl-oil-pipeline-station-struck-in-one-night/",
+        "https://unn.ua/en/news/general-staff-of-the-afu-confirmed-strikes-on-the-yaroslavl-3-oil-pumping-station-and-the-volgograd-oil-refinery"
+      ]
+    },
+    {
+      "id": "2025-10-17-hvardiiske-atan-depot-crimea",
+      "infra_id": "hvardiiske-atan-depot-crimea",
+      "occurred_on": "2025-10-17",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SOF drones hit the Hvardiiske (ATAN) depot; two fires on its tanks (NASA satellite confirmed); Russia downed its own Su-30SM in response.",
+      "source_urls": [
+        "https://kyivindependent.com/ukraine-confirms-drone-strike-on-crimea-oil-depot-releases-footage/",
+        "https://www.ukrinform.net/amp/rubric-ato/4048536-two-fires-recorded-at-oil-depot-in-hvardiiske-crimea.html"
+      ]
+    },
+    {
+      "id": "2025-10-29-hvardiiske-atan-depot-crimea",
+      "infra_id": "hvardiiske-atan-depot-crimea",
+      "occurred_on": "2025-10-29",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Third strike that month on Hvardiiske (SBU SOC 'A'); large fire with thick black smoke.",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-strike-2-oil-depots-in-russian-occupied-crimea-media-reports/",
+        "https://english.nv.ua/nation/sbu-strikes-pantsir-air-defense-system-and-russian-oil-depots-in-crimea-video-appears-online-50556426.html"
+      ]
+    },
+    {
+      "id": "2025-10-29-komsomolske-depot-crimea",
+      "infra_id": "komsomolske-depot-crimea",
+      "occurred_on": "2025-10-29",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "SBU SOC 'A' drones ignited a fuel/lubricants container at the Komsomolske depot (co-strike that destroyed a Pantsir-S2 and two radars).",
+      "source_urls": [
+        "https://kyivindependent.com/ukrainian-drones-strike-2-oil-depots-in-russian-occupied-crimea-media-reports/",
+        "https://english.nv.ua/nation/sbu-strikes-pantsir-air-defense-system-and-russian-oil-depots-in-crimea-video-appears-online-50556426.html"
+      ]
+    },
+    {
+      "id": "2026-04-18-sevastopol-kozacha-bay-terminal",
+      "infra_id": "sevastopol-kozacha-bay-terminal",
+      "occurred_on": "2026-04-18",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "Drones struck the Kozacha Bay (Yugtorsan) BSF fuel terminal; ≥2 tanks damaged, fire burned three days (Russian-installed Sevastopol head confirmed).",
+      "source_urls": [
+        "https://www.ukrinform.net/rubric-ato/4113893-drones-attack-oil-depot-in-sevastopol.html",
+        "https://www.ukrinform.net/rubric-ato/4114447-oil-depot-in-sevastopol-on-fire-for-third-day-in-kozacha-bay-area-social-media.html"
+      ]
+    },
+    {
+      "id": "2024-06-18-azovprodukt-terminal-azov",
+      "infra_id": "azovprodukt-terminal-azov",
+      "occurred_on": "2024-06-18",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "SBU drones struck the Azovprodukt terminal; a 5,000 m³ tank caught fire spreading to ~3,200 m², 200 firefighters (satellite-confirmed).",
+      "source_urls": [
+        "https://newsukraine.rbc.ua/news/drone-attack-on-oil-depot-in-rostov-region-1718730620.html",
+        "https://www.rferl.org/a/russia-fire-oil-depot-azov-drone-attack/32997491.html"
+      ]
+    },
+    {
+      "id": "2025-10-19-orenburg-gpp",
+      "infra_id": "orenburg-gpp",
+      "occurred_on": "2025-10-19",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "First confirmed drone strike on the Orenburg GPP; gas-treatment workshop hit, plant halted Kazakh-gas intake (Karachaganak output cut 25–30%; Gen Staff + governor confirmed).",
+      "source_urls": [
+        "https://kyivindependent.com/massive-russian-gas-plant-forced-to-suspend-gas-intake-following-ukrainian-drone-attack/",
+        "https://euromaidanpress.com/2025/10/19/ukrainian-drones-ignite-one-of-russias-largest-gas-plants-1200-km-from-front-lines-orenburg-facility-burns-overnight/"
+      ]
+    },
+    {
+      "id": "2025-12-25-orenburg-gpp",
+      "infra_id": "orenburg-gpp",
+      "occurred_on": "2025-12-25",
+      "weapon": "uav",
+      "severity": "moderate",
+      "summary": "Second strike (SBU 'Alpha') on the Orenburg GPP's 3U-70 H2S/CO2 purification unit; gas fire, process suspended.",
+      "source_urls": [
+        "https://www.spokesman.com/stories/2025/dec/25/ukraine-says-it-hit-russian-gas-processing-plant-o/",
+        "https://charter97.org/en/news/2025/12/25/667808/"
+      ]
+    },
+    {
+      "id": "2026-02-21-neftegorsk-gpp-samara",
+      "infra_id": "neftegorsk-gpp-samara",
+      "occurred_on": "2026-02-21",
+      "weapon": "uav",
+      "severity": "major",
+      "summary": "An-196 Lyutyi drones destroyed central elements of the Neftegorsk GPP — two gas-condensate stabilization columns + tanks, 5 tanks burning (NASA FIRMS confirmed; governor acknowledged).",
+      "source_urls": [
+        "https://militarnyi.com/en/news/drones-neftegorsk-gas-plant-samara-region/",
+        "https://militarnyi.com/en/news/ukrainian-drones-destroyed-central-elements-of-russian-neftegorsk-gas-processing-plant/"
+      ]
     }
   ]
 }
